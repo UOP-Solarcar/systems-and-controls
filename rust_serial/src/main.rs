@@ -13,9 +13,9 @@ fn main() {
     loop {
         let mut serial_buf = vec![0; 1024];
         if port.read(serial_buf.as_mut_slice()).is_ok() {
-            println!("{}", unsafe {
-                String::from_utf8(serial_buf)
-                    .unwrap_unchecked()
+            println!(
+                "{}",
+                String::from_utf8_lossy(&serial_buf)
                     .replace("  ", " ")
                     .replace("  ", " ")
                     .replace("  ", " ")
@@ -47,7 +47,7 @@ fn main() {
                     .replace("\n\n", "\n")
                     .replace("\n\n", "\n")
                     .replace("\n\n", "\n")
-            });
+            );
         }
     }
 }
