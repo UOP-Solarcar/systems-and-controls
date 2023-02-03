@@ -11,10 +11,8 @@ fn main() {
         .expect("Failed to open port");
 
     loop {
-        let mut serial_buf: Vec<u8> = vec![0; 32];
-        let _ = port
-            .read(serial_buf.as_mut_slice())
-            .expect("Found no data!");
+        let mut serial_buf = vec![0; 32];
+        let _ = unsafe { port.read(serial_buf.as_mut_slice()).unwrap_unchecked() };
         println!("{}", unsafe {
             String::from_utf8(serial_buf).unwrap_unchecked()
         });
