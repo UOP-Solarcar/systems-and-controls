@@ -47,6 +47,7 @@ fn main() {
                     .replace("\n\n", "\n")
                     .replace("\n\n", "\n")
                     .replace("\n\n", "\n")
+                    .replace('\0', "")
             );
         }
     }
