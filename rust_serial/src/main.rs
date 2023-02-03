@@ -11,10 +11,11 @@ fn main() {
         .expect("Failed to open port");
 
     loop {
-        let mut serial_buf = vec![0; 32];
-        let _ = unsafe { port.read(serial_buf.as_mut_slice()).unwrap_unchecked() };
-        println!("{}", unsafe {
-            String::from_utf8(serial_buf).unwrap_unchecked()
-        });
+        let mut serial_buf = vec![0; 1024];
+        if port.read(serial_buf.as_mut_slice()).is_ok() {
+            println!("{}", unsafe {
+                String::from_utf8(serial_buf).unwrap_unchecked()
+            });
+        }
     }
 }
