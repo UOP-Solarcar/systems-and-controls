@@ -5,49 +5,17 @@ fn main() {
     for p in ports {
         println!("{}", p.port_name);
     }
-    let mut port = serialport::new("/dev/ttyS0", 9600)
+    let mut port = serialport::new("/dev/ttyACM0", 9600)
         .timeout(Duration::from_millis(10))
         .open()
         .expect("Failed to open port");
 
     loop {
         let mut serial_buf = vec![0; 1024];
-        if port.read(serial_buf.as_mut_slice()).is_ok() {
+        if let Ok(thingy) = port.read(serial_buf.as_mut_slice()) {
             println!(
                 "{}",
-                String::from_utf8_lossy(&serial_buf)
-                    .replace("  ", " ")
-                    .replace("  ", " ")
-                    .replace("  ", " ")
-                    .replace("  ", " ")
-                    .replace("  ", " ")
-                    .replace("  ", " ")
-                    .replace("  ", " ")
-                    .replace("  ", " ")
-                    .replace("  ", " ")
-                    .replace("  ", " ")
-                    .replace("  ", " ")
-                    .replace("  ", " ")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace("\n\n", "\n")
-                    .replace('\0', "")
+                String::from_utf8_lossy(&serial_buf[..thingy]).replace('\0', "")
             );
         }
     }
