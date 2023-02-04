@@ -1,3 +1,5 @@
+use std::io;
+use std::io::Write;
 use std::time::Duration;
 
 fn main() {
@@ -5,18 +7,19 @@ fn main() {
     for p in ports {
         println!("{}", p.port_name);
     }
-    let mut port = serialport::new("/dev/ttyACM0", 9600)
+    let port_name = "/dev/ttyACM0";
+    let baud_rate = 9600;
+    let mut port = serialport::new(port_name, baud_rate)
         .timeout(Duration::from_millis(10))
         .open()
-        .expect("Failed to open port");
-
+        .unwrap();
+    println!("Receiving data on {} at {} baud:", &port_name, &baud_rate);
+    let mut serial_buf = vec![0; 1024];
     loop {
-        let mut serial_buf = vec![0; 1024];
-        if let Ok(thingy) = port.read(serial_buf.as_mut_slice()) {
-            println!(
-                "{}",
-                String::from_utf8_lossy(&serial_buf[..thingy]).replace('\0', "")
-            );
+        match port.read(serial_buf.as_mut_slice()) {
+            Ok(t) => io::stdout().write_all(&serial_buf[..t]).unwrap(),
+            Err(ref e) if e.kind() == io::ErrorKind::TimedOut => (),
+            Err(e) => eprintln!("{e:?}"),
         }
     }
 }
