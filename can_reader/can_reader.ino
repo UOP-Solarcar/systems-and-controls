@@ -1,7 +1,5 @@
-#include <SPI.h>     //Library for using SPI Communication
-#include <mcp2515.h> //Library for using CAN Communication (https://github.com/autowp/arduino-mcp2515/)
-
-struct can_frame canMsg;
+#include <SPI.h>
+#include <mcp2515.h> (https://github.com/autowp/arduino-mcp2515/)
 
 MCP2515 mcp2515(10); // SPI CS Pin 10
 
@@ -17,13 +15,13 @@ void setup() {
 }
 
 void loop() {
-  if (mcp2515.readMessage(&canMsg) == MCP2515::ERROR_OK) {
-    for (const auto &datum : canMsg.data) {
+  can_frame can_msg;
+  if (mcp2515.readMessage(&can_msg) == MCP2515::ERROR_OK) {
+    for (const auto &datum : can_msg.data) {
       Serial.print(datum);
     }
     Serial.println();
 
-    delay(100); // delay for 1 second between each reading (this makes the
-                // display less noisy)
+    delay(100);
   }
 }
