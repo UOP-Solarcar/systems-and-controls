@@ -18,18 +18,12 @@ void loop() {
   can_frame can_msg;
   if (mcp2515.readMessage(&can_msg) == MCP2515::ERROR_OK) {
     Serial.print("[CAN] ");
-    {
-      Serial.print("0x");
-      char out[((32 / 8) * 2) + 1];
-      sprintf(out, "%X", can_msg.can_id);
-      Serial.print(out);
-    }
+    Serial.print("0x");
+    Serial.print(can_msg.can_id, HEX);
     Serial.print(":");
     for (const auto &datum : can_msg.data) {
       Serial.print(" 0x");
-      char out[((8 / 8) * 2) + 1];
-      sprintf(out, "%X", datum);
-      Serial.print(out);
+      Serial.print(datum, HEX);
     }
     Serial.println();
 
