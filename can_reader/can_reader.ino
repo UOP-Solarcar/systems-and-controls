@@ -1,5 +1,5 @@
 #include <SPI.h>
-#include <mcp2515.h> (https: //github.com/autowp/arduino-mcp2515/)
+#include <mcp2515.h> // (https://github.com/autowp/arduino-mcp2515/)
 
 MCP2515 mcp2515(10); // SPI CS Pin 10
 
