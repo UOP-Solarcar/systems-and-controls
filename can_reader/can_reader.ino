@@ -1,5 +1,5 @@
 #include <SPI.h>
-#include <mcp2515.h> (https://github.com/autowp/arduino-mcp2515/)
+#include <mcp2515.h> (https: //github.com/autowp/arduino-mcp2515/)
 
 MCP2515 mcp2515(10); // SPI CS Pin 10
 
@@ -17,8 +17,19 @@ void setup() {
 void loop() {
   can_frame can_msg;
   if (mcp2515.readMessage(&can_msg) == MCP2515::ERROR_OK) {
+    Serial.print("[CAN] ");
+    {
+      Serial.print("0x");
+      char out[((32 / 8) * 2) + 1];
+      sprintf(out, "%X", can_msg.can_id);
+      Serial.print(out);
+    }
+    Serial.print(":");
     for (const auto &datum : can_msg.data) {
-      Serial.print(datum);
+      Serial.print(" 0x");
+      char out[((8 / 8) * 2) + 1];
+      sprintf(out, "%X", datum);
+      Serial.print(out);
     }
     Serial.println();
 
