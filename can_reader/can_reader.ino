@@ -20,13 +20,13 @@ void loop() {
     Serial.print("[CAN] ");
     Serial.print("0x");
     Serial.print(can_msg.can_id, HEX);
-    Serial.print(":");
+    Serial.print(" [0x");
+    Serial.print(can_msg.can_dlc, HEX);
+    Serial.print("]:");
     for (const auto &datum : can_msg.data) {
       Serial.print(" 0x");
       Serial.print(datum, HEX);
     }
     Serial.println();
-
-    delay(100);
   }
 }
