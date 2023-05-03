@@ -56,10 +56,10 @@ void loop() {
   Serial.print(" quality: ");
   Serial.print(GPS.fixquality);
   Serial.print(" | Satellites: ");
-  Serial.print(GPS.satellites);
+  Serial.println(GPS.satellites);
 
   if (GPS.fix) {
-    Serial.print(" | Location: ");
+    Serial.print("Location: ");
     Serial.print(GPS.latitude, 4);
     Serial.print(GPS.lat);
     Serial.print(", ");
@@ -75,9 +75,8 @@ void loop() {
     Serial.print(" | Heading: ");
     Serial.print(GPS.angle);
     Serial.print(" | Altitude: ");
-    Serial.print(GPS.altitude);
+    Serial.println(GPS.altitude);
   }
-  Serial.println();
 
   // Accel
   Wire.beginTransmission(MPU_ADDR);
@@ -133,8 +132,7 @@ void loop() {
   Serial.print(" | gY = ");
   Serial.print(gyro_y);
   Serial.print(" | gZ = ");
-  Serial.print(gyro_z);
-  Serial.println();
+  Serial.println(gyro_z);
 }
 
 void clearGPS() {
