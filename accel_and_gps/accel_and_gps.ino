@@ -1,5 +1,6 @@
 #include <Adafruit_GPS.h>
 #include <Wire.h>
+#include <due_can.h>
 
 Adafruit_GPS GPS(&Serial3);
 
@@ -10,6 +11,8 @@ char c;
 const int MPU_ADDR = 0x68;
 
 void setup() {
+  // CAN
+  Can0.init(CAN_BPS_500K);
   // GPS
   Serial.begin(9600);
   GPS.begin(9600);
@@ -116,6 +119,23 @@ void loop() {
   // reading registers: 0x47 (GYRO_ZOUT_H) and 0x48 (GYRO_ZOUT_L)
   int16_t gyro_z = Wire.read() << 8 | Wire.read();
 
+  CAN_FRAME can_frame;
+  can_frame.id = 0x21;
+  can_frame.length = 8;
+  can_frame.data.int16[0] = temperature;
+  can_frame.data.int16[1] = accelerometer_x;
+  can_frame.data.int16[2] = accelerometer_y;
+  can_frame.data.int16[3] = accelerometer_z;
+  Can0.sendFrame(can_frame);
+
+  can_frame.id = 0x22;
+  can_frame.length = 6;
+  can_frame.data.int16[0] = gyro_x;
+  can_frame.data.int16[1] = gyro_y;
+  can_frame.data.int16[2] = gyro_z;
+  can_frame.data.int16[3] = 0;
+  Can0.sendFrame(can_frame);
+
   // print out data
   Serial.print("aX = ");
   Serial.print(accelerometer_x);
@@ -127,6 +147,7 @@ void loop() {
   // Register Map and Description, p.30]
   Serial.print(" | tmp = ");
   Serial.print(temperature / 340.00 + 36.53);
+
   Serial.print(" | gX = ");
   Serial.print(gyro_x);
   Serial.print(" | gY = ");
