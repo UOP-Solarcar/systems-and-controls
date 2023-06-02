@@ -23,9 +23,9 @@ void loop() {
     Serial.print(" [0x");
     Serial.print(can_msg.can_dlc, HEX);
     Serial.print("]:");
-    for (const auto &datum : can_msg.data) {
+    for (size_t i = 0; i < can_msg.can_dlc; i++) {
       Serial.print(" 0x");
-      Serial.print(datum, HEX);
+      Serial.print(can_msg.data[i], HEX);
     }
     Serial.println();
   }
