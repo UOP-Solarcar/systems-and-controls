@@ -15,8 +15,8 @@ void setup() {
 uint8_t num = 0;
 void loop() {
   can_frame can_msg;
-  can_msg.can_id = 0x022; // CAN id as 0x036
-  can_msg.can_dlc = 8;    // CAN data length as 8
+  can_msg.can_id = 0x36; // CAN id as 0x36
+  can_msg.can_dlc = 8;   // CAN data length as 8
   for (size_t i = 0; i < can_msg.can_dlc; i++) {
     can_msg.data[i] = num++;
   }
