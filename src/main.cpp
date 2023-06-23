@@ -22,8 +22,7 @@ void setup() {
 void loop() {
   can_frame can_msg{};
   if (mcp2515.readMessage(&can_msg) == MCP2515::ERROR_OK) {
-    Serial.print("[CAN] ");
-    Serial.print("0x");
+    Serial.print("[CAN] 0x");
     Serial.print(can_msg.can_id, HEX);
     Serial.print(" [0x");
     Serial.print(can_msg.can_dlc, HEX);
