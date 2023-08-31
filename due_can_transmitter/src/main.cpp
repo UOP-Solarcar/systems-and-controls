@@ -1,5 +1,5 @@
+#include <Arduino.h>
 #include <due_can.h>
-
 void setup() { Can0.init(CAN_BPS_500K); }
 
 uint8_t num = 0;
