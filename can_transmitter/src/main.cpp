@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <SPI.h>     // Library for using SPI Communication
 #include <mcp2515.h> // Library for using CAN Communication (https://github.com/autowp/arduino-mcp2515/)
 
