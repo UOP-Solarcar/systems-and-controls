@@ -1,4 +1,9 @@
 #include <Arduino.h>
+
+#ifndef MONITOR_SPEED
+#define MONITOR_SPEED 115200
+#endif
+
 int ref_read = 1024;
 
 const uint8_t ANALOG_IN_PIN = 0;
@@ -7,7 +12,7 @@ const double ref_v = 4.2;
 
 void setup() {
   // Setup Serial Monitor
-  Serial.begin(19200);
+  Serial.begin(MONITOR_SPEED);
   Serial.println("DC Voltage Test");
   Serial.print("Supply ");
   Serial.print(ref_v);
