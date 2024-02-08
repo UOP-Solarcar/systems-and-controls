@@ -1,7 +1,5 @@
  # **TCU quickstart**
 
-if you're using windows, you're on your own lol xd
-
 clone this repository (I recommend making this a subdirectory of a Solar Car directory)
 ```
 git clone https://github.com/UOP-Solarcar/CAN.git
