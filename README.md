@@ -22,28 +22,29 @@ https://docs.platformio.org/en/latest/integration/ide/vscode.html
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-- PlatformIO can thus be installed this 
+- PlatformIO can thus be installed whis 
 ```
 brew install platformio
 ```
 
 # Python Installation
 - if you have python installed, you can sinply run 
--- this method is cross-platform
+- this method is cross-platform
 ```
 python3 -m pip install -U platformio
 ```
 
 ## Creating a new platformio project
-Identify the board you're using 
+Identify the board you're using, for example if you know you're using an arduino uno, you can run pio boards with the uno argument
 ```
 pio boards uno
 ```
 
 using the appropriate board, initialize a PlatformIO project. For example:
 ```
-pio project init --board uno
+mkdir test
 cd test
+pio project init --board uno
 ```
 This will create a project with the following structure: 
 (dont forget to actually edit the README)
