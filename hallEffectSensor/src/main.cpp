@@ -18,13 +18,12 @@ void loop() {
   reading1 = digitalRead(Pin1);
   reading2 = digitalRead(Pin2);
   reading3 = digitalRead(Pin3);
-  Serial.print("Readings ");
+  Serial.print("Pin1:");
   Serial.print(reading1);
-  Serial.print(", ");
+  Serial.print(",Pin2:");
   Serial.print(reading2);
-  Serial.print(", ");
+  Serial.print(",Pin3:");
   Serial.print(reading3);
   delay(20);
-  Serial.print('\n');
 }
 
