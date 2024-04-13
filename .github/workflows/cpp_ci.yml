@@ -1,0 +1,44 @@
+name: C++ CI
+
+on:
+  push:
+    paths:
+      - '**/*.cpp'
+      - '**/*.h'
+  pull_request:
+    paths:
+      - '**/*.cpp'
+      - '**/*.h'
+
+jobs:
+  build-and-analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install Cppcheck
+      run: sudo apt-get install -y cppcheck
+
+    - name: Install Clang-Tidy
+      run: sudo apt-get install -y clang-tidy
+
+    - name: Run Cppcheck
+      run: cppcheck --enable=all --std=c++11 --verbose --force --output-file=cppcheck_results.txt src/
+
+    - name: Run Clang-Tidy
+      run: clang-tidy src/*.cpp -- -Iinclude
+
+    - name: Upload Cppcheck Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: cppcheck-results
+        path: cppcheck_results.txt
+
+    - name: Upload Clang-Tidy Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: clang-tidy-results
+        path: clang-tidy-results.txt
+
