@@ -26,4 +26,3 @@ void loop() {
   Serial.print(reading3);
   delay(20);
 }
-

@@ -1,4 +1,4 @@
-include <Arduino.h>
+#include <Arduino.h>
 
 const int Pin1 = A1;
 const int Pin2 = A2;
@@ -9,7 +9,6 @@ bool reading3;
 int rotation;
 unsigned int rpm;
 long time;
-
 
 void setup() {
   Serial.begin(115200);
@@ -34,13 +33,13 @@ void loop() {
     rotation += 60;
   }
 
-  while (rotation > 360){
+  while (rotation > 360) {
     rotation -= 360;
     Serial.println("One rotation");
     rpm = (millis() - time) * 1000 * 60;
     time = millis();
     Serial.println(rpm);
   }
-  
+
   delay(20);
 }

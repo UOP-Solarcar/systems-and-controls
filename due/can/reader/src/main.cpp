@@ -3,8 +3,11 @@
 
 void setup() {
   Serial.begin(MONITOR_SPEED);
-  Can0.begin(CAN_BPS_250K);
-  Can1.begin(CAN_BPS_250K);
+  while (!Serial)
+    ;
+  Serial.println("Booted");
+  Can0.beginAutoSpeed();
+  Can1.beginAutoSpeed();
   for (int filter = 0; filter < 3; filter++) {
     Can0.setRXFilter(filter, 0, 0, true);
     Can1.setRXFilter(filter, 0, 0, true);
