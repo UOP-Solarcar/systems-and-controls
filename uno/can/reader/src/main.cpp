@@ -10,6 +10,9 @@ MCP2515 mcp2515(10); // SPI CS Pin 10
 
 void setup() {
   Serial.begin(MONITOR_SPEED);
+  while (!Serial)
+    ;
+  Serial.println("Booted");
   SPI.begin();
 
   mcp2515.reset();

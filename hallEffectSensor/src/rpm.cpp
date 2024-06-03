@@ -1,6 +1,7 @@
 #include <Arduino.h>
 
-const int hallPin = A2;  // Replace with the actual pin number connected to the Hall Sensor
+const int hallPin =
+    A2; // Replace with the actual pin number connected to the Hall Sensor
 
 unsigned long lastTime = 0;
 unsigned long currentTime = 0;
@@ -18,9 +19,9 @@ void loop() {
 
   // Check for a rising edge (transition from LOW to HIGH)
   if (hallState == 1 && lastTime == 0) {
-    lastTime = millis();  // Record the time of the rising edge
+    lastTime = millis(); // Record the time of the rising edge
   } else if (hallState == 0 && lastTime != 0) {
-    currentTime = millis();  // Record the time of the falling edge
+    currentTime = millis(); // Record the time of the falling edge
     timeDifference = currentTime - lastTime;
 
     // Calculate RPM using the formula: RPM = (1 / (timeDifference / 1000)) * 60

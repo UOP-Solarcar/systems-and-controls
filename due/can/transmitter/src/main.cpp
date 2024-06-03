@@ -1,6 +1,13 @@
 #include <Arduino.h>
 #include <due_can.h>
-void setup() { Can0.init(CAN_BPS_500K); }
+
+void setup() {
+  Serial.begin(MONITOR_SPEED);
+  while (!Serial)
+    ;
+  Serial.println("Booted");
+  Can0.init(CAN_BPS_500K);
+}
 
 uint8_t num = 0;
 void loop() {
@@ -10,7 +17,6 @@ void loop() {
   for (size_t i = 0; i < frame.length; i++) {
     frame.data.bytes[i] = num++;
   }
-
   Can0.sendFrame(frame);
   delay(100);
 }

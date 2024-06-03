@@ -5,8 +5,11 @@
 MCP2515 mcp2515(10);
 
 void setup() {
+  Serial.begin(MONITOR_SPEED);
+  while (!Serial)
+    ;
+  Serial.println("Booted");
   SPI.begin(); // Begins SPI communication
-
   mcp2515.reset();
   mcp2515.setBitrate(CAN_500KBPS,
                      MCP_8MHZ); // Sets CAN at speed 500KBPS and Clock 8MHz
