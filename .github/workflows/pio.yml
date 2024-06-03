@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
-      matrix: { dir: ['due/can/reader', 'due/can/transmitter', 'uno/can/reader', 'uno/can/transmitter'] }
+      matrix: { dir: ['arduino/due/reader', 'arduino/due/transmitter', 'arduino/uno/reader', 'arduino/uno/transmitter'] }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/cache@v4
