@@ -1,5 +1,5 @@
-#include "bitcasting.h"
-#include "bitcasting.cpp"
+#include "bytetools.cpp"
+#include "bytetools.hpp"
 #include <Arduino.h>
 #include <SPI.h>
 #include <mcp2515.h> // (https://github.com/autowp/arduino-mcp2515/)
@@ -50,9 +50,9 @@ void parse_frame(can_frame &frame, Print &print = Serial) {
     case 0x80000900: // status 1
     {
       print.print('1');
-      int32_t rpm = bitcasting::int_bswap(*(uint32_t *)&frame.data[0]);
-      int16_t current = bitcasting::int_bswap(*(uint16_t *)&frame.data[4]),
-               duty_cycle = bitcasting::int_bswap(*(uint16_t *)&frame.data[6]);
+      int32_t rpm = bytetools::int_bswap(*(uint32_t *)&frame.data[0]);
+      int16_t current = bytetools::int_bswap(*(uint16_t *)&frame.data[4]),
+              duty_cycle = bytetools::int_bswap(*(uint16_t *)&frame.data[6]);
       print.print(" RPM: ");
       print.print(rpm);
       print.print(" current: ");
@@ -63,8 +63,8 @@ void parse_frame(can_frame &frame, Print &print = Serial) {
     case 0x80000e00: // status 2
     {
       print.print('2');
-      int32_t ah_used = bitcasting::int_bswap(*(int32_t *)&frame.data[0]),
-              ah_charged = bitcasting::int_bswap(*(int32_t *)&frame.data[4]);
+      int32_t ah_used = bytetools::int_bswap(*(int32_t *)&frame.data[0]),
+              ah_charged = bytetools::int_bswap(*(int32_t *)&frame.data[4]);
       print.print(" Ah Used: ");
       print.print(ah_used);
       print.print(" Ah Charged: ");
@@ -73,8 +73,8 @@ void parse_frame(can_frame &frame, Print &print = Serial) {
     case 0x80000f00: // status 3
     {
       print.print('3');
-      int32_t wh_used = bitcasting::int_bswap(*(int32_t *)&frame.data[0]),
-              wh_charged = bitcasting::int_bswap(*(int32_t *)&frame.data[4]);
+      int32_t wh_used = bytetools::int_bswap(*(int32_t *)&frame.data[0]),
+              wh_charged = bytetools::int_bswap(*(int32_t *)&frame.data[4]);
       print.print(" Wh Used: ");
       print.print(wh_used);
       print.print(" Wh Charged: ");
@@ -83,11 +83,11 @@ void parse_frame(can_frame &frame, Print &print = Serial) {
     case 0x80001000: // status 4
     {
       print.print('4');
-      int16_t temp_fet = bitcasting::int_bswap(*(int16_t *)&frame.data[0]),
-              temp_motor = bitcasting::int_bswap(*(int16_t *)&frame.data[2]),
-              current_in = bitcasting::int_bswap(*(int16_t *)&frame.data[4]),
+      int16_t temp_fet = bytetools::int_bswap(*(int16_t *)&frame.data[0]),
+              temp_motor = bytetools::int_bswap(*(int16_t *)&frame.data[2]),
+              current_in = bytetools::int_bswap(*(int16_t *)&frame.data[4]),
               pid_position_now =
-                  bitcasting::int_bswap(*(int16_t *)&frame.data[6]);
+                  bytetools::int_bswap(*(int16_t *)&frame.data[6]);
       print.print(" Temp FET: ");
       print.print(temp_fet);
       print.print(" Temp Motor: ");
@@ -113,10 +113,10 @@ void parse_frame(can_frame &frame, Print &print = Serial) {
     case 0x80003a00: // status 6
     {
       print.print('6');
-      int16_t adc1 = bitcasting::int_bswap(*(int16_t *)&frame.data[0]),
-              adc2 = bitcasting::int_bswap(*(int16_t *)&frame.data[2]),
-              adc3 = bitcasting::int_bswap(*(int16_t *)&frame.data[4]),
-              ppm = bitcasting::int_bswap(*(int16_t *)&frame.data[6]);
+      int16_t adc1 = bytetools::int_bswap(*(int16_t *)&frame.data[0]),
+              adc2 = bytetools::int_bswap(*(int16_t *)&frame.data[2]),
+              adc3 = bytetools::int_bswap(*(int16_t *)&frame.data[4]),
+              ppm = bytetools::int_bswap(*(int16_t *)&frame.data[6]);
       print.print(" ADC1: ");
       print.print(adc1);
       print.print(" ADC2: ");
