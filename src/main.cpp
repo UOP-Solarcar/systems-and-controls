@@ -3,6 +3,7 @@
 const uint8_t RIGHT_PIN = 2;
 const uint8_t LEFT_PIN = 3;
 const uint8_t HEADLIGHT_PIN = 4;
+const uint8_t RELAY_PIN_4 = 5;
 const uint8_t RELAY_PIN_5 = 6;
 const uint8_t RELAY_PIN_6 = 7;
 const uint8_t RELAY_PIN_7 = 8;
@@ -23,13 +24,13 @@ enum HeadlightState {
 };
 
 SignalState state = TURNLEFTBRAKE;
-HeadlightState Hlstate = OFF;
+HeadlightState Hlstate = ON;
 
 void reset(){
     // Initialize relay pins as off
     digitalWrite(RIGHT_PIN, HIGH);
     digitalWrite(LEFT_PIN, HIGH);
-    //digitalWrite(HEADLIGHT_PIN, HIGH);
+    digitalWrite(HEADLIGHT_PIN, HIGH);
     digitalWrite(RELAY_PIN_4, HIGH);
     digitalWrite(RELAY_PIN_5, HIGH);
     digitalWrite(RELAY_PIN_6, HIGH);
