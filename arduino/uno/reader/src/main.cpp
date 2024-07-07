@@ -29,7 +29,6 @@ void print_frame(can_frame &frame, Print &print = Serial) {
     print.print(" 0x");
     print.print(frame.data[i], HEX);
   }
-  print.println();
 }
 
 void parse_frame(can_frame &frame, Print &print = Serial) {
@@ -41,6 +40,7 @@ void parse_frame(can_frame &frame, Print &print = Serial) {
   case 0x80001000: // status 4
   case 0x80001b00: // status 5
   case 0x80003a00: // status 6
+  {
     canid_t motor_controller_id = frame.can_id & 0x000000FF;
     print.print("Motor Controller ID: 0x");
     print.print(motor_controller_id, HEX);
@@ -50,9 +50,9 @@ void parse_frame(can_frame &frame, Print &print = Serial) {
     case 0x80000900: // status 1
     {
       print.print('1');
-      int32_t rpm = bytetools::int_bswap(*(uint32_t *)&frame.data[0]);
-      int16_t current = bytetools::int_bswap(*(uint16_t *)&frame.data[4]),
-              duty_cycle = bytetools::int_bswap(*(uint16_t *)&frame.data[6]);
+      int32_t rpm = bytetools::int_bswap(*(int32_t *)&frame.data[0]);
+      int16_t current = bytetools::int_bswap(*(int16_t *)&frame.data[4]),
+              duty_cycle = bytetools::int_bswap(*(int16_t *)&frame.data[6]);
       print.print(" RPM: ");
       print.print(rpm);
       print.print(" current: ");
@@ -127,9 +127,84 @@ void parse_frame(can_frame &frame, Print &print = Serial) {
       print.print(ppm);
     } break;
     }
-    print.println();
-    break;
+  } break;
+  default: {
+    switch (frame.can_id) {
+    case 0x6B0: {
+      uint16_t pack_current = bytetools::int_bswap(*(uint16_t *)&frame.data[0]),
+               pack_inst_voltage =
+                   bytetools::int_bswap(*(uint16_t *)&frame.data[2]);
+      uint8_t pack_soc = frame.data[4];
+      uint16_t relay_state = bytetools::int_bswap(*(uint16_t *)&frame.data[5]);
+      uint8_t checksum = frame.data[7];
+      print.print("Pack Current: ");
+      print.print(pack_current);
+      print.print(" Pack Inst. Voltage: ");
+      print.print(pack_inst_voltage);
+      print.print(" Pack SOC: ");
+      print.print(pack_soc);
+      print.print(" Relay State: ");
+      print.print(relay_state);
+      print.print(" Checksum: ");
+      print.print(checksum);
+    } break;
+    case 0x6B1: {
+      uint16_t pack_dcl = bytetools::int_bswap(*(uint16_t *)&frame.data[0]),
+               pack_ccl = bytetools::int_bswap(*(uint16_t *)&frame.data[2]);
+      uint8_t high_temp = frame.data[4], low_temp = frame.data[5],
+              checksum = frame.data[7];
+      print.print("Pack DCL: ");
+      print.print(pack_dcl);
+      print.print(" Pack CCL: ");
+      print.print(pack_ccl);
+      print.print(" High Temperature: ");
+      print.print(high_temp);
+      print.print(" Low Temperature: ");
+      print.print(low_temp);
+      print.print(" Checksum: ");
+      print.print(checksum);
+    } break;
+    case 0x6B2: {
+      uint16_t high_cell_voltage =
+          bytetools::int_bswap(*(uint16_t *)&frame.data[0]);
+      uint8_t high_cell_voltage_id = frame.data[2];
+      uint16_t low_cell_voltage =
+          bytetools::int_bswap(*(uint16_t *)&frame.data[3]);
+      uint8_t low_cell_voltage_id = frame.data[5], checksum = frame.data[6];
+      print.print("High Cell Voltage: ");
+      print.print(high_cell_voltage);
+      print.print(" High Cell Voltage ID: ");
+      print.print(high_cell_voltage_id);
+      print.print(" Low Cell Voltage: ");
+      print.print(low_cell_voltage);
+      print.print(" Low Cell Voltage ID: ");
+      print.print(low_cell_voltage_id);
+      print.print(" Checksum: ");
+      print.print(checksum);
+    } break;
+    case 0x6B3: {
+      uint16_t high_temp = bytetools::int_bswap(*(uint16_t *)&frame.data[0]);
+      uint8_t high_thermistor_id = frame.data[2];
+      uint16_t low_temp = bytetools::int_bswap(*(uint16_t *)&frame.data[3]);
+      uint8_t low_thermistor_id = frame.data[5], checksum = frame.data[6];
+      print.print("High Temperature: ");
+      print.print(high_temp);
+      print.print(" High Thermistor ID: ");
+      print.print(high_thermistor_id);
+      print.print(" Low Temperature: ");
+      print.print(low_temp);
+      print.print(" Low Thermistor ID: ");
+      print.print(low_thermistor_id);
+      print.print(" Checksum: ");
+      print.print(checksum);
+    } break;
+    default:
+      print_frame(frame, print);
+      break;
+    }
+  } break;
   }
+  print.println();
 }
 
 void loop() {
