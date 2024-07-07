@@ -1,4 +1,4 @@
-file_path = '/Users/pranavjay/Downloads/rpm'
+file_path = '/src/rpm'
 
 def print_rpm_data():
     try:
