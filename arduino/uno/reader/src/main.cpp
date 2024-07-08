@@ -183,10 +183,9 @@ void parse_frame(can_frame &frame, Print &print = Serial) {
       print.print(checksum);
     } break;
     case 0x6B3: {
-      uint16_t high_temp = bytetools::int_bswap(*(uint16_t *)&frame.data[0]);
-      uint8_t high_thermistor_id = frame.data[2];
-      uint16_t low_temp = bytetools::int_bswap(*(uint16_t *)&frame.data[3]);
-      uint8_t low_thermistor_id = frame.data[5], checksum = frame.data[6];
+      uint8_t high_temp = frame.data[0], high_thermistor_id = frame.data[1],
+              low_temp = frame.data[2], low_thermistor_id = frame.data[3],
+              internal_temp = frame.data[4], checksum = frame.data[5];
       print.print("High Temperature: ");
       print.print(high_temp);
       print.print(" High Thermistor ID: ");
@@ -195,6 +194,43 @@ void parse_frame(can_frame &frame, Print &print = Serial) {
       print.print(low_temp);
       print.print(" Low Thermistor ID: ");
       print.print(low_thermistor_id);
+      print.print(" Internal Temperature: ");
+      print.print(internal_temp);
+      print.print(" Checksum: ");
+      print.print(checksum);
+    } break;
+    case 0x6B4: {
+      uint8_t pack_health = frame.data[0];
+      uint16_t adaptive_total_capacity =
+                   bytetools::int_bswap(*(uint16_t *)&frame.data[3]),
+               input_supply_voltage =
+                   bytetools::int_bswap(*(uint16_t *)&frame.data[5]);
+      uint8_t checksum = frame.data[7];
+      print.print("Pack Health: ");
+      print.print(pack_health);
+      print.print(" Adaptive Total Capacity: ");
+      print.print(adaptive_total_capacity);
+      print.print(" Input Supply Voltage: ");
+      print.print(input_supply_voltage);
+      print.print(" Checksum: ");
+      print.print(checksum);
+    } break;
+    case 0x36: {
+      uint8_t cell_id = frame.data[0];
+      uint16_t instant_voltage =
+                   bytetools::int_bswap(*(uint16_t *)&frame.data[1]),
+               internal_resistance =
+                   bytetools::int_bswap(*(uint16_t *)&frame.data[3]),
+               open_voltage = frame.data[5];
+      uint8_t checksum = frame.data[7];
+      print.print("Cell ID: ");
+      print.print(cell_id);
+      print.print(" Instant Voltage: ");
+      print.print(instant_voltage);
+      print.print(" Internal Resistance: ");
+      print.print(internal_resistance);
+      print.print(" Open Voltage: ");
+      print.print(open_voltage);
       print.print(" Checksum: ");
       print.print(checksum);
     } break;
