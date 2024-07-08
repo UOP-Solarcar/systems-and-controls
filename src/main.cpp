@@ -13,7 +13,7 @@ void disconnect_relay() {
   if (!relay_disconnected) {
     relay_disconnected = true;
     digitalWrite(RELAYPIN, HIGH);
-    Serial.print("Relay Disconnected");
+    Serial.println("Relay Disconnected");
   }
 }
 
@@ -21,7 +21,7 @@ void connect_relay() {
   if (relay_disconnected) {
     relay_disconnected = false;
     digitalWrite(RELAYPIN, LOW);
-    Serial.print("Relay Connected");
+    Serial.println("Relay Connected");
   }
 }
 
@@ -66,7 +66,7 @@ void loop() {
       Serial.print(" Relay State: ");
       Serial.print(relay_state);
       Serial.print(" Checksum: ");
-      Serial.print(checksum);
+      Serial.println(checksum);
     } break;
     case 0x6B1: {
       uint16_t pack_dcl = bytetools::int_bswap(*(uint16_t *)&frame.data[0]),
@@ -87,7 +87,7 @@ void loop() {
       Serial.print(" Low Temperature: ");
       Serial.print(low_temp);
       Serial.print(" Checksum: ");
-      Serial.print(checksum);
+      Serial.println(checksum);
     } break;
     case 0x6B2: {
       uint16_t high_cell_voltage =
@@ -110,7 +110,7 @@ void loop() {
       Serial.print(" Low Cell Voltage ID: ");
       Serial.print(low_cell_voltage_id);
       Serial.print(" Checksum: ");
-      Serial.print(checksum);
+      Serial.println(checksum);
     } break;
     case 0x6B3: {
       uint8_t high_temp = frame.data[0], high_thermistor_id = frame.data[1],
@@ -132,7 +132,7 @@ void loop() {
       Serial.print(" Internal Temperature: ");
       Serial.print(internal_temp);
       Serial.print(" Checksum: ");
-      Serial.print(checksum);
+      Serial.println(checksum);
     } break;
     default:
       break;
