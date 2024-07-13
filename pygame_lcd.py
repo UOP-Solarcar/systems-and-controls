@@ -139,7 +139,7 @@ def main():
                     key, value = metric.split(":")
                     if key.strip() == "RPM":
                         rpm = int(value.strip())
-                        speed = calculate_speed(rpm) * 0.6
+                        speed = calculate_speed(rpm) * 0.62
                     elif key.strip() == "Pack SOC":
                         battery_charge = int(value.strip()) / 2
                     elif key.strip() == "Voltage In":
