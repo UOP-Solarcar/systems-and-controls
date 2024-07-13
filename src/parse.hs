@@ -34,13 +34,23 @@ parseMotorController str
   | otherwise = Nothing
 
 
--- parseBMS :: String -> String
+parseBMS :: String -> String
+parseBMS line
+  | isPrefixOf "Pack Current" line = let
+                                  packCurr = unwords $ take 3 $ words $ line
+                                  packInstVolt = unwords $ take 4 $ drop 3 $ words $ line
+                                  packsoc = unwords $ take 3 $ drop 7 $ words $ line
+                                  relayState = unwords $ take 3 $ drop 10 $ words $ line
+                                  checksum = unwords $ take 2 $ drop 13 $ words $ line
+                                in
+                                  packCurr ++ "\n" ++ packInstVolt ++ "\n" ++ packsoc ++ "\n" ++ relayState ++ "\n" ++ checksum
+  | otherwise = " "
 
 
 parse :: String -> String
 parse line
   | isPrefixOf motor line = fromMaybe " " $ (stripPrefix motor line) >>= parseMotorController
-  | otherwise = " "
+  | otherwise = parseBMS line
   where
     motor = "Motor Controller ID: 0x21 Status #"
 
