@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include <Keypad.h>
 
-const uint8_t RIGHT_PIN = 5;
-const uint8_t LEFT_PIN = 6;
-const uint8_t HEADLIGHT_PIN = 7;
+const uint8_t RIGHT_PIN = 2;
+const uint8_t LEFT_PIN = 3;
+const uint8_t HEADLIGHT_PIN = 4;
 // const uint8_t RELAY_PIN_4 = 5;
 // const uint8_t RELAY_PIN_5 = 6;
 // const uint8_t RELAY_PIN_6 = 7;
@@ -25,10 +25,8 @@ char hexaKeys[ROWS][COLS] = {{'1', '2', '3', 'A'},
                              {'7', '8', '9', 'C'},
                              {'*', '0', '#', 'D'}};
 
-uint8_t rowPins[ROWS] = {14, 15, 16,
-                         17}; // connect to the row pinouts of the keypad
-uint8_t colPins[COLS] = {18, 19, 3,
-                         2}; // connect to the column pinouts of the keypad
+uint8_t rowPins[ROWS] = {5, 6, 7, 8}; // connect to the row pinouts of the keypad
+uint8_t colPins[COLS] = {9, 10, 11, 12}; // connect to the column pinouts of the keypad
 
 Keypad customKeypad =
     Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
