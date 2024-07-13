@@ -1,12 +1,12 @@
 name: PlatformIO CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
-      matrix: { dir: ['arduino/due/reader', 'arduino/due/transmitter', 'arduino/uno/reader', 'arduino/uno/transmitter'] }
+      matrix: { dir: ['arduino/due/reader', 'arduino/due/transmitter', 'reader', 'arduino/uno/transmitter'] }
     steps:
       - uses: actions/checkout@v4
         with:
