@@ -122,7 +122,7 @@ def main():
 
                 try:
                     if motor_voltage and motor_current and speed:
-                        consumption = kwh_per_100_km(motor_voltage, motor_current, speed) * 0.6
+                        consumption = kwh_per_100_km(motor_voltage, motor_current, speed) / 0.6
                 except ValueError as e:
                     print(f"ValueError: {e}", file=sys.stderr)
                 
