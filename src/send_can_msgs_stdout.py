@@ -8,6 +8,7 @@ import itertools
 if len(sys.argv) < 2:
     print("Usage: ./send_can_msgs_stdout.py <file1>")
 
+
 combined_file_path = sys.argv[1]
 
 with open(combined_file_path, 'r') as combined_file:
