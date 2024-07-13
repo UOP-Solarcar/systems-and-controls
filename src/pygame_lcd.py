@@ -67,12 +67,12 @@ def display_metrics(rpm, speed, battery_charge, consumption, motor_temp, battery
     screen.blit(consumption_text, consumption_rect)
 
     # Render the motor temperature
-    motortemp_text = font.render(f"Motor Temperature: {motor_temp:.2f} °F", True, WHITE)
+    motortemp_text = font.render(f"Motor Temperature: {motor_temp:.2f} °C", True, WHITE)
     motortemp_rect = motortemp_text.get_rect(center=(600, 273))
     screen.blit(motortemp_text, motortemp_rect)
 
     # Render the battery temperature
-    batt_temp_text = font.render(f"Battery Temperature: {battery_temp:.2f}", True, WHITE)
+    batt_temp_text = font.render(f"Battery Temperature: {battery_temp:.2f} °C", True, WHITE)
     batt_temp_rect = batt_temp_text.get_rect(center=(600, 352))
     screen.blit(batt_temp_text, batt_temp_rect)
 
