@@ -5,18 +5,13 @@ import time
 import itertools
 
 # Ensure at least two args are passed
-if len(sys.argv) < 3:
-    print("Usage: ./send_can_msgs_stdout.py <file1> <file2>")
+if len(sys.argv) < 2:
+    print("Usage: ./send_can_msgs_stdout.py <file1>")
 
-file1_path = sys.argv[1]
-file2_path = sys.argv[2]
+combined_file_path = sys.argv[1]
 
-# Read the files
-with open(file1_path, 'r') as file1:
-    lines1 = file1.readlines()
-
-with open(file2_path, 'r') as file2:
-    lines2 = file2.readlines()
+with open(combined_file_path, 'r') as combined_file:
+    combined_lines = combined_file.readlines()
 
 # Function to extract all metrics
 def extract_metrics(lines, metrics):
@@ -26,8 +21,8 @@ def extract_metrics(lines, metrics):
                 metrics[key] = line.split(f"{key}:")[1].split()[0]
     return metrics
 
-# Initialize metric dictionaries
-metrics1 = {
+# Initialize a single metric dictionary
+metrics = {
     "Wh Used": "",
     "Wh Charged": "",
     "RPM": "",
@@ -41,10 +36,7 @@ metrics1 = {
     "ADC1": "",
     "ADC2": "",
     "ADC3": "",
-    "PPM": ""
-}
-
-metrics2 = {
+    "PPM": "",
     "Pack Health": "",
     "Adaptive Total Capacity": "",
     "Pack Current": "",
@@ -61,12 +53,7 @@ metrics2 = {
     "Low Cell Voltage": ""
 }
 
-# Extract metrics
-metrics_list1 = [extract_metrics(lines1[i:i+15], metrics1.copy()) for i in range(0, len(lines1), 15)]
-metrics_list2 = [extract_metrics(lines2[i:i+15], metrics2.copy()) for i in range(0, len(lines2), 15)]
-
-# Merge metrics lists
-metrics_list = [dict(list(m1.items()) + list(m2.items())) for m1, m2 in zip(metrics_list1, metrics_list2)]
+metrics_list = [extract_metrics(combined_lines[i:i+15], metrics.copy()) for i in range(0, len(combined_lines), 15)]
 
 # Function to print metrics continuously
 def print_metrics(metrics_list):
