@@ -18,10 +18,12 @@
 #if defined(RPI4B)
 typedef std::ostream Out;
 template <typename T> void print_n(T t, Out &out = std::cout) { out << t; }
+void print_n(uint8_t n, Out &out = std::cout) { out << (uint16_t)n; }
+void print_n(int8_t n, Out &out = std::cout) { out << (int16_t)n; }
 template <typename T> void print_hex(T t, Out &out = std::cout) {
   out << std::hex << t << std::dec;
 }
-void println(Out &out = std::cout) { out << '\n'; }
+void println(Out &out = std::cout) { out << std::endl; }
 #else
 typedef Print Out;
 template <typename T> void print_n(T t, Out &out = Serial) { out.print(t); }
@@ -270,7 +272,7 @@ void parse_frame(can_frame &frame, Out &out =
 #if defined(RPI4B)
 class CanSocket {
 public:
-  CanSocket(const std::string &interface) {
+  explicit CanSocket(const std::string &interface) {
     if ((sock = socket(PF_CAN, SOCK_RAW, CAN_RAW)) < 0) {
       throw std::runtime_error("Error while opening socket");
     }
@@ -312,7 +314,7 @@ int main() {
   CanSocket canSocket("can0");
   while (true) {
     can_frame frame = canSocket.read_frame();
-    print_frame(frame);
+    parse_frame(frame);
   }
   return 0;
 }
