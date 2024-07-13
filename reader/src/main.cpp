@@ -211,7 +211,8 @@ void parse_frame(can_frame &frame, Out &out =
     case 0x6B3: {
       uint8_t high_temp = frame.data[0], high_thermistor_id = frame.data[1],
               low_temp = frame.data[2], low_thermistor_id = frame.data[3],
-              internal_temp = frame.data[4], checksum = frame.data[5];
+              avg_temp = frame.data[4], internal_temp = frame.data[5],
+              checksum = frame.data[6];
       print_n("High Temperature: ", out);
       print_n(high_temp, out);
       print_n(" High Thermistor ID: ", out);
@@ -220,6 +221,8 @@ void parse_frame(can_frame &frame, Out &out =
       print_n(low_temp, out);
       print_n(" Low Thermistor ID: ", out);
       print_n(low_thermistor_id, out);
+      print_n(" Average Temperature: ", out);
+      print_n(avg_temp, out);
       print_n(" Internal Temperature: ", out);
       print_n(internal_temp, out);
       print_n(" Checksum: ", out);
