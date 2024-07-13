@@ -5,10 +5,10 @@ import time
 import itertools
 
 # Read the files
-with open('/Users/pranavjay/Downloads/penis', 'r') as file1:
+with open('/Users/pranavjay/uop-solar-car/lcd/test/penis', 'r') as file1:
     lines1 = file1.readlines()
 
-with open('/Users/pranavjay/Downloads/sample_bms_data (1).txt', 'r') as file2:
+with open('/Users/pranavjay/uop-solar-car/lcd/test/sample_bms_data.txt', 'r') as file2:
     lines2 = file2.readlines()
 
 # Function to extract all metrics
