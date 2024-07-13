@@ -1,824 +1,4 @@
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 66
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 67
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 44
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 45
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 66
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 67
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 41
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 42
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 43
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 44
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-Pack Current: 1 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 131
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Pack Current: 1 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 131
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 43
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 44
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 45
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-Pack Current: 1 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 131
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 43
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 44
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 45
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Pack Current: 1 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 131
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 67
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 66
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 67
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
-Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
-Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 41
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 42
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
-Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
-Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
-Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
-High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
-Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
-Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
-High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
-Cell ID: 8 Instant Voltage: 0 InteMotor Controller ID: 0x21 Status #3 Wh Used: 13724 Wh Charged: 2785
+Motor Controller ID: 0x21 Status #3 Wh Used: 13724 Wh Charged: 2785
 Motor Controller ID: 0x21 Status #1 RPM: 0 current: 0 duty cycle: 3
 Motor Controller ID: 0x21 Status #2 Ah Used: 276 Ah Charged: 52
 Motor Controller ID: 0x21 Status #5 Tachometer: 35658 Voltage In: 508 Reserved: 0
@@ -2283,3 +1463,830 @@ Motor Controller ID: 0x21 Status #2 Ah Used: 581 Ah Charged: 131
 Motor Controller ID: 0x21 Status #5 Tachometer: 66666 Voltage In: 507 Reserved: 0
 Motor Controller ID: 0x21 Status #6 ADC1: 623 ADC2: 631 ADC3: 623 PPM: 0
 Motor Controller ID: 0x21 Status #3 Wh Used: 28787 Wh Charged: 7053
+--- Terminal on /dev/ttyACM0 | 115200 8-N-1
+--- Available filters and text transformations: colorize, debug, default, direct, hexlify, log2file, nocontrol, printable, send_on_enter, time
+--- More details at https://bit.ly/pio-monitor-filters
+--- Quit: Ctrl+C | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+g9 Open Voltage: 0 Checksum: 62
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+ance: 1509 Open Voltage: 0 Checksum: 62
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 66
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 67
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 44
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 45
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 66
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 67
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 41
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 42
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 43
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 44
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+Pack Current: 1 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Pack Current: 1 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 43
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 44
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 45
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+Pack Current: 1 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 43
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 44
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 45
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Pack Current: 1 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 67
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 66
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 67
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 41
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 42
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+Cell ID: 8 Instant Voltage: 0 Inte
