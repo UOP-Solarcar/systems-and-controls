@@ -9,7 +9,7 @@ import time
 
 # Initialize Pygame
 pygame.init()
-screen = pygame.display.set_mode((1024, 768))
+screen = pygame.display.set_mode((800, 480))
 pygame.display.set_caption("Motor Controller Dashboard")
 font = pygame.font.Font(None, 36)
 clock = pygame.time.Clock()
@@ -48,32 +48,32 @@ def display_metrics(rpm, speed, adaptive_total_capacity, consumption, motor_temp
     screen.fill(BLACK)
     # Render the speed
     speed_text = font.render(f"Speed: {speed:.2f} mph", True, WHITE)
-    speed_rect = speed_text.get_rect(center=(512, 150))  # Centered the text
+    speed_rect = speed_text.get_rect(center=(400, 117))  # Centered the text
     screen.blit(speed_text, speed_rect)
 
     # Render the RPM
     rpm_text = font.render(f"RPM: {rpm}", True, WHITE)
-    rpm_rect = rpm_text.get_rect(center=(512, 250))
+    rpm_rect = rpm_text.get_rect(center=(400, 195))
     screen.blit(rpm_text, rpm_rect)
 
     # Render the Adaptive Total Capacity
     capacity_text = font.render(f"Adaptive Total Capacity: {adaptive_total_capacity}", True, WHITE)
-    capacity_rect = capacity_text.get_rect(center=(256, 350))  # Centered the text
+    capacity_rect = capacity_text.get_rect(center=(200, 273))  # Centered the text
     screen.blit(capacity_text, capacity_rect)
 
     # Render the motor consumption
     consumption_text = font.render(f"Consumption: {consumption:.2f} kWh/100 mi", True, WHITE)
-    consumption_rect = consumption_text.get_rect(center=(256, 450))
+    consumption_rect = consumption_text.get_rect(center=(200, 352))
     screen.blit(consumption_text, consumption_rect)
 
     # Render the motor temperature
     motortemp_text = font.render(f"Motor Temperature: {motor_temp:.2f} °F", True, WHITE)
-    motortemp_rect = motortemp_text.get_rect(center=(768, 350))
+    motortemp_rect = motortemp_text.get_rect(center=(600, 273))
     screen.blit(motortemp_text, motortemp_rect)
 
     # Render the battery temperature
     batt_temp_text = font.render(f"Battery Temperature: {battery_temp:.2f}", True, WHITE)
-    batt_temp_rect = batt_temp_text.get_rect(center=(768, 450))
+    batt_temp_rect = batt_temp_text.get_rect(center=(600, 352))
     screen.blit(batt_temp_text, batt_temp_rect)
 
     pygame.display.flip()
