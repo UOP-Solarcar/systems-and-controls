@@ -44,7 +44,7 @@ def kwh_per_100_km(voltage, current, speed):
     energy_consumption = power * time_hours_per_100_km
     return energy_consumption
 
-def display_metrics(rpm, speed, adaptive_total_capacity, consumption, motor_temp, battery_temp):
+def display_metrics(rpm, speed, battery_charge, consumption, motor_temp, battery_temp, adaptive_total_capacity):
     screen.fill(BLACK)
     # Render the speed
     speed_text = font.render(f"Speed: {speed:.2f} mph", True, WHITE)
@@ -56,8 +56,8 @@ def display_metrics(rpm, speed, adaptive_total_capacity, consumption, motor_temp
     rpm_rect = rpm_text.get_rect(center=(400, 195))
     screen.blit(rpm_text, rpm_rect)
 
-    # Render the Adaptive Total Capacity
-    capacity_text = font.render(f"Adaptive Total Capacity: {adaptive_total_capacity}", True, WHITE)
+    # Render the State of Charge (SOC)
+    capacity_text = font.render(f"Battery Charge: {battery_charge:.2f}%", True, WHITE)
     capacity_rect = capacity_text.get_rect(center=(200, 273))  # Centered the text
     screen.blit(capacity_text, capacity_rect)
 
@@ -76,6 +76,11 @@ def display_metrics(rpm, speed, adaptive_total_capacity, consumption, motor_temp
     batt_temp_rect = batt_temp_text.get_rect(center=(600, 352))
     screen.blit(batt_temp_text, batt_temp_rect)
 
+    # Render the Adaptive Total Capacity
+    adaptive_total_capacity_text = font.render(f"Adaptive Total Capacity: {adaptive_total_capacity:.2f} Ah", True, WHITE)
+    adaptive_total_capacity_rect = adaptive_total_capacity_text.get_rect(center=(400, 416))
+    screen.blit(adaptive_total_capacity_text, adaptive_total_capacity_rect)
+
     pygame.display.flip()
 
 def main():
@@ -89,6 +94,7 @@ def main():
 
     rpm = 0
     speed = 0
+    battery_charge = 0
     adaptive_total_capacity = 0
     motor_voltage = 0
     motor_current = 0
@@ -110,8 +116,8 @@ def main():
                     if key.strip() == "RPM":
                         rpm = int(value.strip())
                         speed = calculate_speed(rpm) * 0.6
-                    elif key.strip() == "Adaptive Total Capacity":
-                        adaptive_total_capacity = int(value.strip())
+                    elif key.strip() == "Pack SOC":
+                        battery_charge = int(value.strip()) / 2
                     elif key.strip() == "Voltage In":
                         motor_voltage = int(value.strip())
                     elif key.strip() == "current":
@@ -122,6 +128,8 @@ def main():
                         lo_temp = int(value.strip())
                     elif key.strip() == "Temp Motor":
                         motor_temp = int(value.strip())
+                    elif key.strip() == "Adaptive Total Capacity":
+                        adaptive_total_capacity = int(value.strip()) / 10
 
                 except ValueError as e:
                     print(f"ValueError: {e}", file=sys.stderr)  # Debugging: print error message
@@ -138,9 +146,9 @@ def main():
                 except ValueError as e:
                     print(f"ValueError: {e}", file=sys.stderr)
 
-                print(f"Updated metrics - Speed: {speed}, Adaptive Total Capacity: {adaptive_total_capacity}, Consumption: {consumption}, Battery Temp: {battery_temp}, Motor Temp: {motor_temp}")  # Debugging: print updated values
+                print(f"Updated metrics - Speed: {speed}, Battery Charge: {battery_charge}, Consumption: {consumption}, Battery Temp: {battery_temp}, Motor Temp: {motor_temp}")  # Debugging: print updated values
 
-            display_metrics(rpm, speed, adaptive_total_capacity, consumption, motor_temp, battery_temp)
+            display_metrics(rpm, speed, battery_charge, consumption, motor_temp, battery_temp, adaptive_total_capacity)
             clock.tick(30)  # Update the display at 30 FPS
 
             for event in pygame.event.get():
