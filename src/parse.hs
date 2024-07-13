@@ -9,9 +9,28 @@ parseMotorController :: String -> Maybe String
 parseMotorController str
   | isPrefixOf "1" str = let
                            rpm =  unwords $ take 2 $ words $ drop 1 str --rpm
-                            -- current =  unwords $ take 1 $ words $ drop 3 str --rpm
                            current = unwords $ take 2 $ drop 3 $ words $ str
-                         in return $ rpm ++ "\n" ++ current
+                           duty = unwords $ take 3 $ drop 5 $ words $ str
+                         in
+                           return $ rpm ++ "\n" ++ current ++ "\n" ++ duty
+
+  | isPrefixOf "2" str = let
+                           ahin =  unwords $ take 3 $ words $ drop 1 str --rpm
+                           ahout = unwords $ take 3 $ drop 4 $ words $ str
+                         in
+                           return $ ahin ++ "\n" ++ ahout
+
+  | isPrefixOf "3" str = let
+                           whused =  unwords $ take 3 $ words $ drop 1 str --rpm
+                           whcharged = unwords $ take 3 $ drop 4 $ words $ str
+                         in
+                           return $ whused ++ "\n" ++ whcharged
+  | isPrefixOf "5" str = let
+                           tacho =  unwords $ take 2 $ words $ drop 1 str --rpm
+                           voltin = unwords $ take 3 $ drop 3 $ words $ str
+                           reserved = unwords $ take 2 $ drop 6 $ words $ str
+                         in
+                           return $ voltin ++ "\n" ++ tacho ++ "\n" ++ reserved
   | otherwise = Nothing
 
 
