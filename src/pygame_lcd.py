@@ -47,7 +47,7 @@ def kwh_per_100_km(voltage, current, speed):
 def display_metrics(speed, adaptive_total_capacity, consumption, motor_temp, battery_temp):
     screen.fill(BLACK)
     # Render the speed
-    speed_text = font.render(f"Speed: {speed:.2f} km/h", True, WHITE)
+    speed_text = font.render(f"Speed: {speed:.2f} mph", True, WHITE)
     speed_rect = speed_text.get_rect(center=(512, 250))  # Centered the text
     screen.blit(speed_text, speed_rect)
 
@@ -57,7 +57,7 @@ def display_metrics(speed, adaptive_total_capacity, consumption, motor_temp, bat
     screen.blit(capacity_text, capacity_rect)
 
     # Render the motor consumption
-    consumption_text = font.render(f"Consumption: {consumption:.2f} kWh/100 km", True, WHITE)
+    consumption_text = font.render(f"Consumption: {consumption:.2f} kWh/100 mi", True, WHITE)
     consumption_rect = consumption_text.get_rect(center=(512, 450))
     screen.blit(consumption_text, consumption_rect)
 
@@ -103,7 +103,7 @@ def main():
                     key, value = metric.split(":")
                     if key.strip() == "RPM":
                         rpm = int(value.strip())
-                        speed = calculate_speed(rpm)
+                        speed = calculate_speed(rpm) * 0.6
                     elif key.strip() == "Adaptive Total Capacity":
                         adaptive_total_capacity = int(value.strip())
                     elif key.strip() == "Voltage In":
@@ -122,7 +122,7 @@ def main():
 
                 try:
                     if motor_voltage and motor_current and speed:
-                        consumption = kwh_per_100_km(motor_voltage, motor_current, speed)
+                        consumption = kwh_per_100_km(motor_voltage, motor_current, speed) * 0.6
                 except ValueError as e:
                     print(f"ValueError: {e}", file=sys.stderr)
                 
