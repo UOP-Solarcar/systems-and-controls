@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import time
 
 file_path = "/Users/pranavjay/Downloads/stripped"
