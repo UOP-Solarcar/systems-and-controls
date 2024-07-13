@@ -4,11 +4,18 @@ import sys
 import time
 import itertools
 
+# Ensure at least two args are passed
+if len(sys.argv) < 3:
+    print("Usage: ./send_can_msgs_stdout.py <file1> <file2>")
+
+file1_path = sys.argv[1]
+file2_path = sys.argv[2]
+
 # Read the files
-with open('/Users/pranavjay/uop-solar-car/lcd/test/penis', 'r') as file1:
+with open(file1_path, 'r') as file1:
     lines1 = file1.readlines()
 
-with open('/Users/pranavjay/uop-solar-car/lcd/test/sample_bms_data.txt', 'r') as file2:
+with open(file2_path, 'r') as file2:
     lines2 = file2.readlines()
 
 # Function to extract all metrics
