@@ -27,6 +27,9 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+# Config files
+*.cfg
+
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
@@ -113,6 +116,9 @@ venv.bak/
 # Spyder project settings
 .spyderproject
 .spyproject
+
+# VSCode project settings
+.vscode
 
 # Rope project settings
 .ropeproject
