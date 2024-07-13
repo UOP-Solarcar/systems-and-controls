@@ -26,11 +26,13 @@ template <typename T> void print_hex(T t, Out &out = Serial) {
 void println(Out &out = Serial) { out.println(); }
 #endif
 
+void print_frame(can_frame &frame, Out &out =
 #if defined(RPI4B)
-void print_frame(can_frame &frame, Out &out = std::cout) {
+                                       std::cout
 #else
-void print_frame(can_frame &frame, Out &out = Serial) {
+                                       Serial
 #endif
+) {
   print_n("[CAN] 0x", out);
   print_hex(frame.can_id, out);
   print_n(" [0x", out);
@@ -41,11 +43,14 @@ void print_frame(can_frame &frame, Out &out = Serial) {
     print_hex(frame.data[i], out);
   }
 }
+
+void parse_frame(can_frame &frame, Out &out =
 #if defined(RPI4B)
-void parse_frame(can_frame &frame, Out &out = std::cout) {
+                                       std::cout
 #else
-void parse_frame(can_frame &frame, Out &out = Serial) {
+                                       Serial
 #endif
+) {
   switch (frame.can_id & 0xFFFFFF00) {
   // Motor Controller Statuses
   case 0x80000900: // status 1
