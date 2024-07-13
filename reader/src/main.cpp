@@ -2,8 +2,13 @@
 #include "bytetools.hpp"
 
 #if defined(RPI4B)
+#include <cstring>
 #include <iostream>
 #include <linux/can.h>
+#include <net/if.h>
+#include <sys/ioctl.h>
+#include <sys/socket.h>
+#include <unistd.h>
 #else
 #include <Arduino.h>
 #include <SPI.h>
@@ -263,7 +268,54 @@ void parse_frame(can_frame &frame, Out &out =
 }
 
 #if defined(RPI4B)
-int main() { return 1; }
+class CanSocket {
+public:
+  CanSocket(const std::string &interface) {
+    if ((sock = socket(PF_CAN, SOCK_RAW, CAN_RAW)) < 0) {
+      throw std::runtime_error("Error while opening socket");
+    }
+
+    ifreq ifr;
+    std::strncpy(ifr.ifr_name, interface.c_str(), IFNAMSIZ - 1);
+    if (ioctl(sock, SIOCGIFINDEX, &ifr) < 0) {
+      throw std::runtime_error("Error in ioctl");
+    }
+
+    sockaddr_can addr;
+    addr.can_family = AF_CAN;
+    addr.can_ifindex = ifr.ifr_ifindex;
+
+    if (bind(sock, reinterpret_cast<struct sockaddr *>(&addr), sizeof(addr)) <
+        0) {
+      throw std::runtime_error("Error in bind");
+    }
+  }
+
+  ~CanSocket() { close(sock); }
+
+  can_frame read_frame() {
+    can_frame frame;
+    auto nbytes = read(sock, &frame, sizeof(can_frame));
+    if (nbytes < 0) {
+      throw std::runtime_error("Error in read");
+    } else if (nbytes < sizeof(can_frame)) {
+      throw std::runtime_error("Incomplete CAN frame");
+    }
+    return frame;
+  }
+
+private:
+  int sock;
+};
+
+int main() {
+  CanSocket canSocket("can0");
+  while (true) {
+    can_frame frame = canSocket.read_frame();
+    print_frame(frame);
+  }
+  return 0;
+}
 
 #else
 MCP2515 mcp2515(10); // SPI CS Pin 10
