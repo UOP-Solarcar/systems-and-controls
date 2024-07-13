@@ -44,31 +44,36 @@ def kwh_per_100_km(voltage, current, speed):
     energy_consumption = power * time_hours_per_100_km
     return energy_consumption
 
-def display_metrics(speed, adaptive_total_capacity, consumption, motor_temp, battery_temp):
+def display_metrics(rpm, speed, adaptive_total_capacity, consumption, motor_temp, battery_temp):
     screen.fill(BLACK)
     # Render the speed
     speed_text = font.render(f"Speed: {speed:.2f} mph", True, WHITE)
-    speed_rect = speed_text.get_rect(center=(512, 250))  # Centered the text
+    speed_rect = speed_text.get_rect(center=(512, 150))  # Centered the text
     screen.blit(speed_text, speed_rect)
+
+    # Render the RPM
+    rpm_text = font.render(f"RPM: {rpm}", True, WHITE)
+    rpm_rect = rpm_text.get_rect(center=(512, 250))
+    screen.blit(rpm_text, rpm_rect)
 
     # Render the Adaptive Total Capacity
     capacity_text = font.render(f"Adaptive Total Capacity: {adaptive_total_capacity}", True, WHITE)
-    capacity_rect = capacity_text.get_rect(center=(512, 350))  # Centered the text
+    capacity_rect = capacity_text.get_rect(center=(256, 350))  # Centered the text
     screen.blit(capacity_text, capacity_rect)
 
     # Render the motor consumption
     consumption_text = font.render(f"Consumption: {consumption:.2f} kWh/100 mi", True, WHITE)
-    consumption_rect = consumption_text.get_rect(center=(512, 450))
+    consumption_rect = consumption_text.get_rect(center=(256, 450))
     screen.blit(consumption_text, consumption_rect)
 
     # Render the motor temperature
     motortemp_text = font.render(f"Motor Temperature: {motor_temp:.2f} °F", True, WHITE)
-    motortemp_rect = motortemp_text.get_rect(center=(512, 500))
+    motortemp_rect = motortemp_text.get_rect(center=(768, 350))
     screen.blit(motortemp_text, motortemp_rect)
 
-    # Render the battery high temperature
+    # Render the battery temperature
     batt_temp_text = font.render(f"Battery Temperature: {battery_temp:.2f}", True, WHITE)
-    batt_temp_rect = motortemp_text.get_rect(center=(512, 600))
+    batt_temp_rect = batt_temp_text.get_rect(center=(768, 450))
     screen.blit(batt_temp_text, batt_temp_rect)
 
     pygame.display.flip()
@@ -82,6 +87,7 @@ def main():
 
     print("Starting main loop...")  # Debugging: Print when the main loop starts
 
+    rpm = 0
     speed = 0
     adaptive_total_capacity = 0
     motor_voltage = 0
@@ -134,7 +140,7 @@ def main():
 
                 print(f"Updated metrics - Speed: {speed}, Adaptive Total Capacity: {adaptive_total_capacity}, Consumption: {consumption}, Battery Temp: {battery_temp}, Motor Temp: {motor_temp}")  # Debugging: print updated values
 
-            display_metrics(speed, adaptive_total_capacity, consumption, motor_temp, battery_temp)
+            display_metrics(rpm, speed, adaptive_total_capacity, consumption, motor_temp, battery_temp)
             clock.tick(30)  # Update the display at 30 FPS
 
             for event in pygame.event.get():
