@@ -48,16 +48,15 @@ parseBMS line
                                   inputvoltage = unwords $ take 4 $ drop 7 $ words $ line
                                 in
                                   atc ++ "\n" ++ inputvoltage
-  | otherwise = " "
-
+  | isPrefixOf "Average Temperature" line = unwords $ take 3 $ words $ line
+  | otherwise = ""
 
 parse :: String -> String
 parse line
-  | isPrefixOf motor line = fromMaybe " " $ (stripPrefix motor line) >>= parseMotorController
+  | isPrefixOf motor line = fromMaybe "" $ (stripPrefix motor line) >>= parseMotorController
   | otherwise = parseBMS line
   where
     motor = "Motor Controller ID: 0x21 Status #"
-
 
 main :: IO ()
 main = do
@@ -69,4 +68,3 @@ main = do
             let parsed = parse line
             putStrLn parsed
             main
-
