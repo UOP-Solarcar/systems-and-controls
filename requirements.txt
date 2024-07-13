@@ -1,3 +1,5 @@
+future==1.0.0
+iso8601==2.1.0
 msgpack==1.0.8
 numpy==2.0.0
 packaging==24.1
@@ -7,6 +9,8 @@ pygame==2.6.0
 python-can==4.4.2
 python-dateutil==2.9.0.post0
 pytz==2024.1
+PyYAML==6.0.1
+serial==0.0.97
 six==1.16.0
 typing_extensions==4.12.2
 tzdata==2024.1
