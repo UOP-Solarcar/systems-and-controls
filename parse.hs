@@ -24,6 +24,7 @@ parseMotorController str
                            whcharged = unwords $ take 3 $ drop 4 $ words $ str
                          in
                            return $ whused ++ "\n" ++ whcharged
+  | isPrefixOf "4" str = unwords $ take 3 $ drop 3 $ words str
   | isPrefixOf "5" str = let
                            tacho =  unwords $ take 2 $ words $ drop 1 str
                            voltin = unwords $ take 3 $ drop 3 $ words $ str
