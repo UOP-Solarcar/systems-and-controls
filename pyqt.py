@@ -22,7 +22,7 @@ FONT = QFont(None, 27)
 
 output_queue = queue.Queue()
 
-def read_metrics_from_stdin(output_queue) -> None;
+def read_metrics_from_stdin(output_queue) -> None:
     print("Reader thread started")  # Debugging: Confirm thread start
     while True:
         try:
@@ -133,7 +133,7 @@ class MainWindow(QMainWindow):
     def set_motor_temp(self, celsius: float) -> None:
         self.mottemp.setText(f"{celsius:.2f}°")
 
-    def set_bat_temp(self, celsius: float) -> None
+    def set_bat_temp(self, celsius: float) -> None:
         self.battemp.setText(f"{celsius:.2f}°")
 
     def set_efficiency(self, mpkwh: float) -> None:
@@ -149,7 +149,7 @@ class MainWindow(QMainWindow):
                 key, value = metric.split(":")
                 if key.strip() == "RPM":
                     speed = calculate_speed(int(value.strip())) * 0.62
-                    self.set_speed(rpm)
+                    self.set_speed(speed)
                 #elif key.strip() == "Pack SOC":
                 #    battery_charge = int(value.strip()) / 2
                 #elif key.strip() == "Voltage In":
