@@ -40,6 +40,11 @@ def read_metrics_from_stdin(output_queue) -> None:
 def calculate_speed(rpm: int, wheel_diameter: float = 0.6) -> float:
     return (rpm * wheel_diameter * 3.141593 * 60) / 1000  # Adjusted formula
 
+def kwh_per_100_km(wh_used: int, wh_charged: int, speed: float) -> float:
+    power = (wh_used - wh_charged) / 1000
+    time_hours_per_100_km = 100 / speed
+    energy_consumption = power * time_hours_per_100_km
+    return energy_consumption
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -114,7 +119,7 @@ class MainWindow(QMainWindow):
 
         self.eff = QLabel()
         self.eff.setFont(FONT)
-        self.eff.setText("n km/h")
+        self.eff.setText("0 kWh / 100 mi")
         self.layout.addWidget(self.eff, 7, 2, 2, 2, Qt.AlignmentFlag.AlignLeft)
 
         container = QWidget()
@@ -137,9 +142,12 @@ class MainWindow(QMainWindow):
         self.battemp.setText(f"{celsius:.2f}°")
 
     def set_efficiency(self, mpkwh: float) -> None:
-        self.eff.setText(f"{int(mpkwh)} m/kWh")
+        self.eff.setText(f"{int(mpkwh)} kW / 100 mi")
 
     def loop(self) -> None:
+        wh_used = 0
+        wh_charged = 0
+        speed = 0
         while not output_queue.empty():
             metric = output_queue.get()
             print(f"Received metric: {metric}")  # Debugging: Print received metric
@@ -153,28 +161,30 @@ class MainWindow(QMainWindow):
                 #elif key.strip() == "Pack SOC":
                 #    battery_charge = int(value.strip()) / 2
                 #elif key.strip() == "Voltage In":
-                #    motor_voltage = int(value.strip())
+                    #motor_voltage = int(value.strip())
+                elif key.strip() == "Wh Used":
+                    wh_used = int(value.strip())
+                elif key.strip() == "Wh Charged":
+                    wh_charged = int(value.strip())
                 #elif key.strip() == "current":
-                #    motor_current = int(value.strip())
+                    #motor_current = int(value.strip())
                 elif key.strip() == "Average Temperature": #battery
                     self.set_bat_temp(float(value.strip()))
                 elif key.strip() == "Temp Motor":
                     self.set_motor_temp(int(value.strip()))
                 elif key.strip() == "Adaptive Total Capacity":
                     self.set_bat(int(float(value.strip())/10))
+                if wh_used and wh_charged and speed:
+                    consumption = kwh_per_100_km(wh_used, wh_charged, speed)
+                    self.set_efficiency(int(float(consumption)))
 
             except ValueError as e:
                 print(
                     f"ValueError: {e}", file=sys.stderr
                 )  # Debugging: print error message
-
-            #try:
-            #    if motor_voltage and motor_current and speed:
-            #        consumption = (
-            #            kwh_per_100_km(motor_voltage, motor_current, speed) / 0.6
-            #        )
+                
             #except ValueError as e:
-            #    print(f"ValueError: {e}", file=sys.stderr)
+                #print(f"ValueError: {e}", file=sys.stderr)
 
             #try:
             #    if hi_temp and lo_temp:
