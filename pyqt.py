@@ -13,8 +13,33 @@ from PyQt6.QtWidgets import (
     QLCDNumber,
     QProgressBar,
 )
+import queue
+import select
+import time
+import threading
 
 FONT = QFont(None, 27)
+
+output_queue = queue.Queue()
+
+def read_metrics_from_stdin(output_queue):
+    print("Reader thread started")  # Debugging: Confirm thread start
+    while True:
+        try:
+            rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
+            if rlist:
+                line = sys.stdin.readline()
+                if line.strip():
+                    print(f"Read line: {line.strip()}")  # Debugging: Print read line
+                    output_queue.put(line.strip())
+        except Exception as e:
+            print(f"Error in reader thread: {e}")
+        time.sleep(0.1)
+
+
+def calculate_speed(rpm, wheel_diameter=0.6):
+    return (rpm * wheel_diameter * 3.141593 * 60) / 1000  # Adjusted formula
+
 
 
 class MainWindow(QMainWindow):
@@ -116,7 +141,49 @@ class MainWindow(QMainWindow):
         self.eff.setText(f"{int(mpkwh)} m/kWh")
 
     def loop(self) -> None:
-        self.set_speed(69)
+        while not output_queue.empty():
+            metric = output_queue.get()
+            print(f"Received metric: {metric}")  # Debugging: Print received metric
+
+            # Simple metric handling
+            try:
+                key, value = metric.split(":")
+                if key.strip() == "RPM":
+                    rpm = int(value.strip())
+                    speed = calculate_speed(rpm) * 0.62
+                    self.set_speed(rpm)
+                #elif key.strip() == "Pack SOC":
+                #    battery_charge = int(value.strip()) / 2
+                #elif key.strip() == "Voltage In":
+                #    motor_voltage = int(value.strip())
+                #elif key.strip() == "current":
+                #    motor_current = int(value.strip())
+                elif key.strip() == "Average Temperature": #battery
+                    self.set_bat_temp(float(value.strip()))
+                elif key.strip() == "Temp Motor":
+                    self.set_motor_temp(int(value.strip()))
+                elif key.strip() == "Adaptive Total Capacity":
+                    self.set_bat(int(float(value.strip())/10))
+
+            except ValueError as e:
+                print(
+                    f"ValueError: {e}", file=sys.stderr
+                )  # Debugging: print error message
+
+            #try:
+            #    if motor_voltage and motor_current and speed:
+            #        consumption = (
+            #            kwh_per_100_km(motor_voltage, motor_current, speed) / 0.6
+            #        )
+            #except ValueError as e:
+            #    print(f"ValueError: {e}", file=sys.stderr)
+
+            #try:
+            #    if hi_temp and lo_temp:
+            #        battery_temp = calculate_avg_tmp(hi_temp, lo_temp)
+            #except ValueError as e:
+            #    print(f"ValueError: {e}", file=sys.stderr)
+
 
 
 app = QApplication(sys.argv)
@@ -131,6 +198,15 @@ timer.start(1000)
 
 
 def main() -> None:
+    #output_queue = queue.Queue()
+
+    reader_thread = threading.Thread(
+        target=read_metrics_from_stdin, args=(output_queue,)
+    )
+
+    reader_thread.daemon = True
+    reader_thread.start()
+
     app.exec()
 
 
