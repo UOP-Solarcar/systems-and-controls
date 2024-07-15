@@ -4,34 +4,34 @@ import System.IO (isEOF)
 import Data.List
 import Data.Maybe
 
-parseMotorController :: String -> Maybe String
+parseMotorController :: String -> String
 parseMotorController str
   | isPrefixOf "1" str = let
                            rpm =  unwords $ take 2 $ words $ drop 1 str
                            current = unwords $ take 2 $ drop 3 $ words $ str
                            duty = unwords $ take 3 $ drop 5 $ words $ str
                          in
-                           return $ rpm ++ "\n" ++ current ++ "\n" ++ duty
+                           rpm ++ "\n" ++ current ++ "\n" ++ duty
 
   | isPrefixOf "2" str = let
                            ahin =  unwords $ take 3 $ words $ drop 1 str
                            ahout = unwords $ take 3 $ drop 4 $ words $ str
                          in
-                           return $ ahin ++ "\n" ++ ahout
+                           ahin ++ "\n" ++ ahout
 
   | isPrefixOf "3" str = let
                            whused =  unwords $ take 3 $ words $ drop 1 str
                            whcharged = unwords $ take 3 $ drop 4 $ words $ str
                          in
-                           return $ whused ++ "\n" ++ whcharged
-  | isPrefixOf "4" str = return $ unwords $ take 3 $ drop 4 $ words str --motor temp?
+                           whused ++ "\n" ++ whcharged
+  | isPrefixOf "4" str = unwords $ take 3 $ drop 4 $ words str --motor temp?
   | isPrefixOf "5" str = let
                            tacho =  unwords $ take 2 $ words $ drop 1 str
                            voltin = unwords $ take 3 $ drop 3 $ words $ str
                            reserved = unwords $ take 2 $ drop 6 $ words $ str
                          in
-                           return $ voltin ++ "\n" ++ tacho ++ "\n" ++ reserved
-  | otherwise = Nothing
+                           voltin ++ "\n" ++ tacho ++ "\n" ++ reserved
+ | otherwise = ""
 
 
 parseBMS :: String -> String
@@ -54,7 +54,7 @@ parseBMS line
 
 parse :: String -> String
 parse line
-  | isPrefixOf motor line = fromMaybe "" $ (stripPrefix motor line) >>= parseMotorController
+  | isPrefixOf motor line = fromMaybe "" $ parseMotorController <$> (stripPrefix motor line)
   | otherwise = parseBMS line
   where
     motor = "Motor Controller ID: 0x21 Status #"

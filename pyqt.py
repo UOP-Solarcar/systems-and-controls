@@ -22,7 +22,7 @@ FONT = QFont(None, 27)
 
 output_queue = queue.Queue()
 
-def read_metrics_from_stdin(output_queue):
+def read_metrics_from_stdin(output_queue) -> None;
     print("Reader thread started")  # Debugging: Confirm thread start
     while True:
         try:
@@ -37,9 +37,8 @@ def read_metrics_from_stdin(output_queue):
         time.sleep(0.1)
 
 
-def calculate_speed(rpm, wheel_diameter=0.6):
+def calculate_speed(rpm: int, wheel_diameter: float = 0.6) -> float:
     return (rpm * wheel_diameter * 3.141593 * 60) / 1000  # Adjusted formula
-
 
 
 class MainWindow(QMainWindow):
@@ -131,13 +130,13 @@ class MainWindow(QMainWindow):
     def set_bat(self, val: int) -> None:
         self.batbar.setValue(val)
 
-    def set_motor_temp(self, celsius: float):
+    def set_motor_temp(self, celsius: float) -> None:
         self.mottemp.setText(f"{celsius:.2f}°")
 
-    def set_bat_temp(self, celsius: float):
+    def set_bat_temp(self, celsius: float) -> None
         self.battemp.setText(f"{celsius:.2f}°")
 
-    def set_efficiency(self, mpkwh: float):
+    def set_efficiency(self, mpkwh: float) -> None:
         self.eff.setText(f"{int(mpkwh)} m/kWh")
 
     def loop(self) -> None:
@@ -149,8 +148,7 @@ class MainWindow(QMainWindow):
             try:
                 key, value = metric.split(":")
                 if key.strip() == "RPM":
-                    rpm = int(value.strip())
-                    speed = calculate_speed(rpm) * 0.62
+                    speed = calculate_speed(int(value.strip())) * 0.62
                     self.set_speed(rpm)
                 #elif key.strip() == "Pack SOC":
                 #    battery_charge = int(value.strip()) / 2
