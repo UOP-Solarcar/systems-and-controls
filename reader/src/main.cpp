@@ -157,9 +157,9 @@ void parse_frame(can_frame &frame, Out &out =
   default: {
     switch (frame.can_id) {
     case 0x6B0: {
-      uint16_t pack_current = bytetools::int_bswap(*(uint16_t *)&frame.data[0]),
-               pack_inst_voltage =
-                   bytetools::int_bswap(*(uint16_t *)&frame.data[2]);
+      int16_t pack_current = bytetools::int_bswap(*(int16_t *)&frame.data[0]);
+      uint16_t pack_inst_voltage =
+          bytetools::int_bswap(*(uint16_t *)&frame.data[2]);
       uint8_t pack_soc = frame.data[4];
       uint16_t relay_state = bytetools::int_bswap(*(uint16_t *)&frame.data[5]);
       uint8_t checksum = frame.data[7];
