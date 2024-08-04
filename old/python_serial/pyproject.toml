@@ -1,0 +1,9 @@
+[project]
+name = "python_serial"
+version = "0.0.1"
+authors = [
+    { name="miguelx413" },
+]
+requires-python = ">=3.7"
+dependencies = [
+]
