@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 [submodule "reader/lib/bytetools"]
 	path = reader/lib/bytetools
+=======
+[submodule "lib/bytetools"]
+	path = lib/bytetools
+>>>>>>> old-contactor-arduino/master
 	url = https://github.com/MiguelX413/bytetools.git
