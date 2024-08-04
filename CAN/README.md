@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# Systems and Controls
+
 =======
  # **TCU quickstart**
 
