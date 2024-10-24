@@ -10,8 +10,6 @@ if [ ! -r "$1" ]; then
   exit 1
 fi
 
-echo "Processing file: $1"
-
 while IFS= read -r line; do
   echo "$line"
-done < "$1"
+done <"$1"

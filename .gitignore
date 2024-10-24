@@ -119,7 +119,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-/lcd
+
 
 # Spyder project settings
 .spyderproject
