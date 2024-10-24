@@ -1,11 +1,7 @@
  Wh Used: 13724 Wh Charged: 2785
---- Terminal on /dev/ttyACM0 | 115200 8-N-1
  RPM: 0 current: 0 duty cycle: 3
---- Available filters and text transformations: colorize, debug, default, direct, hexlify, log2file, nocontrol, printable, send_on_enter, time
  Ah Used: 276 Ah Charged: 52
---- More details at https://bit.ly/pio-monitor-filters
  Tachometer: 35658 Voltage In: 508 Reserved: 0
---- Quit: Ctrl+C | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
  ADC1: 615 ADC2: 632 ADC3: 615 PPM: 0
 g9 Open Voltage: 0 Checksum: 62
  Wh Used: 13724 Wh Charged: 2785
