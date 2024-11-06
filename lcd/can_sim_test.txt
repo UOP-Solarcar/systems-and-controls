@@ -1,0 +1,8 @@
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+Motor Controller ID: 0x21 Status #3 Wh Used: 2000 Wh Charged: 5000
+Pack Current: 3 Pack Inst. Voltage: 0 Pack SOC: 20 Relay State: 32840 Checksum: 130
+Motor Controller ID: 0x21 Status #1 RPM: 0 current: 20 duty cycle: 3
+Motor Controller ID: 0x21 Status #5 Tachometer: 600.0 Voltage In: 50
+High Temperature: 25 High Thermistor ID: 0 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+Motor Controller ID: 0x21 Status #6 ADC1: 600 ADC2: 620 ADC3: 610 PPM: 0
+Motor Controller ID: 0x21 Status #2 Ah Used: 276 Ah Charged: 52 Checksum: 100
