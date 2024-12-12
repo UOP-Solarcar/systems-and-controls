@@ -53,12 +53,21 @@ brew install platformio
 
 # Python Installation
 
-- if you have python installed, you can sinply run
+- if you have python installed, you can simply run
 - this method is cross-platform
 
 ```bash
 python3 -m pip install -U platformio
 ```
+
+> [!IMPORTANT]
+> If you have a Windows system, you will need to add `pio` to your `Path` after installation.
+
+- Find the Python Scripts directory (e.g., `C:\Users\<YourUsername>\AppData\Local\Programs\Python\Python<version>\Scripts`).
+- Add this directory to your PATH:
+- Search for "Environment Variables" in the Windows Start Menu.
+- Under "System Properties," click on Environment Variables.
+- In "System Variables," find `Path`, click Edit, and add the Python `Scripts` path.
 
 ## Creating a new platformio project
 
