@@ -63,7 +63,7 @@ python3 -m pip install -U platformio
 > [!IMPORTANT]
 > If you have a Windows system, you will need to add `pio` to your `Path` after installation.
 
-- Find the Python Scripts directory (e.g., `C:\Users\<YourUsername>\AppData\Local\Programs\Python\Python<version>\Scripts`).
+- Find the Python Scripts directory (e.g., `C:\Users\<Username>\.platformio\penv\Scripts\`).
 - Add this directory to your PATH:
 - Search for "Environment Variables" in the Windows Start Menu.
 - Under "System Properties," click on Environment Variables.
