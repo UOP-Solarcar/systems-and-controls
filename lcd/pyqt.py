@@ -22,6 +22,7 @@ FONT = QFont(None, 27)
 
 output_queue = queue.Queue()
 
+
 def read_metrics_from_stdin(output_queue) -> None:
     print("Reader thread started")  # Debugging: Confirm thread start
     while True:
@@ -40,11 +41,13 @@ def read_metrics_from_stdin(output_queue) -> None:
 def calculate_speed(rpm: int, wheel_diameter: float = 0.6) -> float:
     return (rpm * wheel_diameter * 3.141593 * 60) / 1000  # Adjusted formula
 
+
 def kwh_per_100_km(wh_used: int, wh_charged: int, speed: float) -> float:
     power = (wh_used - wh_charged) / 1000
     time_hours_per_100_km = 100 / speed
     energy_consumption = power * time_hours_per_100_km
     return energy_consumption
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -158,22 +161,22 @@ class MainWindow(QMainWindow):
                 if key.strip() == "RPM":
                     speed = calculate_speed(int(value.strip())) * 0.62
                     self.set_speed(speed)
-                #elif key.strip() == "Pack SOC":
+                # elif key.strip() == "Pack SOC":
                 #    battery_charge = int(value.strip()) / 2
-                #elif key.strip() == "Voltage In":
-                    #motor_voltage = int(value.strip())
+                # elif key.strip() == "Voltage In":
+                # motor_voltage = int(value.strip())
                 elif key.strip() == "Wh Used":
                     wh_used = int(value.strip())
                 elif key.strip() == "Wh Charged":
                     wh_charged = int(value.strip())
-                #elif key.strip() == "current":
-                    #motor_current = int(value.strip())
-                elif key.strip() == "Average Temperature": #battery
+                # elif key.strip() == "current":
+                # motor_current = int(value.strip())
+                elif key.strip() == "Average Temperature":  # battery
                     self.set_bat_temp(float(value.strip()))
                 elif key.strip() == "Temp Motor":
                     self.set_motor_temp(int(value.strip()))
                 elif key.strip() == "Adaptive Total Capacity":
-                    self.set_bat(int(float(value.strip())/10))
+                    self.set_bat(int(float(value.strip()) / 10))
                 if wh_used and wh_charged and speed:
                     consumption = kwh_per_100_km(wh_used, wh_charged, speed)
                     self.set_efficiency(int(float(consumption)))
@@ -182,16 +185,15 @@ class MainWindow(QMainWindow):
                 print(
                     f"ValueError: {e}", file=sys.stderr
                 )  # Debugging: print error message
-                
-            #except ValueError as e:
-                #print(f"ValueError: {e}", file=sys.stderr)
 
-            #try:
+            # except ValueError as e:
+            # print(f"ValueError: {e}", file=sys.stderr)
+
+            # try:
             #    if hi_temp and lo_temp:
             #        battery_temp = calculate_avg_tmp(hi_temp, lo_temp)
-            #except ValueError as e:
+            # except ValueError as e:
             #    print(f"ValueError: {e}", file=sys.stderr)
-
 
 
 app = QApplication(sys.argv)
@@ -206,7 +208,7 @@ timer.start(1000)
 
 
 def main() -> None:
-    #output_queue = queue.Queue()
+    # output_queue = queue.Queue()
 
     reader_thread = threading.Thread(
         target=read_metrics_from_stdin, args=(output_queue,)

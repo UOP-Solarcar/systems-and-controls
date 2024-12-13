@@ -1,6 +1,6 @@
 numpy==2.1.2
 pandas==2.2.3
-pygame==2.6.0
+pygame==2.6.1
 PyQt6==6.7.1
 PyQt6-Qt6==6.7.3
 PyQt6_sip==13.8.0

@@ -7,9 +7,9 @@ output_file = "can_sim_test.txt"
 start_time = datetime(2023, 1, 1, 0, 0, 0)
 
 # Open the file for writing
-with open(output_file, 'w') as f:
+with open(output_file, "w") as f:
     # Define the number of rows to generate
-    num_rows = 1 # Adjust as needed
+    num_rows = 1  # Adjust as needed
 
     # Loop to alternate between BMS and Motor Controller entries
     for i in range(num_rows):
