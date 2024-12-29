@@ -18,30 +18,30 @@ class MainWindow(QMainWindow):
         self.output_queue = output_queue
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint)
         self.setAutoFillBackground(True)
-        
+
         # Set a fixed size for the window (adjust dimensions as needed)
         self.setFixedSize(800, 480)  # Common LCD display resolution
-        
+
         p = self.palette()
         p.setColor(self.backgroundRole(), QColor(0, 0, 0))
         p.setColor(QPalette.ColorRole.WindowText, QColor(255, 255, 255))
         self.setPalette(p)
-        
+
         # Center the window on the screen
         screen = self.screen().geometry()
         self.setGeometry(
             (screen.width() - self.width()) // 2,
             (screen.height() - self.height()) // 2,
             self.width(),
-            self.height()
+            self.height(),
         )
-        
+
         self.setWindowTitle("Solar Car Dashboard")
 
         # Create a central widget and set the layout to it
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
-        
+
         # Create layout and set it to the central widget
         self.layout = QGridLayout(central_widget)
         self.layout.setHorizontalSpacing(10)
@@ -126,7 +126,7 @@ class MainWindow(QMainWindow):
     def loop(self) -> None:
         if self.output_queue is None:
             return
-            
+
         wh_used = 0
         wh_charged = 0
         speed = 0
