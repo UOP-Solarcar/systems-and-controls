@@ -9,6 +9,7 @@ from ..metrics import read_metrics_from_stdin
 # Single output queue definition
 output_queue = queue.Queue()
 
+
 def main():
     app = QApplication(sys.argv)
 
@@ -22,9 +23,7 @@ def main():
     timer.start(1000)
 
     reader_thread = threading.Thread(
-        target=read_metrics_from_stdin, 
-        args=(output_queue,),
-        daemon=True
+        target=read_metrics_from_stdin, args=(output_queue,), daemon=True
     )
     reader_thread.start()
 
