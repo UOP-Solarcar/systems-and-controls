@@ -8,6 +8,8 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QPalette, QColor
+import sys
+from ..metrics import calculate_speed, kwh_per_100_km
 
 FONT = QFont(None, 27)
 
