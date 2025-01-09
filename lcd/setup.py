@@ -12,4 +12,4 @@ setup(
             "lcd=lcd.__main__:main",
         ],
     },
-) 
+)
