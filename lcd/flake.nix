@@ -27,13 +27,14 @@
             pyqt6
           ];
 
-          nativeBuildInputs = with python.pkgs; [
-            setuptools
+          nativeBuildInputs = with pkgs; [
+            python.pkgs.setuptools
+            wrapQtAppsHook
           ];
 
           buildInputs = with pkgs; [
-            qt6.qtbase  # Core Qt functionality
-            qt6.qtsvg   # For SVG support if needed
+            qt6.qtbase
+            qt6.qtsvg
           ];
         };
 
