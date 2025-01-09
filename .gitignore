@@ -143,5 +143,8 @@ dmypy.json
 .pyre/
 >>>>>>> old-lcd/master
 
+# macOS Artifacts
+*.DS_Store
+
 # CSV data
 *.csv
