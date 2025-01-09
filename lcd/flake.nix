@@ -29,7 +29,7 @@
 
           nativeBuildInputs = with pkgs; [
             python.pkgs.setuptools
-            wrapQtAppsHook
+            qt6Packages.wrapQtAppsHook
           ];
 
           buildInputs = with pkgs; [
