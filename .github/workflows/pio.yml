@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 <<<<<<< HEAD
     strategy:
-      matrix: { dir: ['arduino/due/reader', 'arduino/due/transmitter', 'reader', 'arduino/uno/transmitter'] }
+      matrix: { dir: ['CAN/arduino/due/reader', 'CAN/arduino/due/transmitter', 'CAN/reader', 'CAN/arduino/uno/transmitter'] }
 =======
 
 >>>>>>> old-contactor-arduino/master
