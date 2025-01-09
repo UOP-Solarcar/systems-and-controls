@@ -32,7 +32,8 @@
           ];
 
           buildInputs = with pkgs; [
-            qt6.full
+            qt6.qtbase  # Core Qt functionality
+            qt6.qtsvg   # For SVG support if needed
           ];
         };
 
@@ -40,7 +41,8 @@
           buildInputs = with pkgs; [
             python
             python.pkgs.pyqt6
-            qt6.full
+            qt6.qtbase
+            qt6.qtsvg
           ];
         };
       }
