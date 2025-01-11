@@ -172,7 +172,10 @@ class MainWindow(QMainWindow):
                         self.set_efficiency(int(float(consumption)))
 
                 except ValueError as e:
-                    print(f"ValueError processing metric {key}={value}: {e}", file=sys.stderr)
+                    print(
+                        f"ValueError processing metric {key}={value}: {e}",
+                        file=sys.stderr,
+                    )
 
             except ValueError as e:
                 print(f"ValueError parsing metric line: {e}", file=sys.stderr)
