@@ -1,5 +1,41 @@
 {
   "nodes": {
+    "cargo-utils": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1736543624,
+        "narHash": "sha256-TerZj1NTLiX39DqoRdnUfCfobGA7s4FZpbK9fyUgN/8=",
+        "owner": "rust-lang",
+        "repo": "cargo",
+        "rev": "5408cc22acc536494c4cc79fad681c18e195b0bf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rust-lang",
+        "repo": "cargo",
+        "type": "github"
+      }
+    },
+    "darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1736631212,
+        "narHash": "sha256-mG9lRZBcPiAGiVJ9B97BJoIGQcSBWIVlBiN30QYCtG0=",
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "rev": "6ace2f2d12bdf74235d5cbf9fbd34a71c9716685",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -36,6 +72,8 @@
     },
     "root": {
       "inputs": {
+        "cargo-utils": "cargo-utils",
+        "darwin": "darwin",
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs"
       }

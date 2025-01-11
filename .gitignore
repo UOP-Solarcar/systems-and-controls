@@ -22,7 +22,15 @@ var/
 wheels/
 *.egg-info/
 .installed.cfg
-*.egg 
+*.egg
+
+# Virtual Environments
+*venv/
+*.venv/
+*.env
 
 # Data logs
 data/recordings/
+
+# Build artifacts
+lcd-metrics-rs/target/

@@ -4,9 +4,13 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+    darwin.url = "github:LnL7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
+    cargo-utils.url = "github:rust-lang/cargo";
+    cargo-utils.flake = false;
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
+  outputs = { self, nixpkgs, flake-utils, darwin, cargo-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -24,7 +28,7 @@
             pyqt6
             pyarrow
             (pkgs.callPackage ./lcd-metrics-rs {
-              inherit python;
+              inherit python pkgs;
             })
           ];
 
@@ -44,6 +48,7 @@
             python3
             python.pkgs.pyqt6
             python.pkgs.pyarrow
+            python.pkgs.virtualenv
             qt6.qtbase
             qt6.qtsvg
             black
@@ -59,9 +64,12 @@
               cat > .git/hooks/pre-commit << 'EOF'
 #!/usr/bin/env bash
 set -e
-echo "Running black on Python files..."
-black $(git diff --cached --name-only --diff-filter=d | grep -E '\.py$')
-git add $(git diff --cached --name-only --diff-filter=d | grep -E '\.py$')
+FILES=$(git diff --cached --name-only --diff-filter=d | grep -E '\.py$' || true)
+if [ -n "$FILES" ]; then
+  echo "Running black on Python files..."
+  black $FILES
+  git add $FILES
+fi
 EOF
               chmod +x .git/hooks/pre-commit
               echo "Pre-commit hook installed!"

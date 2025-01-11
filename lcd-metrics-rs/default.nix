@@ -1,29 +1,40 @@
 { lib
 , python
 , rustPlatform
-, maturin
+, openssl
+, pkgs
 }:
 
-rustPlatform.buildRustPackage {
+python.pkgs.buildPythonPackage rec {
   pname = "lcd-metrics";
   version = "0.1.0";
+  format = "pyproject";
+
   src = ./.;
 
-  cargoLock = {
-    lockFile = ./Cargo.lock;
+  cargoDeps = rustPlatform.fetchCargoTarball {
+    inherit src;
+    name = "${pname}-${version}";
+    hash = "sha256-as6+LFHHBpMvntCnIctqPcPwOGM4CXrMICRfMQSZjpM=";
   };
 
-  nativeBuildInputs = [
-    maturin
-    python
+  nativeBuildInputs = with pkgs; [
+    rustPlatform.cargoSetupHook
+    rustPlatform.maturinBuildHook
+    pkg-config
+  ] ++ lib.optionals pkgs.stdenv.isDarwin [
+    pkgs.darwin.apple_sdk.frameworks.CoreFoundation
   ];
 
-  buildPhase = ''
-    maturin build --release
-  '';
+  buildInputs = [
+    openssl
+  ];
 
-  installPhase = ''
-    mkdir -p $out/${python.sitePackages}
-    cp target/release/liblcd_metrics.so $out/${python.sitePackages}/lcd_metrics.so
-  '';
+  pythonImportsCheck = [ "lcd_metrics" ];
+
+  meta = with lib; {
+    description = "Metrics recorder for LCD display";
+    homepage = "https://github.com/your/repo";
+    license = licenses.mit;
+  };
 } 

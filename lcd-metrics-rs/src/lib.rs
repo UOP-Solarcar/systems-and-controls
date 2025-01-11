@@ -3,8 +3,10 @@ use std::collections::HashMap;
 use chrono::{DateTime, Utc};
 use std::path::PathBuf;
 use arrow::datatypes::{Schema, Field, DataType};
-use arrow::array::{StringArray, Float64Array, Array};
+use arrow::array::{StringArray, Float64Array, Array, ArrayRef};
 use arrow::record_batch::RecordBatch;
+use arrow::error::ArrowError;
+use std::sync::Arc;
 
 #[pyclass]
 struct MetricsRecorder {
@@ -42,16 +44,17 @@ impl MetricsRecorder {
     fn record_metric(&mut self, key: &str, value: &str) -> PyResult<()> {
         let normalized_key = self.normalize_key(key);
         
-        if let Some(values) = self.metrics_data.get_mut(&normalized_key) {
-            // Start new row if this is RPM or first metric
-            if normalized_key == "RPM" || self.timestamps.is_empty() {
-                self.timestamps.push(Utc::now());
-                for v in self.metrics_data.values_mut() {
-                    v.push(None);
-                }
+        // Create new row if needed
+        if normalized_key == "RPM" || self.timestamps.is_empty() {
+            self.timestamps.push(Utc::now());
+            // Initialize new row with None values
+            for v in self.metrics_data.values_mut() {
+                v.push(None);
             }
-            
-            // Update the value
+        }
+        
+        // Update the specific value
+        if let Some(values) = self.metrics_data.get_mut(&normalized_key) {
             if let Some(last_idx) = values.len().checked_sub(1) {
                 values[last_idx] = value.parse().ok();
             }
@@ -69,26 +72,24 @@ impl MetricsRecorder {
         for key in self.metrics_data.keys() {
             fields.push(Field::new(key, DataType::Float64, true));
         }
-        let schema = Schema::new(fields);
+        let schema = Arc::new(Schema::new(fields));
 
         // Create arrays
-        let timestamp_array = StringArray::from(
+        let timestamp_array = Arc::new(StringArray::from(
             self.timestamps
                 .iter()
                 .map(|ts| ts.to_rfc3339())
                 .collect::<Vec<_>>()
-        );
+        )) as ArrayRef;
 
-        let mut arrays: Vec<Box<dyn Array>> = vec![Box::new(timestamp_array)];
+        let mut arrays: Vec<ArrayRef> = vec![timestamp_array];
         for values in self.metrics_data.values() {
-            arrays.push(Box::new(Float64Array::from(values.clone())));
+            arrays.push(Arc::new(Float64Array::from(values.clone())) as ArrayRef);
         }
 
         // Create record batch
-        let batch = RecordBatch::try_new(
-            std::sync::Arc::new(schema),
-            arrays,
-        )?;
+        let batch = RecordBatch::try_new(schema, arrays)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
 
         // Save to CSV
         let filename = format!(
@@ -100,7 +101,8 @@ impl MetricsRecorder {
         // Write batch to CSV
         let file = std::fs::File::create(path)?;
         let mut writer = arrow::csv::Writer::new(file);
-        writer.write(&batch)?;
+        writer.write(&batch)
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
 
         Ok(())
     }
