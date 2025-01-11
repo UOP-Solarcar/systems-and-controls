@@ -37,12 +37,17 @@ class MetricsRecorder:
         """Record a metric with current timestamp"""
         normalized_key = self._normalize_key(key)
         
-        # If this is a new metric we care about, add it to the current row
+        # If this is a metric we care about
         if normalized_key in self.metrics_data:
-            # If this is our first metric in a new row, add the timestamp
-            if all(len(values) == 0 or values[-1] is None for values in self.metrics_data.values()):
+            # Start a new row if:
+            # 1. This is our first metric ever, or
+            # 2. We already have this metric in the current row (meaning it's a new set)
+            if (len(self.metrics_data["timestamp"]) == 0 or 
+                (len(self.metrics_data[normalized_key]) > 0 and 
+                 self.metrics_data[normalized_key][-1] is not None)):
+                
+                # Create new row with timestamp
                 timestamp = datetime.now().isoformat()
-                # Create new row
                 for metric_key in self.metrics_data.keys():
                     if metric_key == "timestamp":
                         self.metrics_data[metric_key].append(timestamp)
