@@ -39,13 +39,8 @@ class MetricsRecorder:
         
         # If this is a metric we care about
         if normalized_key in self.metrics_data:
-            # Start a new row if:
-            # 1. This is our first metric ever, or
-            # 2. We already have this metric in the current row (meaning it's a new set)
-            if (len(self.metrics_data["timestamp"]) == 0 or 
-                (len(self.metrics_data[normalized_key]) > 0 and 
-                 self.metrics_data[normalized_key][-1] is not None)):
-                
+            # Start a new row if this is RPM (our sentinel metric) or first metric ever
+            if normalized_key == "RPM" or len(self.metrics_data["timestamp"]) == 0:
                 # Create new row with timestamp
                 timestamp = datetime.now().isoformat()
                 for metric_key in self.metrics_data.keys():
