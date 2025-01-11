@@ -10,6 +10,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QPalette, QColor
 import sys
 from ..metrics import calculate_speed, kwh_per_100_km
+from ..metrics.recorder import MetricsRecorder
 
 FONT = QFont(None, 27)
 
@@ -18,6 +19,7 @@ class MainWindow(QMainWindow):
     def __init__(self, output_queue=None):
         super().__init__()
         self.output_queue = output_queue
+        self.metrics_recorder = MetricsRecorder()  # Initialize the recorder
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint)
         self.setAutoFillBackground(True)
 
@@ -135,7 +137,7 @@ class MainWindow(QMainWindow):
         while not self.output_queue.empty():
             try:
                 metric = self.output_queue.get()
-                print(f"Received metric: {metric}")  # Debugging: Print received metric
+                print(f"Received metric: {metric}")
 
                 # Skip malformed metrics
                 if ":" not in metric:
@@ -145,6 +147,9 @@ class MainWindow(QMainWindow):
                 key, value = metric.split(":", 1)
                 key = key.strip()
                 value = value.strip()
+
+                # Record the metric
+                self.metrics_recorder.record_metric(key, value)
 
                 # Simple metric handling
                 try:
@@ -167,10 +172,7 @@ class MainWindow(QMainWindow):
                         self.set_efficiency(int(float(consumption)))
 
                 except ValueError as e:
-                    print(
-                        f"ValueError processing metric {key}={value}: {e}",
-                        file=sys.stderr,
-                    )
+                    print(f"ValueError processing metric {key}={value}: {e}", file=sys.stderr)
 
             except ValueError as e:
                 print(f"ValueError parsing metric line: {e}", file=sys.stderr)
