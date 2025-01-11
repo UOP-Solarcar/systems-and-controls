@@ -3,52 +3,31 @@ from typing import Dict, List
 import sys
 
 def split_metrics(line: str) -> List[Dict[str, str]]:
-    """Split a line into individual metrics"""
+    """Split a line into individual metrics using regex pattern matching"""
     metrics = []
     
-    # Remove ID prefixes and other unnecessary info
-    line = re.sub(r'Motor Controller ID: 0x\w+ Status #\d+\s*', '', line)
-    line = re.sub(r'Pack Health: \d+\s*', '', line)
-    line = re.sub(r'Cell ID: \d+\s*', '', line)
-    line = re.sub(r'Checksum: \d+\s*', '', line)
-    line = re.sub(r'Reserved: \d+\s*', '', line)
-    line = re.sub(r'ADC\d+: \d+\s*', '', line)
-    line = re.sub(r'PPM: \d+\s*', '', line)
-    line = re.sub(r'Thermistor ID: \d+\s*', '', line)
+    # Define patterns for each metric we care about
+    patterns = {
+        'RPM': r'RPM: (\d+)',
+        'current': r'current: (-?\d+)',
+        'duty cycle': r'duty cycle: (\d+)',
+        'Wh Used': r'Wh Used: (\d+)',
+        'Wh Charged': r'Wh Charged: (\d+)',
+        'Voltage In': r'Voltage In: (\d+)',
+        'High Temperature': r'High Temperature: (\d+)',
+        'Low Temperature': r'Low Temperature: (\d+)',
+        'Adaptive Total Capacity': r'Adaptive Total Capacity: (\d+)',
+        'Pack SOC': r'Pack SOC: (\d+)',
+        'Pack Current': r'Pack Current: (\d+)',
+        'Pack Inst. Voltage': r'Pack Inst\. Voltage: (\d+)',
+    }
     
-    # Split on common delimiters
-    parts = re.split(r'\s+(?=[A-Za-z])', line)
+    # Extract each metric using its pattern
+    for key, pattern in patterns.items():
+        match = re.search(pattern, line)
+        if match:
+            metrics.append({key: match.group(1)})
     
-    for part in parts:
-        # Skip empty parts or parts without colon
-        if not part or ':' not in part:
-            continue
-            
-        try:
-            key, value = part.split(':', 1)
-            key = key.strip()
-            value = value.strip()
-            
-            # Skip if key or value is empty
-            if not key or not value:
-                continue
-                
-            # Skip certain metrics we don't need
-            if any(skip in key for skip in ['Cell', 'Checksum', 'ADC', 'PPM', 'Reserved']):
-                continue
-                
-            # Try to convert value to number if possible
-            try:
-                value = str(int(value))  # Convert to int and back to string to clean it
-            except ValueError:
-                pass
-                
-            metrics.append({key: value})
-            
-        except Exception as e:
-            print(f"Error parsing metric '{part}': {e}", file=sys.stderr)
-            continue
-            
     return metrics
 
 def parse_line(line: str) -> List[Dict[str, str]]:
