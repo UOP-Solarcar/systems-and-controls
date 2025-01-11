@@ -48,6 +48,22 @@
             qt6.qtsvg
             black
           ];
+
+          shellHook = ''
+            echo "Setting up pre-commit hook for black..."
+            if [ ! -f .git/hooks/pre-commit ]; then
+              mkdir -p .git/hooks
+              cat > .git/hooks/pre-commit << 'EOF'
+#!/usr/bin/env bash
+set -e
+echo "Running black on Python files..."
+black $(git diff --cached --name-only --diff-filter=d | grep -E '\.py$')
+git add $(git diff --cached --name-only --diff-filter=d | grep -E '\.py$')
+EOF
+              chmod +x .git/hooks/pre-commit
+              echo "Pre-commit hook installed!"
+            fi
+          '';
         };
       }
     );
