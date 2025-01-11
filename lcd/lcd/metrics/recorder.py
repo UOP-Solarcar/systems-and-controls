@@ -35,17 +35,21 @@ class MetricsRecorder:
     
     def record_metric(self, key: str, value: str) -> None:
         """Record a metric with current timestamp"""
-        timestamp = datetime.now().isoformat()
-        self.metrics_data["timestamp"].append(timestamp)
-        
-        # Fill all columns with None for this row
-        for metric_key in self.metrics_data.keys():
-            if metric_key != "timestamp":
-                self.metrics_data[metric_key].append(None)
-        
-        # Update the specific metric
         normalized_key = self._normalize_key(key)
+        
+        # If this is a new metric we care about, add it to the current row
         if normalized_key in self.metrics_data:
+            # If this is our first metric in a new row, add the timestamp
+            if all(len(values) == 0 or values[-1] is None for values in self.metrics_data.values()):
+                timestamp = datetime.now().isoformat()
+                # Create new row
+                for metric_key in self.metrics_data.keys():
+                    if metric_key == "timestamp":
+                        self.metrics_data[metric_key].append(timestamp)
+                    else:
+                        self.metrics_data[metric_key].append(None)
+            
+            # Update the specific metric in the current row
             self.metrics_data[normalized_key][-1] = value
     
     def _normalize_key(self, key: str) -> str:
