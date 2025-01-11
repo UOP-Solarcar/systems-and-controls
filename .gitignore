@@ -1,4 +1,15 @@
 <<<<<<< HEAD
+# Nix
+result
+.direnv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+=======
+<<<<<<< HEAD
 .pio
 <<<<<<< HEAD
 .vscode
@@ -14,6 +25,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+>>>>>>> 78bcd19b4520197207ef327cc06de7e1536d8070
 .Python
 build/
 develop-eggs/
@@ -27,6 +39,22 @@ parts/
 sdist/
 var/
 wheels/
+<<<<<<< HEAD
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+*venv/
+*.venv/
+*.env
+
+# Data logs
+data/recordings/
+
+# Build artifacts
+lcd-metrics-rs/target/
+=======
 pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
@@ -148,3 +176,4 @@ dmypy.json
 
 # CSV data
 *.csv
+>>>>>>> 78bcd19b4520197207ef327cc06de7e1536d8070
