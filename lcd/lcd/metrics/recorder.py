@@ -37,12 +37,16 @@ class MetricsRecorder:
         """Record a metric with current timestamp"""
         normalized_key = self._normalize_key(key)
         
+        # Debug prints
+        print(f"Processing metric: {key} -> {normalized_key} = {value}")
+        
         # If this is a metric we care about
         if normalized_key in self.metrics_data:
             # Start a new row if this is RPM (our sentinel metric) or first metric ever
             if normalized_key == "RPM" or len(self.metrics_data["timestamp"]) == 0:
                 # Create new row with timestamp
                 timestamp = datetime.now().isoformat()
+                print(f"Creating new row at {timestamp}")  # Debug print
                 for metric_key in self.metrics_data.keys():
                     if metric_key == "timestamp":
                         self.metrics_data[metric_key].append(timestamp)
@@ -51,24 +55,37 @@ class MetricsRecorder:
             
             # Update the specific metric in the current row
             self.metrics_data[normalized_key][-1] = value
+            print(f"Updated {normalized_key} to {value}")  # Debug print
     
     def _normalize_key(self, key: str) -> str:
         """Convert metric keys to column names"""
-        key = key.lower().replace(" ", "_")
+        # First normalize the input key
+        key = key.lower().strip()
+        
+        # Direct mappings for exact matches
         key_mapping = {
-            "duty_cycle": "duty_cycle",
-            "wh_used": "wh_used",
-            "wh_charged": "wh_charged",
-            "voltage_in": "voltage_in",
-            "high_temperature": "high_temperature",
-            "low_temperature": "low_temperature",
-            "average_temperature": "average_temperature",
-            "adaptive_total_capacity": "adaptive_total_capacity",
-            "pack_soc": "pack_soc",
-            "pack_current": "pack_current",
-            "pack_inst._voltage": "pack_voltage",
+            "rpm": "RPM",
+            "current": "current",
+            "duty cycle": "duty_cycle",
+            "wh used": "wh_used",
+            "wh charged": "wh_charged",
+            "voltage in": "voltage_in",
+            "high temperature": "high_temperature",
+            "low temperature": "low_temperature",
+            "average temperature": "average_temperature",
+            "adaptive total capacity": "adaptive_total_capacity",
+            "pack soc": "pack_soc",
+            "pack current": "pack_current",
+            "pack inst. voltage": "pack_voltage",
         }
-        return key_mapping.get(key, key)
+        
+        normalized = key_mapping.get(key)
+        if normalized:
+            print(f"Normalized key '{key}' to '{normalized}'")  # Debug print
+        else:
+            print(f"Failed to normalize key '{key}'")  # Debug print
+        
+        return normalized if normalized else key
     
     def _create_arrow_table(self) -> pa.Table:
         """Create an Arrow table from recorded metrics"""
