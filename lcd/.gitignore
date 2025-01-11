@@ -23,3 +23,6 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg 
+
+# Data logs
+data/recordings/
