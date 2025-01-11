@@ -12,14 +12,14 @@ def read_metrics_from_stdin(output_queue: queue.Queue) -> None:
             if rlist:
                 line = sys.stdin.readline().strip()
                 if line:
-                    # Parse the line and get metrics
-                    metrics_list = parse_line(line)
-                    # Put each metric in the queue separately
-                    for metric_dict in metrics_list:
+                    # Parse the line into separate metrics
+                    metrics = parse_line(line)
+                    # Put each parsed metric in the queue
+                    for metric_dict in metrics:
                         for key, value in metric_dict.items():
                             output_queue.put(f"{key}: {value}")
         except Exception as e:
-            print(f"Error in reader thread: {e}")
+            print(f"Error in reader thread: {e}", file=sys.stderr)
         time.sleep(0.1)
 
 
