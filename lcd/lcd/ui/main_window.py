@@ -10,6 +10,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QPalette, QColor
 import sys
 from ..metrics import calculate_speed, kwh_per_100_km
+from ..metrics.recorder import MetricsRecorder
 
 FONT = QFont(None, 27)
 
@@ -18,6 +19,7 @@ class MainWindow(QMainWindow):
     def __init__(self, output_queue=None):
         super().__init__()
         self.output_queue = output_queue
+        self.metrics_recorder = MetricsRecorder()  # Initialize the recorder
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint)
         self.setAutoFillBackground(True)
 
@@ -133,45 +135,47 @@ class MainWindow(QMainWindow):
         wh_charged = 0
         speed = 0
         while not self.output_queue.empty():
-            metric = self.output_queue.get()
-            print(f"Received metric: {metric}")  # Debugging: Print received metric
-
-            # Simple metric handling
             try:
-                key, value = metric.split(":")
-                if key.strip() == "RPM":
-                    speed = calculate_speed(int(value.strip())) * 0.62
-                    self.set_speed(speed)
-                # elif key.strip() == "Pack SOC":
-                #    battery_charge = int(value.strip()) / 2
-                # elif key.strip() == "Voltage In":
-                # motor_voltage = int(value.strip())
-                elif key.strip() == "Wh Used":
-                    wh_used = int(value.strip())
-                elif key.strip() == "Wh Charged":
-                    wh_charged = int(value.strip())
-                # elif key.strip() == "current":
-                # motor_current = int(value.strip())
-                elif key.strip() == "Average Temperature":  # battery
-                    self.set_bat_temp(float(value.strip()))
-                elif key.strip() == "Temp Motor":
-                    self.set_motor_temp(int(value.strip()))
-                elif key.strip() == "Adaptive Total Capacity":
-                    self.set_bat(int(float(value.strip()) / 10))
-                if wh_used and wh_charged and speed:
-                    consumption = kwh_per_100_km(wh_used, wh_charged, speed)
-                    self.set_efficiency(int(float(consumption)))
+                metric = self.output_queue.get()
+                print(f"Received metric: {metric}")
+
+                # Skip malformed metrics
+                if ":" not in metric:
+                    continue
+
+                # Split only on the first occurrence of ":"
+                key, value = metric.split(":", 1)
+                key = key.strip()
+                value = value.strip()
+
+                # Record the metric
+                self.metrics_recorder.record_metric(key, value)
+
+                # Simple metric handling
+                try:
+                    if key == "RPM":
+                        speed = calculate_speed(int(value)) * 0.62
+                        self.set_speed(speed)
+                    elif key == "Wh Used":
+                        wh_used = int(value)
+                    elif key == "Wh Charged":
+                        wh_charged = int(value)
+                    elif key == "Average Temperature":  # battery
+                        self.set_bat_temp(float(value))
+                    elif key == "Temp Motor":
+                        self.set_motor_temp(int(value))
+                    elif key == "Adaptive Total Capacity":
+                        self.set_bat(int(float(value) / 10))
+
+                    if wh_used and wh_charged and speed:
+                        consumption = kwh_per_100_km(wh_used, wh_charged, speed)
+                        self.set_efficiency(int(float(consumption)))
+
+                except ValueError as e:
+                    print(
+                        f"ValueError processing metric {key}={value}: {e}",
+                        file=sys.stderr,
+                    )
 
             except ValueError as e:
-                print(
-                    f"ValueError: {e}", file=sys.stderr
-                )  # Debugging: print error message
-
-            # except ValueError as e:
-            # print(f"ValueError: {e}", file=sys.stderr)
-
-            # try:
-            #    if hi_temp and lo_temp:
-            #        battery_temp = calculate_avg_tmp(hi_temp, lo_temp)
-            # except ValueError as e:
-            #    print(f"ValueError: {e}", file=sys.stderr)
+                print(f"ValueError parsing metric line: {e}", file=sys.stderr)
