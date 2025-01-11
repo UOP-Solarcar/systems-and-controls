@@ -1,78 +1,78 @@
 import re
-from typing import Optional, Dict, List
+from typing import Dict, List
+import sys
 
-def parse_motor_controller(line: str) -> List[Dict[str, str]]:
-    """Parse motor controller messages into separate metrics"""
+def split_metrics(line: str) -> List[Dict[str, str]]:
+    """Split a line into individual metrics"""
     metrics = []
     
-    # Status #1: RPM, current, duty cycle
-    rpm_match = re.search(r'RPM: (\d+)', line)
-    current_match = re.search(r'current: (-?\d+)', line)
-    duty_match = re.search(r'duty cycle: (\d+)', line)
+    # Remove ID prefixes and other unnecessary info
+    line = re.sub(r'Motor Controller ID: 0x\w+ Status #\d+\s*', '', line)
+    line = re.sub(r'Pack Health: \d+\s*', '', line)
+    line = re.sub(r'Cell ID: \d+\s*', '', line)
+    line = re.sub(r'Checksum: \d+\s*', '', line)
+    line = re.sub(r'Reserved: \d+\s*', '', line)
+    line = re.sub(r'ADC\d+: \d+\s*', '', line)
+    line = re.sub(r'PPM: \d+\s*', '', line)
+    line = re.sub(r'Thermistor ID: \d+\s*', '', line)
     
-    # Status #2: Ah Used/Charged
-    ah_used_match = re.search(r'Ah Used: (\d+)', line)
-    ah_charged_match = re.search(r'Ah Charged: (\d+)', line)
+    # Split on common delimiters
+    parts = re.split(r'\s+(?=[A-Za-z])', line)
     
-    # Status #3: Wh Used/Charged
-    wh_used_match = re.search(r'Wh Used: (\d+)', line)
-    wh_charged_match = re.search(r'Wh Charged: (\d+)', line)
-    
-    # Status #5: Tachometer, Voltage
-    tach_match = re.search(r'Tachometer: (\d+)', line)
-    voltage_match = re.search(r'Voltage In: (\d+)', line)
-    
-    # Add each match as a separate metric
-    if rpm_match: metrics.append({'RPM': rpm_match.group(1)})
-    if current_match: metrics.append({'current': current_match.group(1)})
-    if duty_match: metrics.append({'duty cycle': duty_match.group(1)})
-    if ah_used_match: metrics.append({'Ah Used': ah_used_match.group(1)})
-    if ah_charged_match: metrics.append({'Ah Charged': ah_charged_match.group(1)})
-    if wh_used_match: metrics.append({'Wh Used': wh_used_match.group(1)})
-    if wh_charged_match: metrics.append({'Wh Charged': wh_charged_match.group(1)})
-    if tach_match: metrics.append({'Tachometer': tach_match.group(1)})
-    if voltage_match: metrics.append({'Voltage In': voltage_match.group(1)})
-    
-    return metrics
-
-def parse_bms(line: str) -> List[Dict[str, str]]:
-    """Parse BMS messages into separate metrics"""
-    metrics = []
-    
-    # Pack metrics
-    pack_current_match = re.search(r'Pack Current: (\d+)', line)
-    pack_voltage_match = re.search(r'Pack Inst\. Voltage: (\d+)', line)
-    pack_soc_match = re.search(r'Pack SOC: (\d+)', line)
-    
-    # Temperature metrics
-    high_temp_match = re.search(r'High Temperature: (\d+)', line)
-    low_temp_match = re.search(r'Low Temperature: (\d+)', line)
-    
-    # Battery capacity
-    capacity_match = re.search(r'Adaptive Total Capacity: (\d+)', line)
-    
-    # Add each match as a separate metric
-    if pack_current_match: metrics.append({'Pack Current': pack_current_match.group(1)})
-    if pack_voltage_match: metrics.append({'Pack Inst. Voltage': pack_voltage_match.group(1)})
-    if pack_soc_match: metrics.append({'Pack SOC': pack_soc_match.group(1)})
-    if high_temp_match: metrics.append({'High Temperature': high_temp_match.group(1)})
-    if low_temp_match: metrics.append({'Low Temperature': low_temp_match.group(1)})
-    if capacity_match: metrics.append({'Adaptive Total Capacity': capacity_match.group(1)})
-    
-    # Calculate average temperature if both high and low are present
-    if high_temp_match and low_temp_match:
-        avg_temp = (int(high_temp_match.group(1)) + int(low_temp_match.group(1))) / 2
-        metrics.append({'Average Temperature': str(avg_temp)})
-    
+    for part in parts:
+        # Skip empty parts or parts without colon
+        if not part or ':' not in part:
+            continue
+            
+        try:
+            key, value = part.split(':', 1)
+            key = key.strip()
+            value = value.strip()
+            
+            # Skip if key or value is empty
+            if not key or not value:
+                continue
+                
+            # Skip certain metrics we don't need
+            if any(skip in key for skip in ['Cell', 'Checksum', 'ADC', 'PPM', 'Reserved']):
+                continue
+                
+            # Try to convert value to number if possible
+            try:
+                value = str(int(value))  # Convert to int and back to string to clean it
+            except ValueError:
+                pass
+                
+            metrics.append({key: value})
+            
+        except Exception as e:
+            print(f"Error parsing metric '{part}': {e}", file=sys.stderr)
+            continue
+            
     return metrics
 
 def parse_line(line: str) -> List[Dict[str, str]]:
     """Parse a single line of input and return list of key-value pairs"""
-    # Skip lines that don't contain useful metrics
-    if "Cell ID:" in line or "Checksum:" in line or "ADC" in line:
-        return []
-        
-    if "Motor Controller ID:" in line:
-        return parse_motor_controller(line)
-    else:
-        return parse_bms(line) 
+    metrics = split_metrics(line)
+    
+    # Calculate average temperature if we have both high and low
+    high_temp = None
+    low_temp = None
+    
+    for metric in metrics:
+        if 'High Temperature' in metric:
+            try:
+                high_temp = int(metric['High Temperature'])
+            except ValueError:
+                pass
+        elif 'Low Temperature' in metric:
+            try:
+                low_temp = int(metric['Low Temperature'])
+            except ValueError:
+                pass
+    
+    if high_temp is not None and low_temp is not None:
+        avg_temp = (high_temp + low_temp) / 2
+        metrics.append({'Average Temperature': str(avg_temp)})
+    
+    return metrics 
