@@ -43,10 +43,10 @@
           buildInputs = with pkgs; [
             python3
             python.pkgs.pyqt6
+            python.pkgs.pyarrow
             qt6.qtbase
             qt6.qtsvg
             black
-            pyarrow
           ];
         };
       }
