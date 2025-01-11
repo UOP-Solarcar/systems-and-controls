@@ -25,6 +25,7 @@
 
           propagatedBuildInputs = with python.pkgs; [
             pyqt6
+            pyarrow
           ];
 
           nativeBuildInputs = with pkgs; [
@@ -45,6 +46,7 @@
             qt6.qtbase
             qt6.qtsvg
             black
+            pyarrow
           ];
         };
       }
