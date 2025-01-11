@@ -10,19 +10,19 @@ def parse_motor_controller(line: str) -> Dict[str, str]:
     current_match = re.search(r'current: (-?\d+)', line)
     duty_match = re.search(r'duty cycle: (\d+)', line)
     
-    # Status #2: Ah Used/Charged
+    # Status #2: Ah Used/Charged - split into separate metrics
     ah_used_match = re.search(r'Ah Used: (\d+)', line)
     ah_charged_match = re.search(r'Ah Charged: (\d+)', line)
     
-    # Status #3: Wh Used/Charged
+    # Status #3: Wh Used/Charged - split into separate metrics
     wh_used_match = re.search(r'Wh Used: (\d+)', line)
     wh_charged_match = re.search(r'Wh Charged: (\d+)', line)
     
-    # Status #5: Tachometer, Voltage
+    # Status #5: Tachometer, Voltage - split into separate metrics
     tach_match = re.search(r'Tachometer: (\d+)', line)
     voltage_match = re.search(r'Voltage In: (\d+)', line)
     
-    # Add matches to metrics dict
+    # Add matches to metrics dict as separate entries
     if rpm_match: metrics['RPM'] = rpm_match.group(1)
     if current_match: metrics['current'] = current_match.group(1)
     if duty_match: metrics['duty cycle'] = duty_match.group(1)
@@ -39,7 +39,7 @@ def parse_bms(line: str) -> Dict[str, str]:
     """Parse BMS messages"""
     metrics = {}
     
-    # Pack metrics
+    # Pack metrics - each as a separate entry
     pack_current_match = re.search(r'Pack Current: (\d+)', line)
     pack_voltage_match = re.search(r'Pack Inst\. Voltage: (\d+)', line)
     pack_soc_match = re.search(r'Pack SOC: (\d+)', line)
@@ -51,7 +51,7 @@ def parse_bms(line: str) -> Dict[str, str]:
     # Battery capacity
     capacity_match = re.search(r'Adaptive Total Capacity: (\d+)', line)
     
-    # Add matches to metrics dict
+    # Add matches to metrics dict as separate entries
     if pack_current_match: metrics['Pack Current'] = pack_current_match.group(1)
     if pack_voltage_match: metrics['Pack Inst. Voltage'] = pack_voltage_match.group(1)
     if pack_soc_match: metrics['Pack SOC'] = pack_soc_match.group(1)
@@ -68,6 +68,10 @@ def parse_bms(line: str) -> Dict[str, str]:
 
 def parse_line(line: str) -> Dict[str, str]:
     """Parse a single line of input and return key-value pairs"""
+    # Skip lines that don't contain useful metrics
+    if "Cell ID:" in line or "Checksum:" in line or "ADC" in line:
+        return {}
+        
     if "Motor Controller ID:" in line:
         return parse_motor_controller(line)
     else:
