@@ -2,6 +2,7 @@ import sys
 import queue
 import select
 import time
+from .parser import parse_line
 
 
 def read_metrics_from_stdin(output_queue: queue.Queue) -> None:
@@ -9,9 +10,13 @@ def read_metrics_from_stdin(output_queue: queue.Queue) -> None:
         try:
             rlist, _, _ = select.select([sys.stdin], [], [], 0.1)
             if rlist:
-                line = sys.stdin.readline()
-                if line.strip():
-                    output_queue.put(line.strip())
+                line = sys.stdin.readline().strip()
+                if line:
+                    # Parse the line and get metrics
+                    metrics = parse_line(line)
+                    # Put each metric in the queue separately
+                    for key, value in metrics.items():
+                        output_queue.put(f"{key}: {value}")
         except Exception as e:
             print(f"Error in reader thread: {e}")
         time.sleep(0.1)
