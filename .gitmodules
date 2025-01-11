@@ -1,0 +1,3 @@
+[submodule "reader/lib/bytetools"]
+    path = reader/lib/bytetools
+    url = https://github.com/MiguelX413/bytetools.git

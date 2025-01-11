@@ -1,0 +1,40 @@
+name: PlatformIO CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+<<<<<<< HEAD
+    strategy:
+      matrix: { dir: ['CAN/arduino/due/reader', 'CAN/arduino/due/transmitter', 'CAN/reader', 'CAN/arduino/uno/transmitter'] }
+=======
+
+>>>>>>> old-contactor-arduino/master
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
+<<<<<<< HEAD
+      - uses: actions/cache@v4
+=======
+      - uses: actions/cache@v3
+>>>>>>> old-contactor-arduino/master
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.platformio/.cache
+          key: ${{ runner.os }}-pio
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install PlatformIO Core
+        run: pip install --upgrade platformio
+<<<<<<< HEAD
+      - name: Build PlatformIO Project
+        working-directory: ${{ matrix.dir }}
+=======
+
+      - name: Build PlatformIO Project
+>>>>>>> old-contactor-arduino/master
+        run: pio run

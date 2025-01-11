@@ -1,0 +1,2287 @@
+ Wh Used: 13724 Wh Charged: 2785
+ RPM: 0 current: 0 duty cycle: 3
+ Ah Used: 276 Ah Charged: 52
+ Tachometer: 35658 Voltage In: 508 Reserved: 0
+ ADC1: 615 ADC2: 632 ADC3: 615 PPM: 0
+g9 Open Voltage: 0 Checksum: 62
+ Wh Used: 13724 Wh Charged: 2785
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+ RPM: 0 current: 0 duty cycle: 3
+ance: 1509 Open Voltage: 0 Checksum: 62
+ Ah Used: 276 Ah Charged: 52
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+ Tachometer: 35658 Voltage In: 508 Reserved: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 611 ADC2: 633 ADC3: 611 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 13724 Wh Charged: 2785
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 0 current: 0 duty cycle: 3
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+ Ah Used: 276 Ah Charged: 52
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+ Tachometer: 35658 Voltage In: 508 Reserved: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 858 ADC2: 633 ADC3: 858 PPM: 0
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+ Wh Used: 13724 Wh Charged: 2785
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 146 current: 271 duty cycle: 94
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 277 Ah Charged: 52
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1260 ADC2: 633 ADC3: 1260 PPM: 0
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ Wh Used: 13728 Wh Charged: 2786
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 1349 current: 487 duty cycle: 274
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ Ah Used: 278 Ah Charged: 52
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ ADC1: 1445 ADC2: 633 ADC3: 1445 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 13807 Wh Charged: 2786
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 3228 current: 483 duty cycle: 512
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 284 Ah Charged: 52
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ ADC1: 1470 ADC2: 636 ADC3: 1470 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 14114 Wh Charged: 2786
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ RPM: 4877 current: 376 duty cycle: 711
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Ah Used: 292 Ah Charged: 52
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1434 ADC2: 633 ADC3: 1434 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 14494 Wh Charged: 2786
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6109 current: 312 duty cycle: 873
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Ah Used: 299 Ah Charged: 52
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1298 ADC2: 632 ADC3: 1298 PPM: 0
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ Wh Used: 14853 Wh Charged: 2786
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ RPM: 6972 current: -42 duty cycle: 925
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 305 Ah Charged: 52
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1285 ADC2: 632 ADC3: 1285 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 15107 Wh Charged: 2793
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+ RPM: 6538 current: 301 duty cycle: 892
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+ Ah Used: 308 Ah Charged: 55
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1286 ADC2: 634 ADC3: 1286 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 15260 Wh Charged: 2974
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 7010 current: -71 duty cycle: 944
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+ Ah Used: 311 Ah Charged: 56
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+ ADC1: 1234 ADC2: 633 ADC3: 1234 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 15432 Wh Charged: 2996
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 66
+ RPM: 5857 current: 0 duty cycle: 773
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 311 Ah Charged: 61
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1040 ADC2: 632 ADC3: 1040 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 67
+ RPM: 5587 current: 0 duty cycle: 753
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ ADC1: 1041 ADC2: 633 ADC3: 1041 PPM: 0
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Wh Used: 15432 Wh Charged: 3274
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 5468 current: 0 duty cycle: 737
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 311 Ah Charged: 61
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1041 ADC2: 632 ADC3: 1041 PPM: 0
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Wh Used: 15432 Wh Charged: 3274
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 5358 current: 0 duty cycle: 722
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ ADC1: 1044 ADC2: 635 ADC3: 1044 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 15432 Wh Charged: 3274
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 5251 current: 0 duty cycle: 710
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ ADC1: 1041 ADC2: 633 ADC3: 1041 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ RPM: 5143 current: 0 duty cycle: 699
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ Ah Used: 311 Ah Charged: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1043 ADC2: 634 ADC3: 1043 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 15432 Wh Charged: 3274
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 5035 current: 0 duty cycle: 696
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ ADC1: 1043 ADC2: 632 ADC3: 1043 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 15432 Wh Charged: 3274
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 4930 current: 0 duty cycle: 659
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ ADC1: 1043 ADC2: 632 ADC3: 1043 PPM: 0
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ Wh Used: 15432 Wh Charged: 3274
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 4827 current: 0 duty cycle: 655
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+ Ah Used: 311 Ah Charged: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1042 ADC2: 633 ADC3: 1042 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 15432 Wh Charged: 3274
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 4723 current: 0 duty cycle: 634
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+ Ah Used: 311 Ah Charged: 61
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1043 ADC2: 633 ADC3: 1043 PPM: 0
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+ RPM: 4621 current: 0 duty cycle: 620
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 311 Ah Charged: 61
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1043 ADC2: 632 ADC3: 1043 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ RPM: 4518 current: 0 duty cycle: 612
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ ADC1: 1043 ADC2: 632 ADC3: 1043 PPM: 0
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ Wh Used: 15432 Wh Charged: 3274
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 4418 current: 0 duty cycle: 594
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 311 Ah Charged: 61
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 613 ADC2: 632 ADC3: 613 PPM: 0
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Wh Used: 15432 Wh Charged: 3274
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 4320 current: 0 duty cycle: 585
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 15432 Wh Charged: 3274
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 4220 current: 0 duty cycle: 565
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Wh Used: 15432 Wh Charged: 3274
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 4124 current: 0 duty cycle: 558
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 311 Ah Charged: 61
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ RPM: 4024 current: 0 duty cycle: 535
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 15432 Wh Charged: 3274
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 3929 current: 0 duty cycle: 530
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ RPM: 3834 current: 0 duty cycle: 519
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ Ah Used: 311 Ah Charged: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 15432 Wh Charged: 3274
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 3740 current: 0 duty cycle: 503
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ Ah Used: 311 Ah Charged: 61
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+ RPM: 3648 current: 0 duty cycle: 481
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 311 Ah Charged: 61
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ RPM: 3556 current: 0 duty cycle: 467
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ ADC1: 626 ADC2: 632 ADC3: 626 PPM: 0
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ Wh Used: 15432 Wh Charged: 3274
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 3466 current: 0 duty cycle: 466
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 311 Ah Charged: 61
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ RPM: 3374 current: 0 duty cycle: 451
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 311 Ah Charged: 61
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ RPM: 3284 current: 0 duty cycle: 439
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Ah Used: 311 Ah Charged: 61
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Wh Used: 15432 Wh Charged: 3274
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 3196 current: 0 duty cycle: 425
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 311 Ah Charged: 61
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ Wh Used: 15432 Wh Charged: 3274
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 3106 current: 0 duty cycle: 415
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 15432 Wh Charged: 3274
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 3020 current: 0 duty cycle: 395
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ RPM: 2933 current: 0 duty cycle: 391
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ Ah Used: 311 Ah Charged: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 15432 Wh Charged: 3274
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 2849 current: 0 duty cycle: 392
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ Ah Used: 311 Ah Charged: 61
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 44
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 45
+ RPM: 2763 current: 0 duty cycle: 370
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 311 Ah Charged: 61
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+ RPM: 2680 current: 0 duty cycle: 360
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+ Ah Used: 311 Ah Charged: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 15432 Wh Charged: 3274
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 2600 current: 0 duty cycle: 351
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ RPM: 2516 current: 0 duty cycle: 327
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 311 Ah Charged: 61
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ RPM: 2437 current: 0 duty cycle: 330
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ Wh Used: 15432 Wh Charged: 3274
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 2358 current: 0 duty cycle: 318
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 311 Ah Charged: 61
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ Wh Used: 15432 Wh Charged: 3274
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 2273 current: 0 duty cycle: 305
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 15432 Wh Charged: 3274
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 2199 current: 0 duty cycle: 296
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 66
+ RPM: 2117 current: 0 duty cycle: 277
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 67
+ Ah Used: 311 Ah Charged: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 15432 Wh Charged: 3274
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 2043 current: 0 duty cycle: 273
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 15432 Wh Charged: 3274
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 1962 current: 0 duty cycle: 260
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ Wh Used: 15432 Wh Charged: 3274
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 1890 current: 0 duty cycle: 254
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ Ah Used: 311 Ah Charged: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 15432 Wh Charged: 3274
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 1815 current: 0 duty cycle: 240
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ Ah Used: 311 Ah Charged: 61
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ RPM: 1743 current: 0 duty cycle: 237
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 311 Ah Charged: 61
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ RPM: 1662 current: 0 duty cycle: 219
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+ Wh Used: 15432 Wh Charged: 3274
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 1598 current: 0 duty cycle: 215
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 311 Ah Charged: 61
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ Wh Used: 15432 Wh Charged: 3274
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 1521 current: 0 duty cycle: 197
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 15432 Wh Charged: 3274
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 1454 current: 0 duty cycle: 196
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 311 Ah Charged: 61
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+ ADC1: 620 ADC2: 632 ADC3: 620 PPM: 0
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ Wh Used: 15432 Wh Charged: 3274
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 1376 current: 0 duty cycle: 180
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 311 Ah Charged: 61
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 636 ADC2: 632 ADC3: 636 PPM: 0
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+ Wh Used: 15432 Wh Charged: 3274
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+ RPM: 1475 current: 147 duty cycle: 254
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 312 Ah Charged: 61
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ ADC1: 1171 ADC2: 633 ADC3: 1171 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 15452 Wh Charged: 3289
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 2201 current: 340 duty cycle: 352
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 313 Ah Charged: 61
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ ADC1: 1315 ADC2: 633 ADC3: 1315 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 15546 Wh Charged: 3289
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ RPM: 3521 current: 468 duty cycle: 539
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ Ah Used: 319 Ah Charged: 61
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1429 ADC2: 636 ADC3: 1429 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 15793 Wh Charged: 3289
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 5023 current: 347 duty cycle: 731
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ Ah Used: 326 Ah Charged: 61
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1443 ADC2: 633 ADC3: 1443 PPM: 0
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Wh Used: 16155 Wh Charged: 3289
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ RPM: 6218 current: 311 duty cycle: 874
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 333 Ah Charged: 61
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1447 ADC2: 633 ADC3: 1447 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 16512 Wh Charged: 3289
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ RPM: 7038 current: -47 duty cycle: 916
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 338 Ah Charged: 61
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ ADC1: 1447 ADC2: 633 ADC3: 1447 PPM: 0
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ Wh Used: 16767 Wh Charged: 3302
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6211 current: 323 duty cycle: 823
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 342 Ah Charged: 67
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1449 ADC2: 634 ADC3: 1449 PPM: 0
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ Wh Used: 16954 Wh Charged: 3607
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ RPM: 6941 current: 183 duty cycle: 949
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 349 Ah Charged: 67
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1479 ADC2: 634 ADC3: 1479 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 17286 Wh Charged: 3607
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ RPM: 6411 current: 369 duty cycle: 779
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+ Ah Used: 350 Ah Charged: 73
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1524 ADC2: 633 ADC3: 1524 PPM: 0
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+ Wh Used: 17335 Wh Charged: 3924
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6659 current: 294 duty cycle: 911
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 358 Ah Charged: 73
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1558 ADC2: 633 ADC3: 1558 PPM: 0
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ Wh Used: 17707 Wh Charged: 3924
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 6989 current: -387 duty cycle: 936
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ Ah Used: 360 Ah Charged: 74
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ ADC1: 1559 ADC2: 632 ADC3: 1559 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 17807 Wh Charged: 3992
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 7004 current: 129 duty cycle: 943
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 365 Ah Charged: 76
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ ADC1: 1559 ADC2: 632 ADC3: 1559 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 18095 Wh Charged: 4094
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ RPM: 6406 current: 369 duty cycle: 799
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Ah Used: 367 Ah Charged: 81
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1559 ADC2: 633 ADC3: 1559 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 18183 Wh Charged: 4380
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6881 current: 225 duty cycle: 945
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Ah Used: 374 Ah Charged: 81
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1558 ADC2: 632 ADC3: 1558 PPM: 0
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ Wh Used: 18539 Wh Charged: 4380
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ RPM: 6496 current: 363 duty cycle: 794
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 376 Ah Charged: 87
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1557 ADC2: 632 ADC3: 1557 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 18610 Wh Charged: 4671
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ RPM: 6777 current: 285 duty cycle: 929
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ Ah Used: 383 Ah Charged: 87
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1558 ADC2: 634 ADC3: 1558 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 18978 Wh Charged: 4671
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6782 current: -674 duty cycle: 782
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ Ah Used: 385 Ah Charged: 90
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ ADC1: 1559 ADC2: 634 ADC3: 1559 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 19047 Wh Charged: 4854
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ RPM: 6613 current: 317 duty cycle: 904
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 392 Ah Charged: 92
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1558 ADC2: 633 ADC3: 1558 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 19392 Wh Charged: 4965
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+ RPM: 7005 current: -427 duty cycle: 949
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 395 Ah Charged: 94
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+ ADC1: 1558 ADC2: 633 ADC3: 1558 PPM: 0
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ Wh Used: 19533 Wh Charged: 5046
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6517 current: 309 duty cycle: 906
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 401 Ah Charged: 98
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1557 ADC2: 632 ADC3: 1557 PPM: 0
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ Wh Used: 19858 Wh Charged: 5268
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 7032 current: -63 duty cycle: 938
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Ah Used: 405 Ah Charged: 98
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ ADC1: 1557 ADC2: 633 ADC3: 1557 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 20020 Wh Charged: 5298
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6591 current: 301 duty cycle: 900
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 409 Ah Charged: 102
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ ADC1: 1557 ADC2: 633 ADC3: 1557 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 20230 Wh Charged: 5500
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ RPM: 7055 current: -78 duty cycle: 923
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ Ah Used: 412 Ah Charged: 103
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1556 ADC2: 632 ADC3: 1556 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 20400 Wh Charged: 5529
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6432 current: 304 duty cycle: 860
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ Ah Used: 418 Ah Charged: 107
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ ADC1: 1554 ADC2: 633 ADC3: 1554 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 20663 Wh Charged: 5791
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 7048 current: -35 duty cycle: 949
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 422 Ah Charged: 108
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ ADC1: 1553 ADC2: 632 ADC3: 1553 PPM: 0
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ Wh Used: 20880 Wh Charged: 5805
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 6410 current: 336 duty cycle: 833
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+ Ah Used: 424 Ah Charged: 112
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1477 ADC2: 633 ADC3: 1477 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 20996 Wh Charged: 6056
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6984 current: 39 duty cycle: 940
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+ Ah Used: 431 Ah Charged: 112
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1476 ADC2: 633 ADC3: 1476 PPM: 0
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+ Wh Used: 21295 Wh Charged: 6057
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+ RPM: 6278 current: 377 duty cycle: 767
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 431 Ah Charged: 119
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1447 ADC2: 634 ADC3: 1447 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 21340 Wh Charged: 6389
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ RPM: 6595 current: 301 duty cycle: 904
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 439 Ah Charged: 119
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ ADC1: 1414 ADC2: 634 ADC3: 1414 PPM: 0
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ Wh Used: 21706 Wh Charged: 6389
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6851 current: -1802 duty cycle: 32
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 441 Ah Charged: 120
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1365 ADC2: 635 ADC3: 1365 PPM: 0
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Wh Used: 21831 Wh Charged: 6472
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 6419 current: 297 duty cycle: 887
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Ah Used: 448 Ah Charged: 124
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ ADC1: 1298 ADC2: 634 ADC3: 1298 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 22136 Wh Charged: 6700
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6979 current: -161 duty cycle: 939
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 452 Ah Charged: 125
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ ADC1: 1225 ADC2: 633 ADC3: 1225 PPM: 0
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ Wh Used: 22326 Wh Charged: 6728
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6018 current: 144 duty cycle: 824
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 454 Ah Charged: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1158 ADC2: 634 ADC3: 1158 PPM: 0
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ Wh Used: 22430 Wh Charged: 7001
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ RPM: 6200 current: 0 duty cycle: 857
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 455 Ah Charged: 130
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ ADC1: 1015 ADC2: 633 ADC3: 1015 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 22520 Wh Charged: 7001
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6132 current: 0 duty cycle: 830
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 455 Ah Charged: 130
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ ADC1: 929 ADC2: 633 ADC3: 929 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 22520 Wh Charged: 7001
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ RPM: 6018 current: 0 duty cycle: 817
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Ah Used: 455 Ah Charged: 130
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 928 ADC2: 633 ADC3: 928 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 22520 Wh Charged: 7001
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 5905 current: 0 duty cycle: 803
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ Ah Used: 455 Ah Charged: 130
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 929 ADC2: 633 ADC3: 929 PPM: 0
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ Wh Used: 22520 Wh Charged: 7001
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 41
+ RPM: 5792 current: 0 duty cycle: 787
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 455 Ah Charged: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 929 ADC2: 633 ADC3: 929 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 22520 Wh Charged: 7001
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 42
+ RPM: 5679 current: 0 duty cycle: 768
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 455 Ah Charged: 130
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 43
+ ADC1: 928 ADC2: 632 ADC3: 928 PPM: 0
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 44
+ Wh Used: 22520 Wh Charged: 7001
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 5566 current: 0 duty cycle: 749
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 455 Ah Charged: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 928 ADC2: 633 ADC3: 928 PPM: 0
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ Wh Used: 22520 Wh Charged: 7001
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ RPM: 5457 current: 0 duty cycle: 734
+Pack Current: 1 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 131
+ Ah Used: 455 Ah Charged: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 927 ADC2: 632 ADC3: 927 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 22520 Wh Charged: 7001
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ RPM: 5349 current: 0 duty cycle: 722
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ Ah Used: 455 Ah Charged: 130
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 927 ADC2: 633 ADC3: 927 PPM: 0
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Wh Used: 22520 Wh Charged: 7001
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 5241 current: 0 duty cycle: 709
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 455 Ah Charged: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 927 ADC2: 633 ADC3: 927 PPM: 0
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ Wh Used: 22520 Wh Charged: 7001
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 5134 current: 0 duty cycle: 702
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ Ah Used: 455 Ah Charged: 130
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ ADC1: 927 ADC2: 632 ADC3: 927 PPM: 0
+Pack Current: 1 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 131
+ Wh Used: 22520 Wh Charged: 7001
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 5027 current: 0 duty cycle: 678
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 455 Ah Charged: 130
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ ADC1: 927 ADC2: 632 ADC3: 927 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 22520 Wh Charged: 7001
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ RPM: 4922 current: 0 duty cycle: 668
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ Ah Used: 455 Ah Charged: 130
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 927 ADC2: 634 ADC3: 927 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 22520 Wh Charged: 7001
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 4820 current: 0 duty cycle: 653
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ Ah Used: 455 Ah Charged: 130
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 927 ADC2: 633 ADC3: 927 PPM: 0
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+ Wh Used: 22520 Wh Charged: 7001
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+ RPM: 4715 current: 0 duty cycle: 638
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 455 Ah Charged: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 929 ADC2: 633 ADC3: 929 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 22520 Wh Charged: 7001
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ RPM: 4614 current: 0 duty cycle: 636
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ Ah Used: 455 Ah Charged: 130
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 930 ADC2: 633 ADC3: 930 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 22520 Wh Charged: 7001
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 4514 current: 0 duty cycle: 606
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ Ah Used: 455 Ah Charged: 130
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ ADC1: 929 ADC2: 632 ADC3: 929 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 22520 Wh Charged: 7001
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ RPM: 4413 current: 0 duty cycle: 611
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 455 Ah Charged: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 930 ADC2: 632 ADC3: 930 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 22520 Wh Charged: 7001
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ RPM: 4313 current: 0 duty cycle: 582
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 455 Ah Charged: 130
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ ADC1: 931 ADC2: 633 ADC3: 931 PPM: 0
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ Wh Used: 22520 Wh Charged: 7001
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 4217 current: 0 duty cycle: 571
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 455 Ah Charged: 130
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 933 ADC2: 634 ADC3: 933 PPM: 0
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Wh Used: 22520 Wh Charged: 7001
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 4117 current: 0 duty cycle: 551
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Ah Used: 455 Ah Charged: 130
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ ADC1: 930 ADC2: 632 ADC3: 930 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 22520 Wh Charged: 7001
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 4023 current: 0 duty cycle: 549
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 455 Ah Charged: 130
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ ADC1: 931 ADC2: 632 ADC3: 931 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 22520 Wh Charged: 7001
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ RPM: 3925 current: 0 duty cycle: 521
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ Ah Used: 455 Ah Charged: 130
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 932 ADC2: 632 ADC3: 932 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 22520 Wh Charged: 7001
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 3834 current: 0 duty cycle: 514
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 43
+ Ah Used: 455 Ah Charged: 130
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 44
+ ADC1: 988 ADC2: 632 ADC3: 988 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 22520 Wh Charged: 7001
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 4190 current: 264 duty cycle: 629
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 458 Ah Charged: 130
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 45
+ ADC1: 1262 ADC2: 633 ADC3: 1262 PPM: 0
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+ Wh Used: 22668 Wh Charged: 7001
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 5086 current: 275 duty cycle: 722
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+ Ah Used: 463 Ah Charged: 130
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1261 ADC2: 632 ADC3: 1261 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 22909 Wh Charged: 7001
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 5970 current: 262 duty cycle: 827
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ Ah Used: 469 Ah Charged: 130
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1261 ADC2: 634 ADC3: 1261 PPM: 0
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ Wh Used: 23186 Wh Charged: 7001
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ RPM: 6801 current: 206 duty cycle: 928
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 475 Ah Charged: 130
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1261 ADC2: 632 ADC3: 1261 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 23485 Wh Charged: 7001
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ RPM: 6864 current: -24 duty cycle: 934
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 475 Ah Charged: 131
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ ADC1: 1261 ADC2: 633 ADC3: 1261 PPM: 0
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ Wh Used: 23504 Wh Charged: 7051
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6746 current: 61 duty cycle: 946
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 476 Ah Charged: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1261 ADC2: 633 ADC3: 1261 PPM: 0
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ Wh Used: 23545 Wh Charged: 7052
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 6808 current: 10 duty cycle: 924
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ Ah Used: 477 Ah Charged: 131
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ ADC1: 1260 ADC2: 634 ADC3: 1260 PPM: 0
+Pack Current: 1 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 131
+ Wh Used: 23602 Wh Charged: 7052
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6783 current: 73 duty cycle: 949
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 478 Ah Charged: 131
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ ADC1: 1261 ADC2: 633 ADC3: 1261 PPM: 0
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ Wh Used: 23652 Wh Charged: 7052
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6784 current: 41 duty cycle: 947
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 479 Ah Charged: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1260 ADC2: 633 ADC3: 1260 PPM: 0
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+ Wh Used: 23691 Wh Charged: 7052
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+ RPM: 6795 current: 20 duty cycle: 944
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 480 Ah Charged: 131
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ ADC1: 1262 ADC2: 635 ADC3: 1262 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 23749 Wh Charged: 7052
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6782 current: 38 duty cycle: 933
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 481 Ah Charged: 131
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ ADC1: 1260 ADC2: 632 ADC3: 1260 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 23786 Wh Charged: 7052
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ RPM: 6804 current: 40 duty cycle: 937
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ Ah Used: 482 Ah Charged: 131
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1259 ADC2: 632 ADC3: 1259 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 23840 Wh Charged: 7052
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6773 current: 39 duty cycle: 945
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ Ah Used: 483 Ah Charged: 131
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1258 ADC2: 633 ADC3: 1258 PPM: 0
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Wh Used: 23878 Wh Charged: 7052
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ RPM: 6804 current: 23 duty cycle: 939
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 484 Ah Charged: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1259 ADC2: 633 ADC3: 1259 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 23933 Wh Charged: 7052
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ RPM: 6788 current: 31 duty cycle: 937
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 485 Ah Charged: 131
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ ADC1: 1259 ADC2: 633 ADC3: 1259 PPM: 0
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ Wh Used: 23979 Wh Charged: 7052
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6796 current: 45 duty cycle: 934
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 486 Ah Charged: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1259 ADC2: 633 ADC3: 1259 PPM: 0
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ Wh Used: 24029 Wh Charged: 7052
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+ RPM: 6794 current: 51 duty cycle: 944
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 487 Ah Charged: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1259 ADC2: 634 ADC3: 1259 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 24079 Wh Charged: 7052
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+ RPM: 6783 current: 40 duty cycle: 936
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+ Ah Used: 488 Ah Charged: 131
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1259 ADC2: 633 ADC3: 1259 PPM: 0
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ Wh Used: 24116 Wh Charged: 7052
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6798 current: 27 duty cycle: 931
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 489 Ah Charged: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1258 ADC2: 632 ADC3: 1258 PPM: 0
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ Wh Used: 24168 Wh Charged: 7052
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 6775 current: 62 duty cycle: 942
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ Ah Used: 489 Ah Charged: 131
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ ADC1: 1258 ADC2: 633 ADC3: 1258 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 24212 Wh Charged: 7052
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6794 current: 39 duty cycle: 923
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 490 Ah Charged: 131
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ ADC1: 1258 ADC2: 632 ADC3: 1258 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 24262 Wh Charged: 7052
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ RPM: 6802 current: 45 duty cycle: 938
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Ah Used: 492 Ah Charged: 131
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1257 ADC2: 633 ADC3: 1257 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 24317 Wh Charged: 7052
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6779 current: 44 duty cycle: 949
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Ah Used: 492 Ah Charged: 131
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1256 ADC2: 633 ADC3: 1256 PPM: 0
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Wh Used: 24352 Wh Charged: 7052
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ RPM: 6793 current: 43 duty cycle: 944
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 493 Ah Charged: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1251 ADC2: 632 ADC3: 1251 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 24404 Wh Charged: 7052
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ RPM: 6784 current: 69 duty cycle: 944
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ Ah Used: 494 Ah Charged: 131
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1250 ADC2: 633 ADC3: 1250 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 24455 Wh Charged: 7052
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6799 current: 21 duty cycle: 926
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ Ah Used: 495 Ah Charged: 131
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ ADC1: 1251 ADC2: 632 ADC3: 1251 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 24498 Wh Charged: 7052
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ RPM: 6792 current: 22 duty cycle: 944
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 496 Ah Charged: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1250 ADC2: 632 ADC3: 1250 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 24544 Wh Charged: 7052
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ RPM: 6794 current: 56 duty cycle: 941
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 497 Ah Charged: 131
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 43
+ ADC1: 1251 ADC2: 633 ADC3: 1251 PPM: 0
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 44
+ Wh Used: 24601 Wh Charged: 7052
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6793 current: 38 duty cycle: 921
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 498 Ah Charged: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1250 ADC2: 633 ADC3: 1250 PPM: 0
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 45
+ Wh Used: 24639 Wh Charged: 7052
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 6797 current: 48 duty cycle: 936
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+ Ah Used: 499 Ah Charged: 131
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+ ADC1: 1252 ADC2: 635 ADC3: 1252 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 24697 Wh Charged: 7052
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6783 current: 34 duty cycle: 926
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 500 Ah Charged: 131
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ ADC1: 1249 ADC2: 633 ADC3: 1249 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 24733 Wh Charged: 7052
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ RPM: 6776 current: 41 duty cycle: 936
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ Ah Used: 501 Ah Charged: 131
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1249 ADC2: 633 ADC3: 1249 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 24782 Wh Charged: 7052
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6770 current: 49 duty cycle: 934
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ Ah Used: 502 Ah Charged: 131
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ ADC1: 1247 ADC2: 632 ADC3: 1247 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 24824 Wh Charged: 7052
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6802 current: 21 duty cycle: 917
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 503 Ah Charged: 131
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ ADC1: 1249 ADC2: 633 ADC3: 1249 PPM: 0
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ Wh Used: 24883 Wh Charged: 7052
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 6778 current: 47 duty cycle: 949
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ Ah Used: 504 Ah Charged: 131
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1251 ADC2: 635 ADC3: 1251 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 24923 Wh Charged: 7052
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6806 current: 24 duty cycle: 929
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ Ah Used: 505 Ah Charged: 131
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1248 ADC2: 633 ADC3: 1248 PPM: 0
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+ Wh Used: 24980 Wh Charged: 7052
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+ RPM: 6773 current: 62 duty cycle: 945
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 506 Ah Charged: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1248 ADC2: 636 ADC3: 1248 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 25021 Wh Charged: 7052
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ RPM: 6792 current: 22 duty cycle: 929
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 507 Ah Charged: 131
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ ADC1: 1151 ADC2: 632 ADC3: 1151 PPM: 0
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ Wh Used: 25067 Wh Charged: 7052
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6707 current: 44 duty cycle: 905
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 507 Ah Charged: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1120 ADC2: 632 ADC3: 1120 PPM: 0
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ Wh Used: 25086 Wh Charged: 7052
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 6695 current: 70 duty cycle: 933
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Ah Used: 508 Ah Charged: 131
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ ADC1: 1120 ADC2: 633 ADC3: 1120 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 25136 Wh Charged: 7052
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6737 current: 45 duty cycle: 934
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 509 Ah Charged: 131
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ ADC1: 1121 ADC2: 633 ADC3: 1121 PPM: 0
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ Wh Used: 25196 Wh Charged: 7052
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6713 current: 46 duty cycle: 928
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 510 Ah Charged: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1123 ADC2: 634 ADC3: 1123 PPM: 0
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ Wh Used: 25237 Wh Charged: 7052
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ RPM: 6710 current: 54 duty cycle: 921
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 511 Ah Charged: 131
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ ADC1: 1122 ADC2: 632 ADC3: 1122 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 25286 Wh Charged: 7052
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6701 current: 42 duty cycle: 929
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 512 Ah Charged: 131
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ ADC1: 1122 ADC2: 633 ADC3: 1122 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 25327 Wh Charged: 7052
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ RPM: 6732 current: 39 duty cycle: 933
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ Ah Used: 513 Ah Charged: 131
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1124 ADC2: 634 ADC3: 1124 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 25387 Wh Charged: 7052
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6721 current: 67 duty cycle: 931
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ Ah Used: 514 Ah Charged: 131
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1124 ADC2: 633 ADC3: 1124 PPM: 0
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ Wh Used: 25434 Wh Charged: 7052
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+ RPM: 6714 current: 61 duty cycle: 918
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 515 Ah Charged: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1124 ADC2: 633 ADC3: 1124 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 25476 Wh Charged: 7052
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+ RPM: 6720 current: 35 duty cycle: 937
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 516 Ah Charged: 131
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ ADC1: 1125 ADC2: 633 ADC3: 1125 PPM: 0
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ Wh Used: 25522 Wh Charged: 7052
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6720 current: 77 duty cycle: 913
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 517 Ah Charged: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1124 ADC2: 632 ADC3: 1124 PPM: 0
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ Wh Used: 25575 Wh Charged: 7052
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ RPM: 6715 current: 35 duty cycle: 898
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 517 Ah Charged: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1125 ADC2: 634 ADC3: 1125 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 25612 Wh Charged: 7052
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ RPM: 6723 current: 48 duty cycle: 933
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Ah Used: 519 Ah Charged: 131
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1125 ADC2: 633 ADC3: 1125 PPM: 0
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Wh Used: 25669 Wh Charged: 7052
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6727 current: 38 duty cycle: 919
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 519 Ah Charged: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1124 ADC2: 633 ADC3: 1124 PPM: 0
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ Wh Used: 25714 Wh Charged: 7052
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 6725 current: 43 duty cycle: 906
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ Ah Used: 520 Ah Charged: 131
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ ADC1: 1124 ADC2: 633 ADC3: 1124 PPM: 0
+Pack Current: 1 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 131
+ Wh Used: 25766 Wh Charged: 7052
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6706 current: 23 duty cycle: 929
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 521 Ah Charged: 131
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ ADC1: 1124 ADC2: 632 ADC3: 1124 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 25799 Wh Charged: 7052
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ RPM: 6712 current: 21 duty cycle: 927
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ Ah Used: 522 Ah Charged: 131
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1124 ADC2: 633 ADC3: 1124 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 25854 Wh Charged: 7052
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6723 current: 43 duty cycle: 919
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 67
+ Ah Used: 523 Ah Charged: 131
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1125 ADC2: 634 ADC3: 1125 PPM: 0
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ Wh Used: 25902 Wh Charged: 7052
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ RPM: 6712 current: 16 duty cycle: 919
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 524 Ah Charged: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1124 ADC2: 633 ADC3: 1124 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 25946 Wh Charged: 7052
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ RPM: 6705 current: 57 duty cycle: 906
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ Ah Used: 525 Ah Charged: 131
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1124 ADC2: 632 ADC3: 1124 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 25993 Wh Charged: 7052
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6722 current: 20 duty cycle: 929
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ Ah Used: 526 Ah Charged: 131
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ ADC1: 1123 ADC2: 632 ADC3: 1123 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 26043 Wh Charged: 7052
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ RPM: 6716 current: 34 duty cycle: 905
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 527 Ah Charged: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1124 ADC2: 634 ADC3: 1124 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 26085 Wh Charged: 7052
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ RPM: 6730 current: 52 duty cycle: 914
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 528 Ah Charged: 131
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ ADC1: 1124 ADC2: 633 ADC3: 1124 PPM: 0
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ Wh Used: 26148 Wh Charged: 7052
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6714 current: 73 duty cycle: 920
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 529 Ah Charged: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1124 ADC2: 633 ADC3: 1124 PPM: 0
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+ Wh Used: 26181 Wh Charged: 7052
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 6727 current: 28 duty cycle: 927
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 63
+ Ah Used: 530 Ah Charged: 131
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 64
+ ADC1: 1124 ADC2: 633 ADC3: 1124 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 26237 Wh Charged: 7052
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6717 current: 40 duty cycle: 913
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 531 Ah Charged: 131
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 65
+ ADC1: 1124 ADC2: 632 ADC3: 1124 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 26278 Wh Charged: 7052
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 66
+ RPM: 6735 current: 34 duty cycle: 931
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 67
+ Ah Used: 532 Ah Charged: 131
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1124 ADC2: 633 ADC3: 1124 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 26334 Wh Charged: 7052
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6713 current: 49 duty cycle: 913
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ Ah Used: 533 Ah Charged: 131
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ ADC1: 1124 ADC2: 632 ADC3: 1124 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 26376 Wh Charged: 7052
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6723 current: 27 duty cycle: 916
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 533 Ah Charged: 131
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ ADC1: 1124 ADC2: 633 ADC3: 1124 PPM: 0
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Wh Used: 26422 Wh Charged: 7052
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 6712 current: 59 duty cycle: 919
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ Ah Used: 535 Ah Charged: 131
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1121 ADC2: 632 ADC3: 1121 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 26476 Wh Charged: 7052
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6688 current: 0 duty cycle: 908
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ Ah Used: 535 Ah Charged: 131
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 878 ADC2: 633 ADC3: 878 PPM: 0
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Wh Used: 26501 Wh Charged: 7052
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ RPM: 6575 current: 0 duty cycle: 887
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 535 Ah Charged: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 817 ADC2: 633 ADC3: 817 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 26501 Wh Charged: 7052
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ RPM: 6456 current: 0 duty cycle: 868
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 535 Ah Charged: 131
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ ADC1: 819 ADC2: 633 ADC3: 819 PPM: 0
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 57
+ Wh Used: 26501 Wh Charged: 7052
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6367 current: 149 duty cycle: 874
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 536 Ah Charged: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1169 ADC2: 633 ADC3: 1169 PPM: 0
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 58
+ Wh Used: 26530 Wh Charged: 7052
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 6665 current: 129 duty cycle: 943
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 59
+ Ah Used: 539 Ah Charged: 131
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 60
+ ADC1: 1161 ADC2: 630 ADC3: 1161 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 26687 Wh Charged: 7052
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6773 current: 18 duty cycle: 922
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 540 Ah Charged: 131
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 61
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 62
+ Wh Used: 26735 Wh Charged: 7053
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6739 current: 44 duty cycle: 913
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 541 Ah Charged: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1164 ADC2: 634 ADC3: 1164 PPM: 0
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+ Wh Used: 26779 Wh Charged: 7053
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+ RPM: 6759 current: 37 duty cycle: 925
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 542 Ah Charged: 131
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ ADC1: 1163 ADC2: 632 ADC3: 1163 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 26834 Wh Charged: 7053
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6738 current: 48 duty cycle: 909
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 543 Ah Charged: 131
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 46
+ ADC1: 1164 ADC2: 634 ADC3: 1164 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 26873 Wh Charged: 7053
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 47
+ RPM: 6764 current: 32 duty cycle: 923
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ Ah Used: 544 Ah Charged: 131
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1164 ADC2: 633 ADC3: 1164 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 26927 Wh Charged: 7053
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6746 current: 62 duty cycle: 926
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ Ah Used: 544 Ah Charged: 131
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1165 ADC2: 635 ADC3: 1165 PPM: 0
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ Wh Used: 26971 Wh Charged: 7053
+Cell ID: 8 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ RPM: 6757 current: 39 duty cycle: 914
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 545 Ah Charged: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1163 ADC2: 632 ADC3: 1163 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 27020 Wh Charged: 7053
+Cell ID: 9 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ RPM: 6752 current: 42 duty cycle: 943
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Ah Used: 546 Ah Charged: 131
+Cell ID: 10 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+Cell ID: 11 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 52
+ Wh Used: 27070 Wh Charged: 7053
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6748 current: 48 duty cycle: 931
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 547 Ah Charged: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1164 ADC2: 633 ADC3: 1164 PPM: 0
+Cell ID: 12 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 53
+ Wh Used: 27115 Wh Charged: 7053
+Cell ID: 13 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 54
+ RPM: 6747 current: 36 duty cycle: 924
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Ah Used: 548 Ah Charged: 131
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ ADC1: 1163 ADC2: 632 ADC3: 1163 PPM: 0
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Wh Used: 27159 Wh Charged: 7053
+Cell ID: 14 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 55
+ RPM: 6743 current: 45 duty cycle: 926
+Cell ID: 15 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 56
+ Ah Used: 549 Ah Charged: 131
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1164 ADC2: 633 ADC3: 1164 PPM: 0
+Cell ID: 0 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 41
+ Wh Used: 27209 Wh Charged: 7053
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ RPM: 6745 current: 53 duty cycle: 914
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Ah Used: 550 Ah Charged: 131
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+Cell ID: 1 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 42
+ Wh Used: 27255 Wh Charged: 7053
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ RPM: 6767 current: 14 duty cycle: 922
+Cell ID: 2 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 48
+ Ah Used: 551 Ah Charged: 131
+Cell ID: 3 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ Wh Used: 27316 Wh Charged: 7053
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ RPM: 6736 current: 48 duty cycle: 929
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ Ah Used: 552 Ah Charged: 131
+Cell ID: 4 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ Wh Used: 27346 Wh Charged: 7053
+Cell ID: 5 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 49
+ RPM: 6752 current: 26 duty cycle: 921
+Cell ID: 6 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 50
+ Ah Used: 553 Ah Charged: 131
+Pack Current: 0 Pack Inst. Voltage: 0 Pack SOC: 2 Relay State: 32840 Checksum: 130
+ ADC1: 1163 ADC2: 632 ADC3: 1163 PPM: 0
+High Temperature: 25 High Thermistor ID: 8 Low Temperature: 23 Low Thermistor ID: 4 Checksum: 60
+ Wh Used: 27400 Wh Charged: 7053
+Pack DCL: 0 Pack CCL: 0 High Temperature: 25 Low Temperature: 23 Checksum: 233
+ RPM: 6735 current: 77 duty cycle: 934
+Cell ID: 7 Instant Voltage: 0 Internal Resistance: 1509 Open Voltage: 0 Checksum: 51
+ Ah Used: 554 Ah Charged: 131
+High Cell Voltage: 0 High Cell Voltage ID: 1 Low Cell Voltage: 0 Low Cell Voltage ID: 1 Checksum: 2
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+Cell ID: 8 Instant Voltage: 0 Inte Wh Used: 27448 Wh Charged: 7053
+ RPM: 6759 current: 37 duty cycle: 937
+ Ah Used: 555 Ah Charged: 131
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+ Wh Used: 27498 Wh Charged: 7053
+ RPM: 6731 current: 64 duty cycle: 930
+ Ah Used: 556 Ah Charged: 131
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+ Wh Used: 27541 Wh Charged: 7053
+ RPM: 6757 current: 25 duty cycle: 945
+ Ah Used: 557 Ah Charged: 131
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+ Wh Used: 27593 Wh Charged: 7053
+ RPM: 6741 current: 41 duty cycle: 916
+ Ah Used: 558 Ah Charged: 131
+ ADC1: 1163 ADC2: 634 ADC3: 1163 PPM: 0
+ Wh Used: 27639 Wh Charged: 7053
+ RPM: 6747 current: 33 duty cycle: 931
+ Ah Used: 559 Ah Charged: 131
+ ADC1: 1162 ADC2: 632 ADC3: 1162 PPM: 0
+ Wh Used: 27686 Wh Charged: 7053
+ RPM: 6743 current: 26 duty cycle: 925
+ Ah Used: 560 Ah Charged: 131
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+ Wh Used: 27732 Wh Charged: 7053
+ RPM: 6731 current: 26 duty cycle: 917
+ Ah Used: 560 Ah Charged: 131
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+ Wh Used: 27773 Wh Charged: 7053
+ RPM: 6763 current: 60 duty cycle: 929
+ Ah Used: 562 Ah Charged: 131
+ ADC1: 1164 ADC2: 633 ADC3: 1164 PPM: 0
+ Wh Used: 27839 Wh Charged: 7053
+ RPM: 6739 current: 41 duty cycle: 921
+ Ah Used: 562 Ah Charged: 131
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+ Wh Used: 27875 Wh Charged: 7053
+ RPM: 6747 current: 43 duty cycle: 936
+ Ah Used: 563 Ah Charged: 131
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+ Wh Used: 27921 Wh Charged: 7053
+ RPM: 6752 current: 35 duty cycle: 928
+ Ah Used: 564 Ah Charged: 131
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+ Wh Used: 27975 Wh Charged: 7053
+ RPM: 6760 current: 44 duty cycle: 901
+ Ah Used: 565 Ah Charged: 131
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+ Wh Used: 28025 Wh Charged: 7053
+ RPM: 6733 current: 46 duty cycle: 934
+ Ah Used: 566 Ah Charged: 131
+ ADC1: 1163 ADC2: 632 ADC3: 1163 PPM: 0
+ Wh Used: 28059 Wh Charged: 7053
+ RPM: 6753 current: 45 duty cycle: 941
+ Ah Used: 567 Ah Charged: 131
+ ADC1: 1163 ADC2: 634 ADC3: 1163 PPM: 0
+ Wh Used: 28120 Wh Charged: 7053
+ RPM: 6749 current: 35 duty cycle: 943
+ Ah Used: 568 Ah Charged: 131
+ ADC1: 1163 ADC2: 633 ADC3: 1163 PPM: 0
+ Wh Used: 28159 Wh Charged: 7053
+ RPM: 6752 current: 38 duty cycle: 937
+ Ah Used: 569 Ah Charged: 131
+ ADC1: 1163 ADC2: 632 ADC3: 1164 PPM: 0
+ Wh Used: 28212 Wh Charged: 7053
+ RPM: 6756 current: 39 duty cycle: 916
+ Ah Used: 570 Ah Charged: 131
+ ADC1: 1162 ADC2: 633 ADC3: 1162 PPM: 0
+ Wh Used: 28266 Wh Charged: 7053
+ RPM: 6752 current: 34 duty cycle: 900
+ Ah Used: 571 Ah Charged: 131
+ ADC1: 1162 ADC2: 633 ADC3: 1162 PPM: 0
+ Wh Used: 28303 Wh Charged: 7053
+ RPM: 6750 current: 41 duty cycle: 944
+ Ah Used: 572 Ah Charged: 131
+ ADC1: 1161 ADC2: 633 ADC3: 1161 PPM: 0
+ Wh Used: 28356 Wh Charged: 7053
+ RPM: 6726 current: 74 duty cycle: 934
+ Ah Used: 573 Ah Charged: 131
+ ADC1: 1133 ADC2: 632 ADC3: 1133 PPM: 0
+ Wh Used: 28394 Wh Charged: 7053
+ RPM: 6704 current: 34 duty cycle: 941
+ Ah Used: 574 Ah Charged: 131
+ ADC1: 1110 ADC2: 632 ADC3: 1110 PPM: 0
+ Wh Used: 28430 Wh Charged: 7053
+ RPM: 6705 current: 67 duty cycle: 907
+ Ah Used: 575 Ah Charged: 131
+ ADC1: 1111 ADC2: 634 ADC3: 1111 PPM: 0
+ Wh Used: 28484 Wh Charged: 7053
+ RPM: 6697 current: 59 duty cycle: 918
+ Ah Used: 576 Ah Charged: 131
+ ADC1: 1110 ADC2: 633 ADC3: 1110 PPM: 0
+ Wh Used: 28534 Wh Charged: 7053
+ RPM: 6694 current: 40 duty cycle: 923
+ Ah Used: 576 Ah Charged: 131
+ ADC1: 1110 ADC2: 633 ADC3: 1110 PPM: 0
+ Wh Used: 28572 Wh Charged: 7053
+ RPM: 6707 current: 39 duty cycle: 911
+ Ah Used: 578 Ah Charged: 131
+ ADC1: 1110 ADC2: 632 ADC3: 1110 PPM: 0
+ Wh Used: 28631 Wh Charged: 7053
+ RPM: 6699 current: 57 duty cycle: 935
+ Ah Used: 578 Ah Charged: 131
+ ADC1: 1111 ADC2: 633 ADC3: 1111 PPM: 0
+ Wh Used: 28668 Wh Charged: 7053
+ RPM: 6703 current: 52 duty cycle: 934
+ Ah Used: 579 Ah Charged: 131
+ ADC1: 1111 ADC2: 632 ADC3: 1111 PPM: 0
+ Wh Used: 28718 Wh Charged: 7053
+ RPM: 6702 current: 57 duty cycle: 928
+ Ah Used: 580 Ah Charged: 131
+ ADC1: 1114 ADC2: 636 ADC3: 1114 PPM: 0
+ Wh Used: 28768 Wh Charged: 7053
+ RPM: 6662 current: 0 duty cycle: 905
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 618 ADC2: 632 ADC3: 618 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 6547 current: 0 duty cycle: 889
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 6429 current: 0 duty cycle: 869
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 6311 current: 0 duty cycle: 862
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 6194 current: 0 duty cycle: 838
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 6076 current: 0 duty cycle: 822
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 5962 current: 0 duty cycle: 809
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 5849 current: 0 duty cycle: 796
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 5735 current: 0 duty cycle: 770
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 5625 current: 0 duty cycle: 761
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 5515 current: 0 duty cycle: 749
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 5405 current: 0 duty cycle: 730
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 5297 current: 0 duty cycle: 713
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 626 ADC2: 634 ADC3: 626 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 5189 current: 0 duty cycle: 706
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 5083 current: 0 duty cycle: 689
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 4977 current: 0 duty cycle: 671
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 4872 current: 0 duty cycle: 653
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 4768 current: 0 duty cycle: 637
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 627 ADC2: 635 ADC3: 627 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 4666 current: 0 duty cycle: 627
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 4564 current: 0 duty cycle: 611
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 4463 current: 0 duty cycle: 596
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 4365 current: 0 duty cycle: 588
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 4266 current: 0 duty cycle: 571
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 4168 current: 0 duty cycle: 560
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 4072 current: 0 duty cycle: 565
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 3975 current: 0 duty cycle: 537
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 3880 current: 0 duty cycle: 521
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 3789 current: 0 duty cycle: 505
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 3697 current: 0 duty cycle: 489
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 3605 current: 0 duty cycle: 483
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 3510 current: 0 duty cycle: 463
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 3421 current: 0 duty cycle: 466
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 3331 current: 0 duty cycle: 443
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 3244 current: 0 duty cycle: 432
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 3157 current: 0 duty cycle: 427
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 3071 current: 0 duty cycle: 415
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 2984 current: 0 duty cycle: 402
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 628 ADC2: 636 ADC3: 628 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 2899 current: 0 duty cycle: 386
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 2812 current: 0 duty cycle: 378
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 2728 current: 0 duty cycle: 362
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 2646 current: 0 duty cycle: 352
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 2566 current: 0 duty cycle: 348
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 2483 current: 0 duty cycle: 328
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 65822 Voltage In: 506 Reserved: 0
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 2402 current: 0 duty cycle: 314
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 2324 current: 0 duty cycle: 311
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 2245 current: 0 duty cycle: 295
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 2167 current: 0 duty cycle: 284
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 2087 current: 0 duty cycle: 272
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 2016 current: 0 duty cycle: 274
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1940 current: 0 duty cycle: 251
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1863 current: 0 duty cycle: 247
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1789 current: 0 duty cycle: 229
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1719 current: 0 duty cycle: 230
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1640 current: 0 duty cycle: 213
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1569 current: 0 duty cycle: 202
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1500 current: 0 duty cycle: 191
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1425 current: 0 duty cycle: 186
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1360 current: 0 duty cycle: 182
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1287 current: 0 duty cycle: 167
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1216 current: 0 duty cycle: 152
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1148 current: 0 duty cycle: 144
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1089 current: 0 duty cycle: 146
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1015 current: 0 duty cycle: 128
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 960 current: 0 duty cycle: 127
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 894 current: 0 duty cycle: 119
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 817 current: 0 duty cycle: 100
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 762 current: 0 duty cycle: 98
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 693 current: 0 duty cycle: 86
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 639 current: 0 duty cycle: 76
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 570 current: 0 duty cycle: 65
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 494 current: 0 duty cycle: 58
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 446 current: 0 duty cycle: 51
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 376 current: 0 duty cycle: 46
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 307 current: 0 duty cycle: 32
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 249 current: 0 duty cycle: 27
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 221 current: 0 duty cycle: 24
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 163 current: 0 duty cycle: 12
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 110 current: 0 duty cycle: 9
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 7 current: 0 duty cycle: 5
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: -26 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: -26 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 17 current: 0 duty cycle: 4
+ Ah Used: 581 Ah Charged: 131
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1 current: 0 duty cycle: 3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 1 current: 0 duty cycle: 3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 626 ADC2: 635 ADC3: 626 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 623 ADC2: 632 ADC3: 623 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 625 ADC2: 633 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 633 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 625 ADC2: 632 ADC3: 625 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: -2
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 624 ADC2: 632 ADC3: 624 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
+ RPM: 0 current: 0 duty cycle: 3
+ Ah Used: 581 Ah Charged: 131
+ Tachometer: 66666 Voltage In: 507 Reserved: 0
+ ADC1: 623 ADC2: 631 ADC3: 623 PPM: 0
+ Wh Used: 28787 Wh Charged: 7053
