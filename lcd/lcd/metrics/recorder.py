@@ -5,10 +5,12 @@ import atexit
 from datetime import datetime
 from typing import Dict, List
 import os
+from ..models import Metric, VehicleMetrics
 
 
 class MetricsRecorder:
     def __init__(self, output_dir: str = "data/recordings"):
+        self.vehicle_metrics = VehicleMetrics()
         self.metrics_data: Dict[str, List] = {
             "timestamp": [],
             "RPM": [],
@@ -36,27 +38,43 @@ class MetricsRecorder:
 
     def record_metric(self, key: str, value: str) -> None:
         """Record a metric with current timestamp"""
-        normalized_key = self._normalize_key(key)
+        try:
+            metric = Metric(value=value)
+            normalized_key = self._normalize_key(key)
 
-        # Debug prints
-        print(f"Processing metric: {key} -> {normalized_key} = {value}")
+            # If this is a metric we care about
+            if normalized_key in self.metrics_data:
+                # Start a new row if this is RPM (our sentinel metric) or first metric ever
+                if normalized_key == "RPM" or len(self.metrics_data["timestamp"]) == 0:
+                    timestamp = metric.timestamp.isoformat()
+                    for metric_key in self.metrics_data.keys():
+                        if metric_key == "timestamp":
+                            self.metrics_data[metric_key].append(timestamp)
+                        else:
+                            self.metrics_data[metric_key].append(None)
 
-        # If this is a metric we care about
-        if normalized_key in self.metrics_data:
-            # Start a new row if this is RPM (our sentinel metric) or first metric ever
-            if normalized_key == "RPM" or len(self.metrics_data["timestamp"]) == 0:
-                # Create new row with timestamp
-                timestamp = datetime.now().isoformat()
-                print(f"Creating new row at {timestamp}")  # Debug print
-                for metric_key in self.metrics_data.keys():
-                    if metric_key == "timestamp":
-                        self.metrics_data[metric_key].append(timestamp)
-                    else:
-                        self.metrics_data[metric_key].append(None)
+                # Update the specific metric in the current row
+                self.metrics_data[normalized_key][-1] = metric.value
 
-            # Update the specific metric in the current row
-            self.metrics_data[normalized_key][-1] = value
-            print(f"Updated {normalized_key} to {value}")  # Debug print
+                # Update vehicle metrics model
+                self._update_vehicle_metrics(normalized_key, metric.value)
+
+        except ValueError as e:
+            print(f"Error recording metric: {e}")
+
+    def _update_vehicle_metrics(self, key: str, value: float) -> None:
+        """Update the vehicle metrics model with the new value"""
+        if key in [
+            "RPM",
+            "current",
+            "duty_cycle",
+            "wh_used",
+            "wh_charged",
+            "voltage_in",
+        ]:
+            setattr(self.vehicle_metrics.motor, key.lower(), value)
+        else:
+            setattr(self.vehicle_metrics.battery, key.lower(), value)
 
     def _normalize_key(self, key: str) -> str:
         """Convert metric keys to column names"""

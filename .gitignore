@@ -106,6 +106,8 @@ instance/
 # Scrapy stuff:
 .scrapy
 
+# Vehicle Telemetry
+telemetry-data/recordings
 # Sphinx documentation
 docs/_build/
 

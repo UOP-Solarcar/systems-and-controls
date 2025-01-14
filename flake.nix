@@ -27,6 +27,7 @@
           propagatedBuildInputs = with python.pkgs; [
             pyqt6
             pyarrow
+            pydantic
             (pkgs.callPackage ./lcd-metrics-rs {
               inherit python pkgs;
             })
