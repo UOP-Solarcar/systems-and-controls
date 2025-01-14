@@ -11,6 +11,7 @@ from PyQt6.QtGui import QFont, QPalette, QColor
 import sys
 from ..metrics import calculate_speed, kwh_per_100_km
 from ..metrics.recorder import MetricsRecorder
+from ..models import VehicleMetrics
 
 FONT = QFont(None, 27)
 
@@ -111,6 +112,8 @@ class MainWindow(QMainWindow):
         self.eff.setText("0 kWh / 100 mi")
         self.layout.addWidget(self.eff, 7, 2, 2, 2, Qt.AlignmentFlag.AlignLeft)
 
+        self.vehicle_metrics = VehicleMetrics()
+
     def set_speed(self, mph: float | int) -> None:
         self.mphlcd.display(str(int(mph)))
         self.kmhlcd.display(str(int(mph * 1.609344)))
@@ -179,3 +182,19 @@ class MainWindow(QMainWindow):
 
             except ValueError as e:
                 print(f"ValueError parsing metric line: {e}", file=sys.stderr)
+
+    def update_metrics(self, metrics: VehicleMetrics) -> None:
+        """Update display with new metrics"""
+        self.vehicle_metrics = metrics
+
+        if self.vehicle_metrics.motor.rpm is not None:
+            speed = calculate_speed(self.vehicle_metrics.motor.rpm)
+            self.set_speed(speed)
+
+        if self.vehicle_metrics.battery.adaptive_total_capacity is not None:
+            self.set_bat(self.vehicle_metrics.battery.adaptive_total_capacity)
+
+        if self.vehicle_metrics.battery.average_temperature is not None:
+            self.set_bat_temp(self.vehicle_metrics.battery.average_temperature)
+
+        # ... rest of update logic ...

@@ -6,6 +6,8 @@ setup(
     packages=find_packages(),
     install_requires=[
         "PyQt6",
+        "pyarrow",
+        "pydantic",
     ],
     entry_points={
         "console_scripts": [
