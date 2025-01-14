@@ -4,7 +4,7 @@ import atexit
 
 
 class MetricsRecorder:
-    def __init__(self, output_dir: str = "data/recordings"):
+    def __init__(self, output_dir: str = "telemetry-data/recordings"):
         self.recorder = RustMetricsRecorder(output_dir)
 
         # Register save handlers
