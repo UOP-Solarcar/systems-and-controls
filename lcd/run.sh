@@ -1,2 +1,3 @@
 #!/bin/bash
-(cd .. && nix run) 
+(cd .. && nix run)
+
