@@ -44,6 +44,7 @@
             python3
             python.pkgs.pyqt6
             python.pkgs.pyarrow
+            python.pkgs.pydantic
             qt6.qtbase
             qt6.qtsvg
             black
