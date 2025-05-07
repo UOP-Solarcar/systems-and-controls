@@ -22,7 +22,10 @@ def read_metrics_from_stdin(output_queue: queue.Queue) -> None:
                                 output_queue.put(f"{key}: {value}")
                         else:
                             # Log warning for non-dictionary metric (likely a tuple)
-                            print(f"Warning: Received non-dictionary metric: {metric_dict}", file=sys.stderr)
+                            print(
+                                f"Warning: Received non-dictionary metric: {metric_dict}",
+                                file=sys.stderr,
+                            )
         except Exception as e:
             print(f"Error in reader thread: {e}", file=sys.stderr)
         time.sleep(0.1)

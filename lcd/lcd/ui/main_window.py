@@ -158,14 +158,16 @@ class MainWindow(QMainWindow):
                 try:
                     # First convert value to float to handle decimal values
                     float_value = float(value)
-                    
+
                     if key == "RPM":
                         speed = calculate_speed(float_value) * 0.62
                         self.set_speed(speed)
                     elif key == "Wh Used":
                         wh_used = int(float_value)  # Convert to int after float parsing
                     elif key == "Wh Charged":
-                        wh_charged = int(float_value)  # Convert to int after float parsing
+                        wh_charged = int(
+                            float_value
+                        )  # Convert to int after float parsing
                     elif key == "Average Temperature":  # battery
                         self.set_bat_temp(float_value)
                     elif key == "Temp Motor":
