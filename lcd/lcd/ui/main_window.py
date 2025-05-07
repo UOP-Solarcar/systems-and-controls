@@ -156,23 +156,26 @@ class MainWindow(QMainWindow):
 
                 # Simple metric handling
                 try:
+                    # First convert value to float to handle decimal values
+                    float_value = float(value)
+                    
                     if key == "RPM":
-                        speed = calculate_speed(int(value)) * 0.62
+                        speed = calculate_speed(float_value) * 0.62
                         self.set_speed(speed)
                     elif key == "Wh Used":
-                        wh_used = int(value)
+                        wh_used = int(float_value)  # Convert to int after float parsing
                     elif key == "Wh Charged":
-                        wh_charged = int(value)
+                        wh_charged = int(float_value)  # Convert to int after float parsing
                     elif key == "Average Temperature":  # battery
-                        self.set_bat_temp(float(value))
+                        self.set_bat_temp(float_value)
                     elif key == "Temp Motor":
-                        self.set_motor_temp(int(value))
+                        self.set_motor_temp(float_value)
                     elif key == "Adaptive Total Capacity":
-                        self.set_bat(int(float(value) / 10))
+                        self.set_bat(int(float_value / 10))
 
                     if wh_used and wh_charged and speed:
                         consumption = kwh_per_100_km(wh_used, wh_charged, speed)
-                        self.set_efficiency(int(float(consumption)))
+                        self.set_efficiency(int(consumption))
 
                 except ValueError as e:
                     print(
