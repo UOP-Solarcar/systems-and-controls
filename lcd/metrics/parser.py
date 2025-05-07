@@ -34,26 +34,45 @@ def split_metrics(line: str) -> List[Dict[str, str]]:
 
 def parse_line(line: str) -> List[Dict[str, str]]:
     """Parse a single line of input and return list of key-value pairs"""
-    metrics = split_metrics(line)
+    try:
+        metrics = split_metrics(line)
 
-    # Calculate average temperature if we have both high and low
-    high_temp = None
-    low_temp = None
+        # Verify all metrics are dictionaries and skip those that aren't
+        valid_metrics = []
+        for metric in metrics:
+            if isinstance(metric, dict):
+                valid_metrics.append(metric)
+            else:
+                print(
+                    f"Warning: Invalid metric format, expected dict but got {type(metric)}: {metric}",
+                    file=sys.stderr,
+                )
 
-    for metric in metrics:
-        if "High Temperature" in metric:
-            try:
-                high_temp = int(metric["High Temperature"])
-            except ValueError:
-                pass
-        elif "Low Temperature" in metric:
-            try:
-                low_temp = int(metric["Low Temperature"])
-            except ValueError:
-                pass
+        # Replace metrics with valid_metrics
+        metrics = valid_metrics
 
-    if high_temp is not None and low_temp is not None:
-        avg_temp = (high_temp + low_temp) / 2
-        metrics.append({"Average Temperature": str(avg_temp)})
+        # Calculate average temperature if we have both high and low
+        high_temp = None
+        low_temp = None
 
-    return metrics
+        for metric in metrics:
+            if "High Temperature" in metric:
+                try:
+                    high_temp = int(metric["High Temperature"])
+                except (ValueError, KeyError):
+                    pass
+            elif "Low Temperature" in metric:
+                try:
+                    low_temp = int(metric["Low Temperature"])
+                except (ValueError, KeyError):
+                    pass
+
+        if high_temp is not None and low_temp is not None:
+            avg_temp = (high_temp + low_temp) / 2
+            metrics.append({"Average Temperature": str(avg_temp)})
+
+        return metrics
+    except Exception as e:
+        print(f"Error in parse_line: {e}", file=sys.stderr)
+        # Return an empty list of metrics if there's an error
+        return []
