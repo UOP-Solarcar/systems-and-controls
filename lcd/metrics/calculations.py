@@ -16,8 +16,16 @@ def read_metrics_from_stdin(output_queue: queue.Queue) -> None:
                     metrics = parse_line(line)
                     # Put each parsed metric in the queue
                     for metric_dict in metrics:
-                        for key, value in metric_dict.items():
-                            output_queue.put(f"{key}: {value}")
+                        # Check if metric_dict is a dictionary before accessing items()
+                        if isinstance(metric_dict, dict):
+                            for key, value in metric_dict.items():
+                                output_queue.put(f"{key}: {value}")
+                        else:
+                            # Log warning for non-dictionary metric (likely a tuple)
+                            print(
+                                f"Warning: Received non-dictionary metric: {metric_dict}",
+                                file=sys.stderr,
+                            )
         except Exception as e:
             print(f"Error in reader thread: {e}", file=sys.stderr)
         time.sleep(0.1)
