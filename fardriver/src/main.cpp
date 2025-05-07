@@ -75,7 +75,7 @@ void loop() {
     // Safely snapshot packetData
     noInterrupts();
       byte dataCopy[FRAME_BYTES];
-      memcpy(dataCopy, packetData, FRAME_BYTES);
+      memcpy(dataCopy, (const void*)packetData, FRAME_BYTES);
       frameReady = false;
     interrupts();
 
