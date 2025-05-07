@@ -39,14 +39,21 @@ class MetricsRecorder:
     def record_metric(self, key: str, value: str) -> None:
         """Record a metric with current timestamp"""
         try:
-            metric = Metric(value=value)
+            # Convert value to float directly here to handle values with decimal points
+            # Strip any trailing zeros after decimal to avoid int conversion issues
+            float_value = float(value)
+            print(f"Received metric: {key}: {float_value}")
+            
             normalized_key = self._normalize_key(key)
+            if normalized_key is None:
+                print(f"Skipping unknown metric: {key}")
+                return
 
             # If this is a metric we care about
             if normalized_key in self.metrics_data:
                 # Start a new row if this is RPM (our sentinel metric) or first metric ever
                 if normalized_key == "RPM" or len(self.metrics_data["timestamp"]) == 0:
-                    timestamp = metric.timestamp.isoformat()
+                    timestamp = datetime.now().isoformat()
                     for metric_key in self.metrics_data.keys():
                         if metric_key == "timestamp":
                             self.metrics_data[metric_key].append(timestamp)
@@ -54,13 +61,13 @@ class MetricsRecorder:
                             self.metrics_data[metric_key].append(None)
 
                 # Update the specific metric in the current row
-                self.metrics_data[normalized_key][-1] = metric.value
+                self.metrics_data[normalized_key][-1] = float_value
 
                 # Update vehicle metrics model
-                self._update_vehicle_metrics(normalized_key, metric.value)
+                self._update_vehicle_metrics(normalized_key, float_value)
 
         except ValueError as e:
-            print(f"Error recording metric: {e}")
+            print(f"ValueError processing metric {key}={value}: {e}")
 
     def _update_vehicle_metrics(self, key: str, value: float) -> None:
         """Update the vehicle metrics model with the new value"""
@@ -86,6 +93,7 @@ class MetricsRecorder:
             "rpm": "RPM",
             "current": "current",
             "duty cycle": "duty_cycle",
+            "duty_cycle": "duty_cycle",  # Add this mapping for already normalized keys
             "wh used": "wh_used",
             "wh charged": "wh_charged",
             "voltage in": "voltage_in",
@@ -101,10 +109,13 @@ class MetricsRecorder:
         normalized = key_mapping.get(key)
         if normalized:
             print(f"Normalized key '{key}' to '{normalized}'")  # Debug print
+            return normalized
         else:
             print(f"Failed to normalize key '{key}'")  # Debug print
-
-        return normalized if normalized else key
+            # For keys that couldn't be normalized, check if they're already in standard format
+            if key in self.metrics_data:
+                return key
+            return None
 
     def _create_arrow_table(self) -> pa.Table:
         """Create an Arrow table from recorded metrics"""
