@@ -36,18 +36,21 @@ def parse_line(line: str) -> List[Dict[str, str]]:
     """Parse a single line of input and return list of key-value pairs"""
     try:
         metrics = split_metrics(line)
-        
+
         # Verify all metrics are dictionaries and skip those that aren't
         valid_metrics = []
         for metric in metrics:
             if isinstance(metric, dict):
                 valid_metrics.append(metric)
             else:
-                print(f"Warning: Invalid metric format, expected dict but got {type(metric)}: {metric}", file=sys.stderr)
-        
+                print(
+                    f"Warning: Invalid metric format, expected dict but got {type(metric)}: {metric}",
+                    file=sys.stderr,
+                )
+
         # Replace metrics with valid_metrics
         metrics = valid_metrics
-        
+
         # Calculate average temperature if we have both high and low
         high_temp = None
         low_temp = None

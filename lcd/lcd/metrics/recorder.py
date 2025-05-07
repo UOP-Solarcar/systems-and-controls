@@ -43,7 +43,7 @@ class MetricsRecorder:
             # Strip any trailing zeros after decimal to avoid int conversion issues
             float_value = float(value)
             print(f"Received metric: {key}: {float_value}")
-            
+
             normalized_key = self._normalize_key(key)
             if normalized_key is None:
                 print(f"Skipping unknown metric: {key}")

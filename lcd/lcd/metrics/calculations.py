@@ -27,7 +27,10 @@ def read_metrics_from_stdin(output_queue: queue.Queue) -> None:
                             for key, value in metric_entry.items():
                                 output_queue.put(f"{key}: {value}")
                         else:
-                            print(f"Warning: Unexpected metric format: {metric_entry}", file=sys.stderr)
+                            print(
+                                f"Warning: Unexpected metric format: {metric_entry}",
+                                file=sys.stderr,
+                            )
         except Exception as e:
             print(f"Error in reader thread: {e}", file=sys.stderr)
         time.sleep(0.1)
