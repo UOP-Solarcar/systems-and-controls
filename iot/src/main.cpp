@@ -21,9 +21,23 @@ void setup() {
   mcp2515.setBitrate(CAN_500KBPS,
                      MCP_8MHZ); // Sets CAN at speed 500KBPS and Clock 8MHz
   mcp2515.setNormalMode();      // Sets CAN at normal mode
+  Serial.begin(MONITOR_SPEED);
+  while (!Serial)
+    ;
+  Serial.println("Booted");
+  SPI.begin();
+
+  mcp2515.reset();
+  mcp2515.setBitrate(CAN_500KBPS,
+                     MCP_8MHZ); // Sets CAN at speed 500KBPS and Clock 8MHz
+  mcp2515.setNormalMode();      // Sets CAN at normal mode
 }
 
 void loop() {
+  can_frame frame{};
+  if (mcp2515.readMessage(&frame) == MCP2515::ERROR_OK) {
+    parse_frame(frame);
+  }
   can_frame frame{};
   if (mcp2515.readMessage(&frame) == MCP2515::ERROR_OK) {
     parse_frame(frame);
