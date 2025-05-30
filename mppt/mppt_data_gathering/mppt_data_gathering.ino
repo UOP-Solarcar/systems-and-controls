@@ -13,63 +13,57 @@ Two MPPTs at Modbus addresses 1 and 2, reading six registers from 0x3100
 #include <SoftwareSerial.h>
 #include <ModbusMaster.h>
 
-// RS-485 DE/RE control pin
-#define MAX485_DE_RE 2
+// ----- Pin definitions -----
+#define MAX485_DE_RE 2       // Driver enable / receiver enable
+#define RS485_RX_PIN 10      // SoftwareSerial RX (to module DI)
+#define RS485_TX_PIN 11      // SoftwareSerial TX (to module RO)
 
-// SoftwareSerial pins for RS-485 (RX, TX)
-#define RS485_RX_PIN 10
-#define RS485_TX_PIN 11
-
-// Create a software serial port for RS-485 comms
+// ----- Create SoftwareSerial for RS-485 -----
 SoftwareSerial rs485Serial(RS485_RX_PIN, RS485_TX_PIN);
 
-// Modbus nodes for each controller
+// ----- Modbus nodes for each MPPT -----
 ModbusMaster mppt1;
-ModbusMaster mppt2;
 
-// Pre-transmission callback: enable RS-485 driver
+// Called before Modbus transmission: enable RS-485 driver
 void preTransmission() {
   digitalWrite(MAX485_DE_RE, HIGH);
 }
-
-// Post-transmission callback: disable RS-485 driver
+// Called after Modbus transmission: disable RS-485 driver
 void postTransmission() {
   digitalWrite(MAX485_DE_RE, LOW);
 }
 
 void setup() {
-  // DE/RE control
+  // DE/RE control pin
   pinMode(MAX485_DE_RE, OUTPUT);
   digitalWrite(MAX485_DE_RE, LOW);
 
-  // Debug serial
+  // USB serial for debugging
   Serial.begin(115200);
   while (!Serial);
 
-  // RS-485 bus
+  // Start RS-485 on software serial
   rs485Serial.begin(9600);
 
-  // Initialize Modbus instances
-  mppt1.begin(1, rs485Serial);  // Address = 1
-  mppt2.begin(2, rs485Serial);  // Address = 2
+  // Initialize Modbus instances:
+  // .begin(address, serialPort)
+  mppt1.begin(1, rs485Serial);  // MPPT #1 at Modbus address 1
 
-  // Attach callbacks to both nodes
+  // Attach the DE/RE toggling callbacks
   mppt1.preTransmission(preTransmission);
   mppt1.postTransmission(postTransmission);
-  mppt2.preTransmission(preTransmission);
-  mppt2.postTransmission(postTransmission);
 
-  Serial.println("Arduino Nano RS-485 MPPT reader ready");
+  Serial.println("Arduino Uno RS-485 MPPT reader ready");
 }
 
 void loop() {
   uint8_t status;
   uint16_t regs[6];
 
-  // Read 6 input registers starting at 0x3100 from MPPT #1
+  // --- Read from MPPT #1 ---
   status = mppt1.readInputRegisters(0x3100, 6);
   if (status == mppt1.ku8MBSuccess) {
-    Serial.print("MPPT #1 data: ");
+    Serial.print("MPPT #1: ");
     for (uint8_t i = 0; i < 6; i++) {
       regs[i] = mppt1.getResponseBuffer(i);
       Serial.print(regs[i]);
@@ -77,24 +71,8 @@ void loop() {
     }
     Serial.println();
   } else {
-    Serial.print("MPPT #1 error: 0x");
+    Serial.print("Error MPPT #1: 0x");
     Serial.println(status, HEX);
   }
-
-  // Read same registers from MPPT #2
-  status = mppt2.readInputRegisters(0x3100, 6);
-  if (status == mppt2.ku8MBSuccess) {
-    Serial.print("MPPT #2 data: ");
-    for (uint8_t i = 0; i < 6; i++) {
-      regs[i] = mppt2.getResponseBuffer(i);
-      Serial.print(regs[i]);
-      Serial.print(" ");
-    }
-    Serial.println();
-  } else {
-    Serial.print("MPPT #2 error: 0x");
-    Serial.println(status, HEX);
-  }
-
   delay(1000);
 }
