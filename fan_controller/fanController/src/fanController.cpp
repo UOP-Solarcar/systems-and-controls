@@ -9,7 +9,7 @@ int fanSpeed;
 int temperature;
 unsigned long now;
 unsigned long prevReadTime = 0;
-int fanCurve[10] = {30, 35, 40, 45, 50, 55, 60, 65, 70, 75};
+int fanCurve[10] = {33, 35, 37, 39, 41, 43, 45, 47, 49, 51};
 
 const byte OC1A_PIN = 9;
 const byte OC1B_PIN = 10;
