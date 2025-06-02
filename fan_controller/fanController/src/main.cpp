@@ -3,6 +3,7 @@ This is a outline for the fan speed controller.
 
 Need to add how the controller will get the temperature of the battery.
 */
+
 #include <Arduino.h>
 
 const unsigned long INTERVAL = 5000;
@@ -17,6 +18,15 @@ const byte OC1B_PIN = 10;
 
 const word PWM_FREQ_HZ = 25000; //Adjust this value to adjust the frequency
 const word TCNT1_TOP = 16000000/(2*PWM_FREQ_HZ);
+
+void setPwmDuty(byte duty) {
+  OCR1A = (word) (duty*TCNT1_TOP)/100;
+}
+
+int getTemperature() {
+  //somehow get temperature
+  return 36;
+}
 
 void setup() {
   
@@ -56,13 +66,4 @@ void loop() {
     setPwmDuty(fanSpeed); //Change this value 0-100 to adjust duty cycle
   }
     
-}
-
-void setPwmDuty(byte duty) {
-  OCR1A = (word) (duty*TCNT1_TOP)/100;
-}
-
-int getTemperature() {
-  //somehow get temperature
-  return 36;
 }
