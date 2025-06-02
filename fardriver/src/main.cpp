@@ -1,113 +1,102 @@
 #include <Arduino.h>
 
-#define SIF_PIN 2
-#define FRAME_BITS 96
-#define FRAME_BYTES (FRAME_BITS/8)
+#define SIF_PIN 2           // pin that carries the SIF signal
 
+// parsed values
+short  battery         = 0;
+short  current         = 0;
+short  currentPercent  = 0;
+short  rpm             = 0;
+long   faultCode       = 0;
+bool   regen           = false;
+bool   brake           = false;
 
-volatile byte sifData[FRAME_BYTES];
-volatile byte packetData[FRAME_BYTES];
-volatile int bitIndex = -1;
-volatile bool frameReady = false;
+// SIF-decoder state
+unsigned long lastTime      = 0;
+unsigned long lastDuration  = 0;
+byte          lastCrc       = 0;
+byte          data[12]      = {0};
+int           bitIndex      = -1;
 
-unsigned long lastTime = 0;
-unsigned long lastDuration = 0;
+void sifChange()
+{
+    int val = digitalRead(SIF_PIN);
+    unsigned long duration = micros() - lastTime;
+    lastTime              = micros();
 
+    if (val == LOW && lastDuration > 0)
+    {
+        bool  bitComplete = false;
+        float ratio       = float(lastDuration) / float(duration);
 
-// heeheehaha silly goofy fardriver parser amogus sus xd
-void sifChange() {
-  unsigned long now      = micros();
-  unsigned long duration = now - lastTime;
-  lastTime = now;
-
-  int val = digitalRead(SIF_PIN);
-  if (val == LOW && lastDuration > 0) {
-    // very long pulse marks bitIndex=0
-    if (round((float)lastDuration / duration) >= 31) {
-      bitIndex = 0;
-      memset((void*)sifData, 0, sizeof(sifData));
-    }
-    // If in the middle of a frame, decode a bit
-    else if (bitIndex >= 0 && bitIndex < FRAME_BITS) {
-      float ratio = (float)lastDuration / duration;
-      bool bitValue;
-      if      (ratio > 1.5)       bitValue = 0;
-      else if ((1.0 / ratio) > 1.5) bitValue = 1;
-      else {
-        // ambiguous pulse: skip
-        lastDuration = duration;
-        return;
-      }
-
-      // set/clear the correct bit
-      if (bitValue)  bitSet  (sifData[bitIndex/8], 7 - (bitIndex%8));
-      else           bitClear(sifData[bitIndex/8], 7 - (bitIndex%8));
-
-      bitIndex++;
-
-      // full frame received?
-      if (bitIndex == FRAME_BITS) {
-        // snapshot for loop()
-        for (int i = 0; i < FRAME_BYTES; i++) {
-          packetData[i] = sifData[i];
+        if (round(float(lastDuration) / duration) >= 31)
+        {
+            bitIndex = 0;                       // start-of-frame marker
         }
-        frameReady = true;
-        bitIndex   = -1;  // wait for next preamble
-      }
-    }
-  }
+        else if (ratio > 1.5)
+        {
+            bitClear(data[bitIndex / 8], 7 - (bitIndex % 8));   // 0-bit
+            bitComplete = true;
+        }
+        else if ((1.0f / ratio) > 1.5)
+        {
+            bitSet(data[bitIndex / 8], 7 - (bitIndex % 8));     // 1-bit
+            bitComplete = true;
+        }
+        else
+        {
+            Serial.println(String(duration) + "-" + String(lastDuration));
+        }
 
-  lastDuration = duration;
+        if (bitComplete && ++bitIndex == 96)                    // full frame
+        {
+            bitIndex = 0;
+
+            byte crc = 0;
+            for (int i = 0; i < 11; ++i) crc ^= data[i];        // CRC-8
+
+            if (crc != data[11])
+            {
+                Serial.println("CRC FAILURE: " + String(crc) + "-" +
+                               String(data[11]));
+            }
+            else if (crc != lastCrc)                            // new frame
+            {
+                lastCrc = crc;
+
+                for (int i = 0; i < 12; ++i) Serial.println(data[i], HEX);
+                Serial.println();
+
+                battery        = data[9];
+                current        = data[6];
+                currentPercent = data[10];
+                rpm            = ((data[7] << 8) | data[8]) * 1.91;
+                brake          = bitRead(data[4], 5);
+                regen          = bitRead(data[4], 3);
+
+                Serial.print("Battery %: "  + String(battery));
+                Serial.print(" Current %: " + String(currentPercent));
+                Serial.print(" Current A: " + String(current));
+                Serial.print(" RPM: "       + String(rpm));
+                if (brake) Serial.print(" BRAKE");
+                if (regen) Serial.print(" REGEN");
+                Serial.println();
+            }
+        }
+    }
+
+    lastDuration = duration;
 }
 
-void setup() {
-  Serial.begin(115200);
-  pinMode(SIF_PIN, INPUT);
-  memset((void*)sifData, 0, sizeof(sifData));
-  lastTime = micros();
-
-  // Install interrupt on both edges
-  attachInterrupt(digitalPinToInterrupt(SIF_PIN), sifChange, CHANGE);
+void setup()
+{
+    Serial.begin(115200);
+    pinMode(SIF_PIN, INPUT);
+    lastTime = micros();
+    attachInterrupt(digitalPinToInterrupt(SIF_PIN), sifChange, CHANGE);
 }
 
-void loop() {
-  if (frameReady) {
-    // Safely snapshot packetData
-    noInterrupts();
-      byte dataCopy[FRAME_BYTES];
-      memcpy(dataCopy, (const void*)packetData, FRAME_BYTES);
-      frameReady = false;
-    interrupts();
-
-    // CRC check
-    byte crc = 0;
-    for (int i = 0; i < FRAME_BYTES - 1; i++) {
-      crc ^= dataCopy[i];
-    }
-
-    if (crc != dataCopy[FRAME_BYTES - 1]) {
-      Serial.print("CRC FAILURE: ");
-      Serial.print(crc, HEX);
-      Serial.print(" != ");
-      Serial.println(dataCopy[FRAME_BYTES - 1], HEX);
-    } else {
-      // parse fields
-      byte batteryPercent   = dataCopy[9];
-      short currentAmps     = dataCopy[6];
-      byte currentPercent   = dataCopy[10];
-      int   rpmRaw          = (dataCopy[7] << 8) | dataCopy[8];
-      float rpm             = rpmRaw * 1.91;
-      bool  brakeActive     = bitRead(dataCopy[4], 5);
-      bool  regenActive     = bitRead(dataCopy[4], 3);
-
-      // print to Serial
-      Serial.print("Battery %: ");    Serial.print(batteryPercent);
-      Serial.print("   Current %: "); Serial.print(currentPercent);
-      Serial.print("   Current A: "); Serial.print(currentAmps);
-      Serial.print("   RPM: ");       Serial.print(rpm, 1);
-      if (brakeActive) Serial.print("   BRAKE");
-      if (regenActive) Serial.print("   REGEN");
-      Serial.println();
-    }
-  }
+void loop()
+{
+    // nothing to do; everything happens in the ISR
 }
