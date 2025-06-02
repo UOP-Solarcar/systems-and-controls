@@ -3,6 +3,7 @@ This is a outline for the fan speed controller.
 
 Need to add how the controller will get the temperature of the battery.
 */
+#include <Arduino.h>
 
 const unsigned long INTERVAL = 5000;
 int fanSpeed;
