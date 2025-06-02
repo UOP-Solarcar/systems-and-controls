@@ -94,13 +94,11 @@ void controlLights(){
             brakeRight.open();
         }
     }
-    else {
-        if (left || hazards){
-            brakeLeft.toggle();
-        }
-        if (right || hazards){
-            brakeRight.toggle();
-        }
+    if (left || hazards){
+        brakeLeft.toggle();
+    }
+    if (right || hazards){
+        brakeRight.toggle();
     }
 }
 
