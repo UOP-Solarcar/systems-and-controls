@@ -170,7 +170,7 @@ void loop() {
       break;
 
     case RUNNING:
-      Serial.println("Ready to Drive");
+      
 
       break;
   }
