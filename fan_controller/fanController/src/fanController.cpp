@@ -3,13 +3,14 @@ This is a outline for the fan speed controller.
 
 Need to add how the controller will get the temperature of the battery.
 */
+#include <Arduino.h>
 
 const unsigned long INTERVAL = 5000;
 int fanSpeed;
 int temperature;
 unsigned long now;
 unsigned long prevReadTime = 0;
-int fanCurve[10] = {30, 35, 40, 45, 50, 55, 60, 65, 70, 75};
+int fanCurve[10] = {33, 35, 37, 39, 41, 43, 45, 47, 49, 51};
 
 const byte OC1A_PIN = 9;
 const byte OC1B_PIN = 10;
