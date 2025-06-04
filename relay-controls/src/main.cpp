@@ -1,125 +1,197 @@
 #include <Arduino.h>
-#include <Keypad.h>
 
-const uint8_t RIGHT_PIN = 2;
-const uint8_t LEFT_PIN = 3;
-const uint8_t HEADLIGHT_PIN = 4;
+class Relay {
 
-enum SignalState { HAZARD, TURNLEFT, TURNRIGHT, DEF };
-enum HeadlightState { ON, OFF };
+public:
 
-SignalState state = DEF;
-HeadlightState Hlstate = OFF;
+    enum Polarity : uint8_t { ACTIVE_HIGH, ACTIVE_LOW };
 
-const byte ROWS = 4; // four rows
-const byte COLS = 4; // four columns
-// define the symbols on the buttons of the keypads
-char hexaKeys[ROWS][COLS] = {
-  {'1', '2', '3', 'A'},
-  {'4', '5', '6', 'B'},
-  {'7', '8', '9', 'C'},
-  {'*', '0', '#', 'D'}
+    Relay(uint8_t pin, Polarity pol = ACTIVE_HIGH)
+        : _pin(pin), _pol(pol) {}
+
+    void begin() {
+        pinMode(_pin, OUTPUT);
+        digitalWrite(_pin, _inactiveLevel());
+    }
+
+    void close()  { _write(true);  }
+    void open()   { _write(false); }
+    void toggle() { _write(!_closed); }
+
+    bool isClosed() const { return _closed; }
+    bool isOpen()   const { return !_closed; }
+    unsigned long lastChange() const { return _tLast; }
+
+private:
+
+    const uint8_t  _pin;
+    const Polarity _pol;
+
+    bool           _closed  = false;
+    unsigned long  _tLast   = 0;
+
+    uint8_t _activeLevel()   const { return _pol == ACTIVE_HIGH ? HIGH : LOW;  }
+    uint8_t _inactiveLevel() const { return _pol == ACTIVE_HIGH ? LOW  : HIGH; }
+
+    void _write(bool wantClosed) {
+        if (wantClosed == _closed) return;
+        digitalWrite(_pin, wantClosed ? _activeLevel() : _inactiveLevel());
+        _closed = wantClosed;
+        _tLast  = millis();
+    }
+
 };
 
-uint8_t rowPins[ROWS] = {5, 6, 7, 8}; // connect to the row pinouts of the keypad
-uint8_t colPins[COLS] = {9, 10, 11, 12}; // connect to the column pinouts of the keypad
+class Button {
+public:
+  enum Mode : uint8_t { PULLUP, PULLDOWN };
+  enum Behavior : uint8_t { MOMENTARY, TOGGLE };
 
-Keypad customKeypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
+  Button(uint8_t  pin,
+         Mode     mode      = PULLUP,
+         Behavior behavior  = MOMENTARY,
+         uint16_t debounce  = 20,
+         bool     initLatch = false)
+      : _pin(pin),
+        _mode(mode),
+        _behavior(behavior),
+        _debounce(debounce),
+        _latched(initLatch) {}
 
-bool breaking = false;
-unsigned long previousMillis = 0;
-const long interval = 750; // interval for flashing
+  void begin() {
+    pinMode(_pin, _mode == PULLUP ? INPUT_PULLUP : INPUT);
+    _raw         = _read();
+    _stable      = _raw;
+    _lastChange  = millis();
+  }
 
-void reset() {
-  state = DEF;
-  Hlstate = OFF;
-}
+  
+  void update() {
+    bool now = _read();
+
+    if (now != _raw) {
+      _raw        = now;
+      _lastChange = millis();
+    }
+
+    if ((millis() - _lastChange) >= _debounce && now != _stable) {
+      _stable = now;
+      _fell   =  _pressed(_stable);
+      _rose   = !_fell;
+
+      if (_behavior == TOGGLE && _fell)
+        _latched = !_latched;
+    } else {
+      _fell = _rose = false;
+    }
+  }
+
+  // ---------- queries ----------
+  bool fell()       const { return _fell; }
+  bool rose()       const { return _rose; }
+  bool isPressed()  const { return _pressed(_stable); }
+  bool isReleased() const { return !_pressed(_stable); }
+
+
+  bool latched()    const { return _latched; }
+  operator bool()   const { return _latched; }
+
+private:
+
+  inline bool _read()   const { return digitalRead(_pin); }
+  inline bool _pressed(bool level) const {
+    return _mode == PULLUP ? !level : level;
+  }
+
+  uint8_t  _pin;
+  Mode     _mode;
+  Behavior _behavior;
+  uint16_t _debounce;
+
+  bool     _raw        = false;
+  bool     _stable     = false;
+  uint32_t _lastChange = 0;
+  bool     _fell       = false;
+  bool     _rose       = false;
+  bool     _latched    = false;
+};
+
+Relay headlights(14, Relay::ACTIVE_LOW);
+Relay leftTurn(15, Relay::ACTIVE_LOW);
+Relay rightTurn(16, Relay::ACTIVE_LOW);
+Relay brakesLights(17, Relay::ACTIVE_LOW);
+
+Button hazardBtn(3, Button::PULLUP, Button::TOGGLE, 10);
+Button leftSignal(4, Button::PULLUP, Button::TOGGLE, 10);
+Button rightSignal(5, Button::PULLUP, Button::TOGGLE, 10);
+Button headlightsBtn(6, Button::PULLUP, Button::TOGGLE, 10);
+Button brakesLightsBtn(7, Button::PULLUP, Button::TOGGLE, 10);
 
 void setup() {
-  Serial.begin(9600);
-  pinMode(RIGHT_PIN, OUTPUT);
-  pinMode(LEFT_PIN, OUTPUT);
-  pinMode(HEADLIGHT_PIN, OUTPUT);
-  reset();
+  Serial.begin(115200);
+
+  hazardBtn.begin();
+  leftSignal.begin();
+  rightSignal.begin();
+  brakesLightsBtn.begin();
+  headlightsBtn.begin();
+
+  headlights.begin();
+  leftTurn.begin();
+  rightTurn.begin();
+  brakesLights.begin();
 }
 
-void on(uint8_t pin) {
-  digitalWrite(pin, LOW);
-}
-
-void on(uint8_t pin0, uint8_t pin1) {
-  digitalWrite(pin0, LOW);
-  digitalWrite(pin1, LOW);
-}
-
-void off(uint8_t pin) {
-  digitalWrite(pin, HIGH);
-}
-
-void off(uint8_t pin0, uint8_t pin1) {
-  digitalWrite(pin0, HIGH);
-  digitalWrite(pin1, HIGH);
-}
 
 void loop() {
-  char customKey = customKeypad.getKey();
-  unsigned long currentMillis = millis();
 
-  // if(customKey){
-  //   Serial.println(customKey);
-  // }
+  brakesLightsBtn.update();
+  hazardBtn.update();
+  leftSignal.update();
+  rightSignal.update();
+  headlightsBtn.update();
 
-  switch (customKey) {
-    case '1':
-      state = HAZARD;
-      break;
-    case '2':
-      state = TURNLEFT;
-      break;
-    case '3':
-      state = TURNRIGHT;
-      break;
-    case '4':
-      state = DEF;
-      break;
+  static unsigned long flasherT0 = 0;
+  const unsigned long interval = 300;          // 300 ms ≈ 1.7 Hz
+
+  if (brakesLightsBtn) {
+    brakesLights.close();
+  } else {
+    if (brakesLights.isClosed()) brakesLights.open();
   }
 
-  switch (state) {
-    case HAZARD:
-      if (breaking) {
-        on(LEFT_PIN, RIGHT_PIN);
-      } else if (currentMillis - previousMillis >= interval) {
-        previousMillis = currentMillis;
-        digitalWrite(LEFT_PIN, !digitalRead(LEFT_PIN));
-        digitalWrite(RIGHT_PIN, !digitalRead(RIGHT_PIN));
-      }
-      break;
-    case TURNRIGHT:
-      digitalWrite(LEFT_PIN, !breaking);
-      if (currentMillis - previousMillis >= interval) {
-        previousMillis = currentMillis;
-        digitalWrite(RIGHT_PIN, !digitalRead(RIGHT_PIN));
-      }
-      break;
-    case TURNLEFT:
-      digitalWrite(RIGHT_PIN, !breaking);
-      if (currentMillis - previousMillis >= interval) {
-        previousMillis = currentMillis;
-        digitalWrite(LEFT_PIN, !digitalRead(LEFT_PIN));
-      }
-      break;
-    case DEF:
-      digitalWrite(LEFT_PIN, !breaking);
-      digitalWrite(RIGHT_PIN, !breaking);
-      break;
+  if (hazardBtn) {                             // hazards ON (latched)
+    if (millis() - flasherT0 >= interval) {    // time to flip?
+      leftTurn.toggle();
+      rightTurn.toggle();
+      flasherT0 = millis();                    // reset timer
+    }
+  } else {                                     // hazards OFF
+    if (leftTurn.isClosed())  leftTurn.open(); // make sure both lamps off
+    if (rightTurn.isClosed()) rightTurn.open();
   }
 
-  switch (Hlstate) {
-    case ON:
-      digitalWrite(HEADLIGHT_PIN, LOW);
-      break;
-    case OFF:
-      digitalWrite(HEADLIGHT_PIN, HIGH);
-      break;
+  if (leftSignal) {
+    if (millis() - flasherT0 >= interval) {
+      leftTurn.toggle();
+    }
+  } else {
+    if (leftTurn.isClosed()) leftTurn.open();
   }
+
+  if (rightSignal) {
+    if (millis() - flasherT0 >= interval) {
+      rightTurn.toggle();
+    }
+  } else {
+    if (rightTurn.isClosed()) rightTurn.open();
+  }
+
+  if (headlightsBtn) {
+    headlights.close();
+  } else {
+    if (headlights.isClosed()) headlight.open();
+  }
+
 }
+
