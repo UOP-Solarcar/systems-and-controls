@@ -159,6 +159,7 @@ overvoltage and overcurrent
 Any module over 4.2 volts
 Any module under 2.5 volts
 */
+
 bool parse_frame(can_frame &frame, Out &out =
 #if defined(RPI4B)
                                        std::cout
@@ -234,12 +235,14 @@ bool parse_frame(can_frame &frame, Out &out =
   }
 }
 
-MCP2515 mcp2515(10);
+MCP2515 mcp2515(8);
 
 Relay contactorPrecharge(4, Relay::ACTIVE_HIGH);
 Relay contactorPositive(5, Relay::ACTIVE_HIGH);
 Relay contactorNegative(6, Relay::ACTIVE_HIGH);
 Relay faultIndicator(7, Relay::ACTIVE_HIGH);
+Relay contactorSolarPos(14, Relay::ACTIVE_HIGH);
+Relay contactorSolarNeg(15, Relay::ACTIVE_HIGH);
 
 constexpr uint8_t ESTOP_PIN = 3;
 constexpr uint16_t ESTOP_RESET_DEBOUNCE = 1000;
@@ -272,11 +275,6 @@ const word TCNT1_TOP = 16000000/(2*PWM_FREQ_HZ);
 
 void setPwmDuty(byte duty) {
   OCR1A = (word) (duty*TCNT1_TOP)/100;
-}
-
-int getTemperature() {
-  //somehow get temperature
-  return 36;
 }
 
 void setup() {
@@ -375,16 +373,15 @@ void loop() {
 
   if (now - prevReadTime >= INTERVAL){
     prevReadTime = now;
-    int temp = getTemperature();
     fanSpeed = 0;
     for (int i = 0; i < 10; i++){
-      if (temp > fanCurve[i]){
+      if (avg_temp > fanCurve[i]){
         fanSpeed = fanSpeed + 10;
       }
     }
     setPwmDuty(0);
     delay(5000);
-    setPwmDuty(fanSpeed); //Change this value 0-100 to adjust duty cycle
+    setPwmDuty(fanSpeed); // Change this value 0-100 to adjust duty cycle
   }
 
   switch (state) {
