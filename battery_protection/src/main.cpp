@@ -1,6 +1,6 @@
 #include "Arduino.h"
-#include "../../bytetools/src/bytetools.cpp"
-#include "../../bytetools/src/bytetools.hpp"
+#include "bytetools.cpp"
+#include "bytetools.hpp"
 
 #if defined(RPI4B)
 #include <cstring>
@@ -64,8 +64,8 @@ private:
     bool           _closed  = false;
     unsigned long  _tLast   = 0;
 
-    uint8_t _activeLevel()   const { return _pol == ACTIVE_HIGH ? HIGH : LOW;  }
-    uint8_t _inactiveLevel() const { return _pol == ACTIVE_HIGH ? LOW  : HIGH; }
+    uint8_t _activeLevel()   const { return _pol == ACTIVE_LOW ? LOW : HIGH;  }
+    uint8_t _inactiveLevel() const { return _pol == ACTIVE_LOW ? HIGH  : LOW; }
 
     void _write(bool wantClosed) {
         if (wantClosed == _closed) return;
@@ -236,10 +236,10 @@ bool parse_frame(can_frame &frame, Out &out =
 
 MCP2515 mcp2515(10);
 
-Relay contactorPrecharge(4, Relay::ACTIVE_LOW);
-Relay contactorPositive(5, Relay::ACTIVE_LOW);
-Relay contactorNegative(6, Relay::ACTIVE_LOW);
-Relay faultIndicator(7, Relay::ACTIVE_LOW);
+Relay contactorPrecharge(4, Relay::ACTIVE_HIGH);
+Relay contactorPositive(5, Relay::ACTIVE_HIGH);
+Relay contactorNegative(6, Relay::ACTIVE_HIGH);
+Relay faultIndicator(7, Relay::ACTIVE_HIGH);
 
 constexpr uint8_t ESTOP_PIN = 3;
 constexpr uint16_t ESTOP_RESET_DEBOUNCE = 1000;
