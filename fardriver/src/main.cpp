@@ -1,102 +1,109 @@
 #include <Arduino.h>
+#include <digitalWriteFast.h>   // already in your lib deps
+#include <math.h>               // for log()
 
-#define SIF_PIN 2           // pin that carries the SIF signal
+/* ─── Pin assignments ───────────────────────────── */
+const uint8_t HALL_A = 2;   // INT0
+const uint8_t HALL_B = 3;   // INT1
+const uint8_t HALL_C = 5;   // PD5 / PCINT21  (you asked for D5)
 
-// parsed values
-short  battery         = 0;
-short  current         = 0;
-short  currentPercent  = 0;
-short  rpm             = 0;
-long   faultCode       = 0;
-bool   regen           = false;
-bool   brake           = false;
+const byte    TEMP_PIN  = A0;    // NTC divider node
+/* ─── Motor-specific constants ───────────────────── */
+const uint8_t polePairs = 7;     // <--- CHANGE to your motor’s value
+/* Thermistor constants (10 k NTC 3950 β) */
+const float SERIES_R  = 10000.0f;
+const float NOMINAL_R = 10000.0f;
+const float B_COEFF   = 3950.0f;
+const float T0_K      = 298.15f;   // 25 °C in kelvin
 
-// SIF-decoder state
-unsigned long lastTime      = 0;
-unsigned long lastDuration  = 0;
-byte          lastCrc       = 0;
-byte          data[12]      = {0};
-int           bitIndex      = -1;
+/* ─── Globals updated in ISRs ────────────────────── */
+volatile uint8_t hallState = 0;   // latest 3-bit code
+volatile long    elecTicks = 0;   // +1 / –1 per 60° sector
 
-void sifChange()
-{
-    int val = digitalRead(SIF_PIN);
-    unsigned long duration = micros() - lastTime;
-    lastTime              = micros();
+/* ─── Direction lookup table (Gray-cycle) ──────────
+   Row = previous state, Col = new state, Val = +1,-1,0 */
+const int8_t dirLUT[8][8] PROGMEM = {
+/*to 0  1  2  3  4  5  6  7 */
+/*0*/{0, 0, 0, 0, 0, 0, 0, 0},
+/*1*/{0, 0,+1, 0,-1, 0, 0, 0},
+/*2*/{0,-1, 0,+1, 0, 0, 0, 0},
+/*3*/{0, 0,-1, 0, 0,+1, 0, 0},
+/*4*/{0,+1, 0, 0, 0, 0,-1, 0},
+/*5*/{0, 0, 0,-1, 0, 0,+1, 0},
+/*6*/{0, 0,+1, 0,-1, 0, 0, 0},
+/*7*/{0, 0, 0, 0, 0, 0, 0, 0}
+};
 
-    if (val == LOW && lastDuration > 0)
-    {
-        bool  bitComplete = false;
-        float ratio       = float(lastDuration) / float(duration);
+/* ─── Forward declarations ───────────────────────── */
+void hallISR();
+float readMotorTempC();
 
-        if (round(float(lastDuration) / duration) >= 31)
-        {
-            bitIndex = 0;                       // start-of-frame marker
-        }
-        else if (ratio > 1.5)
-        {
-            bitClear(data[bitIndex / 8], 7 - (bitIndex % 8));   // 0-bit
-            bitComplete = true;
-        }
-        else if ((1.0f / ratio) > 1.5)
-        {
-            bitSet(data[bitIndex / 8], 7 - (bitIndex % 8));     // 1-bit
-            bitComplete = true;
-        }
-        else
-        {
-            Serial.println(String(duration) + "-" + String(lastDuration));
-        }
+/* ─── Setup ───────────────────────────────────────── */
+void setup() {
+  pinMode(HALL_A, INPUT_PULLUP);
+  pinMode(HALL_B, INPUT_PULLUP);
+  pinMode(HALL_C, INPUT_PULLUP);
 
-        if (bitComplete && ++bitIndex == 96)                    // full frame
-        {
-            bitIndex = 0;
+  attachInterrupt(digitalPinToInterrupt(HALL_A), hallISR, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(HALL_B), hallISR, CHANGE);
 
-            byte crc = 0;
-            for (int i = 0; i < 11; ++i) crc ^= data[i];        // CRC-8
+  /* Enable pin-change IRQ for PD5 = D5 = PCINT21 */
+  PCICR  |= (1 << PCIE2);       // PORTD group
+  PCMSK2 |= (1 << PCINT21);     // PD5 bit
 
-            if (crc != data[11])
-            {
-                Serial.println("CRC FAILURE: " + String(crc) + "-" +
-                               String(data[11]));
-            }
-            else if (crc != lastCrc)                            // new frame
-            {
-                lastCrc = crc;
-
-                for (int i = 0; i < 12; ++i) Serial.println(data[i], HEX);
-                Serial.println();
-
-                battery        = data[9];
-                current        = data[6];
-                currentPercent = data[10];
-                rpm            = ((data[7] << 8) | data[8]) * 1.91;
-                brake          = bitRead(data[4], 5);
-                regen          = bitRead(data[4], 3);
-
-                Serial.print("Battery %: "  + String(battery));
-                Serial.print(" Current %: " + String(currentPercent));
-                Serial.print(" Current A: " + String(current));
-                Serial.print(" RPM: "       + String(rpm));
-                if (brake) Serial.print(" BRAKE");
-                if (regen) Serial.print(" REGEN");
-                Serial.println();
-            }
-        }
-    }
-
-    lastDuration = duration;
+  analogReference(DEFAULT);     // 5 V reference
+  Serial.begin(115200);
 }
 
-void setup()
-{
-    Serial.begin(115200);
-    pinMode(SIF_PIN, INPUT);
-    lastTime = micros();
-    attachInterrupt(digitalPinToInterrupt(SIF_PIN), sifChange, CHANGE);
+ISR(PCINT2_vect) { hallISR(); } // reuse same routine
+
+/* ─── Hall interrupt service routine ─────────────── */
+void hallISR() {
+  uint8_t a = digitalReadFast(HALL_A);
+  uint8_t b = digitalReadFast(HALL_B);
+  uint8_t c = digitalReadFast(HALL_C);
+
+  uint8_t newState = (c << 2) | (b << 1) | a;
+  static uint8_t lastState = 0;
+
+  if (newState == 0 || newState == 7) return;         // illegal
+
+  int8_t dir = pgm_read_byte(&dirLUT[lastState][newState]);
+  elecTicks += dir;
+  lastState  = newState;
+  hallState  = newState;
 }
 
-void loop()
-{
-    // nothing to do; everything happens in the ISR
+/* ─── Main loop (10 ms window) ───────────────────── */
+void loop() {
+  static uint32_t lastMicros = 0;
+
+  if (micros() - lastMicros >= 10000UL) {             // 10 ms
+    noInterrupts();
+    long ticks = elecTicks;
+    elecTicks  = 0;
+    interrupts();
+
+    /* 6 electrical sectors per e-rev */
+    float mechRPS = (ticks / 6.0f) / polePairs / 0.01f; // 0.01 s window
+    float RPM     = mechRPS * 60.0f;
+    float tempC   = readMotorTempC();
+
+    Serial.print("RPM: ");   Serial.print(RPM, 1);
+    Serial.print("  Temp: ");Serial.print(tempC, 1);
+    Serial.println(" °C");
+
+    lastMicros = micros();
+  }
+}
+
+/* ─── Thermistor helper ──────────────────────────── */
+float readMotorTempC() {
+  int   raw    = analogRead(TEMP_PIN);        // 0-1023
+  float vRatio = raw / 1023.0f;
+  if (vRatio <= 0.0f || vRatio >= 1.0f) return NAN; // open/short check
+
+  float rTherm = SERIES_R * (vRatio / (1.0f - vRatio));
+  float invT   = 1.0f / T0_K + (1.0f / B_COEFF) * log(rTherm / NOMINAL_R);
+  return (1.0f / invT) - 273.15f;
 }
