@@ -160,6 +160,8 @@ Any module over 4.2 volts
 Any module under 2.5 volts
 */
 
+uint8_t battery_t = {};
+
 bool parse_frame(can_frame &frame, Out &out =
 #if defined(RPI4B)
                                        std::cout
@@ -212,6 +214,7 @@ bool parse_frame(can_frame &frame, Out &out =
               low_temp = frame.data[2], low_thermistor_id = frame.data[3],
               avg_temp = frame.data[4], internal_temp = frame.data[5],
               checksum = frame.data[6];
+              battery_t = avg_temp;
     } return false;
     case 0x6B4: {
       uint8_t pack_health = frame.data[0];
