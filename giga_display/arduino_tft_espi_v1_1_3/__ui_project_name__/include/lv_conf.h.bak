@@ -1,0 +1,6 @@
+#ifndef LV_CONF_H
+#define LV_CONF_H
+
+#define LV_USE_TLSF 0
+
+#endif // LV_CONF_H
