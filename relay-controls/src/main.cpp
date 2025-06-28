@@ -156,11 +156,13 @@ void loop() {
 
   if (brakesLightsBtn) {
     brakesLights.close();
+    Serial.println("brakelights");
   } else {
     if (brakesLights.isClosed()) brakesLights.open();
   }
 
-  if (hazardBtn) {                             // hazards ON (latched)
+  if (hazardBtn) {// hazards ON (latched)
+    Serial.println("hazards");
     if (millis() - flasherT0 >= interval) {    // time to flip?
       leftTurn.toggle();
       rightTurn.toggle();
@@ -172,6 +174,7 @@ void loop() {
   }
 
   if (leftSignal) {
+    Serial.println("left signal");
     if (millis() - flasherT0 >= interval) {
       leftTurn.toggle();
     }
@@ -180,6 +183,7 @@ void loop() {
   }
 
   if (rightSignal) {
+    Serial.println("right signal");
     if (millis() - flasherT0 >= interval) {
       rightTurn.toggle();
     }
@@ -188,9 +192,10 @@ void loop() {
   }
 
   if (headlightsBtn) {
+    Serial.println("headlights");
     headlights.close();
   } else {
-    if (headlights.isClosed()) headlight.open();
+    if (headlights.isClosed()) headlights.open();
   }
 
 }
