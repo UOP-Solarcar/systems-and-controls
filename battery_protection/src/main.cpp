@@ -160,7 +160,11 @@ Any module over 4.2 volts
 Any module under 2.5 volts
 */
 
+<<<<<<< HEAD
 uint8_t battery_t {};
+=======
+uint8_t battery_t = {};
+>>>>>>> refs/remotes/origin/master
 
 bool parse_frame(can_frame &frame, Out &out =
 #if defined(RPI4B)
@@ -215,7 +219,10 @@ bool parse_frame(can_frame &frame, Out &out =
               avg_temp = frame.data[4], internal_temp = frame.data[5],
               checksum = frame.data[6];
               battery_t = avg_temp;
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/master
     } return false;
     case 0x6B4: {
       uint8_t pack_health = frame.data[0];
