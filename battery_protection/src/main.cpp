@@ -374,7 +374,7 @@ void loop() {
       faultIndicator.open();
   }
 
-  if (now - prevReadTime >= INTERVAL){
+  /*if (now - prevReadTime >= INTERVAL){
     prevReadTime = now;
     fanSpeed = 0;
     for (int i = 0; i < 10; i++){
@@ -385,7 +385,7 @@ void loop() {
     setPwmDuty(0);
     delay(5000);
     setPwmDuty(fanSpeed); // Change this value 0-100 to adjust duty cycle
-  }
+  }*/
 
   switch (state) {
 
@@ -405,11 +405,14 @@ void loop() {
 
     case PRECHARGING:
 
+      contactorNegative.open();
+      Serial.println("Negative Contactor Opened");
+
+      contactorPositive.open();
+      Serial.println("Positive Contactor Opened");
+
       contactorPrecharge.close();
       Serial.println("Precharge Contactor Closed");
-
-      contactorNegative.close();
-      Serial.println("Negative Contactor Closed");
 
       stateT0 = millis();
 
@@ -420,6 +423,9 @@ void loop() {
       if (millis() - stateT0 >= 3000) {
         contactorPositive.close();
         Serial.println("Positive Contactor Closed");
+
+        contactorNegative.close();
+        Serial.println("Negative Contactor Closed");
 
         contactorPrecharge.open();
         Serial.println("Precharge Contactor Opened");
