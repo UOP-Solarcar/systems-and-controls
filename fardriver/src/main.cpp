@@ -1,11 +1,13 @@
 #include <Arduino.h>
 #include <digitalWriteFast.h>   // already in your lib deps
 #include <math.h>               // for log()
+#include <mcp2515.h>
 
 /* ─── Pin assignments ───────────────────────────── */
 const uint8_t HALL_A = 2;   // INT0
 const uint8_t HALL_B = 3;   // INT1
-const uint8_t HALL_C = 5;   // PD5 / PCINT21  (you asked for D5)
+const uint8_t HALL_C = 5;   // PD5 / PCINT21
+const uint8_t CAN_CS = 8;
 
 const byte    TEMP_PIN  = A0;    // NTC divider node
 /* ─── Motor-specific constants ───────────────────── */
@@ -15,6 +17,9 @@ const float SERIES_R  = 10000.0f;
 const float NOMINAL_R = 10000.0f;
 const float B_COEFF   = 3950.0f;
 const float T0_K      = 298.15f;   // 25 °C in kelvin
+
+
+MCP2515 mcp2515(8);
 
 /* ─── Globals updated in ISRs ────────────────────── */
 volatile uint8_t hallState = 0;   // latest 3-bit code
@@ -50,8 +55,15 @@ void setup() {
   /* Enable pin-change IRQ for PD5 = D5 = PCINT21 */
   PCICR  |= (1 << PCIE2);       // PORTD group
   PCMSK2 |= (1 << PCINT21);     // PD5 bit
+  PCMSK3 |= (1 << PCINT22);     // PD6 bit for CAN interrupt
 
-  analogReference(DEFAULT);     // 5 V reference
+  analogReference(DEFAULT);     // 5 V analog reference 
+  
+  mcp2515.reset();
+
+  mcp2515.setBitrate(CAN_500KBPS,
+                     MCP_8MHZ); // Sets CAN at speed 500KBPS and Clock 8MHz
+  mcp2515.setNormalMode();      // Sets CAN at normal mode
   Serial.begin(115200);
 }
 
