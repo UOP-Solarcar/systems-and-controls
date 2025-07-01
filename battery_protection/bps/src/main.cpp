@@ -64,8 +64,8 @@ private:
     bool           _closed  = false;
     unsigned long  _tLast   = 0;
 
-    uint8_t _activeLevel()   const { return _pol == ACTIVE_LOW ? LOW : HIGH;  }
-    uint8_t _inactiveLevel() const { return _pol == ACTIVE_LOW ? HIGH  : LOW; }
+    uint8_t _activeLevel()   const { return _pol == ACTIVE_HIGH ? HIGH : LOW;  }
+    uint8_t _inactiveLevel() const { return _pol == ACTIVE_HIGH ? LOW  : HIGH; }
 
     void _write(bool wantClosed) {
         if (wantClosed == _closed) return;
@@ -160,7 +160,11 @@ Any module over 4.2 volts
 Any module under 2.5 volts
 */
 
+<<<<<<< HEAD
+uint8_t battery_t {};
+=======
 uint8_t battery_t = {};
+>>>>>>> refs/remotes/origin/master
 
 bool parse_frame(can_frame &frame, Out &out =
 #if defined(RPI4B)
@@ -215,6 +219,10 @@ bool parse_frame(can_frame &frame, Out &out =
               avg_temp = frame.data[4], internal_temp = frame.data[5],
               checksum = frame.data[6];
               battery_t = avg_temp;
+<<<<<<< HEAD
+
+=======
+>>>>>>> refs/remotes/origin/master
     } return false;
     case 0x6B4: {
       uint8_t pack_health = frame.data[0];
@@ -240,10 +248,10 @@ bool parse_frame(can_frame &frame, Out &out =
 
 MCP2515 mcp2515(8);
 
-Relay contactorPrecharge(4, Relay::ACTIVE_HIGH);
-Relay contactorPositive(5, Relay::ACTIVE_HIGH);
-Relay contactorNegative(6, Relay::ACTIVE_HIGH);
-Relay faultIndicator(7, Relay::ACTIVE_HIGH);
+Relay contactorPrecharge(4, Relay::ACTIVE_LOW);
+Relay contactorPositive(5, Relay::ACTIVE_LOW);
+Relay contactorNegative(6, Relay::ACTIVE_LOW);
+Relay faultIndicator(7, Relay::ACTIVE_LOW);
 Relay contactorSolarPos(14, Relay::ACTIVE_HIGH);
 Relay contactorSolarNeg(15, Relay::ACTIVE_HIGH);
 
@@ -378,7 +386,7 @@ void loop() {
     prevReadTime = now;
     fanSpeed = 0;
     for (int i = 0; i < 10; i++){
-      if (avg_temp > fanCurve[i]){
+      if (battery_t > fanCurve[i]){
         fanSpeed = fanSpeed + 10;
       }
     }
