@@ -116,21 +116,21 @@ private:
   bool     _latched    = false;
 };
 
-Relay headlights(14, Relay::ACTIVE_LOW);
-Relay leftTurn(15, Relay::ACTIVE_LOW);
-Relay rightTurn(16, Relay::ACTIVE_LOW);
-Relay brakesLights(17, Relay::ACTIVE_LOW);
-Relay motorController(18, Relay::ACTIVE_LOW);
-Relay direction(19, Relay::ACTIVE_LOW);
+Relay headlights(10, Relay::ACTIVE_LOW);
+Relay leftTurn(A0, Relay::ACTIVE_LOW);
+Relay rightTurn(A1, Relay::ACTIVE_LOW);
+Relay brakesLights(A2, Relay::ACTIVE_LOW);
+Relay motorController(A3, Relay::ACTIVE_LOW);
+Relay direction(A4, Relay::ACTIVE_LOW);
 
-Button leftSignal(3, Button::PULLUP, Button::TOGGLE, 10);
-Button comms(4, Button::PULLUP, Button::TOGGLE, 10);
-Button hazardBtn(5, Button::PULLUP, Button::TOGGLE, 10);
-Button rightSignal(6, Button::PULLUP, Button::TOGGLE, 10);
-Button directionToggle(7, Button::PULLUP, Button::TOGGLE, 10);
-Button headlightsBtn(8, Button::PULLUP, Button::TOGGLE, 10);
-Button brakesLightsBtn(9, Button::PULLUP, Button::TOGGLE, 10);
-Button motorToggle(10, Button::PULLUP, Button::TOGGLE, 10);
+Button leftSignal(2, Button::PULLUP, Button::TOGGLE, 10);
+Button comms(3, Button::PULLUP, Button::TOGGLE, 10);
+Button hazardBtn(4, Button::PULLUP, Button::TOGGLE, 10);
+Button rightSignal(5, Button::PULLUP, Button::TOGGLE, 10);
+Button directionToggle(6, Button::PULLUP, Button::TOGGLE, 10);
+Button headlightsBtn(7, Button::PULLUP, Button::TOGGLE, 10);
+Button brakesLightsBtn(8, Button::PULLUP, Button::TOGGLE, 10);
+Button motorToggle(9, Button::PULLUP, Button::TOGGLE, 10);
 
 void setup() {
   //Serial.begin(115200);
