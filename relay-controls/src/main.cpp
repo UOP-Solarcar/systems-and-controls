@@ -120,26 +120,36 @@ Relay headlights(14, Relay::ACTIVE_LOW);
 Relay leftTurn(15, Relay::ACTIVE_LOW);
 Relay rightTurn(16, Relay::ACTIVE_LOW);
 Relay brakesLights(17, Relay::ACTIVE_LOW);
+Relay motorController(18, Relay::ACTIVE_LOW);
+Relay direction(19, Relay::ACTIVE_LOW);
 
-Button hazardBtn(3, Button::PULLUP, Button::TOGGLE, 10);
-Button leftSignal(4, Button::PULLUP, Button::TOGGLE, 10);
-Button rightSignal(5, Button::PULLUP, Button::TOGGLE, 10);
-Button headlightsBtn(6, Button::PULLUP, Button::TOGGLE, 10);
-Button brakesLightsBtn(7, Button::PULLUP, Button::TOGGLE, 10);
+Button leftSignal(3, Button::PULLUP, Button::TOGGLE, 10);
+Button comms(4, Button::PULLUP, Button::TOGGLE, 10);
+Button hazardBtn(5, Button::PULLUP, Button::TOGGLE, 10);
+Button rightSignal(6, Button::PULLUP, Button::TOGGLE, 10);
+Button directionToggle(7, Button::PULLUP, Button::TOGGLE, 10);
+Button headlightsBtn(8, Button::PULLUP, Button::TOGGLE, 10);
+Button brakesLightsBtn(9, Button::PULLUP, Button::TOGGLE, 10);
+Button motorToggle(10, Button::PULLUP, Button::TOGGLE, 10);
 
 void setup() {
-  Serial.begin(115200);
+  //Serial.begin(115200);
 
   hazardBtn.begin();
   leftSignal.begin();
   rightSignal.begin();
   brakesLightsBtn.begin();
   headlightsBtn.begin();
+  comms.begin();
+  directionToggle.begin();
+  motorToggle.begin();
 
   headlights.begin();
   leftTurn.begin();
   rightTurn.begin();
   brakesLights.begin();
+  motorController.begin();
+  direction.begin();
 }
 
 
@@ -150,9 +160,24 @@ void loop() {
   leftSignal.update();
   rightSignal.update();
   headlightsBtn.update();
+  comms.update();
+  directionToggle.update();
+  motorToggle.update();
 
   static unsigned long flasherT0 = 0;
   const unsigned long interval = 300;          // 300 ms ≈ 1.7 Hz
+
+  if (motorToggle) {
+    motorController.close();
+  } else {
+    if (motorController.isClosed()) motorController.open();
+  }
+
+  if (directionToggle) {
+    direction.close();
+  } else {
+    if (direction.isClosed()) direction.open();
+  }
 
   if (brakesLightsBtn) {
     brakesLights.close();
