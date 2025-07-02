@@ -320,7 +320,7 @@ void setup() {
 }
 
 void loop() {
-
+  bpsFaultState = false;
   can_frame frame{};
   if (mcp2515.readMessage(&frame) == MCP2515::ERROR_OK) {
     bpsFaultState = parse_frame(frame);
