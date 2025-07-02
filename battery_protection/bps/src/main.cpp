@@ -241,8 +241,8 @@ bool parse_frame(can_frame &frame, Out &out =
 MCP2515 mcp2515(8);
 
 Relay contactorPrecharge(4, Relay::ACTIVE_HIGH);
-Relay contactorPower(5, Relay::ACTIVE_LOW);
-Relay faultIndicator(7, Relay::ACTIVE_LOW);
+Relay contactorPower(5, Relay::ACTIVE_HIGH);
+Relay faultIndicator(6, Relay::ACTIVE_HIGH);
 
 constexpr uint8_t ESTOP_PIN = 3;
 constexpr uint16_t ESTOP_RESET_DEBOUNCE = 1000;
@@ -321,20 +321,18 @@ void setup() {
 
 void loop() {
 
-  if (estopTripped) {
-    contactorPrecharge.open();
-    contactorPower.open();
-    estopTripped = false;
-    Serial.println("E-Stop Tripped");
-
-  }
-
-  static unsigned long ledT0 = 0;
-  
   can_frame frame{};
   if (mcp2515.readMessage(&frame) == MCP2515::ERROR_OK) {
     bpsFaultState = parse_frame(frame);
   }
+
+  if (estopTripped) {
+    contactorPrecharge.open();
+    contactorPower.open();
+    Serial.println("E-Stop Tripped");
+    bpsFaultState = estopTripped;
+  }
+  static unsigned long ledT0 = 0;
 
   if (bpsFaultState) {
 
@@ -350,6 +348,7 @@ void loop() {
           } else if (millis() - estopLowSince > ESTOP_RESET_DEBOUNCE) {
 
               bpsFaultState = false;
+              estopTripped = false;
               estopLowSince = 0;
               faultIndicator.open();
 
@@ -409,10 +408,10 @@ void loop() {
 
     case WAITING:
 
-      if (millis() - stateT0 >= 3000) {
-        contactorPower.close();
-
+      if (millis() - stateT0 >= 5000) {
         contactorPrecharge.open();
+        delay(500);
+        contactorPower.close();
         Serial.println("Precharge Contactor Opened");
         
         Serial.println("Ready");
