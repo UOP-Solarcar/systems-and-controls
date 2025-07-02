@@ -160,11 +160,7 @@ Any module over 4.2 volts
 Any module under 2.5 volts
 */
 
-<<<<<<< HEAD
-uint8_t battery_t {};
-=======
 uint8_t battery_t = {};
->>>>>>> refs/remotes/origin/master
 
 bool parse_frame(can_frame &frame, Out &out =
 #if defined(RPI4B)
@@ -219,10 +215,6 @@ bool parse_frame(can_frame &frame, Out &out =
               avg_temp = frame.data[4], internal_temp = frame.data[5],
               checksum = frame.data[6];
               battery_t = avg_temp;
-<<<<<<< HEAD
-
-=======
->>>>>>> refs/remotes/origin/master
     } return false;
     case 0x6B4: {
       uint8_t pack_health = frame.data[0];
@@ -248,12 +240,9 @@ bool parse_frame(can_frame &frame, Out &out =
 
 MCP2515 mcp2515(8);
 
-Relay contactorPrecharge(4, Relay::ACTIVE_LOW);
-Relay contactorPositive(5, Relay::ACTIVE_LOW);
-Relay contactorNegative(6, Relay::ACTIVE_LOW);
+Relay contactorPrecharge(4, Relay::ACTIVE_HIGH);
+Relay contactorPower(5, Relay::ACTIVE_LOW);
 Relay faultIndicator(7, Relay::ACTIVE_LOW);
-Relay contactorSolarPos(14, Relay::ACTIVE_HIGH);
-Relay contactorSolarNeg(15, Relay::ACTIVE_HIGH);
 
 constexpr uint8_t ESTOP_PIN = 3;
 constexpr uint16_t ESTOP_RESET_DEBOUNCE = 1000;
@@ -311,8 +300,7 @@ void setup() {
   
   // initalize relays
   contactorPrecharge.begin();
-  contactorPositive.begin();
-  contactorNegative.begin();
+  contactorPower.begin();
   faultIndicator.begin();
 
   // attach estop isr
@@ -334,9 +322,8 @@ void setup() {
 void loop() {
 
   if (estopTripped) {
-    contactorPositive.open();
-    contactorNegative.open();
-    bpsFaultState = true;
+    contactorPrecharge.open();
+    contactorPower.open();
     estopTripped = false;
     Serial.println("E-Stop Tripped");
 
@@ -367,8 +354,7 @@ void loop() {
               faultIndicator.open();
 
 
-              contactorPositive.open();
-              contactorNegative.open();
+              contactorPower.open();
               contactorPrecharge.open();
 
               state = IDLE;
@@ -401,8 +387,7 @@ void loop() {
     case IDLE:
 
       if (contactorPrecharge.isOpen() &&
-          contactorNegative.isOpen() && 
-          contactorPositive.isOpen() && 
+          contactorPower.isOpen() && 
           !bpsFaultState)
       {
       
@@ -413,11 +398,7 @@ void loop() {
 
     case PRECHARGING:
 
-      contactorNegative.open();
-      Serial.println("Negative Contactor Opened");
-
-      contactorPositive.open();
-      Serial.println("Positive Contactor Opened");
+      contactorPower.open();
 
       contactorPrecharge.close();
       Serial.println("Precharge Contactor Closed");
@@ -429,11 +410,7 @@ void loop() {
     case WAITING:
 
       if (millis() - stateT0 >= 3000) {
-        contactorPositive.close();
-        Serial.println("Positive Contactor Closed");
-
-        contactorNegative.close();
-        Serial.println("Negative Contactor Closed");
+        contactorPower.close();
 
         contactorPrecharge.open();
         Serial.println("Precharge Contactor Opened");
