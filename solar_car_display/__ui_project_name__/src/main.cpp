@@ -14,16 +14,13 @@ extern uint8_t BigFont[];
 extern uint8_t SevenSegNumFont[];
 UTFT myGLCD(CTE32HR,38,39,40,41);
 
-int mph = 0;
-int rpm = 0;
-int kWOut = 0;
-int kWIn = 0;
+int total_kwh = 0; // Total energy in watt-hours
 int SOC = 0;
 int current_total = 0;
 int voltage_total = 0;
 int odometer = 0;
 int previous_time_wh = millis();
-int previous_time_mph = millis();
+int supplimental_soc = 0; // Additional SOC from supplimental battery
 
 typedef Print Out;
 
@@ -46,10 +43,10 @@ void parse_frame(can_frame &frame, Out &out = Serial) {
     case 0x80000900: // status 1
     {
       //print_n('1', out);
-      int32_t rpm_l = bytetools::int_bswap(*(int32_t *)&frame.data[0]);
+      //int32_t rpm_l = bytetools::int_bswap(*(int32_t *)&frame.data[0]);
       //int16_t current = bytetools::int_bswap(*(int16_t *)&frame.data[4]),
       //        duty_cycle = bytetools::int_bswap(*(int16_t *)&frame.data[6]);
-      rpm = rpm_l;
+      //rpm = rpm_l;
     } break;
     case 0x80000e00: // status 2
     {
@@ -60,10 +57,10 @@ void parse_frame(can_frame &frame, Out &out = Serial) {
     case 0x80000f00: // status 3
     {
       //print_n('3', out);
-      int32_t wh_used = bytetools::int_bswap(*(int32_t *)&frame.data[0]),
-              wh_charged = bytetools::int_bswap(*(int32_t *)&frame.data[4]);
-      kWIn = wh_charged; // Calculate motor Wh
-      kWOut = wh_used; // Calculate motor Wh
+      //int32_t wh_used = bytetools::int_bswap(*(int32_t *)&frame.data[0]),
+              //wh_charged = bytetools::int_bswap(*(int32_t *)&frame.data[4]);
+      //kWIn = wh_charged; // Calculate motor Wh
+      //kWOut = wh_used; // Calculate motor Wh
     } break;
     case 0x80001000: // status 4
     {
@@ -126,10 +123,10 @@ void parse_frame(can_frame &frame, Out &out = Serial) {
     } break;
     case 0x6B4: {
       //uint8_t pack_health = frame.data[0];
-      //uint16_t adaptive_total_capacity =
-      //             bytetools::int_bswap(*(uint16_t *)&frame.data[3]),
-      //         input_supply_voltage =
-      //             bytetools::int_bswap(*(uint16_t *)&frame.data[5]);
+      uint16_t adaptive_total_capacity =
+                   bytetools::int_bswap(*(uint16_t *)&frame.data[3]),
+               input_supply_voltage =
+                   bytetools::int_bswap(*(uint16_t *)&frame.data[5]);
       //uint8_t checksum = frame.data[7];
     } break;
     case 0x36: {
@@ -151,24 +148,14 @@ void parse_frame(can_frame &frame, Out &out = Serial) {
 MCP2515 mcp2515(10); // SPI CS Pin 10
 
 void calculateKWh() {
-    int total_wh = int(current_total * voltage_total * (millis() - previous_time_wh) / 3600000.0); // kWh = (A * V * t) / 3600000
+    total_kwh = int(current_total * voltage_total * (millis() - previous_time_wh) / 3600000.0); // kWh = (A * V * t) / 3600000
     previous_time_wh = millis();
-    int difference = total_wh - (kWIn - kWOut); // Calculate the difference in kWh
-    if (difference < 0) {
-        kWIn = -difference + kWIn;
-    } else {
-        kWOut = difference + kWIn;
-    }
-    kWIn = kWIn / 1000;
-    kWOut = kWOut / 1000;
 }
 
-void calculateMph(){
-    mph = int((rpm * (3.14 * 22)) / 63360) * 60;
-}
-
-void calculateMiles(){
-    odometer = odometer + mph / 3600000 * (millis() - previous_time_mph);
+void calc_suplimental_soc() {
+    // Calculate the supplemental SOC based on the current total and voltage
+    // This is a placeholder calculation, adjust as needed
+    supplimental_soc = (supplimental_soc + 1) % 100;
 }
 
 
@@ -192,9 +179,12 @@ void loop()
 
     myGLCD.setFont(BigFont);
     myGLCD.setColor(255, 255, 255);
-    myGLCD.print(String("mph"), CENTER, 110);
+    if (total_kwh < 0) {
+        myGLCD.print(String("-"), 200, 20);
+    }
+    myGLCD.print(String("kW/h"), CENTER, 110);
     myGLCD.print(String("%SOC"), CENTER, 200);
-    myGLCD.print(String("ODO"), CENTER, 290);
+    myGLCD.print(String("SUP"), CENTER, 290);
     myGLCD.setColor(0, 255, 0);
     myGLCD.print(String("-"), 400, 20);
     myGLCD.print(String("kW/h OUT"), RIGHT, 50);
@@ -203,19 +193,14 @@ void loop()
 
     myGLCD.setFont(SevenSegNumFont);
     myGLCD.setColor(255, 255, 255);
-    myGLCD.print(String(mph), CENTER, 60);
     myGLCD.print(String(SOC), CENTER, 150);
-    myGLCD.print(String(odometer), CENTER, 240);
-    myGLCD.setColor(0, 255, 0);
-    myGLCD.print(String(kWOut), RIGHT, 0);
-    myGLCD.setColor(0, 255, 0);
-    myGLCD.print(String(kWIn), LEFT, 0);
+    myGLCD.print(String(supplimental_soc), CENTER, 240);
+    myGLCD.print(String(abs(total_kwh)), CENTER, 0);
 
     can_frame frame{};
     if (mcp2515.readMessage(&frame) == MCP2515::ERROR_OK) {
         parse_frame(frame);
     }
     calculateKWh();
-    calculateMph();
-    calculateMiles();
+    calc_suplimental_soc(); // Function to calculate the supplemental SOC
 }
