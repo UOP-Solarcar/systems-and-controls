@@ -1,4 +1,3 @@
-#include <UTFT.h>
 #include <Arduino.h>
 #include <string.h>
 
@@ -8,11 +7,10 @@
 #include <Arduino.h>
 #include <SPI.h>
 #include <mcp2515.h> // (https://github.com/autowp/arduino-mcp2515/)
-
-
-extern uint8_t BigFont[];
-extern uint8_t SevenSegNumFont[];
-UTFT myGLCD(CTE32HR,38,39,40,41);
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <avr/wdt.h>
 
 int total_kwh = 0; // Total energy in watt-hours
 int SOC = 0;
@@ -21,6 +19,17 @@ int voltage_total = 0;
 int odometer = 0;
 int previous_time_wh = millis();
 int supplimental_soc = 0; // Additional SOC from supplimental battery
+
+#define SCREEN_WIDTH 128 // OLED display width, in pixels
+#define SCREEN_HEIGHT 64 // OLED display height, in pixels
+
+// Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
+#define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
+Adafruit_SSD1306 display1(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+Adafruit_SSD1306 display2(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+const unsigned long DISPLAY_INTERVAL = 500;   // update OLED every 500 ms
+unsigned long prevDisplayTime = 0;
 
 typedef Print Out;
 
@@ -123,10 +132,10 @@ void parse_frame(can_frame &frame, Out &out = Serial) {
     } break;
     case 0x6B4: {
       //uint8_t pack_health = frame.data[0];
-      uint16_t adaptive_total_capacity =
-                   bytetools::int_bswap(*(uint16_t *)&frame.data[3]),
-               input_supply_voltage =
-                   bytetools::int_bswap(*(uint16_t *)&frame.data[5]);
+      //uint16_t adaptive_total_capacity =
+      //             bytetools::int_bswap(*(uint16_t *)&frame.data[3]),
+      //         input_supply_voltage =
+      //             bytetools::int_bswap(*(uint16_t *)&frame.data[5]);
       //uint8_t checksum = frame.data[7];
     } break;
     case 0x36: {
@@ -158,12 +167,56 @@ void calc_suplimental_soc() {
     supplimental_soc = (supplimental_soc + 1) % 100;
 }
 
+void display() {
+    display1.clearDisplay();
+    display2.clearDisplay();
+
+    display1.setTextSize(4);
+    display1.setTextColor(WHITE);
+    display1.setCursor(0, 0);
+    display1.print("Total kWh: ");
+    display1.println(total_kwh);
+    
+    display2.setTextSize(4);
+    display2.setTextColor(WHITE);
+    display2.setCursor(0, 0);
+    display2.print("SOC: ");
+    display2.println(SOC);
+
+    display2.setCursor(0, 20);
+    display2.print("Suppl. SOC: ");
+    display2.println(supplimental_soc);
+
+    // Display the updates
+    display1.display();
+    display2.display();
+}
+
 
 void setup()
 {
-  myGLCD.InitLCD();
+  //myGLCD.InitLCD();
 
-  myGLCD.clrScr();
+  //myGLCD.clrScr();
+
+  if(!display1.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { 
+    //Serial.println(F("SSD1306A allocation failed"));
+    for(;;); // Don't proceed, loop forever
+  }
+  if(!display2.begin(SSD1306_SWITCHCAPVCC, 0x3D)) { 
+    //Serial.println(F("SSD1306B allocation failed"));
+    for(;;); // Don't proceed, loop forever
+  }
+
+  display1.display();
+  display2.display();
+  delay(1000);
+  display1.clearDisplay();
+  display1.drawPixel(10, 10, WHITE);
+  display2.clearDisplay();
+  display2.drawPixel(10, 10, WHITE);
+  display1.display();
+  display2.display();
 
   SPI.begin();
 
@@ -175,7 +228,7 @@ void setup()
 
 void loop()
 {
-    myGLCD.setBackColor(0, 0, 0);
+    /*myGLCD.setBackColor(0, 0, 0);
 
     myGLCD.setFont(BigFont);
     myGLCD.setColor(255, 255, 255);
@@ -187,15 +240,17 @@ void loop()
     myGLCD.print(String("SUP"), CENTER, 290);
     myGLCD.setColor(0, 255, 0);
     myGLCD.print(String("-"), 400, 20);
-    myGLCD.print(String("kW/h OUT"), RIGHT, 50);
-    myGLCD.setColor(0, 255, 0);
-    myGLCD.print(String("kW/h IN"), LEFT, 50);
 
     myGLCD.setFont(SevenSegNumFont);
     myGLCD.setColor(255, 255, 255);
     myGLCD.print(String(SOC), CENTER, 150);
     myGLCD.print(String(supplimental_soc), CENTER, 240);
-    myGLCD.print(String(abs(total_kwh)), CENTER, 0);
+    myGLCD.print(String(abs(total_kwh)), CENTER, 0);*/
+
+    if (millis() - prevDisplayTime >= DISPLAY_INTERVAL) {
+        prevDisplayTime = millis();
+        display();
+    }
 
     can_frame frame{};
     if (mcp2515.readMessage(&frame) == MCP2515::ERROR_OK) {
