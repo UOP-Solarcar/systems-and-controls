@@ -116,21 +116,21 @@ private:
   bool     _latched    = false;
 };
 
-Relay headlights(10, Relay::ACTIVE_LOW);
+Relay headlights(A5, Relay::ACTIVE_LOW);
 Relay leftTurn(A0, Relay::ACTIVE_LOW);
 Relay rightTurn(A1, Relay::ACTIVE_LOW);
 Relay brakesLights(A2, Relay::ACTIVE_LOW);
 Relay motorController(A3, Relay::ACTIVE_LOW);
 Relay direction(A4, Relay::ACTIVE_LOW);
 
-Button leftSignal(2, Button::PULLUP, Button::TOGGLE, 10);
-Button comms(3, Button::PULLUP, Button::TOGGLE, 10);
-Button hazardBtn(4, Button::PULLUP, Button::TOGGLE, 10);
-Button rightSignal(5, Button::PULLUP, Button::TOGGLE, 10);
+Button leftSignal(5, Button::PULLUP, Button::TOGGLE, 10);
+Button comms(4, Button::PULLUP, Button::TOGGLE, 10);
+Button hazardBtn(3, Button::PULLUP, Button::TOGGLE, 10);
+Button rightSignal(2, Button::PULLUP, Button::TOGGLE, 10);
 Button directionToggle(6, Button::PULLUP, Button::TOGGLE, 10);
 Button headlightsBtn(7, Button::PULLUP, Button::TOGGLE, 10);
-Button brakesLightsBtn(8, Button::PULLUP, Button::TOGGLE, 10);
-Button motorToggle(9, Button::PULLUP, Button::TOGGLE, 10);
+//Button brakesLightsBtn(8, Button::PULLUP, Button::TOGGLE, 10);
+Button motorToggle(8, Button::PULLUP, Button::TOGGLE, 10);
 
 void setup() {
   //Serial.begin(115200);
@@ -138,7 +138,6 @@ void setup() {
   hazardBtn.begin();
   leftSignal.begin();
   rightSignal.begin();
-  brakesLightsBtn.begin();
   headlightsBtn.begin();
   comms.begin();
   directionToggle.begin();
@@ -155,7 +154,6 @@ void setup() {
 
 void loop() {
 
-  brakesLightsBtn.update();
   hazardBtn.update();
   leftSignal.update();
   rightSignal.update();
@@ -177,13 +175,6 @@ void loop() {
     direction.close();
   } else {
     if (direction.isClosed()) direction.open();
-  }
-
-  if (brakesLightsBtn) {
-    brakesLights.close();
-    Serial.println("brakelights");
-  } else {
-    if (brakesLights.isClosed()) brakesLights.open();
   }
 
   if (hazardBtn) {// hazards ON (latched)
