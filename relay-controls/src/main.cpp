@@ -122,6 +122,8 @@ Relay rightTurn(A1, Relay::ACTIVE_LOW);
 Relay brakesLights(A2, Relay::ACTIVE_LOW);
 Relay motorController(A3, Relay::ACTIVE_LOW);
 Relay direction(A4, Relay::ACTIVE_LOW);
+Relay rightRear(11, Relay::ACTIVE_LOW);
+Relay leftRear(12, Relay::ACTIVE_LOW);
 
 Button leftSignal(5, Button::PULLUP, Button::TOGGLE, 10);
 Button comms(4, Button::PULLUP, Button::TOGGLE, 10);
@@ -131,6 +133,7 @@ Button directionToggle(6, Button::PULLUP, Button::TOGGLE, 10);
 Button headlightsBtn(7, Button::PULLUP, Button::TOGGLE, 10);
 //Button brakesLightsBtn(8, Button::PULLUP, Button::TOGGLE, 10);
 Button motorToggle(8, Button::PULLUP, Button::TOGGLE, 10);
+Button brakeSignal(9, Button::PULLUP, Button::MOMENTARY, 10);
 
 void setup() {
   //Serial.begin(115200);
@@ -142,6 +145,7 @@ void setup() {
   comms.begin();
   directionToggle.begin();
   motorToggle.begin();
+  brakeSignal.begin();
 
   headlights.begin();
   leftTurn.begin();
@@ -149,6 +153,8 @@ void setup() {
   brakesLights.begin();
   motorController.begin();
   direction.begin();
+  rightRear.begin();
+  leftRear.begin();
 }
 
 
@@ -161,6 +167,7 @@ void loop() {
   comms.update();
   directionToggle.update();
   motorToggle.update();
+  brakeSignal.update();
 
   static unsigned long flasherT0 = 0;
   const unsigned long interval = 300;          // 300 ms ≈ 1.7 Hz
@@ -182,6 +189,8 @@ void loop() {
     if (millis() - flasherT0 >= interval) {    // time to flip?
       leftTurn.toggle();
       rightTurn.toggle();
+      leftRear.toggle();
+      rightRear.toggle();
       flasherT0 = millis();                    // reset timer
     }
   } else {                                     // hazards OFF
@@ -214,5 +223,14 @@ void loop() {
     if (headlights.isClosed()) headlights.open();
   }
 
+  if (brakeSignal) {
+    Serial.println("brake");
+    brakesLights.close();
+    if (!leftSignal){
+      leftRear.open();
+    } if (!rightSignal) {
+      rightRear.open();
+    }
+  }
 }
 
