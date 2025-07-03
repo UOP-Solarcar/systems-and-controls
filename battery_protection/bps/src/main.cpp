@@ -177,7 +177,8 @@ bool parse_frame(can_frame &frame, Out &out =
       uint8_t pack_soc = frame.data[4];
       uint16_t relay_state = bytetools::int_bswap(*(uint16_t *)&frame.data[5]);
       uint8_t checksum = frame.data[7];
-
+      Serial.print("Pack current ");
+      Serial.println(pack_current);
       if (pack_current < -20){
         Serial.println("Exceeding Maximum Charging Current");
         return true;
@@ -200,6 +201,10 @@ bool parse_frame(can_frame &frame, Out &out =
       uint16_t low_cell_voltage =
           bytetools::int_bswap(*(uint16_t *)&frame.data[3]);
       uint8_t low_cell_voltage_id = frame.data[5], checksum = frame.data[6];
+      Serial.print("High cell voltage ");
+      Serial.println(high_cell_voltage);
+      Serial.print("Low cell voltage ");
+      Serial.println(low_cell_voltage);
       if (high_cell_voltage > 4.2){
         Serial.println("Cell Overvoltage");
         return true;
@@ -215,6 +220,8 @@ bool parse_frame(can_frame &frame, Out &out =
               avg_temp = frame.data[4], internal_temp = frame.data[5],
               checksum = frame.data[6];
               battery_t = avg_temp;
+
+        if (high_temp > 60) return true;
     } return false;
     case 0x6B4: {
       uint8_t pack_health = frame.data[0];
