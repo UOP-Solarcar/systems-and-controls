@@ -117,11 +117,11 @@ private:
 };
 
 Relay headlights(A5, Relay::ACTIVE_LOW);
-Relay leftTurn(A0, Relay::ACTIVE_LOW);
-Relay rightTurn(A1, Relay::ACTIVE_LOW);
-Relay brakesLights(A2, Relay::ACTIVE_LOW);
-Relay motorController(A3, Relay::ACTIVE_LOW);
-Relay direction(A4, Relay::ACTIVE_LOW);
+Relay leftTurn(A1, Relay::ACTIVE_LOW);
+Relay rightTurn(A2, Relay::ACTIVE_LOW);
+Relay brakesLights(A3, Relay::ACTIVE_LOW);
+Relay motorController(A4, Relay::ACTIVE_LOW);
+Relay direction(A6, Relay::ACTIVE_LOW);
 Relay rightRear(11, Relay::ACTIVE_LOW);
 Relay leftRear(12, Relay::ACTIVE_LOW);
 
