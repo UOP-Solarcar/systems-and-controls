@@ -1,39 +1,3 @@
-#include "Arduino.h"
-#include "bytetools.cpp"
-#include "bytetools.hpp"
-
-#if defined(RPI4B)
-#include <cstring>
-#include <iostream>
-#include <linux/can.h>
-#include <net/if.h>
-#include <sys/ioctl.h>
-#include <sys/socket.h>
-#include <unistd.h>
-#else
-#include <Arduino.h>
-#include <SPI.h>
-#include <mcp2515.h> // (https://github.com/autowp/arduino-mcp2515/)
-#endif
-
-#if defined(RPI4B)
-typedef std::ostream Out;
-template <typename T> void print_n(T t, Out &out = std::cout) { out << t; }
-void print_n(uint8_t n, Out &out = std::cout) { out << (uint16_t)n; }
-void print_n(int8_t n, Out &out = std::cout) { out << (int16_t)n; }
-template <typename T> void print_hex(T t, Out &out = std::cout) {
-  out << std::hex << t << std::dec;
-}
-void println(Out &out = std::cout) { out << std::endl; }
-#else
-typedef Print Out;
-template <typename T> void print_n(T t, Out &out = Serial) { out.print(t); }
-template <typename T> void print_hex(T t, Out &out = Serial) {
-  out.print(t, HEX);
-}
-void println(Out &out = Serial) { out.println(); }
-#endif
-
 class Relay {
 
 public:
@@ -162,91 +126,6 @@ Any module under 2.5 volts
 
 uint8_t battery_t = {};
 
-bool parse_frame(can_frame &frame, Out &out =
-#if defined(RPI4B)
-                                       std::cout
-#else
-                                       Serial
-#endif
-) {
-  switch (frame.can_id) {
-    case 0x6B0: {
-      int16_t pack_current = bytetools::int_bswap(*(int16_t *)&frame.data[0]);
-      uint16_t pack_inst_voltage =
-          bytetools::int_bswap(*(uint16_t *)&frame.data[2]);
-      uint8_t pack_soc = frame.data[4];
-      uint16_t relay_state = bytetools::int_bswap(*(uint16_t *)&frame.data[5]);
-      uint8_t checksum = frame.data[7];
-      Serial.print("Pack current ");
-      Serial.println(pack_current);
-      if (pack_current < -20){
-        Serial.println("Exceeding Maximum Charging Current");
-        return true;
-      }
-      if (pack_current > 100){
-        Serial.println("Exceeding Maximum Discharge Current");
-        return true;
-      }
-    } return false;
-    case 0x6B1: {
-      uint16_t pack_dcl = bytetools::int_bswap(*(uint16_t *)&frame.data[0]),
-               pack_ccl = bytetools::int_bswap(*(uint16_t *)&frame.data[2]);
-      uint8_t high_temp = frame.data[4], low_temp = frame.data[5],
-              checksum = frame.data[7];
-    } return false;
-    case 0x6B2: {
-      uint16_t high_cell_voltage =
-          bytetools::int_bswap(*(uint16_t *)&frame.data[0]);
-      uint8_t high_cell_voltage_id = frame.data[2];
-      uint16_t low_cell_voltage =
-          bytetools::int_bswap(*(uint16_t *)&frame.data[3]);
-      uint8_t low_cell_voltage_id = frame.data[5], checksum = frame.data[6];
-      Serial.print("High cell voltage ");
-      Serial.println(high_cell_voltage);
-      Serial.print("Low cell voltage ");
-      Serial.println(low_cell_voltage);
-      if (high_cell_voltage > 4.2){
-        Serial.println("Cell Overvoltage");
-        return true;
-      }
-      if (low_cell_voltage <= 2.5){
-        Serial.println("Cell Undervoltage");
-        return true;
-      }
-    } return false;
-    case 0x6B3: {
-      uint8_t high_temp = frame.data[0], high_thermistor_id = frame.data[1],
-              low_temp = frame.data[2], low_thermistor_id = frame.data[3],
-              avg_temp = frame.data[4], internal_temp = frame.data[5],
-              checksum = frame.data[6];
-              battery_t = avg_temp;
-
-        if (high_temp > 60) return true;
-    } return false;
-    case 0x6B4: {
-      uint8_t pack_health = frame.data[0];
-      uint16_t adaptive_total_capacity =
-                   bytetools::int_bswap(*(uint16_t *)&frame.data[3]),
-               input_supply_voltage =
-                   bytetools::int_bswap(*(uint16_t *)&frame.data[5]);
-      uint8_t checksum = frame.data[7];
-    } return false;
-    case 0x36: {
-      uint8_t cell_id = frame.data[0];
-      uint16_t instant_voltage =
-                   bytetools::int_bswap(*(uint16_t *)&frame.data[1]),
-               internal_resistance =
-                   bytetools::int_bswap(*(uint16_t *)&frame.data[3]),
-               open_voltage = frame.data[5];
-      uint8_t checksum = frame.data[7];
-    } return false;
-    default:
-      return false;
-  }
-}
-
-MCP2515 mcp2515(8);
-
 Relay contactorPrecharge(4, Relay::ACTIVE_HIGH);
 Relay contactorPower(5, Relay::ACTIVE_HIGH);
 Relay faultIndicator(6, Relay::ACTIVE_HIGH);
@@ -285,26 +164,7 @@ void setPwmDuty(byte duty) {
 }
 
 void setup() {
-  pinMode(OC1A_PIN, OUTPUT);
 
-  // Clear Timer1 control and count registers
-  TCCR1A = 0;
-  TCCR1B = 0;
-  TCNT1  = 0;
-
-  // Set Timer1 configuration
-  // COM1A(1:0) = 0b10   (Output A clear rising/set falling)
-  // COM1B(1:0) = 0b00   (Output B normal operation)
-  // WGM(13:10) = 0b1010 (Phase correct PWM)
-  // ICNC1      = 0b0    (Input capture noise canceler disabled)
-  // ICES1      = 0b0    (Input capture edge select disabled)
-  // CS(12:10)  = 0b001  (Input clock select = clock/1)
-  
-  TCCR1A |= (1 << COM1A1) | (1 << WGM11);
-  TCCR1B |= (1 << WGM13) | (1 << CS10);
-  ICR1 = TCNT1_TOP;
-
-  
   // initalize relays
   contactorPrecharge.begin();
   contactorPower.begin();
@@ -319,19 +179,10 @@ void setup() {
   while (!Serial);
   Serial.println("Booted");
   SPI.begin();
-
-  mcp2515.reset();
-  mcp2515.setBitrate(CAN_500KBPS,
-                     MCP_8MHZ); // Sets CAN at speed 500KBPS and Clock 8MHz
-  mcp2515.setNormalMode();      // Sets CAN at normal mode
 }
 
 void loop() {
-  bpsFaultState = false;
-  can_frame frame{};
-  if (mcp2515.readMessage(&frame) == MCP2515::ERROR_OK) {
-    bpsFaultState = parse_frame(frame);
-  }
+  bpsFaultState = false; 
 
   if (estopTripped) {
     contactorPrecharge.open();
@@ -373,19 +224,6 @@ void loop() {
   } else {
       faultIndicator.open();
   }
-
-  /*if (now - prevReadTime >= INTERVAL){
-    prevReadTime = now;
-    fanSpeed = 0;
-    for (int i = 0; i < 10; i++){
-      if (battery_t > fanCurve[i]){
-        fanSpeed = fanSpeed + 10;
-      }
-    }
-    setPwmDuty(0);
-    delay(5000);
-    setPwmDuty(fanSpeed); // Change this value 0-100 to adjust duty cycle
-  }*/
 
   switch (state) {
 
