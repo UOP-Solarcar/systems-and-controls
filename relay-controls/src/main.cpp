@@ -126,25 +126,19 @@ Relay rightRear(11, Relay::ACTIVE_LOW);
 Relay leftRear(12, Relay::ACTIVE_LOW);
 
 Button leftSignal(5, Button::PULLUP, Button::TOGGLE, 10);
-Button comms(4, Button::PULLUP, Button::TOGGLE, 10);
 Button hazardBtn(3, Button::PULLUP, Button::TOGGLE, 10);
 Button rightSignal(2, Button::PULLUP, Button::TOGGLE, 10);
-Button directionToggle(6, Button::PULLUP, Button::TOGGLE, 10);
 Button headlightsBtn(7, Button::PULLUP, Button::TOGGLE, 10);
 //Button brakesLightsBtn(8, Button::PULLUP, Button::TOGGLE, 10);
-Button motorToggle(8, Button::PULLUP, Button::TOGGLE, 10);
 Button brakeSignal(9, Button::PULLUP, Button::MOMENTARY, 10);
 
 void setup() {
-  //Serial.begin(115200);
+  Serial.begin(115200);
 
   hazardBtn.begin();
   leftSignal.begin();
   rightSignal.begin();
   headlightsBtn.begin();
-  comms.begin();
-  directionToggle.begin();
-  motorToggle.begin();
   brakeSignal.begin();
 
   headlights.begin();
@@ -164,25 +158,10 @@ void loop() {
   leftSignal.update();
   rightSignal.update();
   headlightsBtn.update();
-  comms.update();
-  directionToggle.update();
-  motorToggle.update();
   brakeSignal.update();
 
   static unsigned long flasherT0 = 0;
   const unsigned long interval = 300;          // 300 ms ≈ 1.7 Hz
-
-  if (motorToggle) {
-    motorController.close();
-  } else {
-    if (motorController.isClosed()) motorController.open();
-  }
-
-  if (directionToggle) {
-    direction.close();
-  } else {
-    if (direction.isClosed()) direction.open();
-  }
 
   if (hazardBtn) {// hazards ON (latched)
     Serial.println("hazards");
@@ -202,6 +181,8 @@ void loop() {
     Serial.println("left signal");
     if (millis() - flasherT0 >= interval) {
       leftTurn.toggle();
+      leftRear.toggle();
+      flasherT0 = millis(); // reset timer
     }
   } else {
     if (leftTurn.isClosed()) leftTurn.open();
@@ -211,6 +192,8 @@ void loop() {
     Serial.println("right signal");
     if (millis() - flasherT0 >= interval) {
       rightTurn.toggle();
+      rightRear.toggle();
+      flasherT0 = millis(); // reset timer
     }
   } else {
     if (rightTurn.isClosed()) rightTurn.open();
@@ -226,9 +209,15 @@ void loop() {
   if (brakeSignal) {
     Serial.println("brake");
     brakesLights.close();
-    if (!leftSignal){
+    if (!leftSignal || !hazardBtn){
+      leftRear.close();
+    } if (!rightSignal || !hazardBtn) {
+      rightRear.close();
+    }
+  } else {
+    if (!leftSignal && !hazardBtn){
       leftRear.open();
-    } if (!rightSignal) {
+    } if (!rightSignal && !hazardBtn) {
       rightRear.open();
     }
   }

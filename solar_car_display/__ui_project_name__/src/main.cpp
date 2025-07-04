@@ -26,135 +26,15 @@ int supplimental_soc = 0; // Additional SOC from supplimental battery
 // Declaration for an SSD1306 display connected to I2C (SDA, SCL pins)
 #define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
 Adafruit_SSD1306 display1(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
-Adafruit_SSD1306 display2(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+//Adafruit_SSD1306 display2(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 const unsigned long DISPLAY_INTERVAL = 500;   // update OLED every 500 ms
 unsigned long prevDisplayTime = 0;
 
-typedef Print Out;
-
-void parse_frame(can_frame &frame, Out &out = Serial) {
-  switch (frame.can_id & 0xFFFFFF00) {
-  // Motor Controller Statuses
-  case 0x80000900: // status 1
-  case 0x80000e00: // status 2
-  case 0x80000f00: // status 3
-  case 0x80001000: // status 4
-  case 0x80001b00: // status 5
-  case 0x80003a00: // status 6
-  {
-    //canid_t motor_controller_id = frame.can_id & 0x000000FF;
-    //print_n("Motor Controller ID: 0x", out);
-    //print_hex(motor_controller_id, out);
-    //print_n(" Status #", out);
-    switch (frame.can_id & 0xFFFFFF00) {
-    // Motor Controller Statuses
-    case 0x80000900: // status 1
-    {
-      //print_n('1', out);
-      //int32_t rpm_l = bytetools::int_bswap(*(int32_t *)&frame.data[0]);
-      //int16_t current = bytetools::int_bswap(*(int16_t *)&frame.data[4]),
-      //        duty_cycle = bytetools::int_bswap(*(int16_t *)&frame.data[6]);
-      //rpm = rpm_l;
-    } break;
-    case 0x80000e00: // status 2
-    {
-      //print_n('2', out);
-      //int32_t ah_used = bytetools::int_bswap(*(int32_t *)&frame.data[0]),
-      //        ah_charged = bytetools::int_bswap(*(int32_t *)&frame.data[4]);
-    } break;
-    case 0x80000f00: // status 3
-    {
-      //print_n('3', out);
-      //int32_t wh_used = bytetools::int_bswap(*(int32_t *)&frame.data[0]),
-              //wh_charged = bytetools::int_bswap(*(int32_t *)&frame.data[4]);
-      //kWIn = wh_charged; // Calculate motor Wh
-      //kWOut = wh_used; // Calculate motor Wh
-    } break;
-    case 0x80001000: // status 4
-    {
-      //print_n('4', out);
-      //int16_t temp_fet = bytetools::int_bswap(*(int16_t *)&frame.data[0]),
-      //        temp_motor = bytetools::int_bswap(*(int16_t *)&frame.data[2]),
-      //        current_in = bytetools::int_bswap(*(int16_t *)&frame.data[4]),
-      //        pid_position_now =
-      //            bytetools::int_bswap(*(int16_t *)&frame.data[6]);
-    } break;
-    case 0x80001b00: // status 5
-    {
-      //print_n('5', out);
-      //uint32_t tachometer = __builtin_bswap32(*(uint32_t *)&frame.data[0]);
-      //uint16_t voltage_in = __builtin_bswap16(*(uint16_t *)&frame.data[4]),
-      //         reserved = __builtin_bswap16(*(uint16_t *)&frame.data[6]);
-    } break;
-    case 0x80003a00: // status 6
-    {
-      //print_n('6', out);
-      //int16_t adc1 = bytetools::int_bswap(*(int16_t *)&frame.data[0]),
-      //        adc2 = bytetools::int_bswap(*(int16_t *)&frame.data[2]),
-      //        adc3 = bytetools::int_bswap(*(int16_t *)&frame.data[4]),
-      //        ppm = bytetools::int_bswap(*(int16_t *)&frame.data[6]);
-    } break;
-    }
-  } break;
-  default: {
-    switch (frame.can_id) {
-    case 0x6B0: {
-      int16_t pack_current = bytetools::int_bswap(*(int16_t *)&frame.data[0]);
-      uint16_t pack_inst_voltage =
-          bytetools::int_bswap(*(uint16_t *)&frame.data[2]);
-      uint8_t pack_soc = frame.data[4];
-      //uint16_t relay_state = bytetools::int_bswap(*(uint16_t *)&frame.data[5]);
-      //uint8_t checksum = frame.data[7];
-      voltage_total = pack_inst_voltage;
-      current_total = pack_current;
-      SOC = pack_soc;
-    } break;
-    case 0x6B1: {
-      //uint16_t pack_dcl = bytetools::int_bswap(*(uint16_t *)&frame.data[0]),
-      //         pack_ccl = bytetools::int_bswap(*(uint16_t *)&frame.data[2]);
-      //uint8_t high_temp = frame.data[4], low_temp = frame.data[5],
-      //        checksum = frame.data[7];
-    } break;
-    case 0x6B2: {
-      //uint16_t high_cell_voltage =
-      //    bytetools::int_bswap(*(uint16_t *)&frame.data[0]);
-      //uint8_t high_cell_voltage_id = frame.data[2];
-      //uint16_t low_cell_voltage =
-      //    bytetools::int_bswap(*(uint16_t *)&frame.data[3]);
-      //uint8_t low_cell_voltage_id = frame.data[5], checksum = frame.data[6];
-    } break;
-    case 0x6B3: {
-      //uint8_t high_temp = frame.data[0], high_thermistor_id = frame.data[1],
-      //        low_temp = frame.data[2], low_thermistor_id = frame.data[3],
-      //        avg_temp = frame.data[4], internal_temp = frame.data[5],
-      //        checksum = frame.data[6];
-    } break;
-    case 0x6B4: {
-      //uint8_t pack_health = frame.data[0];
-      //uint16_t adaptive_total_capacity =
-      //             bytetools::int_bswap(*(uint16_t *)&frame.data[3]),
-      //         input_supply_voltage =
-      //             bytetools::int_bswap(*(uint16_t *)&frame.data[5]);
-      //uint8_t checksum = frame.data[7];
-    } break;
-    case 0x36: {
-      //uint8_t cell_id = frame.data[0];
-      //uint16_t instant_voltage =
-      //             bytetools::int_bswap(*(uint16_t *)&frame.data[1]),
-      //         internal_resistance =
-      //             bytetools::int_bswap(*(uint16_t *)&frame.data[3]),
-      //         open_voltage = frame.data[5];
-      //uint8_t checksum = frame.data[7];
-    } break;
-    default:
-      break;
-    }
-  } break;
-  }
-}
-
 MCP2515 mcp2515(10); // SPI CS Pin 10
+
+inline int16_t  be16s(const uint8_t* p){ return  (int16_t)((p[0]<<8)|p[1]); }
+inline uint16_t be16u(const uint8_t* p){ return (uint16_t)((p[0]<<8)|p[1]); }
 
 void calculateKWh() {
     total_kwh = int(current_total * voltage_total * (millis() - previous_time_wh) / 3600000.0); // kWh = (A * V * t) / 3600000
@@ -169,27 +49,27 @@ void calc_suplimental_soc() {
 
 void display() {
     display1.clearDisplay();
-    display2.clearDisplay();
+    //display2.clearDisplay();
 
-    display1.setTextSize(4);
+    display1.setTextSize(3);
     display1.setTextColor(WHITE);
     display1.setCursor(0, 0);
-    display1.print("Total kWh: ");
+    display1.print("kWh:");
     display1.println(total_kwh);
     
-    display2.setTextSize(4);
-    display2.setTextColor(WHITE);
-    display2.setCursor(0, 0);
-    display2.print("SOC: ");
-    display2.println(SOC);
+    display1.setTextSize(3);
+    display1.setTextColor(WHITE);
+    display1.setCursor(0, 32);
+    display1.print("SOC:");
+    display1.println(SOC);
 
-    display2.setCursor(0, 20);
-    display2.print("Suppl. SOC: ");
-    display2.println(supplimental_soc);
+    //display2.setCursor(0, 20);
+    //display2.print("Suppl. SOC: ");
+    //display2.println(supplimental_soc);
 
     // Display the updates
     display1.display();
-    display2.display();
+    //display2.display();
 }
 
 
@@ -203,20 +83,20 @@ void setup()
     //Serial.println(F("SSD1306A allocation failed"));
     for(;;); // Don't proceed, loop forever
   }
-  if(!display2.begin(SSD1306_SWITCHCAPVCC, 0x3D)) { 
+  //if(!display2.begin(SSD1306_SWITCHCAPVCC, 0x3D)) { 
     //Serial.println(F("SSD1306B allocation failed"));
-    for(;;); // Don't proceed, loop forever
-  }
+  //  for(;;); // Don't proceed, loop forever
+  //}
 
   display1.display();
-  display2.display();
+  //display2.display();
   delay(1000);
   display1.clearDisplay();
   display1.drawPixel(10, 10, WHITE);
-  display2.clearDisplay();
-  display2.drawPixel(10, 10, WHITE);
+  //display2.clearDisplay();
+  //display2.drawPixel(10, 10, WHITE);
   display1.display();
-  display2.display();
+  //display2.display();
 
   SPI.begin();
 
@@ -252,9 +132,15 @@ void loop()
         display();
     }
 
-    can_frame frame{};
-    if (mcp2515.readMessage(&frame) == MCP2515::ERROR_OK) {
-        parse_frame(frame);
+    can_frame f;
+    while (mcp2515.readMessage(&f) == MCP2515::ERROR_OK) {
+    switch (f.can_id) {
+        case 0x6B0: current_total  = be16s(&f.data[0]) * 10;
+                  voltage_total  = be16u(&f.data[2]) * 10;
+                  SOC  = f.data[4];
+                  break;
+        default: break;
+        }
     }
     calculateKWh();
     calc_suplimental_soc(); // Function to calculate the supplemental SOC

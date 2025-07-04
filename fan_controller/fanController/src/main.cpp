@@ -12,6 +12,7 @@ int temperature;
 unsigned long now;
 unsigned long prevReadTime = 0;
 int fanCurve[10] = {33, 35, 37, 39, 41, 43, 45, 47, 49, 51};
+int temp = 0;
 
 const byte OC1A_PIN = 9;
 const byte OC1B_PIN = 10;
@@ -25,7 +26,7 @@ void setPwmDuty(byte duty) {
 
 int getTemperature() {
   //somehow get temperature
-  return 36;
+  return (temp + 1)%100;
 }
 
 void setup() {
@@ -54,15 +55,13 @@ void loop() {
   now = millis();
   if (now - prevReadTime >= INTERVAL){
     prevReadTime = now;
-    int temp = getTemperature();
+    temp = getTemperature();
     fanSpeed = 0;
     for (int i = 0; i < 10; i++){
       if (temp > fanCurve[i]){
         fanSpeed = fanSpeed + 10;
       }
     }
-    setPwmDuty(0);
-    delay(5000);
     setPwmDuty(fanSpeed); //Change this value 0-100 to adjust duty cycle
   }
     
