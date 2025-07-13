@@ -334,7 +334,7 @@ void setup() {
 
   mcp2515.reset();
   mcp2515.setBitrate(CAN_500KBPS,
-                     MCP_8MHZ); // Sets CAN at speed 500KBPS and Clock 8MHz
+                     MCP_8MHZ); // Sets CAN at speed 250KBPS and Clock 8MHz
   mcp2515.setNormalMode();      // Sets CAN at normal mode
 }
 
