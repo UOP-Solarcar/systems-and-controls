@@ -116,9 +116,9 @@ private:
   bool     _latched    = false;
 };
 
-Relay headlights(A5, Relay::ACTIVE_LOW);
-Relay leftTurn(A1, Relay::ACTIVE_LOW);
-Relay rightTurn(A2, Relay::ACTIVE_LOW);
+Relay headlights(A1, Relay::ACTIVE_LOW);
+Relay leftTurn(A2, Relay::ACTIVE_LOW);
+Relay rightTurn(A5, Relay::ACTIVE_LOW);
 Relay brakesLights(A3, Relay::ACTIVE_LOW);
 Relay motorController(A4, Relay::ACTIVE_LOW);
 Relay direction(A6, Relay::ACTIVE_LOW);
@@ -127,9 +127,9 @@ Relay leftRear(12, Relay::ACTIVE_LOW);
 
 Button leftSignal(5, Button::PULLUP, Button::TOGGLE, 10);
 Button hazardBtn(3, Button::PULLUP, Button::TOGGLE, 10);
-Button rightSignal(2, Button::PULLUP, Button::TOGGLE, 10);
+Button rightSignal(10, Button::PULLUP, Button::TOGGLE, 10);
 Button headlightsBtn(7, Button::PULLUP, Button::TOGGLE, 10);
-//Button brakesLightsBtn(8, Button::PULLUP, Button::TOGGLE, 10);
+//wwButton brakesLightsBtn(8, Button::PULLUP, Button::TOGGLE, 10);
 Button brakeSignal(9, Button::PULLUP, Button::MOMENTARY, 10);
 
 void setup() {
