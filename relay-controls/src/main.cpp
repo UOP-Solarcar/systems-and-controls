@@ -1,3 +1,30 @@
+/*
+This is just what I have tried to troubleshoot so far and a todo list for nect steps.
+
+What’s Working
+The relay and Arduino turn on and seem to function
+The wires on the steering wheel are connected, only missing ground connection
+Most connection through umbilical are working
+Wires to relay seem correct and have no shorts
+
+What’s Not Working
+Steering Wheel is missing consistent ground connection, buttons presses are not registered by Arduino
+The wire on the umbilical (looking at connector it is bottom row second from the right
+Not all lights are wired correctly 
+
+
+What is left to check
+Which lights specifically are not working
+Code correctness
+Full system test
+
+Work To-Do
+Fix all wiring issues
+Get full system working
+Redo steering wheel, send messages over CAN
+Light controller functions through CAN by receiving start and stop messages 
+*/
+
 #include <Arduino.h>
 
 class Relay {
