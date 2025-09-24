@@ -1,3 +1,30 @@
+/*
+This is just what I have tried to troubleshoot so far and a todo list for nect steps.
+
+What’s Working
+The relay and Arduino turn on and seem to function
+The wires on the steering wheel are connected, only missing ground connection
+Most connection through umbilical are working
+Wires to relay seem correct and have no shorts
+
+What’s Not Working
+Steering Wheel is missing consistent ground connection, buttons presses are not registered by Arduino
+The wire on the umbilical (looking at connector it is bottom row second from the right
+Not all lights are wired correctly 
+
+
+What is left to check
+Which lights specifically are not working
+Code correctness
+Full system test
+
+Work To-Do
+Fix all wiring issues
+Get full system working
+Redo steering wheel, send messages over CAN
+Light controller functions through CAN by receiving start and stop messages 
+*/
+
 #include <Arduino.h>
 
 class Relay {
@@ -116,9 +143,9 @@ private:
   bool     _latched    = false;
 };
 
-Relay headlights(A5, Relay::ACTIVE_LOW);
-Relay leftTurn(A1, Relay::ACTIVE_LOW);
-Relay rightTurn(A2, Relay::ACTIVE_LOW);
+Relay headlights(A1, Relay::ACTIVE_LOW);
+Relay leftTurn(A2, Relay::ACTIVE_LOW);
+Relay rightTurn(A5, Relay::ACTIVE_LOW);
 Relay brakesLights(A3, Relay::ACTIVE_LOW);
 Relay motorController(A4, Relay::ACTIVE_LOW);
 Relay direction(A6, Relay::ACTIVE_LOW);
@@ -126,25 +153,19 @@ Relay rightRear(11, Relay::ACTIVE_LOW);
 Relay leftRear(12, Relay::ACTIVE_LOW);
 
 Button leftSignal(5, Button::PULLUP, Button::TOGGLE, 10);
-Button comms(4, Button::PULLUP, Button::TOGGLE, 10);
 Button hazardBtn(3, Button::PULLUP, Button::TOGGLE, 10);
-Button rightSignal(2, Button::PULLUP, Button::TOGGLE, 10);
-Button directionToggle(6, Button::PULLUP, Button::TOGGLE, 10);
+Button rightSignal(10, Button::PULLUP, Button::TOGGLE, 10);
 Button headlightsBtn(7, Button::PULLUP, Button::TOGGLE, 10);
-//Button brakesLightsBtn(8, Button::PULLUP, Button::TOGGLE, 10);
-Button motorToggle(8, Button::PULLUP, Button::TOGGLE, 10);
+//wwButton brakesLightsBtn(8, Button::PULLUP, Button::TOGGLE, 10);
 Button brakeSignal(9, Button::PULLUP, Button::MOMENTARY, 10);
 
 void setup() {
-  //Serial.begin(115200);
+  Serial.begin(115200);
 
   hazardBtn.begin();
   leftSignal.begin();
   rightSignal.begin();
   headlightsBtn.begin();
-  comms.begin();
-  directionToggle.begin();
-  motorToggle.begin();
   brakeSignal.begin();
 
   headlights.begin();
@@ -164,25 +185,10 @@ void loop() {
   leftSignal.update();
   rightSignal.update();
   headlightsBtn.update();
-  comms.update();
-  directionToggle.update();
-  motorToggle.update();
   brakeSignal.update();
 
   static unsigned long flasherT0 = 0;
   const unsigned long interval = 300;          // 300 ms ≈ 1.7 Hz
-
-  if (motorToggle) {
-    motorController.close();
-  } else {
-    if (motorController.isClosed()) motorController.open();
-  }
-
-  if (directionToggle) {
-    direction.close();
-  } else {
-    if (direction.isClosed()) direction.open();
-  }
 
   if (hazardBtn) {// hazards ON (latched)
     Serial.println("hazards");
@@ -202,6 +208,8 @@ void loop() {
     Serial.println("left signal");
     if (millis() - flasherT0 >= interval) {
       leftTurn.toggle();
+      leftRear.toggle();
+      flasherT0 = millis(); // reset timer
     }
   } else {
     if (leftTurn.isClosed()) leftTurn.open();
@@ -211,6 +219,8 @@ void loop() {
     Serial.println("right signal");
     if (millis() - flasherT0 >= interval) {
       rightTurn.toggle();
+      rightRear.toggle();
+      flasherT0 = millis(); // reset timer
     }
   } else {
     if (rightTurn.isClosed()) rightTurn.open();
@@ -226,9 +236,15 @@ void loop() {
   if (brakeSignal) {
     Serial.println("brake");
     brakesLights.close();
-    if (!leftSignal){
+    if (!leftSignal || !hazardBtn){
+      leftRear.close();
+    } if (!rightSignal || !hazardBtn) {
+      rightRear.close();
+    }
+  } else {
+    if (!leftSignal && !hazardBtn){
       leftRear.open();
-    } if (!rightSignal) {
+    } if (!rightSignal && !hazardBtn) {
       rightRear.open();
     }
   }
