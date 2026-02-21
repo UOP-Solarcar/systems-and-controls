@@ -137,7 +137,7 @@ void loop() {
       Serial.println("Precharge Contactor Closed");
 
       stateT0 = millis();
-
+      contactorPower.close();
       state = WAITING;
 
     case WAITING:
@@ -145,9 +145,7 @@ void loop() {
       if (millis() - stateT0 >= 5000) {
         contactorPrecharge.open();
         delay(500);
-        contactorPower.close();
         Serial.println("Precharge Contactor Opened");
-        
         Serial.println("Ready");
         state = RUNNING;
       }
