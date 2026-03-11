@@ -1,0 +1,52 @@
+#!/bin/bash
+# cubemx-to-pio.sh - Copy STM32CubeMX project to PlatformIO
+# Usage: cd your-pio-project && cubemx-to-pio bms_2026
+
+CUBEMX_WORKSPACE="$HOME/STM32CubeIDE/workspace_2.0.0"
+CUBE_PROJECT="$1"
+
+if [ -z "$CUBE_PROJECT" ]; then
+  echo "Usage: $(basename "$0") <cube_project_name>"
+  echo "Example: $(basename "$0") bms_2026"
+  exit 1
+fi
+
+CUBE_PATH="$CUBEMX_WORKSPACE/$CUBE_PROJECT"
+if [ ! -d "$CUBE_PATH" ]; then
+  echo "❌ CubeMX project '$CUBE_PROJECT' not found at $CUBE_PATH"
+  exit 1
+fi
+
+echo "🚀 Migrating $CUBE_PROJECT → $(pwd)"
+
+# Create PlatformIO directories
+mkdir -p include lib src ld boards
+
+# Copy Core/Inc → include/
+echo "📁 Core/Inc → include/"
+cp "$CUBE_PATH/Core/Inc/"* include/ 2>/dev/null || echo "   (empty)"
+
+# Copy Core/Src → src/
+echo "📁 Core/Src → src/"
+cp "$CUBE_PATH/Core/Src/"* src/
+
+# Copy HAL Drivers → lib/
+echo "📁 HAL Drivers → lib/"
+rm -rf lib/STM32H5xx_HAL_Driver
+cp -r "$CUBE_PATH/Drivers/STM32H5xx_HAL_Driver" lib/
+
+# Copy Linker Scripts → ld/
+echo "🔗 Linker Scripts → ld/"
+cp "$CUBE_PATH/STM32H562RGTX_"*.ld ld/ 2>/dev/null || echo "   (no .ld files)"
+
+# Copy Startup → lib/
+echo "🚀 Startup → lib/"
+mkdir -p lib/STM32H5xx_Startup
+cp "$CUBE_PATH/Core/Startup/startup_"*.s lib/STM32H5xx_Startup/ 2>/dev/null || echo "   (no startup)"
+
+echo "✅ Migration complete!"
+echo ""
+echo "Next steps:"
+echo "1. Update platformio.ini: board = <your-board>  (create boards/*.json if needed)"
+echo "2. pio run --target clean && pio run"
+echo "3. Regenerate in CubeMX → run this script again to update"

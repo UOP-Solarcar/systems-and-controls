@@ -46,8 +46,7 @@ FDCAN_HandleTypeDef hfdcan1;
 
 PCD_HandleTypeDef hpcd_USB_DRD_FS;
 
-/* USER CODE BEGIN PV */
-/* USER CODE BEGIN PV */
+// Button-to-relay pin mapping
 GPIO_TypeDef* btn_port[NUM_RELAYS] = {GPIOC, GPIOC, GPIOC, GPIOC, GPIOC, GPIOC, GPIOC, GPIOA};
 uint16_t btn_pin[NUM_RELAYS] = {GPIO_PIN_0, GPIO_PIN_1, GPIO_PIN_2, GPIO_PIN_3, GPIO_PIN_7, GPIO_PIN_8, GPIO_PIN_9, GPIO_PIN_8};
 
@@ -58,7 +57,8 @@ uint8_t relay_state[NUM_RELAYS] = {0};
 uint8_t btn_stable[NUM_RELAYS] = {1, 1, 1, 1, 1, 1, 1, 1};
 uint8_t btn_raw[NUM_RELAYS] = {1, 1, 1, 1, 1, 1, 1, 1};
 uint32_t btn_debounce_time[NUM_RELAYS] = {0};
-/* USER CODE END PV */
+/* USER CODE BEGIN PV */
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -115,8 +115,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
+	  /* USER CODE BEGIN 3 */
 	  for (int i = 0; i < NUM_RELAYS; i++) {
 	      uint8_t reading = HAL_GPIO_ReadPin(btn_port[i], btn_pin[i]);
 
@@ -137,8 +136,10 @@ int main(void)
 	          }
 	      }
 	  }
-  /* USER CODE END 3 */
+	  /* USER CODE END 3 */
+    /* USER CODE BEGIN 3 */
   }
+  /* USER CODE END 3 */
 }
 
 /**
@@ -313,7 +314,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3
                           |GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PA4 PA5 PA6 PA7 */
@@ -340,7 +341,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin : PA8 */
   GPIO_InitStruct.Pin = GPIO_PIN_8;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */

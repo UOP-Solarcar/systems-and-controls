@@ -1,0 +1,26 @@
+{
+  "build": {
+    "core": "stm32",
+    "cpu": "cortex-m33",
+    "f_cpu": "250000000L",
+    "mcu": "stm32h562rgtx",
+    "extra_flags": "-DSTM32H562xx -DUSE_HAL_DRIVER"
+  },
+  "connectivity": ["usb"],
+  "debug": {
+    "default_tools": ["stlink"],
+    "jlink_device": "STM32H562RG",
+    "openocd_target": "stm32h5x",
+    "svd_path": "STM32H562.svd"
+  },
+  "frameworks": ["stm32cube"],
+  "name": "Pacific Solar Car YKX32S-H562RG Battery Management System",
+  "upload": {
+    "maximum_ram_size": 1310720,
+    "maximum_size": 2048180,
+    "protocol": "stlink",
+    "protocols": ["stlink", "jlink", "cmsis-dap", "dfu"]
+  },
+  "url": "https://github.com/UOP-Solarcar",
+  "vendor": "Pacific Solar Car"
+}
