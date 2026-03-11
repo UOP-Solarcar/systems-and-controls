@@ -15,7 +15,7 @@ constexpr uint8_t PRECHARGE_PIN = 4;
 constexpr uint8_t CONTACTOR_PINS[] = {5};
 constexpr uint8_t PIN_FAULT_LAMP   = 6;
 constexpr uint8_t ESTOP_PIN        = 3;
-
+constexpr bool    ESTOP_ACTIVE     = LOW;       // LOW = pressed (active-low with pullup)
 
 constexpr uint8_t RELAY_OPEN_LEVEL =
         (RELAY_CLOSE_LEVEL == HIGH ? LOW : HIGH);
@@ -25,7 +25,7 @@ const int16_t  TRIP_I_HI_dA  = 1000;      // +100 A  (0.1 A units)
 const int16_t  TRIP_I_LO_dA  = -425;      //  −42.5 A
 const uint16_t TRIP_V_HI_dV  =  950;      //  95.0 V (0.1 V units)
 const uint16_t TRIP_V_LO_dV  =  780;      //  78.0 V
-const uint8_t  TRIP_T_HI_C   =   45;      //  45 °C  (change back to 60 if that was a typo)
+const uint8_t  TRIP_T_HI_C   =   45;      //  45 °C
 const uint16_t CELL_V_HI_ct  = 42000;     // 4.2000 V (0.0001 V/ct)
 const uint16_t CELL_V_LO_ct  = 25000;     // 2.5000 V
 
@@ -59,8 +59,23 @@ void setPrecharge(bool closed){
 
 void lampOff(){ digitalWrite(PIN_FAULT_LAMP, LOW); }
 
+void processCAN(can_frame &f){
+  switch (f.can_id) {
+    case 0x6B0: cur_dA   = be16s(&f.data[0]);
+                pack_dV  = be16u(&f.data[2]);
+                soc_pct  = f.data[4];
+                break;
+    case 0x6B2: cell_hi_ct = be16u(&f.data[0]);
+                cell_lo_ct = be16u(&f.data[3]);
+                break;
+    case 0x6B3: temp_hi  = f.data[0];
+                temp_avg = f.data[4];
+                break;
+    default: break;
+  }
+}
+
 void setup(){
-  
   Serial.begin(115200); while(!Serial){;}
 
   for (uint8_t p : CONTACTOR_PINS) pinMode(p, OUTPUT);
@@ -75,9 +90,20 @@ void setup(){
   SPI.begin();
   mcp2515.reset();
   mcp2515.setBitrate(CAN_500KBPS, MCP_8MHZ);
-  mcp2515.setNormalMode();
+
+  // Accept all CAN IDs
+  mcp2515.setFilterMask(MCP2515::MASK0, false, 0x000);
+  mcp2515.setFilterMask(MCP2515::MASK1, false, 0x000);
+  mcp2515.setFilter(MCP2515::RXF0, false, 0x000);
+  mcp2515.setFilter(MCP2515::RXF1, false, 0x000);
+  mcp2515.setFilter(MCP2515::RXF2, false, 0x000);
+  mcp2515.setFilter(MCP2515::RXF3, false, 0x000);
+  mcp2515.setFilter(MCP2515::RXF4, false, 0x000);
+  mcp2515.setFilter(MCP2515::RXF5, false, 0x000);
 
   Serial.println(F("\nRun/Trip controller — stateless fault logic"));
+
+  mcp2515.setNormalMode();
   setContactors(false);
   setPrecharge(false);
   delay(1000);
@@ -86,19 +112,7 @@ void setup(){
   setPrecharge(false);
   can_frame f;
   while (mcp2515.readMessage(&f) == MCP2515::ERROR_OK) {
-    switch (f.can_id) {
-      case 0x6B0: cur_dA   = be16s(&f.data[0]);
-                  pack_dV  = be16u(&f.data[2]);
-                  soc_pct  = f.data[4];
-                  break;
-      case 0x6B2: cell_hi_ct = be16u(&f.data[0]);
-                  cell_lo_ct = be16u(&f.data[3]);
-                  break;
-      case 0x6B3: temp_hi  = f.data[0];
-                  temp_avg = f.data[4];
-                  break;
-      default: break;
-    }
+    processCAN(f);
   }
   delay(500);
   setContactors(true);
@@ -109,23 +123,11 @@ void loop(){
   /* ---------- read CAN ---------- */
   can_frame f;
   while (mcp2515.readMessage(&f) == MCP2515::ERROR_OK) {
-    switch (f.can_id) {
-      case 0x6B0: cur_dA   = be16s(&f.data[0]);
-                  pack_dV  = be16u(&f.data[2]);
-                  soc_pct  = f.data[4];
-                  break;
-      case 0x6B2: cell_hi_ct = be16u(&f.data[0]);
-                  cell_lo_ct = be16u(&f.data[3]);
-                  break;
-      case 0x6B3: temp_hi  = f.data[0];
-                  temp_avg = f.data[4];
-                  break;
-      default: break;
-    }
+    processCAN(f);
   }
 
   /* ---------- evaluate live faults ---------- */
-  bool estopHigh = digitalRead(ESTOP_PIN);       // HIGH = pressed
+  bool estopPressed = (digitalRead(ESTOP_PIN) == ESTOP_ACTIVE);
   if (!liveFault){
     liveFault =
         (temp_hi >= TRIP_T_HI_C) ||
@@ -145,13 +147,12 @@ void loop(){
   }
 
   /* ---------- actuation ---------- */
-  if(liveFault || estopHigh){
+  if(liveFault || estopPressed){
     setContactors(false);
   }
 
-
   static unsigned long blinkT = 0;
-  if (liveFault || estopHigh) {
+  if (liveFault || estopPressed) {
       if (millis() - blinkT >= 500) {
           digitalWrite(PIN_FAULT_LAMP, !digitalRead(PIN_FAULT_LAMP));
           blinkT = millis();
@@ -160,10 +161,11 @@ void loop(){
       lampOff();
   }
 
-  /* ---------- status print (200 ms) ---------- */
+  /* ---------- status print (1 s) ---------- */
   static unsigned long tPrint = 0, tLastRx = 0;
   unsigned long now = millis();
-  if (now - tPrint >= 200 && cur_dA != INT16_MIN) {
+
+  if (now - tPrint >= 1000 && cur_dA != INT16_MIN) {
       float I   = cur_dA / 10.0f;
       float Vhi = cellVolts(cell_hi_ct);
       float Vlo = cellVolts(cell_lo_ct);
@@ -173,23 +175,23 @@ void loop(){
       Serial.print("I ");  Serial.print(I,1);
       Serial.print(" A | V-hi "); Serial.print(Vhi,4);
       Serial.print(" V | V-lo "); Serial.print(Vlo,4);
-      Serial.print(" V | SOC ");  Serial.print(soc_pct);
-      Serial.print("% | T-hi ");   Serial.print(temp_hi);
+      Serial.print(" V | SOC ");  Serial.print(soc_pct * 0.5f, 1);
+      Serial.print("% | T-hi ");  Serial.print(temp_hi);
       Serial.print(" °C | T-avg ");Serial.print(temp_avg);
       Serial.print(" °C | ");      Serial.print(age,1);
       Serial.println(" s");
 
-      if (liveFault || estopHigh) {
-        Serial.print(F("!!! DC THE CONTACTOR  ("));
-        if (estopHigh) { Serial.print("E-stop"); }
+      if (liveFault || estopPressed) {
+        Serial.print(F("!!! FAULT: "));
+        if (estopPressed) { Serial.print("E-stop"); }
         else if (cell_hi_ct >= CELL_V_HI_ct)   { Serial.print("cell over-volt ");  Serial.print(Vhi,4); Serial.print(" V"); }
         else if (cell_lo_ct <= CELL_V_LO_ct)   { Serial.print("cell under-volt "); Serial.print(Vlo,4); Serial.print(" V"); }
-        else if (temp_hi >= TRIP_T_HI_C)       { Serial.print("over-temp ");       Serial.print(temp_hi); Serial.print(" °C"); }
+        else if (temp_hi >= TRIP_T_HI_C)       { Serial.print("over-temp ");       Serial.print(temp_hi); Serial.print(" C"); }
         else if (cur_dA > TRIP_I_HI_dA)        { Serial.print("over-current ");    Serial.print(I,1);    Serial.print(" A"); }
         else if (cur_dA < TRIP_I_LO_dA)        { Serial.print("charge current ");  Serial.print(I,1);    Serial.print(" A"); }
         else if (pack_dV > TRIP_V_HI_dV)       { Serial.print("pack over-volt ");  Serial.print(pack_dV/10.0f,1); Serial.print(" V"); }
         else if (pack_dV < TRIP_V_LO_dV)       { Serial.print("pack under-volt "); Serial.print(pack_dV/10.0f,1); Serial.print(" V"); }
-        Serial.println(")");
+        Serial.println();
       }
       tPrint = now;
   }
