@@ -1,1 +1,15 @@
 .pio
+
+# STM32CubeIDE build artifacts
+Debug/
+Release/
+*.o
+*.d
+*.su
+*.cyclo
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+*.mk
