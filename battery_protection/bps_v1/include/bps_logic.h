@@ -31,8 +31,8 @@ struct BpsData {
     uint16_t cell_lo_ct = 0xFFFF;
 };
 
-/* ---------- CAN frame for native builds ---------- */
-#ifndef ARDUINO
+/* ---------- CAN frame stub (used when mcp2515 library is not included) ---------- */
+#ifndef CAN_H_
 struct can_frame {
     uint32_t can_id;
     uint8_t  can_dlc;
