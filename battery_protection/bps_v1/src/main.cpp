@@ -54,6 +54,8 @@ void setup(){
   pinMode(ESTOP_PIN, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(ESTOP_PIN), eStopISR, RISING);
 
+  // Init MCP2515 after estop interrupt is attached to prevent
+  // fault state from triggering before CAN frames are read
   SPI.begin();
   mcp2515.reset();
   mcp2515.setBitrate(CAN_500KBPS, MCP_8MHZ);
