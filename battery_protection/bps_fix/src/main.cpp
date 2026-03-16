@@ -126,6 +126,13 @@ void loop(){
     processCAN(f);
   }
 
+  /* clear RX-overflow & bus-error flags so the chip keeps receiving */
+  uint8_t eflg = mcp2515.getErrorFlags();
+  if (eflg & (MCP2515::EFLG_RX0OVR | MCP2515::EFLG_RX1OVR))
+    mcp2515.clearRXnOVR();
+  if (eflg & MCP2515::EFLG_TXBO)
+    mcp2515.setNormalMode();           // recover from bus-off
+
   /* ---------- evaluate live faults ---------- */
   bool estopPressed = (digitalRead(ESTOP_PIN) == ESTOP_ACTIVE);
   if (!liveFault){
