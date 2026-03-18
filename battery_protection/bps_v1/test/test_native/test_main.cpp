@@ -24,6 +24,9 @@ static BpsData safeData(){
     d.temp_avg   = 25;
     d.cell_hi_ct = 36000;   // 3.6000 V — below 4.2000
     d.cell_lo_ct = 32000;   // 3.2000 V — above 2.5000
+    d.got_6B0    = true;
+    d.got_6B2    = true;
+    d.got_6B3    = true;
     return d;
 }
 
@@ -236,6 +239,16 @@ void test_no_fault_cell_lo_boundary(void){
 /* ================================================================
  *  evaluateFault — two-strike latch behaviour
  * ================================================================ */
+void test_eval_skips_before_data_ready(void){
+    BpsData d = safeData();
+    d.got_6B3 = false;      // missing temperature frame
+    d.temp_hi = 50;          // would fault if evaluated
+    bool last = false;
+    bool live = evaluateFault(d, false, last);
+    TEST_ASSERT_FALSE(live);
+    TEST_ASSERT_FALSE(last); // should not even set first strike
+}
+
 void test_eval_no_fault(void){
     BpsData d = safeData();
     bool last = false;
@@ -374,6 +387,7 @@ int main(int argc, char **argv){
     RUN_TEST(test_no_fault_cell_lo_boundary);
 
     /* evaluateFault (two-strike latch) */
+    RUN_TEST(test_eval_skips_before_data_ready);
     RUN_TEST(test_eval_no_fault);
     RUN_TEST(test_eval_first_strike_does_not_latch);
     RUN_TEST(test_eval_second_strike_latches);

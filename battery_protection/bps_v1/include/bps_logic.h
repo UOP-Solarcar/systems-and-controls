@@ -29,6 +29,13 @@ struct BpsData {
     uint8_t  temp_avg   = 0xFF;
     uint16_t cell_hi_ct = 0;
     uint16_t cell_lo_ct = 0xFFFF;
+
+    /* Track which CAN frame types have been received at least once.
+       Fault evaluation is deferred until all required frames arrive. */
+    bool got_6B0 = false;   // current, pack voltage, SOC
+    bool got_6B2 = false;   // cell voltages
+    bool got_6B3 = false;   // temperatures
+    bool dataReady() const { return got_6B0 && got_6B2 && got_6B3; }
 };
 
 /* ---------- CAN frame stub (used when mcp2515 library is not included) ---------- */
@@ -46,12 +53,15 @@ inline void processCAN(can_frame &f, BpsData &d){
     case 0x6B0: d.cur_dA   = be16s(&f.data[0]);
                 d.pack_dV  = be16u(&f.data[2]);
                 d.soc_pct  = f.data[4];
+                d.got_6B0  = true;
                 break;
     case 0x6B2: d.cell_hi_ct = be16u(&f.data[0]);
                 d.cell_lo_ct = be16u(&f.data[3]);
+                d.got_6B2  = true;
                 break;
     case 0x6B3: d.temp_hi  = f.data[0];
                 d.temp_avg = f.data[4];
+                d.got_6B3  = true;
                 break;
     default: break;
   }
@@ -69,6 +79,9 @@ inline bool checkFaultCondition(const BpsData &d){
    Once latched (liveFault == true), stays latched until reset. */
 inline bool evaluateFault(const BpsData &d, bool liveFault, bool &lastFault){
     if (liveFault) return true;  // already latched
+
+    /* Don't evaluate until we have received at least one of each CAN frame */
+    if (!d.dataReady()) return false;
 
     bool faultNow = checkFaultCondition(d);
     if (!faultNow && lastFault) {
