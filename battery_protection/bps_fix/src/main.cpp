@@ -104,11 +104,14 @@ void setup(){
   setContactors(true);
 }
 
+static unsigned long tPrint = 0, tLastRx = 0;
+
 void loop(){
 
   /* ---------- read CAN ---------- */
   can_frame f;
   while (mcp2515.readMessage(&f) == MCP2515::ERROR_OK) {
+    Serial.println(f.can_id);
     switch (f.can_id) {
       case 0x6B0: cur_dA   = be16s(&f.data[0]);
                   pack_dV  = be16u(&f.data[2]);
@@ -161,7 +164,6 @@ void loop(){
   }
 
   /* ---------- status print (200 ms) ---------- */
-  static unsigned long tPrint = 0, tLastRx = 0;
   unsigned long now = millis();
   if (now - tPrint >= 200 && cur_dA != INT16_MIN) {
       float I   = cur_dA / 10.0f;

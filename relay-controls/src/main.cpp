@@ -23,6 +23,10 @@ Fix all wiring issues
 Get full system working
 Redo steering wheel, send messages over CAN
 Light controller functions through CAN by receiving start and stop messages 
+
+
+Left Turn and Headlight read on hardware not in software
+Horn is physical error
 */
 
 #include <Arduino.h>
@@ -143,21 +147,30 @@ private:
   bool     _latched    = false;
 };
 
-Relay headlights(A1, Relay::ACTIVE_LOW);
-Relay leftTurn(A2, Relay::ACTIVE_LOW);
-Relay rightTurn(A5, Relay::ACTIVE_LOW);
-Relay brakesLights(A3, Relay::ACTIVE_LOW);
-Relay motorController(A4, Relay::ACTIVE_LOW);
-Relay direction(A6, Relay::ACTIVE_LOW);
-Relay rightRear(11, Relay::ACTIVE_LOW);
-Relay leftRear(12, Relay::ACTIVE_LOW);
+Relay headlights(A0, Relay::ACTIVE_HIGH);
+Relay horn(A1, Relay::ACTIVE_HIGH);
+Relay leftTurn(A5, Relay::ACTIVE_HIGH);
+Relay rightTurn(A6, Relay::ACTIVE_HIGH);
+Relay leftRear(A2, Relay::ACTIVE_HIGH);
+Relay rightRear(A3, Relay::ACTIVE_HIGH);
+Relay topBrake(A4, Relay::ACTIVE_HIGH);
 
-Button leftSignal(5, Button::PULLUP, Button::TOGGLE, 10);
-Button hazardBtn(3, Button::PULLUP, Button::TOGGLE, 10);
-Button rightSignal(10, Button::PULLUP, Button::TOGGLE, 10);
-Button headlightsBtn(7, Button::PULLUP, Button::TOGGLE, 10);
-//wwButton brakesLightsBtn(8, Button::PULLUP, Button::TOGGLE, 10);
-Button brakeSignal(9, Button::PULLUP, Button::MOMENTARY, 10);
+Button leftSignal(7, Button::PULLUP, Button::TOGGLE, 10);//5
+Button hazardBtn(6, Button::PULLUP, Button::TOGGLE, 10);//3
+Button rightSignal(2, Button::PULLUP, Button::TOGGLE, 10);//10
+Button headlightsBtn(9, Button::PULLUP, Button::TOGGLE, 10);//4
+Button hornBtn(4, Button::PULLUP, Button::TOGGLE, 10);//6 no signal
+//Button brakesLightsBtn(9, Button::PULLUP, Button::TOGGLE, 10);
+Button brakeSignal(11, Button::PULLUP, Button::MOMENTARY, 10);
+
+//right turn 3
+//left turn 5
+//scribble 6
+//headlight 10
+
+//D8 doesn't work
+//D5 ddoesn't work
+//D2 doesn't work
 
 void setup() {
   Serial.begin(115200);
@@ -166,14 +179,14 @@ void setup() {
   leftSignal.begin();
   rightSignal.begin();
   headlightsBtn.begin();
+  hornBtn.begin();
   brakeSignal.begin();
 
   headlights.begin();
   leftTurn.begin();
   rightTurn.begin();
-  brakesLights.begin();
-  motorController.begin();
-  direction.begin();
+  topBrake.begin();
+  horn.begin();
   rightRear.begin();
   leftRear.begin();
 }
@@ -186,6 +199,7 @@ void loop() {
   rightSignal.update();
   headlightsBtn.update();
   brakeSignal.update();
+  hornBtn.update();
 
   static unsigned long flasherT0 = 0;
   const unsigned long interval = 300;          // 300 ms ≈ 1.7 Hz
@@ -211,7 +225,7 @@ void loop() {
       leftRear.toggle();
       flasherT0 = millis(); // reset timer
     }
-  } else {
+  } else if (!hazardBtn){
     if (leftTurn.isClosed()) leftTurn.open();
   }
 
@@ -222,7 +236,7 @@ void loop() {
       rightRear.toggle();
       flasherT0 = millis(); // reset timer
     }
-  } else {
+  } else if (!hazardBtn){
     if (rightTurn.isClosed()) rightTurn.open();
   }
 
@@ -235,7 +249,7 @@ void loop() {
 
   if (brakeSignal) {
     Serial.println("brake");
-    brakesLights.close();
+    topBrake.close();
     if (!leftSignal || !hazardBtn){
       leftRear.close();
     } if (!rightSignal || !hazardBtn) {
