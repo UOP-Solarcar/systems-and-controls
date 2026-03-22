@@ -55,7 +55,8 @@ void setup() {
   mcp2515.setNormalMode();
   
   for (ptrdiff_t i = 2; i < 10; i++)    { pinMode(i, OUTPUT); }
-  inputState.x = 0;
+
+  // TODO: init pins as Relay objects
 
 }
 

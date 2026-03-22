@@ -21,4 +21,7 @@ struct Bitset {
     }
     return ct;
   }
+
+  Bitset(uint8_t val = 0) : x(val) {}
+
 };
