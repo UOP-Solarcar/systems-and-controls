@@ -108,7 +108,10 @@ instance/
 
 # Vehicle Telemetry
 telemetry-data/recordings
+<<<<<<< HEAD
+=======
 iot/pio_err_log.txt
+>>>>>>> 2eca416a47b6b26f1ac17f3f4c3f240c479e6787
 # Sphinx documentation
 docs/_build/
 
