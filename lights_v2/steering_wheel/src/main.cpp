@@ -13,7 +13,7 @@ struct can_frame msg;
 
 uint8_t readPinValue(const uint8_t* arr, size_t size) {
 
-  for (ptrdiff_t i = 0; i < size; i++)
+  for (size_t i = 0; i < size; i++)
     if (digitalRead(arr[i]) == LOW){
       return arr[i];
     }
@@ -31,11 +31,11 @@ void setup() {
   msg.can_id  = 0x100;
   msg.can_dlc = 8;
 
- for (ptrdiff_t i = 0; i < NUMPINS; i++) {
+ for (size_t i = 0; i < NUMPINS; i++) {
     msg.data[i] = 0x00;
   }
 
-  for (ptrdiff_t i = 0; i < NUMPINS; i++) {
+  for (size_t i = 0; i < NUMPINS; i++) {
     pinMode(PINS[i], INPUT_PULLUP);
   }
 
@@ -44,7 +44,7 @@ void setup() {
 
 void loop() {
   
-  for (ptrdiff_t i = 0; i < NUMPINS; i++) {
+  for (size_t i = 0; i < NUMPINS; i++) {
     msg.data[i] = 0x00;
   }
 
