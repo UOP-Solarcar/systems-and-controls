@@ -15,8 +15,8 @@
 
 constexpr size_t NUMRELAYS {};
 
-constexpr size_t NUM_BUTTONS
-constexpr uint8_t BUTTON_PINS [NUM_BUTTONS] {2, 3, 4, 5, 6, 7, 8, 9};
+constexpr size_t NUM_BUTTONS = 8
+constexpr uint8_t BUTTON_PINS [NUM_BUTTONS] {/* 2, 3, 4, 5, 6, 7, 8, 9 */};
 
 Bitset inputState {};
 Bitset outputState {};
@@ -30,14 +30,28 @@ struct Relay {
 
 };
 
+/* TODO: Define relays here: 
+ * Relay headlights(2);
+ * Relay leftBlinker(3);
+ * Relay rightBlinker(4);
+ * Relay leftBrake(5);
+ * Relay rightBrake(6);
+ * Relay topBrake(7);
+ * Relay horn(8);
+*/ 
 
 void setup () {
-  
+  Serial.begin(115200);
+  /* TODO: Init relays, etc
+   * headlights.init();
+   * leftBlinker.init();
+   * ...
+  */ 
 
 }
 
 void loop() {
-  
+  // TODO: copy/paste lights logic from older code here
 }
 
 
