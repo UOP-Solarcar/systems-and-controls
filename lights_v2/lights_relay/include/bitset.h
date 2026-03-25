@@ -1,3 +1,7 @@
+/*** bitset.h 
+ * Boilerplate code for bitset operations since it isn't included in AVR-GCC
+***/ 
+
 #pragma once
 #include <stdint.h>
 
