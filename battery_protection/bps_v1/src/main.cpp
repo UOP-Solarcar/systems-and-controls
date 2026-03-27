@@ -26,9 +26,12 @@ MCP2515 mcp2515(10);
 
 /* ---------- live data ---------- */
 BpsData bps;
-volatile bool estopEdge = false;      // set by ISR on rising edge
 
-void eStopISR(){ estopEdge = true; }
+/* ---------- E-stop debounce ---------- */
+constexpr unsigned long ESTOP_DEBOUNCE_MS = 50;
+bool estopConfirmed = false;
+unsigned long estopStableStart  = 0;
+bool          estopLastRaw      = false;
 
 /* ---------- helpers ---------- */
 void setContactors(bool closed){
@@ -52,7 +55,6 @@ void setup(){
   lampOff();
 
   pinMode(ESTOP_PIN, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(ESTOP_PIN), eStopISR, RISING);
 
   // Init MCP2515 after estop interrupt is attached to prevent
   // fault state from triggering before CAN frames are read
@@ -102,8 +104,17 @@ void loop(){
   if (eflg & MCP2515::EFLG_TXBO)
     mcp2515.setNormalMode();           // recover from bus-off
 
+  /* ---------- debounce E-stop ---------- */
+  bool rawEstop = (digitalRead(ESTOP_PIN) == ESTOP_ACTIVE);
+  if (rawEstop != estopLastRaw) {
+      estopStableStart = millis();
+      estopLastRaw = rawEstop;
+  } else if (millis() - estopStableStart >= ESTOP_DEBOUNCE_MS) {
+      estopConfirmed = rawEstop;
+  }
+  bool estopPressed = estopConfirmed;
+
   /* ---------- evaluate live faults ---------- */
-  bool estopPressed = (digitalRead(ESTOP_PIN) == ESTOP_ACTIVE);
   liveFault = evaluateFault(bps, liveFault, lastFault);
 
   /* ---------- actuation ---------- */
