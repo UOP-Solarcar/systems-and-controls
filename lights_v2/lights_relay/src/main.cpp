@@ -17,6 +17,7 @@
 #include "bitset.h"
 
 const uint8_t PINS = 8;
+const bool FRAME_DEBUG = false;
 
 Bitset inputState {};
 Bitset outputState {};
@@ -33,9 +34,11 @@ struct Relay {
 
   uint8_t pin;
 
-  void init() {  pinMode(pin, OUTPUT);  }
-  void on()   {  digitalWrite(pin, LOW);  }
-  void off()  {  digitalWrite(pin, HIGH);  }
+  Relay(uint8_t pin) : pin(pin) {}
+
+  inline void init() {  pinMode(pin, OUTPUT);  }
+  inline void on()   {  digitalWrite(pin, LOW);  }
+  inline void off()  {  digitalWrite(pin, HIGH);  }
 
 };
 
@@ -47,22 +50,60 @@ struct Relay {
  *
 */ 
 
+Relay headlights(2);
+Relay leftFrontBlinker(3);
+Relay rightFrontBlinker(4);
+Relay backRightBlinker(5);
+Relay backLeftBlinker(6);
+Relay topBrakeLight(7);
+Relay horn(8);
+
 void setup() {
 
   Serial.begin(115200);
   mcp2515.reset();
   mcp2515.setBitrate(CAN_500KBPS, MCP_8MHZ);
+  mcp2515.setConfigMode();
+  mcp2515.setFilterMask(MCP2515::MASK0, false, 0x000);
+  mcp2515.setFilterMask(MCP2515::MASK1, false, 0x000);
+  mcp2515.setFilter(MCP2515::RXF0, false, 0x000);
+  mcp2515.setFilter(MCP2515::RXF1, false, 0x000);
+  mcp2515.setFilter(MCP2515::RXF2, false, 0x000);
+  mcp2515.setFilter(MCP2515::RXF3, false, 0x000);
+  mcp2515.setFilter(MCP2515::RXF4, false, 0x000);
+  mcp2515.setFilter(MCP2515::RXF5, false, 0x000);
   mcp2515.setNormalMode();
   
-  for (ptrdiff_t i = 2; i < 10; i++)    { pinMode(i, OUTPUT); }
+  headlights.init();
+  leftFrontBlinker.init();
+  rightFrontBlinker.init();
+  backRightBlinker.init();
+  backLeftBlinker.init();
+  topBrakeLight.init();
+  horn.init();
 
-  // TODO: init pins as Relay objects
 
 }
 
 void loop() {
-
+  
   if (mcp2515.readMessage(&msg) == MCP2515::ERROR_OK) {
+
+    if (FRAME_DEBUG){
+    
+      // Dump all frames
+      Serial.print("ID: 0x");
+      Serial.print(msg.can_id, HEX);
+      Serial.print(" DLC: ");
+      Serial.print(msg.can_dlc);
+      Serial.print(" Data:");
+      for (uint8_t i = 0; i < msg.can_dlc; i++) {
+        Serial.print(" 0x");
+        Serial.print(msg.data[i], HEX);
+      }
+      Serial.println();
+  
+    }
 
     if (msg.can_id == 0x100) {
       for (uint8_t i = 0; i < msg.can_dlc; i++) {

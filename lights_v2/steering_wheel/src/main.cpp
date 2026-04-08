@@ -43,25 +43,29 @@ void setup() {
 
 
 void loop() {
-  
+
+  uint8_t buttonPressed = readPinValue(PINS, NUMPINS);
+
   for (size_t i = 0; i < NUMPINS; i++) {
     msg.data[i] = 0x00;
   }
 
-  uint8_t buttonPressed = readPinValue(PINS, NUMPINS);
+  if (buttonPressed != 0) {
+    switch(buttonPressed) {
+      case 2: msg.data[0] = 0x02; break;
+      case 3: msg.data[1] = 0x03; break;
+      case 4: msg.data[2] = 0x04; break;
+      case 5: msg.data[3] = 0x05; break;
+      case 6: msg.data[4] = 0x06; break;
+      case 7: msg.data[5] = 0x07; break;
+      case 8: msg.data[6] = 0x08; break;
+      case 9: msg.data[7] = 0x09; break;
+      default: break;
+    }
 
-  switch(buttonPressed) {
-
-    case 2: msg.data[0] = 0x02; break;
-    case 3: msg.data[1] = 0x03; break;
-    case 4: msg.data[2] = 0x04; break;
-    case 5: msg.data[3] = 0x05; break;
-    case 6: msg.data[4] = 0x06; break;
-    case 7: msg.data[5] = 0x07; break;
-    case 8: msg.data[6] = 0x08; break;
-    case 9: msg.data[7] = 0x09; break;
-
-    default: break;
+    Serial.print("Button pressed on pin ");
+    Serial.print(buttonPressed);
+    Serial.println();
   }
 
   mcp2515.sendMessage(&msg);
