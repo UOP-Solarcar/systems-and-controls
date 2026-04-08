@@ -16,7 +16,7 @@ constexpr uint8_t PRECHARGE_PIN = 4;
 constexpr uint8_t CONTACTOR_PINS[] = {5};
 constexpr uint8_t PIN_FAULT_LAMP   = 6;
 constexpr uint8_t ESTOP_PIN        = 3;
-constexpr bool    ESTOP_ACTIVE     = LOW;       // LOW = pressed (active-low with pullup)
+constexpr bool    ESTOP_ACTIVE     = HIGH;       // LOW = pressed (active-low with pullup)
 
 constexpr uint8_t RELAY_OPEN_LEVEL =
         (RELAY_CLOSE_LEVEL == HIGH ? LOW : HIGH);
