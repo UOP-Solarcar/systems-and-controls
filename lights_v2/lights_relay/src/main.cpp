@@ -20,10 +20,10 @@ const uint8_t PINS = 8;
 const bool FRAME_DEBUG = false;
 
 Bitset inputState {};
-Bitset outputState {};
-
-unsigned long lastToggle[PINS] = {};
 uint8_t prevData[PINS] = {};
+
+unsigned long flasherT0 = 0;
+const unsigned long interval = 500;
 
 
 MCP2515 mcp2515(10);
@@ -33,12 +33,15 @@ struct can_frame msg;
 struct Relay {
 
   uint8_t pin;
+  bool closed = false;
 
   Relay(uint8_t pin) : pin(pin) {}
 
-  inline void init() {  pinMode(pin, OUTPUT);  }
-  inline void on()   {  digitalWrite(pin, LOW);  }
-  inline void off()  {  digitalWrite(pin, HIGH);  }
+  inline void init()      { pinMode(pin, OUTPUT); digitalWrite(pin, HIGH); }
+  inline void close()     { digitalWrite(pin, LOW);  closed = true; }
+  inline void open()      { digitalWrite(pin, HIGH); closed = false; }
+  inline void toggle()    { closed ? open() : close(); }
+  inline bool isClosed()  { return closed; }
 
 };
 
@@ -118,39 +121,89 @@ void loop() {
     }
   }
 
-  unsigned long now = millis();
+  // Map input state bits to named signals
+  // bit 0 = pin 2 = right turn, bit 1 = pin 3 = headlights, bit 2 = pin 4 = brake
+  // bit 3 = pin 5 = horn,       bit 6 = pin 8 = hazards,    bit 7 = pin 9 = left turn
+  bool rightSignal   = inputState.test(0);
+  bool headlightsBtn = inputState.test(1);
+  bool brakeSignal   = inputState.test(2);
+  bool hornBtn       = inputState.test(3);
+  bool hazardBtn     = inputState.test(6);
+  bool leftSignal    = inputState.test(7);
 
-  for (uint8_t i = 0; i < 8; i++) {
-
-    if (!inputState.test(i)) {
-      digitalWrite(i + 2, HIGH);
-      continue;
+  // Hazards
+  if (hazardBtn) {
+    Serial.println("hazards");
+    if (millis() - flasherT0 >= interval) {
+      leftFrontBlinker.toggle();
+      rightFrontBlinker.toggle();
+      backLeftBlinker.toggle();
+      backRightBlinker.toggle();
+      flasherT0 = millis();
     }
-    
-    // TODO: replace digitalWrite calls with relay mappings once defined
-    switch (i) {
+  } else {
+    if (leftFrontBlinker.isClosed())  leftFrontBlinker.open();
+    if (rightFrontBlinker.isClosed()) rightFrontBlinker.open();
+  }
 
-      case 0:
-
-        digitalWrite(2, LOW);
-        break;
-      
-      case 1:
-
-        if (now - lastToggle[i] >= 500) {
-          lastToggle[i] = now;
-          outputState.flip(i);
-        }
-
-        digitalWrite(3, outputState.test(i) ? LOW : HIGH);
-        break;
-
-      // TODO: add remaining cases
-
-      default:
-        break;
+  // Left turn signal
+  if (leftSignal) {
+    Serial.println("left signal");
+    if (millis() - flasherT0 >= interval) {
+      leftFrontBlinker.toggle();
+      backLeftBlinker.toggle();
+      flasherT0 = millis();
     }
+  } else if (!hazardBtn) {
+    if (leftFrontBlinker.isClosed()) leftFrontBlinker.open();
+  }
 
-  } 
+  // Right turn signal
+  if (rightSignal) {
+    Serial.println("right signal");
+    if (millis() - flasherT0 >= interval) {
+      rightFrontBlinker.toggle();
+      backRightBlinker.toggle();
+      flasherT0 = millis();
+    }
+  } else if (!hazardBtn) {
+    if (rightFrontBlinker.isClosed()) rightFrontBlinker.open();
+  }
+
+  // Headlights
+  if (headlightsBtn) {
+    Serial.println("headlights");
+    headlights.close();
+  } else {
+    if (headlights.isClosed()) headlights.open();
+  }
+
+  // Brake
+  if (brakeSignal) {
+    Serial.println("brake");
+    topBrakeLight.close();
+    if (!leftSignal || !hazardBtn) {
+      backLeftBlinker.close();
+    }
+    if (!rightSignal || !hazardBtn) {
+      backRightBlinker.close();
+    }
+  } else {
+    topBrakeLight.open();
+    if (!leftSignal && !hazardBtn) {
+      backLeftBlinker.open();
+    }
+    if (!rightSignal && !hazardBtn) {
+      backRightBlinker.open();
+    }
+  }
+
+  // Horn
+  if (hornBtn) {
+    Serial.println("horn");
+    horn.close();
+  } else {
+    if (horn.isClosed()) horn.open();
+  }
 
 }
