@@ -147,19 +147,19 @@ private:
   bool     _latched    = false;
 };
 
-Relay headlights(A0, Relay::ACTIVE_HIGH);
-Relay horn(A1, Relay::ACTIVE_HIGH);
-Relay leftTurn(A5, Relay::ACTIVE_HIGH);
-Relay rightTurn(A6, Relay::ACTIVE_HIGH);
+Relay horn(A0, Relay::ACTIVE_HIGH);
+Relay headlights(A1, Relay::ACTIVE_HIGH);
 Relay leftRear(A2, Relay::ACTIVE_HIGH);
 Relay rightRear(A3, Relay::ACTIVE_HIGH);
 Relay topBrake(A4, Relay::ACTIVE_HIGH);
+Relay leftTurn(A6, Relay::ACTIVE_HIGH);
+Relay rightTurn(A7, Relay::ACTIVE_HIGH);
 
-Button leftSignal(7, Button::PULLUP, Button::TOGGLE, 10);//5
-Button hazardBtn(6, Button::PULLUP, Button::TOGGLE, 10);//3
+Button leftSignal(4, Button::PULLUP, Button::TOGGLE, 10);//5
+Button hazardBtn(3, Button::PULLUP, Button::TOGGLE, 10);//3
 Button rightSignal(2, Button::PULLUP, Button::TOGGLE, 10);//10
-Button headlightsBtn(9, Button::PULLUP, Button::TOGGLE, 10);//4
-Button hornBtn(4, Button::PULLUP, Button::TOGGLE, 10);//6 no signal
+Button headlightsBtn(5, Button::PULLUP, Button::TOGGLE, 10);//4
+Button hornBtn(6, Button::PULLUP, Button::TOGGLE, 10);//6 no signal
 //Button brakesLightsBtn(9, Button::PULLUP, Button::TOGGLE, 10);
 Button brakeSignal(11, Button::PULLUP, Button::MOMENTARY, 10);
 
