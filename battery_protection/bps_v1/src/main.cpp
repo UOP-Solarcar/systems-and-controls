@@ -155,8 +155,8 @@ void loop(){
       if (liveFault || estopPressed) {
         Serial.print(F("!!! FAULT: "));
         if (estopPressed) { Serial.print("E-stop"); }
-        else if (bps.cell_hi_ct >= CELL_V_HI_ct)   { Serial.print("cell over-volt ");  Serial.print(Vhi,4); Serial.print(" V"); }
-        else if (bps.cell_lo_ct <= CELL_V_LO_ct)   { Serial.print("cell under-volt "); Serial.print(Vlo,4); Serial.print(" V"); }
+        else if (bps.cell_hi_ct >= CELL_V_HI_ct)   { Serial.print("cell over-volt ");  Serial.print(Vhi,4); Serial.print(" V (cell "); Serial.print(bps.cell_hi_id); Serial.print(")"); }
+        else if (bps.cell_lo_ct <= CELL_V_LO_ct)   { Serial.print("cell under-volt "); Serial.print(Vlo,4); Serial.print(" V (cell "); Serial.print(bps.cell_lo_id); Serial.print(")"); }
         else if (bps.temp_hi >= TRIP_T_HI_C)       { Serial.print("over-temp ");       Serial.print(bps.temp_hi); Serial.print(" C"); }
         else if (bps.cur_dA > TRIP_I_HI_dA)        { Serial.print("over-current ");    Serial.print(I,1);    Serial.print(" A"); }
         else if (bps.cur_dA < TRIP_I_LO_dA)        { Serial.print("charge current ");  Serial.print(I,1);    Serial.print(" A"); }

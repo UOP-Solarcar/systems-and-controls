@@ -29,6 +29,8 @@ struct BpsData {
     uint8_t  temp_avg   = 0xFF;
     uint16_t cell_hi_ct = 0;
     uint16_t cell_lo_ct = 0xFFFF;
+    uint8_t  cell_hi_id = 0xFF;   // module/cell ID holding the highest voltage
+    uint8_t  cell_lo_id = 0xFF;   // module/cell ID holding the lowest voltage
 
     /* Track which CAN frame types have been received at least once.
        Fault evaluation is deferred until all required frames arrive. */
@@ -56,7 +58,9 @@ inline void processCAN(can_frame &f, BpsData &d){
                 d.got_6B0  = true;
                 break;
     case 0x6B2: d.cell_hi_ct = be16u(&f.data[0]);
+                d.cell_hi_id = f.data[2];
                 d.cell_lo_ct = be16u(&f.data[3]);
+                d.cell_lo_id = f.data[5];
                 d.got_6B2  = true;
                 break;
     case 0x6B3: d.temp_hi  = f.data[0];
