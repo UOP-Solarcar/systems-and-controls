@@ -507,6 +507,28 @@ void loop() {
       float Vhi = cellVolts(bps.cell_hi_ct);
       float Vlo = cellVolts(bps.cell_lo_ct);
       float age = (now - tLastRx) / 1000.0f;
+      tLastRx   = now;
+
+      Serial.print("I ");  Serial.print(I,1);
+      Serial.print(" A | V-hi "); Serial.print(Vhi,4);
+      Serial.print(" V | V-lo "); Serial.print(Vlo,4);
+      Serial.print(" V | SOC ");  Serial.print(bps.soc_pct * 0.5f, 1);
+      Serial.print("% | T-hi ");  Serial.print(bps.temp_hi);
+      Serial.print(" °C | T-avg ");Serial.print(bps.temp_avg);
+      Serial.print(" °C | ");      Serial.print(age,1);
+      Serial.println(" s");
+
+      if (liveFault || estopPressed) {
+        Serial.print(F("!!! FAULT: "));
+        if (estopPressed) { Serial.print("E-stop"); }
+        else if (bps.cell_hi_ct >= CELL_V_HI_ct)   { Serial.print("cell over-volt ");  Serial.print(Vhi,4); Serial.print(" V (cell "); Serial.print(bps.cell_hi_id); Serial.print(")"); }
+        else if (bps.cell_lo_ct <= CELL_V_LO_ct)   { Serial.print("cell under-volt "); Serial.print(Vlo,4); Serial.print(" V (cell "); Serial.print(bps.cell_lo_id); Serial.print(")"); }
+        else if (bps.temp_hi >= TRIP_T_HI_C)       { Serial.print("over-temp ");       Serial.print(bps.temp_hi); Serial.print(" C"); }
+        else if (bps.cur_dA > TRIP_I_HI_dA)        { Serial.print("over-current ");    Serial.print(I,1);    Serial.print(" A"); }
+        else if (bps.cur_dA < TRIP_I_LO_dA)        { Serial.print("charge current ");  Serial.print(I,1);    Serial.print(" A"); }
+        else if (bps.pack_dV > TRIP_V_HI_dV)       { Serial.print("pack over-volt ");  Serial.print(bps.pack_dV/10.0f,1); Serial.print(" V"); }
+        else if (bps.pack_dV < TRIP_V_LO_dV)       { Serial.print("pack under-volt "); Serial.print(bps.pack_dV/10.0f,1); Serial.print(" V"); }
+        Serial.println();
       tLastRx = now;
 
       Serial.print(F("I "));         Serial.print(I, 1);
