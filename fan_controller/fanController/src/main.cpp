@@ -1,68 +1,52 @@
-/*
-This is a outline for the fan speed controller.
-
-Need to add how the controller will get the temperature of the battery.
-*/
-
 #include <Arduino.h>
 
-const unsigned long INTERVAL = 5000;
-int fanSpeed;
-int temperature;
-unsigned long now;
-unsigned long prevReadTime = 0;
-int fanCurve[10] = {33, 35, 37, 39, 41, 43, 45, 47, 49, 51};
-int temp = 0;
-
-const byte OC1A_PIN = 9;
-const byte OC1B_PIN = 10;
-
-const word PWM_FREQ_HZ = 25000; //Adjust this value to adjust the frequency
-const word TCNT1_TOP = 16000000/(2*PWM_FREQ_HZ);
-
-void setPwmDuty(byte duty) {
-  OCR1A = (word) (duty*TCNT1_TOP)/100;
-}
-
-int getTemperature() {
-  //somehow get temperature
-  return (temp + 1)%100;
-}
+const int pwmPin = 9; // OC1A output — must be pin 9 for Timer1
 
 void setup() {
-  
-  pinMode(OC1A_PIN, OUTPUT);
+  pinMode(pwmPin, OUTPUT);
+  Serial.begin(115200);
 
-  // Clear Timer1 control and count registers
+  TCCR1A = 0; TCCR1B = 0; TCCR1C = 0;
+
+  // Configure Timer1 for 25kHz PWM (non-inverting, fast PWM mode)
   TCCR1A = 0;
   TCCR1B = 0;
-  TCNT1  = 0;
 
-  // Set Timer1 configuration
-  // COM1A(1:0) = 0b10   (Output A clear rising/set falling)
-  // COM1B(1:0) = 0b00   (Output B normal operation)
-  // WGM(13:10) = 0b1010 (Phase correct PWM)
-  // ICNC1      = 0b0    (Input capture noise canceler disabled)
-  // ICES1      = 0b0    (Input capture edge select disabled)
-  // CS(12:10)  = 0b001  (Input clock select = clock/1)
-  
-  TCCR1A |= (1 << COM1A1) | (1 << WGM11);
-  TCCR1B |= (1 << WGM13) | (1 << CS10);
-  ICR1 = TCNT1_TOP;
+  // Fast PWM, TOP = ICR1
+  TCCR1A |= (1 << COM1A1); // Non-inverting on OC1A (pin 9)
+  TCCR1A |= (1 << WGM11);
+  TCCR1B |= (1 << WGM13) | (1 << WGM12);
+
+  // No prescaler, 16MHz / 640 = 25kHz
+  TCCR1B |= (1 << CS10);
+  ICR1 = 639; // TOP value for 25kHz
+
+  OCR1A = 0; // Start at 0% duty cycle
+}
+
+// Convert temps between 28 - 43 C to ramp up fan speed
+int tempToFanSpeed(double temp) {
+  return int((temp - 28) * 10);
+}
+
+// Set fan speed: 0–100 (%)
+void setFanSpeed(double temp) {
+  int percent = constrain(tempToFanSpeed(temp), 0, 100);
+  OCR1A = (percent * 639UL) / 100;
 }
 
 void loop() {
-  now = millis();
-  if (now - prevReadTime >= INTERVAL){
-    prevReadTime = now;
-    temp = getTemperature();
-    fanSpeed = 0;
-    for (int i = 0; i < 10; i++){
-      if (temp > fanCurve[i]){
-        fanSpeed = fanSpeed + 10;
-      }
-    }
-    setPwmDuty(fanSpeed); //Change this value 0-100 to adjust duty cycle
+  // Ramp up
+  for (int temp = 0; temp <= 45; temp += 1) {
+    setFanSpeed(temp);
+    Serial.println(temp);
+    delay(2000);
   }
-    
+
+  // Ramp down
+  for (int temp = 45; temp >= 0; temp -= 1) {
+    setFanSpeed(temp);
+    Serial.println(temp);
+    delay(2000);
+  }
 }

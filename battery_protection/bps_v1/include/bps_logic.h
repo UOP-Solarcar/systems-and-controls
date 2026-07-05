@@ -11,7 +11,7 @@ constexpr int16_t  TRIP_I_HI_dA  = 1000;      // +100 A  (0.1 A units)
 constexpr int16_t  TRIP_I_LO_dA  = -425;      //  -42.5 A
 constexpr uint16_t TRIP_V_HI_dV  =  950;      //  95.0 V (0.1 V units)
 constexpr uint16_t TRIP_V_LO_dV  =  780;      //  78.0 V
-constexpr uint8_t  TRIP_T_HI_C   =   60;      //  45 C
+constexpr uint8_t  TRIP_T_HI_C   =   45;      //  45 C
 constexpr uint16_t CELL_V_HI_ct  = 42000;     // 4.2000 V (0.0001 V/ct)
 constexpr uint16_t CELL_V_LO_ct  = 25000;     // 2.5000 V
 

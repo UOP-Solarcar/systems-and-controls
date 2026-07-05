@@ -72,8 +72,16 @@ float R_therm;
 float invT;
 float Tkelvin;
 
+int getMuxTemp(int pin);
+int getPotTemp();
+void runHeatingBed(int val1, int val2, int val3, int val4);
+float calcTemp(int Vo);
+bool ifTempBelow(int value);
+void writeTemp(int val1, int val2, int val3, int val4);
+void displayTemp(int temp, int val1, int val2, int val3, int val4);
+
 void setup() {
-  //Serial.begin(115200);
+  Serial.begin(115200);
   if(!display1.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { 
     Serial.println(F("SSD1306A allocation failed"));
     for(;;); // Don't proceed, loop forever
@@ -143,7 +151,7 @@ void loop() {
   }
   if (now - prevDisplayTime >= DISPLAY_INTERVAL) {
     prevDisplayTime = now;
-    //writeTemp(val1, val2, val3, val4);
+    writeTemp(val1, val2, val3, val4);
     //displaySetTemp(tempThreshold);
     displayTemp(tempThreshold, val1, val2, val3, val4);
   }
@@ -255,7 +263,7 @@ float calcTemp(int Vo) {
 
 bool ifTempBelow(int value) {
   temp = (value);
-  return temp < tempThreshold;
+  return temp < tempThreshold && temp > 0;
 }
 
 void writeTemp(int val1, int val2, int val3, int val4) {
