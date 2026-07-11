@@ -45,6 +45,26 @@ struct Relay {
 
 };
 
+struct Button {
+  uint8_t pin;
+  bool toggle;
+  bool on = false;
+  bool last = false;
+
+  Button(uint8_t pin, bool toggle) : pin(pin), toggle(toggle) {}
+
+  bool update(bool pressed) {
+    if (toggle && pressed && pressed != last) {
+      on = !on;
+    }
+    else if (!toggle) {
+      on = pressed;
+    }
+    last = pressed;
+    return on;
+  }
+};
+
 /* Map relays to pins here. example:
  *
  * Relay headlights(2);
@@ -60,6 +80,13 @@ Relay backRightBlinker(5);
 Relay backLeftBlinker(6);
 Relay topBrakeLight(7);
 Relay horn(8);
+
+Button RightSignal(0, true);
+Button HeadlightsBtn(1, true);
+Button BrakeSignal(2, false);
+Button HornBtn(3, false);
+Button HazardBtn(6, true);
+Button LeftSignal(7, true);
 
 void setup() {
 
@@ -84,7 +111,6 @@ void setup() {
   backLeftBlinker.init();
   topBrakeLight.init();
   horn.init();
-
 
 }
 
@@ -124,12 +150,12 @@ void loop() {
   // Map input state bits to named signals
   // bit 0 = pin 2 = right turn, bit 1 = pin 3 = headlights, bit 2 = pin 4 = brake
   // bit 3 = pin 5 = horn,       bit 6 = pin 8 = hazards,    bit 7 = pin 9 = left turn
-  bool rightSignal   = inputState.test(0);
-  bool headlightsBtn = inputState.test(1);
-  bool brakeSignal   = inputState.test(2);
-  bool hornBtn       = inputState.test(3);
-  bool hazardBtn     = inputState.test(6);
-  bool leftSignal    = inputState.test(7);
+  bool rightSignal   = RightSignal.update(inputState.test(0));
+  bool headlightsBtn = HeadlightsBtn.update(inputState.test(1));
+  bool brakeSignal   = BrakeSignal.update(inputState.test(2));
+  bool hornBtn       = HornBtn.update(inputState.test(3));
+  bool hazardBtn     = HazardBtn.update(inputState.test(6));
+  bool leftSignal    = LeftSignal.update(inputState.test(7));
 
   // Hazards
   if (hazardBtn) {

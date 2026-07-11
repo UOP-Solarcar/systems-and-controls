@@ -9,13 +9,30 @@ MCP2515 mcp2515(10);
 const uint8_t PINS [] = {2, 3, 4, 5, 6, 7, 8, 9};
 const size_t NUMPINS = 8;
 
+bool state [8] = {false};
+bool sent [8] = {false};
+long unsigned int debounce_time = 20;
+long unsigned int debounce [NUMPINS] = {0};
+
 struct can_frame msg;
 
 uint8_t readPinValue(const uint8_t* arr, size_t size) {
 
   for (size_t i = 0; i < size; i++)
-    if (digitalRead(arr[i]) == LOW){
-      return arr[i];
+    if (digitalRead(arr[i]) == LOW ){
+      long unsigned int now = millis();
+      if (state[i] != true) {
+        state[i] = true;
+        debounce[i] = now;
+      }
+      if (now - debounce[i] > debounce_time && state[i]){ //&& sent[i] == false){
+        sent[i] = true;
+        return arr[i];
+      }
+    }
+    else {
+      state[i] = false;
+      //sent[i] = false;
     }
 
   return 0;
@@ -45,6 +62,9 @@ void setup() {
 void loop() {
 
   uint8_t buttonPressed = readPinValue(PINS, NUMPINS);
+
+  msg.can_id  = 0x100;
+  msg.can_dlc = 8;
 
   for (size_t i = 0; i < NUMPINS; i++) {
     msg.data[i] = 0x00;
