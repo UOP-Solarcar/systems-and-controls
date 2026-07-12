@@ -15,6 +15,8 @@
 #include <SPI.h>
 #include <mcp2515.h>
 #include "bitset.h"
+#include "button.h"
+#include "input_decoder.h"
 
 const uint8_t PINS = 8;
 const bool FRAME_DEBUG = false;
@@ -43,26 +45,6 @@ struct Relay {
   inline void toggle()    { closed ? open() : close(); }
   inline bool isClosed()  { return closed; }
 
-};
-
-struct Button {
-  uint8_t pin;
-  bool toggle;
-  bool on = false;
-  bool last = false;
-
-  Button(uint8_t pin, bool toggle) : pin(pin), toggle(toggle) {}
-
-  bool update(bool pressed) {
-    if (toggle && pressed && pressed != last) {
-      on = !on;
-    }
-    else if (!toggle) {
-      on = pressed;
-    }
-    last = pressed;
-    return on;
-  }
 };
 
 /* Map relays to pins here. example:
@@ -133,16 +115,16 @@ void loop() {
       Serial.println();
   
     }
-
+    
+    // Bitmask for CAN frames
     if (msg.can_id == 0x100) {
+      uint8_t pressedMask = updateInputState(inputState, prevData, msg.data, msg.can_dlc);
       for (uint8_t i = 0; i < msg.can_dlc; i++) {
-        if (msg.data[i] != 0x00 && prevData[i] == 0x00) {
-          inputState.flip(i);
+        if (pressedMask & (1U << i)) {
           Serial.print("Button pressed on pin: ");
           Serial.print(msg.data[i]);
           Serial.println();
         }
-        prevData[i] = msg.data[i];
       }
     }
   }
