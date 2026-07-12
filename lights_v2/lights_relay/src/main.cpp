@@ -25,7 +25,23 @@ Bitset inputState {};
 uint8_t prevData[PINS] = {};
 
 unsigned long flasherT0 = 0;
+unsigned long hazardT0 = 0;
+bool hazardPhase = false;
+bool prevLeftSignal = false;
+bool prevRightSignal = false;
+bool prevHazard = false;
+bool prevHeadlights = false;
+bool prevBrake = false;
+bool prevHorn = false;
 const unsigned long interval = 500;
+
+// Announce a signal on its rising edge only. Printing every loop while a button
+// is held stalls the loop long enough to back up the CAN RX buffers, which makes
+// presses register late.
+inline void logOnRise(bool state, bool &prev, const char *label) {
+  if (state && !prev) Serial.println(label);
+  prev = state;
+}
 
 
 MCP2515 mcp2515(10);
@@ -39,9 +55,10 @@ struct Relay {
 
   Relay(uint8_t pin) : pin(pin) {}
 
-  inline void init()      { pinMode(pin, OUTPUT); digitalWrite(pin, HIGH); }
-  inline void close()     { digitalWrite(pin, LOW);  closed = true; }
-  inline void open()      { digitalWrite(pin, HIGH); closed = false; }
+  // Active-high relay module: driving the pin HIGH energizes (closes) the relay.
+  inline void init()      { pinMode(pin, OUTPUT); digitalWrite(pin, LOW); }
+  inline void close()     { digitalWrite(pin, HIGH); closed = true; }
+  inline void open()      { digitalWrite(pin, LOW);  closed = false; }
   inline void toggle()    { closed ? open() : close(); }
   inline bool isClosed()  { return closed; }
 
@@ -55,13 +72,15 @@ struct Relay {
  *
 */ 
 
-Relay headlights(2);
-Relay leftFrontBlinker(3);
-Relay rightFrontBlinker(4);
-Relay backRightBlinker(5);
-Relay backLeftBlinker(6);
-Relay topBrakeLight(7);
-Relay horn(8);
+Relay horn(A0);              // horn
+Relay headlights(A1);        // headlights
+Relay backLeftBlinker(A2);   // left rear indicator
+Relay backRightBlinker(A3);  // right rear indicator
+Relay topBrakeLight(A4);     // brake light
+// A6/A7 are analog-input-only on the Nano's ATmega328P (no GPIO output driver),
+// so the front blinkers can't live there - moved to digital pins D2/D3.
+Relay leftFrontBlinker(2);   // left turn signal
+Relay rightFrontBlinker(3);  // right turn signal
 
 Button RightSignal(0, true);
 Button HeadlightsBtn(1, true);
@@ -139,25 +158,66 @@ void loop() {
   bool hazardBtn     = HazardBtn.update(inputState.test(6));
   bool leftSignal    = LeftSignal.update(inputState.test(7));
 
-  // Hazards
+  // Turn signals are mutually exclusive, like a physical turn stalk: engaging
+  // one side cancels the other so both can never latch on at once. Both-on is a
+  // state the driver has no way to clear (only hazards flash both sides), and it
+  // also left the two flashers fighting over the shared timer - the starved side
+  // stayed latched but invisible, so pressing one side appeared to toggle the
+  // other and the signals could never be turned off.
+  bool leftEngaged  = leftSignal  && !prevLeftSignal;
+  bool rightEngaged = rightSignal && !prevRightSignal;
+  if (leftEngaged) {
+    RightSignal.on = false;
+    rightSignal = false;
+    rightEngaged = false;
+  }
+  if (rightEngaged) {
+    LeftSignal.on = false;
+    leftSignal = false;
+  }
+  prevLeftSignal  = leftSignal;
+  prevRightSignal = rightSignal;
+
+  // Announce each signal on its rising edge only (see logOnRise). The turn
+  // signals already carry engage edges from the mutual-exclusion pass above.
+  if (leftEngaged)  Serial.println("left signal");
+  if (rightEngaged) Serial.println("right signal");
+  logOnRise(hazardBtn, prevHazard, "hazards");
+  logOnRise(headlightsBtn, prevHeadlights, "headlights");
+  logOnRise(brakeSignal, prevBrake, "brake");
+  logOnRise(hornBtn, prevHorn, "horn");
+
+  // Hazards: flash all four indicators together. Drive every lamp to a single
+  // shared phase off a dedicated timer (rather than toggle()ing each one), so a
+  // brake tap or a latched turn signal can't leave one lamp inverted and put
+  // the hazards out of sync. Takes priority over the turn signals below.
   if (hazardBtn) {
-    Serial.println("hazards");
-    if (millis() - flasherT0 >= interval) {
-      leftFrontBlinker.toggle();
-      rightFrontBlinker.toggle();
-      backLeftBlinker.toggle();
-      backRightBlinker.toggle();
-      flasherT0 = millis();
+    if (millis() - hazardT0 >= interval) {
+      hazardPhase = !hazardPhase;
+      hazardT0 = millis();
+    }
+    if (hazardPhase) {
+      leftFrontBlinker.close();
+      rightFrontBlinker.close();
+      backLeftBlinker.close();
+      backRightBlinker.close();
+    } else {
+      leftFrontBlinker.open();
+      rightFrontBlinker.open();
+      backLeftBlinker.open();
+      backRightBlinker.open();
     }
   } else {
+    hazardPhase = false;
     if (leftFrontBlinker.isClosed())  leftFrontBlinker.open();
     if (rightFrontBlinker.isClosed()) rightFrontBlinker.open();
   }
 
-  // Left turn signal
-  if (leftSignal) {
-    Serial.println("left signal");
-    if (millis() - flasherT0 >= interval) {
+  // Left turn signal (suppressed while hazards own the lamps). A freshly engaged
+  // signal fires immediately so it lights on press instead of waiting out a
+  // stale timer left over from the other side.
+  if (leftSignal && !hazardBtn) {
+    if (leftEngaged || millis() - flasherT0 >= interval) {
       leftFrontBlinker.toggle();
       backLeftBlinker.toggle();
       flasherT0 = millis();
@@ -166,10 +226,9 @@ void loop() {
     if (leftFrontBlinker.isClosed()) leftFrontBlinker.open();
   }
 
-  // Right turn signal
-  if (rightSignal) {
-    Serial.println("right signal");
-    if (millis() - flasherT0 >= interval) {
+  // Right turn signal (suppressed while hazards own the lamps)
+  if (rightSignal && !hazardBtn) {
+    if (rightEngaged || millis() - flasherT0 >= interval) {
       rightFrontBlinker.toggle();
       backRightBlinker.toggle();
       flasherT0 = millis();
@@ -180,7 +239,6 @@ void loop() {
 
   // Headlights
   if (headlightsBtn) {
-    Serial.println("headlights");
     headlights.close();
   } else {
     if (headlights.isClosed()) headlights.open();
@@ -188,7 +246,6 @@ void loop() {
 
   // Brake
   if (brakeSignal) {
-    Serial.println("brake");
     topBrakeLight.close();
     if (!leftSignal || !hazardBtn) {
       backLeftBlinker.close();
@@ -208,7 +265,6 @@ void loop() {
 
   // Horn
   if (hornBtn) {
-    Serial.println("horn");
     horn.close();
   } else {
     if (horn.isClosed()) horn.open();
