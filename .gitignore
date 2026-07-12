@@ -175,11 +175,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
->>>>>>> old-lcd/master
+
 
 # macOS Artifacts
 *.DS_Store
 
 # CSV data
 *.csv
->>>>>>> 78bcd19b4520197207ef327cc06de7e1536d8070
+
+# Claude Headroom artifacts
+*.tokensave/
