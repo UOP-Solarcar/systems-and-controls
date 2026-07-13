@@ -208,9 +208,10 @@ void loop() {
       backRightBlinker.open();
     }
   } else {
+    // Front-lamp cleanup is left to the turn-signal blocks below. Opening the
+    // front blinkers here would run every loop and re-open a lamp that an active
+    // turn signal just toggled closed, so the front could never stay lit.
     hazardPhase = false;
-    if (leftFrontBlinker.isClosed())  leftFrontBlinker.open();
-    if (rightFrontBlinker.isClosed()) rightFrontBlinker.open();
   }
 
   // Left turn signal (suppressed while hazards own the lamps). A freshly engaged
@@ -247,10 +248,13 @@ void loop() {
   // Brake
   if (brakeSignal) {
     topBrakeLight.close();
-    if (!leftSignal || !hazardBtn) {
+    // Only steady-light a rear lamp for the brake on a side with no active
+    // flasher; if that side's turn signal (or hazards) is running, leave the
+    // lamp to the flasher above so the indicator keeps blinking while braking.
+    if (!leftSignal && !hazardBtn) {
       backLeftBlinker.close();
     }
-    if (!rightSignal || !hazardBtn) {
+    if (!rightSignal && !hazardBtn) {
       backRightBlinker.close();
     }
   } else {
