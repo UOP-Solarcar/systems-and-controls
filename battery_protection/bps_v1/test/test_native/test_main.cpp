@@ -348,6 +348,131 @@ void test_integration_data_keeps_updating_while_latched(void){
 }
 
 /* ================================================================
+ *  E-stop debounce
+ *
+ *  Reproduces the un-debounced glitch behaviour and verifies the fix.
+ *  A physical e-stop press is modelled as a (level, timestamp) trace:
+ *  a few ms of contact bounce followed by a settled level. main.cpp
+ *  currently feeds the *raw* level straight into the fault logic, so
+ *  every bounce edge counts as a state change.
+ * ================================================================ */
+struct EstopSample { bool level; unsigned long t; };
+
+/* Count how many times the boolean value changes across a sequence. */
+static int countBoolTransitions(const bool *seq, int n){
+    int c = 0;
+    for (int i = 1; i < n; ++i) if (seq[i] != seq[i-1]) ++c;
+    return c;
+}
+
+/* A realistic press: idle LOW, ~4 ms of contact bounce, then held HIGH
+   past the 20 ms debounce window (timestamps in ms). */
+static const EstopSample kPress[] = {
+    {false, 0}, {false, 5},
+    {true, 10}, {false, 11}, {true, 12}, {false, 13}, {true, 14},  // bounce
+    {true, 20}, {true, 30}, {true, 40}, {true, 50}                 // settled HIGH
+};
+static const int kPressLen = sizeof(kPress) / sizeof(kPress[0]);
+
+/* CURRENT behaviour (the bug): main.cpp uses `digitalRead(ESTOP_PIN)`
+   verbatim, so the raw trace of a single press contains many transitions —
+   each one re-derives faultCode and fires an immediate 0x791 frame. */
+void test_estop_raw_read_glitches_on_bounce(void){
+    bool raw[kPressLen];
+    for (int i = 0; i < kPressLen; ++i) raw[i] = kPress[i].level;
+    // A single physical press glitches many times when read raw.
+    TEST_ASSERT_TRUE(countBoolTransitions(raw, kPressLen) > 1);
+}
+
+/* FIXED behaviour: debounceEstop() collapses the bounce into exactly one
+   clean transition, and still reports the press once it settles. */
+void test_estop_debounce_suppresses_bounce(void){
+    EstopDebounce s;
+    bool debounced[kPressLen];
+    for (int i = 0; i < kPressLen; ++i)
+        debounced[i] = debounceEstop(s, kPress[i].level, kPress[i].t);
+
+    TEST_ASSERT_EQUAL_INT(1, countBoolTransitions(debounced, kPressLen));
+    TEST_ASSERT_TRUE(debounced[kPressLen - 1]);   // press is reported once settled
+}
+
+/* A noise spike shorter than the debounce window never flips the state. */
+void test_estop_debounce_rejects_short_spike(void){
+    EstopDebounce s;
+    TEST_ASSERT_FALSE(debounceEstop(s, false, 0));
+    TEST_ASSERT_FALSE(debounceEstop(s, true,  1));   // spike appears
+    TEST_ASSERT_FALSE(debounceEstop(s, true,  5));   // still within 20 ms window
+    TEST_ASSERT_FALSE(debounceEstop(s, false, 6));   // spike gone before settling
+    TEST_ASSERT_FALSE(debounceEstop(s, false, 40));  // stayed released the whole time
+}
+
+/* A genuine sustained press is accepted exactly at the debounce boundary. */
+void test_estop_debounce_accepts_sustained_press(void){
+    EstopDebounce s;
+    TEST_ASSERT_FALSE(debounceEstop(s, true, 100));                  // t=0 of press
+    TEST_ASSERT_FALSE(debounceEstop(s, true, 100 + ESTOP_DEBOUNCE_MS - 1));
+    TEST_ASSERT_TRUE (debounceEstop(s, true, 100 + ESTOP_DEBOUNCE_MS));
+}
+
+/* Release also debounces: bounce on the way back to LOW is suppressed. */
+void test_estop_debounce_suppresses_release_bounce(void){
+    EstopDebounce s;
+    // Establish a settled pressed state first.
+    debounceEstop(s, true, 0);
+    TEST_ASSERT_TRUE(debounceEstop(s, true, ESTOP_DEBOUNCE_MS));
+
+    // Release with bounce, then settle LOW.
+    debounceEstop(s, false, 100);
+    TEST_ASSERT_TRUE (debounceEstop(s, true,  101));  // bounce back HIGH — still pressed
+    debounceEstop(s, false, 102);
+    TEST_ASSERT_TRUE (debounceEstop(s, false, 110));  // <20 ms since settling LOW
+    TEST_ASSERT_FALSE(debounceEstop(s, false, 122));  // now released after settling
+}
+
+/* ================================================================
+ *  E-stop trip latch
+ *
+ *  A confirmed e-stop press is a safety trip: it must stay active after
+ *  the button is released (contactors are opened on trip and never
+ *  reclosed in loop()), and only a power cycle clears it.
+ * ================================================================ */
+void test_estop_latch_holds_after_release(void){
+    bool latched = false;
+    TEST_ASSERT_FALSE(latchEstop(latched, false));   // idle
+    TEST_ASSERT_TRUE (latchEstop(latched, true));    // pressed -> trip
+    TEST_ASSERT_TRUE (latchEstop(latched, false));   // released -> STILL tripped
+    TEST_ASSERT_TRUE (latchEstop(latched, false));
+}
+
+void test_estop_latch_stays_clear_without_press(void){
+    bool latched = false;
+    TEST_ASSERT_FALSE(latchEstop(latched, false));
+    TEST_ASSERT_FALSE(latchEstop(latched, false));
+    TEST_ASSERT_FALSE(latched);
+}
+
+/* Integration: debounce + latch together, exactly as loop() chains them.
+   A bouncing press latches once (only after it settles) and stays tripped
+   through a bouncing release. */
+void test_estop_debounce_then_latch_persists(void){
+    EstopDebounce s;
+    bool latched = false;
+
+    // Bouncing press — not tripped until the level settles past the window.
+    latchEstop(latched, debounceEstop(s, false, 0));
+    latchEstop(latched, debounceEstop(s, true,  10));
+    latchEstop(latched, debounceEstop(s, false, 11));   // bounce
+    latchEstop(latched, debounceEstop(s, true,  12));
+    TEST_ASSERT_FALSE(latched);                          // still settling
+    TEST_ASSERT_TRUE(latchEstop(latched, debounceEstop(s, true, 40)));  // settled -> latch
+
+    // Release (with bounce) — the trip must stay latched.
+    latchEstop(latched, debounceEstop(s, false, 100));
+    latchEstop(latched, debounceEstop(s, false, 130));  // debounced back to released
+    TEST_ASSERT_TRUE(latchEstop(latched, debounceEstop(s, false, 200)));
+}
+
+/* ================================================================
  *  Runner
  * ================================================================ */
 int main(int argc, char **argv){
@@ -397,6 +522,18 @@ int main(int argc, char **argv){
     /* integration */
     RUN_TEST(test_integration_overtemp_latch_then_update);
     RUN_TEST(test_integration_data_keeps_updating_while_latched);
+
+    /* e-stop debounce */
+    RUN_TEST(test_estop_raw_read_glitches_on_bounce);
+    RUN_TEST(test_estop_debounce_suppresses_bounce);
+    RUN_TEST(test_estop_debounce_rejects_short_spike);
+    RUN_TEST(test_estop_debounce_accepts_sustained_press);
+    RUN_TEST(test_estop_debounce_suppresses_release_bounce);
+
+    /* e-stop trip latch */
+    RUN_TEST(test_estop_latch_holds_after_release);
+    RUN_TEST(test_estop_latch_stays_clear_without_press);
+    RUN_TEST(test_estop_debounce_then_latch_persists);
 
     return UNITY_END();
 }

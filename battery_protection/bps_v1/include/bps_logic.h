@@ -100,3 +100,45 @@ inline bool evaluateFault(const BpsData &d, bool liveFault, bool &lastFault){
     }
     return false;
 }
+
+/* ---------- E-stop debounce ----------
+   The e-stop input (D3, INPUT_PULLUP, active-HIGH when pressed) is a mechanical
+   contact and bounces for a few ms on both press and release. loop() reads the
+   pin with a bare digitalRead() every iteration, so during the bounce window the
+   reported state flips HIGH<->LOW several times. Each flip re-derives the fault
+   code (FC_ESTOP <-> FC_NONE) and fires an immediate 0x791 fault-detail frame,
+   turning one physical press into a burst of spurious CAN traffic and lamp/fan
+   chatter. Require the raw level to hold steady for ESTOP_DEBOUNCE_MS before the
+   debounced state is allowed to change. */
+constexpr unsigned long ESTOP_DEBOUNCE_MS = 20;   // contacts settle well under 20 ms
+
+struct EstopDebounce {
+    bool          stable    = false;   // debounced state reported to the caller
+    bool          candidate = false;   // raw level currently being timed
+    unsigned long since     = 0;       // millis() when `candidate` was first seen
+};
+
+/* Feed the raw pin level and the current millis() every loop. The returned
+   (debounced) state only flips once `raw` has held its new value continuously
+   for ESTOP_DEBOUNCE_MS; bounce pulses shorter than that are rejected. */
+inline bool debounceEstop(EstopDebounce &s, bool raw, unsigned long now){
+    if (raw != s.candidate) {
+        // Level changed — (re)start the settle timer on the new candidate.
+        s.candidate = raw;
+        s.since     = now;
+    } else if (raw != s.stable && (now - s.since) >= ESTOP_DEBOUNCE_MS) {
+        // Candidate has held steady long enough — accept it.
+        s.stable = raw;
+    }
+    return s.stable;
+}
+
+/* E-stop trip latch: like the two-strike fault latch and the CAN LATCHED state,
+   a confirmed (debounced) e-stop press is a safety trip that must persist until
+   the board is power-cycled — releasing the button does NOT clear it, otherwise
+   the reported fault would drop while the contactors stay open. Pass the
+   debounced level in; the latch stays set once it has ever seen a press. */
+inline bool latchEstop(bool &estopLatched, bool debouncedPressed){
+    if (debouncedPressed) estopLatched = true;
+    return estopLatched;
+}

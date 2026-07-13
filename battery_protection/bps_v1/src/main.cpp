@@ -15,6 +15,12 @@
  *    - Forced to 100% on any fault, e-stop, or CAN watchdog event
  *    - Held at 0% until first valid CAN temp reading (temp_hi != 0xFF)
  *
+ *  E-stop behavior:
+ *    - Debounced: raw D3 level must hold steady for ESTOP_DEBOUNCE_MS before
+ *      the state changes, so contact bounce cannot chatter the fault code / lamp
+ *    - Latched: a confirmed press trips until power cycle; releasing the button
+ *      does NOT clear it (matches the two-strike and CAN-latched fault behavior)
+ *
  *  CAN watchdog (3 states):
  *    NOMINAL  -- frames arriving within 2000 ms, normal operation
  *    TIMEOUT  -- no valid frame for >2000 ms; contactors open immediately,
@@ -127,6 +133,9 @@ bool lastFault        = false;   // two-strike latch support
 bool contactorsClosed = false;
 bool prechargeClosed  = false;
 volatile bool estopEdge = false;
+
+EstopDebounce estopDebounce;   // filters mechanical contact bounce on ESTOP_PIN
+bool estopLatched = false;     // e-stop trip latch — cleared only by power cycle
 
 void eStopISR() { estopEdge = true; }
 
@@ -445,7 +454,12 @@ void loop() {
   /* ---- 3. Evaluate threshold faults via bps_logic.h ----
      evaluateFault() defers until dataReady() (all 3 frame types seen),
      then applies a two-strike latch before tripping. */
-  bool estopHigh = digitalRead(ESTOP_PIN);
+  // Debounce the raw pin so contact bounce can't chatter the fault code /
+  // 0x791 fault frames / lamp on a single physical press or release, then latch:
+  // a confirmed press trips until power cycle so releasing the button can't drop
+  // the reported fault while the contactors stay open.
+  bool estopNow  = debounceEstop(estopDebounce, digitalRead(ESTOP_PIN), millis());
+  bool estopHigh = latchEstop(estopLatched, estopNow);
   liveFault = evaluateFault(bps, liveFault, lastFault);
 
   /* ---- 4. Actuate contactors ---- */
