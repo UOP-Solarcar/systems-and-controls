@@ -64,6 +64,11 @@ constexpr uint8_t ESTOP_PIN        = 3;
 constexpr uint8_t RELAY_OPEN_LEVEL =
         (RELAY_CLOSE_LEVEL == HIGH ? LOW : HIGH);
 
+/* Precharge dwell: on startup the normally-closed precharge is opened and the
+   normally-open main contactors are closed; the precharge stays open for this
+   long (contactors closed throughout) before it recloses. */
+constexpr unsigned long PRECHARGE_DELAY_MS = 5000UL;
+
 /* ================================================================
  *  FAN CONSTANTS
  *  Timer1 at 16 MHz, no prescaler: ICR1 = 16e6/25000 - 1 = 639
@@ -414,22 +419,20 @@ void setup() {
 
   Serial.println(F("\nRun/Trip + Fan controller -- ready"));
 
-  // Precharge sequence
-  setContactors(false);
-  setPrecharge(false);
-  delay(1000);
-  setPrecharge(true);
-  delay(5000);
-  setPrecharge(false);
+  // Precharge / startup sequence:
+  //   Open the normally-closed precharge and close the normally-open main
+  //   contactors, hold for the precharge delay, then reclose precharge. The
+  //   main contactors stay closed throughout.
+  setPrecharge(false);   // precharge opens
+  setContactors(true);   // main contactors close
+  delay(PRECHARGE_DELAY_MS);
+  setPrecharge(true);    // precharge closes again; contactors stay closed
 
   // Drain any CAN frames that arrived during precharge
   readCAN();
 
-  delay(500);
-  setContactors(true);
-
   // Seed watchdog timer after precharge so the 2 s window starts from here,
-  // not from before the 6+ s blocking delay above
+  // not from before the blocking delay above
   tLastCanRx = millis();
 }
 
