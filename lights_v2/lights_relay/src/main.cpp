@@ -79,8 +79,8 @@ Relay backRightBlinker(A3);  // right rear indicator
 Relay topBrakeLight(A4);     // brake light
 // A6/A7 are analog-input-only on the Nano's ATmega328P (no GPIO output driver),
 // so the front blinkers can't live there - moved to digital pins D2/D3.
-Relay leftFrontBlinker(2);   // left turn signal
-Relay rightFrontBlinker(3);  // right turn signal
+Relay leftFrontBlinker(6);   // left turn signal
+Relay rightFrontBlinker(2);  // right turn signal
 
 Button RightSignal(0, true);
 Button HeadlightsBtn(1, true);
