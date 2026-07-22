@@ -93,7 +93,7 @@ void setup() {
 
   Serial.begin(115200);
   mcp2515.reset();
-  mcp2515.setBitrate(CAN_500KBPS, MCP_8MHZ);
+  mcp2515.setBitrate(CAN_125KBPS, MCP_8MHZ);
   mcp2515.setConfigMode();
   mcp2515.setFilterMask(MCP2515::MASK0, false, 0x000);
   mcp2515.setFilterMask(MCP2515::MASK1, false, 0x000);

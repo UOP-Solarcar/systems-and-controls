@@ -32,6 +32,13 @@ struct BpsData {
     uint8_t  cell_hi_id = 0xFF;   // module/cell ID holding the highest voltage
     uint8_t  cell_lo_id = 0xFF;   // module/cell ID holding the lowest voltage
 
+    /* Set once a 0x6B2 frame reports cell_hi/cell_lo past the OV/UV threshold;
+       cleared the moment a frame reports back in-range. Used by processCAN()
+       to require two consecutive over/under-threshold frames before trusting
+       the reading -- see the 0x6B2 case below. */
+    bool cell_hi_flagged = false;
+    bool cell_lo_flagged = false;
+
     /* Track which CAN frame types have been received at least once.
        Fault evaluation is deferred until all required frames arrive. */
     bool got_6B0 = false;   // current, pack voltage, SOC
@@ -65,12 +72,39 @@ inline void processCAN(can_frame &f, BpsData &d){
                 d.soc_pct  = f.data[4];
                 d.got_6B0  = true;
                 break;
-    case 0x6B2: d.cell_hi_ct = be16u(&f.data[0]);
-                d.cell_hi_id = f.data[2];
-                d.cell_lo_ct = be16u(&f.data[3]);
-                d.cell_lo_id = f.data[5];
-                d.got_6B2  = true;
-                break;
+    case 0x6B2: {
+      uint16_t hi_ct = be16u(&f.data[0]);
+      uint8_t  hi_id = f.data[2];
+      uint16_t lo_ct = be16u(&f.data[3]);
+      uint8_t  lo_id = f.data[5];
+
+      /* A single frame reporting a cell past the OV/UV threshold could be a
+         corrupted CAN/SPI transfer rather than a real cell excursion --
+         require the very next 0x6B2 frame to also be past threshold before
+         committing it, so one bad frame can't look like a sustained trip.
+         In-range readings always commit immediately; there's no safety cost
+         to trusting those right away. */
+      if (hi_ct >= CELL_V_HI_ct) {
+        if (d.cell_hi_flagged) { d.cell_hi_ct = hi_ct; d.cell_hi_id = hi_id; }
+        d.cell_hi_flagged = true;
+      } else {
+        d.cell_hi_ct      = hi_ct;
+        d.cell_hi_id      = hi_id;
+        d.cell_hi_flagged = false;
+      }
+
+      if (lo_ct <= CELL_V_LO_ct) {
+        if (d.cell_lo_flagged) { d.cell_lo_ct = lo_ct; d.cell_lo_id = lo_id; }
+        d.cell_lo_flagged = true;
+      } else {
+        d.cell_lo_ct      = lo_ct;
+        d.cell_lo_id      = lo_id;
+        d.cell_lo_flagged = false;
+      }
+
+      d.got_6B2 = true;
+      break;
+    }
     case 0x6B3: d.temp_hi  = f.data[0];
                 d.temp_avg = f.data[4];
                 d.got_6B3  = true;
@@ -87,26 +121,37 @@ inline bool checkFaultCondition(const BpsData &d){
            (d.cell_hi_ct >= CELL_V_HI_ct) || (d.cell_lo_ct <= CELL_V_LO_ct);
 }
 
-/* Two-strike latch: first fault sets lastFault, second consecutive fault latches.
-   Once latched (liveFault == true), stays latched until reset. */
-inline bool evaluateFault(const BpsData &d, bool liveFault, bool &lastFault){
+/* Fault hold time: a threshold condition must hold continuously for this
+   long before it latches, so a single noisy/transient CAN reading can't
+   trip the contactors. */
+constexpr unsigned long FAULT_HOLD_MS = 2000;
+
+struct FaultTimer {
+    bool          candidate = false;   // faultNow currently being timed
+    unsigned long since     = 0;       // millis() when candidate first went true
+};
+
+/* Time-based latch: checkFaultCondition() must return true continuously for
+   FAULT_HOLD_MS before evaluateFault() reports a trip. Any recovery below
+   threshold resets the timer. Once latched (liveFault == true), stays
+   latched until reset. */
+inline bool evaluateFault(const BpsData &d, bool liveFault, FaultTimer &timer, unsigned long now){
     if (liveFault) return true;  // already latched
 
     /* Don't evaluate until we have received at least one of each CAN frame */
     if (!d.dataReady()) return false;
 
     bool faultNow = checkFaultCondition(d);
-    if (!faultNow && lastFault) {
-        lastFault = false;
-    }
-    if (faultNow && lastFault) {
-        return true;
-    }
-    if (faultNow && !lastFault) {
-        lastFault = true;
+    if (!faultNow) {
+        timer.candidate = false;
         return false;
     }
-    return false;
+    if (!timer.candidate) {
+        timer.candidate = true;
+        timer.since     = now;
+        return false;
+    }
+    return (now - timer.since) >= FAULT_HOLD_MS;
 }
 
 /* ---------- E-stop debounce ----------
@@ -128,20 +173,23 @@ struct EstopDebounce {
 
 /* Feed the raw pin level and the current millis() every loop. The returned
    (debounced) state only flips once `raw` has held its new value continuously
-   for ESTOP_DEBOUNCE_MS; bounce pulses shorter than that are rejected. */
-inline bool debounceEstop(EstopDebounce &s, bool raw, unsigned long now){
+   for debounce_ms (defaults to ESTOP_DEBOUNCE_MS); bounce pulses shorter than
+   that are rejected. Callers may pass a longer hold time (e.g. a debug build
+   requiring a full second) without changing the production default. */
+inline bool debounceEstop(EstopDebounce &s, bool raw, unsigned long now,
+                           unsigned long debounce_ms = ESTOP_DEBOUNCE_MS){
     if (raw != s.candidate) {
         // Level changed — (re)start the settle timer on the new candidate.
         s.candidate = raw;
         s.since     = now;
-    } else if (raw != s.stable && (now - s.since) >= ESTOP_DEBOUNCE_MS) {
+    } else if (raw != s.stable && (now - s.since) >= debounce_ms) {
         // Candidate has held steady long enough — accept it.
         s.stable = raw;
     }
     return s.stable;
 }
 
-/* E-stop trip latch: like the two-strike fault latch and the CAN LATCHED state,
+/* E-stop trip latch: like the time-based fault latch and the CAN LATCHED state,
    a confirmed (debounced) e-stop press is a safety trip that must persist until
    the board is power-cycled — releasing the button does NOT clear it, otherwise
    the reported fault would drop while the contactors stay open. Pass the

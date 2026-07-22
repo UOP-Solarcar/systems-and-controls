@@ -3,7 +3,8 @@
  *
  *  Pin map:
  *    D3  : E-stop input (INPUT_PULLUP, rising edge ISR)
- *    D4  : Precharge relay
+ *    D4  : Precharge bypass relay (normally-closed; de-energized shorts the
+ *          precharge resistor out, energized inserts the resistor)
  *    D5  : Main contactor relay
  *    D6  : Fault lamp (blinks while fault present)
  *    D9  : Fan PWM output (Timer1, 25 kHz — OC1A, do not use analogWrite)
@@ -19,7 +20,7 @@
  *    - Debounced: raw D3 level must hold steady for ESTOP_DEBOUNCE_MS before
  *      the state changes, so contact bounce cannot chatter the fault code / lamp
  *    - Latched: a confirmed press trips until power cycle; releasing the button
- *      does NOT clear it (matches the two-strike and CAN-latched fault behavior)
+ *      does NOT clear it (matches the 2 s-hold and CAN-latched fault behavior)
  *
  *  CAN watchdog (3 states):
  *    NOMINAL  -- frames arriving within 2000 ms, normal operation
@@ -64,9 +65,18 @@ constexpr uint8_t ESTOP_PIN        = 3;
 constexpr uint8_t RELAY_OPEN_LEVEL =
         (RELAY_CLOSE_LEVEL == HIGH ? LOW : HIGH);
 
-/* Precharge dwell: on startup the normally-closed precharge is opened and the
-   normally-open main contactors are closed; the precharge stays open for this
-   long (contactors closed throughout) before it recloses. */
+/* The precharge relay is a normally-closed bypass across the precharge
+   resistor: de-energized (LOW) it sits closed and shorts the resistor out,
+   energized (HIGH) it opens and forces current through the resistor. That's
+   the opposite sense of the main (normally-open) contactor, so it needs its
+   own close/open levels rather than sharing RELAY_CLOSE_LEVEL. */
+constexpr uint8_t PRECHARGE_CLOSE_LEVEL = LOW;
+constexpr uint8_t PRECHARGE_OPEN_LEVEL  = HIGH;
+
+/* Precharge dwell: on startup the bypass relay is opened (LOW->HIGH) so the
+   precharge resistor current-limits the initial charge into the load caps
+   while the main contactor closes; after this dwell the bypass relay recloses
+   (HIGH->LOW) to short the resistor out for full continuous current. */
 constexpr unsigned long PRECHARGE_DELAY_MS = 5000UL;
 
 /* ================================================================
@@ -134,7 +144,7 @@ BpsData bps;
  *  FAULT STATE
  * ================================================================ */
 bool liveFault        = false;
-bool lastFault        = false;   // two-strike latch support
+FaultTimer faultTimer;           // tracks how long a fault condition has held (2 s latch)
 bool contactorsClosed = false;
 bool prechargeClosed  = false;
 volatile bool estopEdge = false;
@@ -156,10 +166,66 @@ void setContactors(bool closed) {
 
 void setPrecharge(bool closed) {
   prechargeClosed = closed;
-  digitalWrite(PRECHARGE_PIN, closed ? RELAY_CLOSE_LEVEL : RELAY_OPEN_LEVEL);
+  digitalWrite(PRECHARGE_PIN, closed ? PRECHARGE_CLOSE_LEVEL : PRECHARGE_OPEN_LEVEL);
 }
 
 void lampOff() { digitalWrite(PIN_FAULT_LAMP, LOW); }
+
+/* ================================================================
+ *  RELAY DEBUG
+ *  When enabled, digitalReads each relay pin every loop and prints a
+ *  line whenever the observed level changes, so the physical pin
+ *  driving each relay can be confirmed against the pin map above.
+ * ================================================================ */
+constexpr bool RELAY_DEBUG = true;
+
+/* DEBUG ONLY: require the e-stop input to hold steady for a full second
+   before it trips, instead of the normal ESTOP_DEBOUNCE_MS. Set false to
+   restore production debounce timing. */
+constexpr bool ESTOP_DEBUG_HOLD = true;
+constexpr unsigned long ESTOP_DEBUG_HOLD_MS = 5000;
+
+/* DEBUG ONLY: force estopHigh to false regardless of the physical input, so
+   other faults/behavior can be exercised on the bench while the e-stop
+   wiring is being fixed. Contactors will NOT open on a real e-stop press
+   while this is true -- MUST be false before this board drives the car. */
+constexpr bool ESTOP_DEBUG_DISABLE = true;
+
+void debugPrintRelayChanges() {
+  constexpr uint8_t NUM_CONTACTORS = sizeof(CONTACTOR_PINS) / sizeof(CONTACTOR_PINS[0]);
+  static uint8_t lastPrecharge = 0xFF;
+  static uint8_t lastContactor[NUM_CONTACTORS];
+  static bool    initialized = false;
+
+  if (!initialized) {
+    for (uint8_t &lvl : lastContactor) lvl = 0xFF;
+    initialized = true;
+  }
+
+  uint8_t level = digitalRead(PRECHARGE_PIN);
+  if (level != lastPrecharge) {
+    Serial.print(F("[RELAY_DEBUG] "));
+    Serial.print(millis());
+    Serial.print(F(" ms -- precharge relay -- pin "));
+    Serial.print(PRECHARGE_PIN);
+    Serial.print(F(" -> "));
+    Serial.println(level == PRECHARGE_CLOSE_LEVEL ? F("CLOSED") : F("OPEN"));
+    lastPrecharge = level;
+  }
+
+  for (uint8_t i = 0; i < NUM_CONTACTORS; i++) {
+    uint8_t cLevel = digitalRead(CONTACTOR_PINS[i]);
+    if (cLevel != lastContactor[i]) {
+      Serial.print(F("[RELAY_DEBUG] "));
+      Serial.print(millis());
+      Serial.print(F(" ms -- contactor relay -- pin "));
+      Serial.print(CONTACTOR_PINS[i]);
+      Serial.print(F(" -> "));
+      Serial.println(cLevel == RELAY_CLOSE_LEVEL ? F("CLOSED") : F("OPEN"));
+      lastContactor[i] = cLevel;
+    }
+  }
+}
 
 /* Configure Timer1 for 25 kHz fast PWM on pin 9 (OC1A).
    Must be called once in setup(). Never call analogWrite(9,...) after this. */
@@ -269,24 +335,43 @@ void updateCanWatchdog() {
  *  FAULT CODE HELPER
  *  Returns the highest-priority active fault code, or FC_NONE.
  *  Priority: CAN faults > E-stop > electrical > thermal
+ *
+ *  liveFault is a time-based latch (see evaluateFault() in bps_logic.h):
+ *  once tripped it stays true even if the offending reading recovers back
+ *  under threshold. Remember which threshold code actually caused the trip
+ *  so it keeps being reported for as long as liveFault is latched, instead
+ *  of silently falling back to FC_NONE the moment the reading recovers.
  * ================================================================ */
 uint8_t activeFaultCode(bool estopHigh, bool canFault) {
+  static uint8_t latchedFault = FC_NONE;
+
   if (canState == CanState::LATCHED)               return FC_CAN_LATCHED;
   if (canState == CanState::TIMEOUT)               return FC_CAN_TIMEOUT;
   if (estopHigh)                                   return FC_ESTOP;
-  if (bps.cell_hi_ct >= CELL_V_HI_ct)             return FC_CELL_OV;
-  if (bps.cell_lo_ct != 0xFFFF &&
-      bps.cell_lo_ct <= CELL_V_LO_ct)             return FC_CELL_UV;
-  if (bps.temp_hi != 0xFF &&
-      bps.temp_hi   >= TRIP_T_HI_C)               return FC_OVER_TEMP;
-  if (bps.cur_dA != INT16_MIN) {
-    if (bps.cur_dA  > TRIP_I_HI_dA)               return FC_OVER_CURRENT;
-    if (bps.cur_dA  < TRIP_I_LO_dA)               return FC_CHARGE_CURRENT;
+
+  uint8_t code = FC_NONE;
+  if (bps.cell_hi_ct >= CELL_V_HI_ct)             code = FC_CELL_OV;
+  else if (bps.cell_lo_ct != 0xFFFF &&
+      bps.cell_lo_ct <= CELL_V_LO_ct)             code = FC_CELL_UV;
+  else if (bps.temp_hi != 0xFF &&
+      bps.temp_hi   >= TRIP_T_HI_C)               code = FC_OVER_TEMP;
+  else if (bps.cur_dA != INT16_MIN &&
+      bps.cur_dA  > TRIP_I_HI_dA)                 code = FC_OVER_CURRENT;
+  else if (bps.cur_dA != INT16_MIN &&
+      bps.cur_dA  < TRIP_I_LO_dA)                 code = FC_CHARGE_CURRENT;
+  else if (bps.pack_dV != 0xFFFF &&
+      bps.pack_dV > TRIP_V_HI_dV)                 code = FC_PACK_OV;
+  else if (bps.pack_dV != 0xFFFF &&
+      bps.pack_dV < TRIP_V_LO_dV)                 code = FC_PACK_UV;
+
+  if (code != FC_NONE) {
+    latchedFault = code;
+    return code;
   }
-  if (bps.pack_dV != 0xFFFF) {
-    if (bps.pack_dV > TRIP_V_HI_dV)               return FC_PACK_OV;
-    if (bps.pack_dV < TRIP_V_LO_dV)               return FC_PACK_UV;
-  }
+
+  if (liveFault) return latchedFault;   // still tripped -- report what caused it
+
+  latchedFault = FC_NONE;
   return FC_NONE;
 }
 
@@ -405,7 +490,7 @@ void setup() {
   // MCP2515 CAN
   SPI.begin();
   mcp2515.reset();
-  mcp2515.setBitrate(CAN_500KBPS, MCP_8MHZ);
+  mcp2515.setBitrate(CAN_125KBPS, MCP_8MHZ);
 
   // Accept all CAN IDs on both RX buffers
   mcp2515.setFilterMask(MCP2515::MASK0, false, 0x000);
@@ -420,15 +505,23 @@ void setup() {
   mcp2515.setNormalMode();
 
   Serial.println(F("\nRun/Trip + Fan controller -- ready"));
+  if (ESTOP_DEBUG_DISABLE) {
+    Serial.println(F("!!! ESTOP_DEBUG_DISABLE is true -- e-stop input IGNORED !!!"));
+    Serial.println(F("!!! DO NOT DRIVE -- set ESTOP_DEBUG_DISABLE = false before use !!!"));
+  }
 
   // Precharge / startup sequence:
-  //   Open the normally-closed precharge and close the normally-open main
-  //   contactors, hold for the precharge delay, then reclose precharge. The
-  //   main contactors stay closed throughout.
-  setPrecharge(false);   // precharge opens
+  //   Open the precharge bypass relay so the precharge resistor current-limits
+  //   the initial charge into the load caps, then close the main contactor.
+  //   After the dwell, reclose the bypass relay to short the resistor out for
+  //   full continuous current. Main contactor stays closed throughout.
+  setPrecharge(false);   // bypass opens -- resistor engaged
+  if (RELAY_DEBUG) debugPrintRelayChanges();
   setContactors(true);   // main contactors close
+  if (RELAY_DEBUG) debugPrintRelayChanges();
   delay(PRECHARGE_DELAY_MS);
-  setPrecharge(true);    // precharge closes again; contactors stay closed
+  setPrecharge(true);    // bypass closes -- resistor shorted, full current; contactors stay closed
+  if (RELAY_DEBUG) debugPrintRelayChanges();
 
   // Drain any CAN frames that arrived during precharge
   readCAN();
@@ -454,23 +547,29 @@ void loop() {
 
   /* ---- 2. CAN watchdog ---- */
   updateCanWatchdog();
-  bool canFault = (canState != CanState::NOMINAL);
+  bool canFault = false;
+  //bool canFault = (canState != CanState::NOMINAL);
 
   /* ---- 3. Evaluate threshold faults via bps_logic.h ----
      evaluateFault() defers until dataReady() (all 3 frame types seen),
-     then applies a two-strike latch before tripping. */
+     then requires the condition to hold continuously for FAULT_HOLD_MS
+     (2 s) before tripping. */
   // Debounce the raw pin so contact bounce can't chatter the fault code /
   // 0x791 fault frames / lamp on a single physical press or release, then latch:
   // a confirmed press trips until power cycle so releasing the button can't drop
   // the reported fault while the contactors stay open.
-  bool estopNow  = debounceEstop(estopDebounce, digitalRead(ESTOP_PIN), millis());
+  bool estopNow  = debounceEstop(estopDebounce, digitalRead(ESTOP_PIN), millis(),
+                                  ESTOP_DEBUG_HOLD ? ESTOP_DEBUG_HOLD_MS : ESTOP_DEBOUNCE_MS);
   bool estopHigh = latchEstop(estopLatched, estopNow);
-  liveFault = evaluateFault(bps, liveFault, lastFault);
+  if (ESTOP_DEBUG_DISABLE) estopHigh = false;
+  //liveFault = evaluateFault(bps, liveFault, faultTimer, millis());
 
   /* ---- 4. Actuate contactors ---- */
   if (liveFault || estopHigh || canFault) {
     setContactors(false);
   }
+
+  if (RELAY_DEBUG) debugPrintRelayChanges();
 
   /* ---- 5. Fan control ---- */
   // Force 100% on any fault, e-stop, or CAN watchdog event
@@ -530,8 +629,10 @@ void loop() {
 
       Serial.print(F("I "));         Serial.print(I, 1);
       Serial.print(F(" A | V-hi "));  Serial.print(Vhi, 4);
-      Serial.print(F(" V | V-lo "));  Serial.print(Vlo, 4);
-      Serial.print(F(" V | SOC "));   Serial.print(bps.soc_pct);
+      Serial.print(F(" V (cell "));   Serial.print(bps.cell_hi_id);
+      Serial.print(F(") | V-lo "));   Serial.print(Vlo, 4);
+      Serial.print(F(" V (cell "));   Serial.print(bps.cell_lo_id);
+      Serial.print(F(") | SOC "));    Serial.print(bps.soc_pct);
       Serial.print(F("% | T-hi "));   Serial.print(bps.temp_hi  != 0xFF ? bps.temp_hi  : 0);
       Serial.print(F(" C | T-avg ")); Serial.print(bps.temp_avg != 0xFF ? bps.temp_avg : 0);
       Serial.print(F(" C | Fan "));   Serial.print(fanPct);

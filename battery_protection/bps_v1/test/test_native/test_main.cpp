@@ -112,6 +112,84 @@ void test_processCAN_0x6B2(void){
 }
 
 /* ================================================================
+ *  processCAN — 0x6B2 OV/UV glitch guard
+ *
+ *  A single frame reporting a cell past the OV/UV threshold could be a
+ *  corrupted CAN/SPI transfer rather than a real cell excursion (the
+ *  Orion's own live display can hold steady while our board sees one bad
+ *  frame). Require two consecutive over/under-threshold frames before the
+ *  reading is trusted; in-range readings still commit immediately.
+ * ================================================================ */
+void test_processCAN_0x6B2_ov_single_frame_not_trusted(void){
+    BpsData d = safeData();   // cell_hi_ct = 36000 (safe)
+    // Single glitched frame: cell_hi = 4.8000 V (48000 = 0xBB80), id 10
+    uint8_t data[] = {0xBB,0x80, 10, 0x7D,0x00, 1, 0,0};
+    can_frame f = makeFrame(0x6B2, data, 8);
+    processCAN(f, d);
+
+    // Not committed yet -- still shows the last safe reading
+    TEST_ASSERT_EQUAL_UINT16(36000, d.cell_hi_ct);
+    TEST_ASSERT_TRUE(d.cell_hi_flagged);
+}
+
+void test_processCAN_0x6B2_ov_confirmed_after_second_frame(void){
+    BpsData d = safeData();
+    uint8_t glitch[] = {0xBB,0x80, 10, 0x7D,0x00, 1, 0,0};   // 48000, id 10
+    can_frame f1 = makeFrame(0x6B2, glitch, 8);
+    processCAN(f1, d);
+
+    // Second consecutive over-threshold frame -- a real sustained condition
+    uint8_t confirm[] = {0xA7,0xF8, 10, 0x7D,0x00, 1, 0,0};  // 43000, id 10
+    can_frame f2 = makeFrame(0x6B2, confirm, 8);
+    processCAN(f2, d);
+
+    TEST_ASSERT_EQUAL_UINT16(43000, d.cell_hi_ct);
+    TEST_ASSERT_EQUAL_UINT8(10, d.cell_hi_id);
+}
+
+void test_processCAN_0x6B2_ov_glitch_recovers_without_exposing_bad_value(void){
+    BpsData d = safeData();
+    uint8_t glitch[] = {0xBB,0x80, 10, 0x7D,0x00, 1, 0,0};   // 48000, id 10
+    can_frame f1 = makeFrame(0x6B2, glitch, 8);
+    processCAN(f1, d);
+    TEST_ASSERT_EQUAL_UINT16(36000, d.cell_hi_ct);   // glitch never surfaced
+
+    // Bus recovers -- next frame is a normal in-range reading
+    uint8_t normal[] = {0x94,0x70, 3, 0x7D,0x00, 1, 0,0};    // 38000, id 3
+    can_frame f2 = makeFrame(0x6B2, normal, 8);
+    processCAN(f2, d);
+
+    TEST_ASSERT_EQUAL_UINT16(38000, d.cell_hi_ct);
+    TEST_ASSERT_EQUAL_UINT8(3, d.cell_hi_id);
+    TEST_ASSERT_FALSE(d.cell_hi_flagged);
+}
+
+void test_processCAN_0x6B2_uv_single_frame_not_trusted(void){
+    BpsData d = safeData();   // cell_lo_ct = 32000 (safe)
+    // Single glitched frame: cell_lo = 2.0000 V (20000 = 0x4E20), id 5
+    uint8_t data[] = {0x94,0x70, 3, 0x4E,0x20, 5, 0,0};
+    can_frame f = makeFrame(0x6B2, data, 8);
+    processCAN(f, d);
+
+    TEST_ASSERT_EQUAL_UINT16(32000, d.cell_lo_ct);
+    TEST_ASSERT_TRUE(d.cell_lo_flagged);
+}
+
+void test_processCAN_0x6B2_uv_confirmed_after_second_frame(void){
+    BpsData d = safeData();
+    uint8_t glitch[] = {0x94,0x70, 3, 0x4E,0x20, 5, 0,0};    // lo = 20000, id 5
+    can_frame f1 = makeFrame(0x6B2, glitch, 8);
+    processCAN(f1, d);
+
+    uint8_t confirm[] = {0x94,0x70, 3, 0x5D,0xC0, 5, 0,0};   // lo = 24000, id 5
+    can_frame f2 = makeFrame(0x6B2, confirm, 8);
+    processCAN(f2, d);
+
+    TEST_ASSERT_EQUAL_UINT16(24000, d.cell_lo_ct);
+    TEST_ASSERT_EQUAL_UINT8(5, d.cell_lo_id);
+}
+
+/* ================================================================
  *  processCAN — 0x6B3  (temperatures)
  * ================================================================ */
 void test_processCAN_0x6B3(void){
@@ -274,55 +352,62 @@ void test_no_fault_cell_lo_boundary(void){
 }
 
 /* ================================================================
- *  evaluateFault — two-strike latch behaviour
+ *  evaluateFault — time-based (2 s hold) latch behaviour
  * ================================================================ */
 void test_eval_skips_before_data_ready(void){
     BpsData d = safeData();
     d.got_6B3 = false;      // missing temperature frame
     d.temp_hi = 50;          // would fault if evaluated
-    bool last = false;
-    bool live = evaluateFault(d, false, last);
+    FaultTimer timer;
+    bool live = evaluateFault(d, false, timer, 0);
     TEST_ASSERT_FALSE(live);
-    TEST_ASSERT_FALSE(last); // should not even set first strike
+    TEST_ASSERT_FALSE(timer.candidate); // should not even start the hold timer
 }
 
 void test_eval_no_fault(void){
     BpsData d = safeData();
-    bool last = false;
-    TEST_ASSERT_FALSE(evaluateFault(d, false, last));
-    TEST_ASSERT_FALSE(last);
+    FaultTimer timer;
+    TEST_ASSERT_FALSE(evaluateFault(d, false, timer, 0));
+    TEST_ASSERT_FALSE(timer.candidate);
 }
 
-void test_eval_first_strike_does_not_latch(void){
+void test_eval_fault_onset_does_not_latch_immediately(void){
     BpsData d = safeData();
     d.temp_hi = 50;     // fault condition
-    bool last = false;
-    bool live = evaluateFault(d, false, last);
-    TEST_ASSERT_FALSE(live);    // not latched yet
-    TEST_ASSERT_TRUE(last);     // but lastFault is now set
+    FaultTimer timer;
+    bool live = evaluateFault(d, false, timer, 1000);
+    TEST_ASSERT_FALSE(live);          // not latched yet
+    TEST_ASSERT_TRUE(timer.candidate); // hold timer now running
+    TEST_ASSERT_EQUAL_UINT32(1000, timer.since);
 }
 
-void test_eval_second_strike_latches(void){
+void test_eval_latches_after_hold_time(void){
     BpsData d = safeData();
     d.temp_hi = 50;
-    bool last = true;   // already had one strike
-    bool live = evaluateFault(d, false, last);
-    TEST_ASSERT_TRUE(live);     // now latched
+    FaultTimer timer;
+    bool live = evaluateFault(d, false, timer, 1000);   // onset
+    TEST_ASSERT_FALSE(live);
+    live = evaluateFault(d, false, timer, 1000 + FAULT_HOLD_MS - 1);
+    TEST_ASSERT_FALSE(live);   // just under the hold time
+    live = evaluateFault(d, false, timer, 1000 + FAULT_HOLD_MS);
+    TEST_ASSERT_TRUE(live);    // held for the full 2 s -> latches
 }
 
 void test_eval_latch_persists(void){
     BpsData d = safeData();     // no fault condition now
-    bool last = true;
-    bool live = evaluateFault(d, true, last);   // already latched
+    FaultTimer timer;
+    bool live = evaluateFault(d, true, timer, 5000);   // already latched
     TEST_ASSERT_TRUE(live);     // stays latched regardless of current data
 }
 
-void test_eval_transient_clears_lastFault(void){
+void test_eval_transient_resets_hold_timer(void){
     BpsData d = safeData();     // no fault
-    bool last = true;           // had one strike previously
-    bool live = evaluateFault(d, false, last);
+    FaultTimer timer;
+    timer.candidate = true;     // hold timer was running previously
+    timer.since     = 500;
+    bool live = evaluateFault(d, false, timer, 1000);
     TEST_ASSERT_FALSE(live);
-    TEST_ASSERT_FALSE(last);    // single strike cleared
+    TEST_ASSERT_FALSE(timer.candidate);    // recovery cancels the hold timer
 }
 
 /* ================================================================
@@ -330,7 +415,7 @@ void test_eval_transient_clears_lastFault(void){
  * ================================================================ */
 void test_integration_overtemp_latch_then_update(void){
     BpsData d = safeData();
-    bool lastF = false;
+    FaultTimer timer;
     bool liveF = false;
 
     // Frame 1: temp_hi = 50 (over-temp)
@@ -338,13 +423,13 @@ void test_integration_overtemp_latch_then_update(void){
     can_frame f1 = makeFrame(0x6B3, hot, 8);
     processCAN(f1, d);
 
-    // First eval: first strike
-    liveF = evaluateFault(d, liveF, lastF);
+    // First eval: onset, hold timer starts
+    liveF = evaluateFault(d, liveF, timer, 1000);
     TEST_ASSERT_FALSE(liveF);
-    TEST_ASSERT_TRUE(lastF);
+    TEST_ASSERT_TRUE(timer.candidate);
 
-    // Second eval with same data: latches
-    liveF = evaluateFault(d, liveF, lastF);
+    // Eval after the 2 s hold time with same data: latches
+    liveF = evaluateFault(d, liveF, timer, 1000 + FAULT_HOLD_MS);
     TEST_ASSERT_TRUE(liveF);
 
     // Now a fresh frame arrives with normal temp
@@ -356,7 +441,7 @@ void test_integration_overtemp_latch_then_update(void){
     TEST_ASSERT_EQUAL_UINT8(30, d.temp_hi);
 
     // Fault stays latched (requires MCU reset)
-    liveF = evaluateFault(d, liveF, lastF);
+    liveF = evaluateFault(d, liveF, timer, 1000 + FAULT_HOLD_MS + 1000);
     TEST_ASSERT_TRUE(liveF);
 }
 
@@ -364,7 +449,7 @@ void test_integration_data_keeps_updating_while_latched(void){
     BpsData d = safeData();
 
     // Force into latched fault state
-    bool lastF = false;
+    FaultTimer timer;
     bool liveF = true;
 
     // Send several frames — data should update each time
@@ -380,7 +465,7 @@ void test_integration_data_keeps_updating_while_latched(void){
     TEST_ASSERT_EQUAL_UINT16(900, d.pack_dV);
 
     // Still latched
-    liveF = evaluateFault(d, liveF, lastF);
+    liveF = evaluateFault(d, liveF, timer, 0);
     TEST_ASSERT_TRUE(liveF);
 }
 
@@ -530,6 +615,11 @@ int main(int argc, char **argv){
     RUN_TEST(test_processCAN_0x6B0);
     RUN_TEST(test_processCAN_0x6B0_negative_current);
     RUN_TEST(test_processCAN_0x6B2);
+    RUN_TEST(test_processCAN_0x6B2_ov_single_frame_not_trusted);
+    RUN_TEST(test_processCAN_0x6B2_ov_confirmed_after_second_frame);
+    RUN_TEST(test_processCAN_0x6B2_ov_glitch_recovers_without_exposing_bad_value);
+    RUN_TEST(test_processCAN_0x6B2_uv_single_frame_not_trusted);
+    RUN_TEST(test_processCAN_0x6B2_uv_confirmed_after_second_frame);
     RUN_TEST(test_processCAN_0x6B3);
     RUN_TEST(test_processCAN_unknown_id);
     RUN_TEST(test_processCAN_rejects_short_dlc);
@@ -550,13 +640,13 @@ int main(int argc, char **argv){
     RUN_TEST(test_no_fault_cell_hi_boundary);
     RUN_TEST(test_no_fault_cell_lo_boundary);
 
-    /* evaluateFault (two-strike latch) */
+    /* evaluateFault (2 s hold latch) */
     RUN_TEST(test_eval_skips_before_data_ready);
     RUN_TEST(test_eval_no_fault);
-    RUN_TEST(test_eval_first_strike_does_not_latch);
-    RUN_TEST(test_eval_second_strike_latches);
+    RUN_TEST(test_eval_fault_onset_does_not_latch_immediately);
+    RUN_TEST(test_eval_latches_after_hold_time);
     RUN_TEST(test_eval_latch_persists);
-    RUN_TEST(test_eval_transient_clears_lastFault);
+    RUN_TEST(test_eval_transient_resets_hold_timer);
 
     /* integration */
     RUN_TEST(test_integration_overtemp_latch_then_update);
