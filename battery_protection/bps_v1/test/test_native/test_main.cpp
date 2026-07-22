@@ -142,6 +142,43 @@ void test_processCAN_unknown_id(void){
 }
 
 /* ================================================================
+ *  processCAN — short/RTR frames must not touch data
+ *
+ *  The mcp2515 driver only overwrites the first can_dlc bytes of a
+ *  can_frame's data[] on receive, and readCAN() reuses one can_frame across
+ *  every message polled in a pass. A short or RTR frame landing on one of
+ *  our heartbeat IDs would otherwise get parsed against stale bytes left
+ *  over from an earlier, unrelated frame. processCAN() must reject these
+ *  outright rather than parse a partially-stale buffer.
+ * ================================================================ */
+void test_processCAN_rejects_short_dlc(void){
+    BpsData d = safeData();
+    BpsData before = d;
+    // Only 2 of the 8 bytes are "real" -- the rest would be stale in practice.
+    uint8_t data[] = {0x00,0x64, 0,0,0,0,0,0};
+    can_frame f = makeFrame(0x6B0, data, 2);
+    processCAN(f, d);
+
+    TEST_ASSERT_EQUAL_INT16(before.cur_dA,   d.cur_dA);
+    TEST_ASSERT_EQUAL_UINT16(before.pack_dV, d.pack_dV);
+    TEST_ASSERT_EQUAL_UINT8(before.soc_pct,  d.soc_pct);
+    TEST_ASSERT_FALSE(d.got_6B0 && !before.got_6B0);
+}
+
+void test_processCAN_rejects_rtr_frame(void){
+    BpsData d = safeData();
+    BpsData before = d;
+    // RTR frame: dlc reports 8 (requested length) but no data was actually
+    // transmitted on the wire, so the buffer would be stale, not real.
+    uint8_t data[] = {40, 0,0,0, 35, 0,0,0};
+    can_frame f = makeFrame(0x6B3 | CAN_RTR_FLAG, data, 8);
+    processCAN(f, d);
+
+    TEST_ASSERT_EQUAL_UINT8(before.temp_hi,  d.temp_hi);
+    TEST_ASSERT_EQUAL_UINT8(before.temp_avg, d.temp_avg);
+}
+
+/* ================================================================
  *  processCAN updates data after fault (the original bug)
  * ================================================================ */
 void test_processCAN_updates_after_fault(void){
@@ -495,6 +532,8 @@ int main(int argc, char **argv){
     RUN_TEST(test_processCAN_0x6B2);
     RUN_TEST(test_processCAN_0x6B3);
     RUN_TEST(test_processCAN_unknown_id);
+    RUN_TEST(test_processCAN_rejects_short_dlc);
+    RUN_TEST(test_processCAN_rejects_rtr_frame);
     RUN_TEST(test_processCAN_updates_after_fault);
 
     /* checkFaultCondition */

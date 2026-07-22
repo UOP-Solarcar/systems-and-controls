@@ -47,10 +47,18 @@ struct can_frame {
     uint8_t  can_dlc;
     uint8_t  data[8];
 };
+constexpr uint32_t CAN_RTR_FLAG = 0x40000000UL;
 #endif
 
 /* ---------- CAN processing ---------- */
 inline void processCAN(can_frame &f, BpsData &d){
+  /* The mcp2515 driver only overwrites the first can_dlc bytes of f.data on
+     receive -- it never clears the rest of the buffer. Since readCAN() reuses
+     one can_frame across every message in a poll, a short or RTR frame (no
+     data on the wire) landing on one of our IDs would otherwise be parsed
+     against stale bytes left over from whatever frame was read before it. */
+  if (f.can_dlc != 8 || (f.can_id & CAN_RTR_FLAG)) return;
+
   switch (f.can_id) {
     case 0x6B0: d.cur_dA   = be16s(&f.data[0]);
                 d.pack_dV  = be16u(&f.data[2]);

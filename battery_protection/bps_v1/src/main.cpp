@@ -208,12 +208,14 @@ void invalidateLiveData() {
  * ================================================================ */
 void readCAN() {
   can_frame f;
+  memset(&f, 0, sizeof(f));
   while (mcp2515.readMessage(&f) == MCP2515::ERROR_OK) {
     bool heartbeat = (f.can_id == 0x6B0 ||
                       f.can_id == 0x6B2 ||
                       f.can_id == 0x6B3);
     processCAN(f, bps);
     if (heartbeat) tLastCanRx = millis();
+    memset(&f, 0, sizeof(f));   // driver only writes the first can_dlc bytes
   }
 
   /* Clear RX-overflow flags so the chip keeps receiving */
