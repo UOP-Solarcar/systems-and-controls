@@ -48,6 +48,17 @@
  *    0x09 CAN timeout
  *    0x0A CAN latched
  ********************************************************************/
+
+ /********************************************************************
+ * DEBUG NOTES
+ * 
+ * Not connected to 5V unless plugged into laptop.
+ * Contactors are hardwired to ESTOP with the relay module in series.
+ * CAN not working. Everything was working great until the wires got 
+ * moved a bit while trying to mount. Check the transciever and 
+ * network wiring. May have been shorted.
+ ********************************************************************/
+
 #include <SPI.h>
 #include <mcp2515.h>
 #include "bps_logic.h"
@@ -562,7 +573,7 @@ void loop() {
                                   ESTOP_DEBUG_HOLD ? ESTOP_DEBUG_HOLD_MS : ESTOP_DEBOUNCE_MS);
   bool estopHigh = latchEstop(estopLatched, estopNow);
   if (ESTOP_DEBUG_DISABLE) estopHigh = false;
-  //liveFault = evaluateFault(bps, liveFault, faultTimer, millis());
+  liveFault = evaluateFault(bps, liveFault, faultTimer, millis());
 
   /* ---- 4. Actuate contactors ---- */
   if (liveFault || estopHigh || canFault) {

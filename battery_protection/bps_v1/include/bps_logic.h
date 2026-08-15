@@ -117,7 +117,7 @@ inline void processCAN(can_frame &f, BpsData &d){
 inline bool checkFaultCondition(const BpsData &d){
     return (d.temp_hi >= TRIP_T_HI_C) ||
            (d.cur_dA   > TRIP_I_HI_dA) || (d.cur_dA < TRIP_I_LO_dA) ||
-           (d.pack_dV  > TRIP_V_HI_dV) || (d.pack_dV < TRIP_V_LO_dV) ||
+           //(d.pack_dV  > TRIP_V_HI_dV) || (d.pack_dV < TRIP_V_LO_dV) ||
            (d.cell_hi_ct >= CELL_V_HI_ct) || (d.cell_lo_ct <= CELL_V_LO_ct);
 }
 
